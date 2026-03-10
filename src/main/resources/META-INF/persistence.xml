@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+  <persistence-unit name="dao-lib" transaction-type="JTA">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <jta-data-source>db2/dataSource</jta-data-source>
+    <properties>
+      <!-- Hibernate Dialect for DB2 -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.DB2Dialect"/>
+      <!-- Schema generation - set to 'none' for production -->
+      <property name="hibernate.hbm2ddl.auto" value="none"/>
+      <!-- Show SQL queries in logs -->
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <!-- Use JDBC batch processing for better performance -->
+      <property name="hibernate.jdbc.batch_size" value="20"/>
+      <property name="hibernate.order_inserts" value="true"/>
+      <property name="hibernate.order_updates" value="true"/>
+      <!-- Enable query cache (optional) -->
+      <property name="hibernate.cache.use_second_level_cache" value="false"/>
+      <property name="hibernate.cache.use_query_cache" value="false"/>
+      <!-- Disable bytecode enhancement to prevent StackOverflowError in Liberty -->
+      <property name="hibernate.enhancer.enableDirtyTracking" value="false"/>
+      <property name="hibernate.enhancer.enableLazyInitialization" value="false"/>
+      <property name="hibernate.enhancer.enableAssociationManagement" value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>

@@ -1,0 +1,333 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.corpay.dao.cxxcow;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Table;
+import java.io.Serializable;
+
+/**
+ *
+ * @author Sukant.Tiwari
+ */
+@Entity
+@Table(name = "MC_ADD_GEN_DTL", catalog = "", schema = "CXXCOW")
+@NamedQueries({
+    @NamedQuery(name = "McAddGenDtl.findAll", query = "SELECT m FROM McAddGenDtl m"),
+    @NamedQuery(name = "McAddGenDtl.findByP105s1FileTy", query = "SELECT m FROM McAddGenDtl m WHERE m.mcAddGenDtlPK.p105s1FileTy = :p105s1FileTy"),
+    @NamedQuery(name = "McAddGenDtl.findByP105s2FileRDt", query = "SELECT m FROM McAddGenDtl m WHERE m.mcAddGenDtlPK.p105s2FileRDt = :p105s2FileRDt"),
+    @NamedQuery(name = "McAddGenDtl.findByP105s3ProcId", query = "SELECT m FROM McAddGenDtl m WHERE m.mcAddGenDtlPK.p105s3ProcId = :p105s3ProcId"),
+    @NamedQuery(name = "McAddGenDtl.findByP105s4FileSeqNo", query = "SELECT m FROM McAddGenDtl m WHERE m.mcAddGenDtlPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
+    @NamedQuery(name = "McAddGenDtl.findByMsgTyId", query = "SELECT m FROM McAddGenDtl m WHERE m.msgTyId = :msgTyId"),
+    @NamedQuery(name = "McAddGenDtl.findByBitMapPri", query = "SELECT m FROM McAddGenDtl m WHERE m.bitMapPri = :bitMapPri"),
+    @NamedQuery(name = "McAddGenDtl.findByD1BitMapSec", query = "SELECT m FROM McAddGenDtl m WHERE m.d1BitMapSec = :d1BitMapSec"),
+    @NamedQuery(name = "McAddGenDtl.findByD24FuncCd", query = "SELECT m FROM McAddGenDtl m WHERE m.d24FuncCd = :d24FuncCd"),
+    @NamedQuery(name = "McAddGenDtl.findByD32AcqInstIdCd", query = "SELECT m FROM McAddGenDtl m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
+    @NamedQuery(name = "McAddGenDtl.findByD33FwdngInstCd", query = "SELECT m FROM McAddGenDtl m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
+    @NamedQuery(name = "McAddGenDtl.findByD48AddtlDat", query = "SELECT m FROM McAddGenDtl m WHERE m.d48AddtlDat = :d48AddtlDat"),
+    @NamedQuery(name = "McAddGenDtl.findByP191OrMsgFmt", query = "SELECT m FROM McAddGenDtl m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
+    @NamedQuery(name = "McAddGenDtl.findByP501s1UsageCd", query = "SELECT m FROM McAddGenDtl m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
+    @NamedQuery(name = "McAddGenDtl.findByP501s2IndstyRec", query = "SELECT m FROM McAddGenDtl m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
+    @NamedQuery(name = "McAddGenDtl.findByP501s3OccInd", query = "SELECT m FROM McAddGenDtl m WHERE m.mcAddGenDtlPK.p501s3OccInd = :p501s3OccInd"),
+    @NamedQuery(name = "McAddGenDtl.findByP501s4MsgNo", query = "SELECT m FROM McAddGenDtl m WHERE m.mcAddGenDtlPK.p501s4MsgNo = :p501s4MsgNo"),
+    @NamedQuery(name = "McAddGenDtl.findByP663Freefrmdesc", query = "SELECT m FROM McAddGenDtl m WHERE m.p663Freefrmdesc = :p663Freefrmdesc"),
+    @NamedQuery(name = "McAddGenDtl.findByD62AddtlData2", query = "SELECT m FROM McAddGenDtl m WHERE m.d62AddtlData2 = :d62AddtlData2"),
+    @NamedQuery(name = "McAddGenDtl.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddGenDtl m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
+    @NamedQuery(name = "McAddGenDtl.findByD63s2TraceId", query = "SELECT m FROM McAddGenDtl m WHERE m.d63s2TraceId = :d63s2TraceId"),
+    @NamedQuery(name = "McAddGenDtl.findByD63s3ValidnCd", query = "SELECT m FROM McAddGenDtl m WHERE m.d63s3ValidnCd = :d63s3ValidnCd"),
+    @NamedQuery(name = "McAddGenDtl.findByD63s4LfcyctrSeq", query = "SELECT m FROM McAddGenDtl m WHERE m.d63s4LfcyctrSeq = :d63s4LfcyctrSeq"),
+    @NamedQuery(name = "McAddGenDtl.findByD63s5LfcyctrTot", query = "SELECT m FROM McAddGenDtl m WHERE m.d63s5LfcyctrTot = :d63s5LfcyctrTot"),
+    @NamedQuery(name = "McAddGenDtl.findByD71MsgNo", query = "SELECT m FROM McAddGenDtl m WHERE m.mcAddGenDtlPK.d71MsgNo = :d71MsgNo"),
+    @NamedQuery(name = "McAddGenDtl.findByD93TrDestInst", query = "SELECT m FROM McAddGenDtl m WHERE m.d93TrDestInst = :d93TrDestInst"),
+    @NamedQuery(name = "McAddGenDtl.findByD94TrOrgInst", query = "SELECT m FROM McAddGenDtl m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
+    @NamedQuery(name = "McAddGenDtl.findByD100RecvInstId", query = "SELECT m FROM McAddGenDtl m WHERE m.d100RecvInstId = :d100RecvInstId"),
+    @NamedQuery(name = "McAddGenDtl.findByD123AddtlDat3", query = "SELECT m FROM McAddGenDtl m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
+    @NamedQuery(name = "McAddGenDtl.findByD124AddtlDat4", query = "SELECT m FROM McAddGenDtl m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
+    @NamedQuery(name = "McAddGenDtl.findByD125AddtlDat5", query = "SELECT m FROM McAddGenDtl m WHERE m.d125AddtlDat5 = :d125AddtlDat5")})
+public class McAddGenDtl implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @EmbeddedId
+    protected McAddGenDtlPK mcAddGenDtlPK;
+    @Column(name = "MSG_TY_ID")
+    private Short msgTyId;
+    @Column(name = "BIT_MAP_PRI")
+    private String bitMapPri;
+    @Column(name = "D1_BIT_MAP_SEC")
+    private String d1BitMapSec;
+    @Column(name = "D24_FUNC_CD")
+    private Short d24FuncCd;
+    @Column(name = "D32_ACQ_INST_ID_CD")
+    private Long d32AcqInstIdCd;
+    @Column(name = "D33_FWDNG_INST_CD")
+    private Long d33FwdngInstCd;
+    @Column(name = "D48_ADDTL_DAT")
+    private String d48AddtlDat;
+    @Column(name = "P191_OR_MSG_FMT")
+    private Short p191OrMsgFmt;
+    @Column(name = "P501S1_USAGE_CD")
+    private Short p501s1UsageCd;
+    @Column(name = "P501S2_INDSTY_REC")
+    private Short p501s2IndstyRec;
+    @Column(name = "P663_FREEFRMDESC")
+    private String p663Freefrmdesc;
+    @Column(name = "D62_ADDTL_DATA_2")
+    private String d62AddtlData2;
+    @Column(name = "D63S1_LFCYC_SP_IND")
+    private Character d63s1LfcycSpInd;
+    @Column(name = "D63S2_TRACE_ID")
+    private String d63s2TraceId;
+    @Column(name = "D63S3_VALIDN_CD")
+    private String d63s3ValidnCd;
+    @Column(name = "D63S4_LFCYCTR_SEQ")
+    private String d63s4LfcyctrSeq;
+    @Column(name = "D63S5_LFCYCTR_TOT")
+    private String d63s5LfcyctrTot;
+    @Column(name = "D93_TR_DEST_INST")
+    private Long d93TrDestInst;
+    @Column(name = "D94_TR_ORG_INST")
+    private Long d94TrOrgInst;
+    @Column(name = "D100_RECV_INST_ID")
+    private Long d100RecvInstId;
+    @Column(name = "D123_ADDTL_DAT_3")
+    private String d123AddtlDat3;
+    @Column(name = "D124_ADDTL_DAT_4")
+    private String d124AddtlDat4;
+    @Column(name = "D125_ADDTL_DAT_5")
+    private String d125AddtlDat5;
+
+    public McAddGenDtl() {
+    }
+
+    public McAddGenDtl(McAddGenDtlPK mcAddGenDtlPK) {
+        this.mcAddGenDtlPK = mcAddGenDtlPK;
+    }
+
+    public McAddGenDtl(short p105s1FileTy, int p105s2FileRDt, long p105s3ProcId, int p105s4FileSeqNo, short p501s3OccInd, int p501s4MsgNo, int d71MsgNo) {
+        this.mcAddGenDtlPK = new McAddGenDtlPK(p105s1FileTy, p105s2FileRDt, p105s3ProcId, p105s4FileSeqNo, p501s3OccInd, p501s4MsgNo, d71MsgNo);
+    }
+
+    public McAddGenDtlPK getMcAddGenDtlPK() {
+        return mcAddGenDtlPK;
+    }
+
+    public void setMcAddGenDtlPK(McAddGenDtlPK mcAddGenDtlPK) {
+        this.mcAddGenDtlPK = mcAddGenDtlPK;
+    }
+
+    public Short getMsgTyId() {
+        return msgTyId;
+    }
+
+    public void setMsgTyId(Short msgTyId) {
+        this.msgTyId = msgTyId;
+    }
+
+    public String getBitMapPri() {
+        return bitMapPri;
+    }
+
+    public void setBitMapPri(String bitMapPri) {
+        this.bitMapPri = bitMapPri;
+    }
+
+    public String getD1BitMapSec() {
+        return d1BitMapSec;
+    }
+
+    public void setD1BitMapSec(String d1BitMapSec) {
+        this.d1BitMapSec = d1BitMapSec;
+    }
+
+    public Short getD24FuncCd() {
+        return d24FuncCd;
+    }
+
+    public void setD24FuncCd(Short d24FuncCd) {
+        this.d24FuncCd = d24FuncCd;
+    }
+
+    public Long getD32AcqInstIdCd() {
+        return d32AcqInstIdCd;
+    }
+
+    public void setD32AcqInstIdCd(Long d32AcqInstIdCd) {
+        this.d32AcqInstIdCd = d32AcqInstIdCd;
+    }
+
+    public Long getD33FwdngInstCd() {
+        return d33FwdngInstCd;
+    }
+
+    public void setD33FwdngInstCd(Long d33FwdngInstCd) {
+        this.d33FwdngInstCd = d33FwdngInstCd;
+    }
+
+    public String getD48AddtlDat() {
+        return d48AddtlDat;
+    }
+
+    public void setD48AddtlDat(String d48AddtlDat) {
+        this.d48AddtlDat = d48AddtlDat;
+    }
+
+    public Short getP191OrMsgFmt() {
+        return p191OrMsgFmt;
+    }
+
+    public void setP191OrMsgFmt(Short p191OrMsgFmt) {
+        this.p191OrMsgFmt = p191OrMsgFmt;
+    }
+
+    public Short getP501s1UsageCd() {
+        return p501s1UsageCd;
+    }
+
+    public void setP501s1UsageCd(Short p501s1UsageCd) {
+        this.p501s1UsageCd = p501s1UsageCd;
+    }
+
+    public Short getP501s2IndstyRec() {
+        return p501s2IndstyRec;
+    }
+
+    public void setP501s2IndstyRec(Short p501s2IndstyRec) {
+        this.p501s2IndstyRec = p501s2IndstyRec;
+    }
+
+    public String getP663Freefrmdesc() {
+        return p663Freefrmdesc;
+    }
+
+    public void setP663Freefrmdesc(String p663Freefrmdesc) {
+        this.p663Freefrmdesc = p663Freefrmdesc;
+    }
+
+    public String getD62AddtlData2() {
+        return d62AddtlData2;
+    }
+
+    public void setD62AddtlData2(String d62AddtlData2) {
+        this.d62AddtlData2 = d62AddtlData2;
+    }
+
+    public Character getD63s1LfcycSpInd() {
+        return d63s1LfcycSpInd;
+    }
+
+    public void setD63s1LfcycSpInd(Character d63s1LfcycSpInd) {
+        this.d63s1LfcycSpInd = d63s1LfcycSpInd;
+    }
+
+    public String getD63s2TraceId() {
+        return d63s2TraceId;
+    }
+
+    public void setD63s2TraceId(String d63s2TraceId) {
+        this.d63s2TraceId = d63s2TraceId;
+    }
+
+    public String getD63s3ValidnCd() {
+        return d63s3ValidnCd;
+    }
+
+    public void setD63s3ValidnCd(String d63s3ValidnCd) {
+        this.d63s3ValidnCd = d63s3ValidnCd;
+    }
+
+    public String getD63s4LfcyctrSeq() {
+        return d63s4LfcyctrSeq;
+    }
+
+    public void setD63s4LfcyctrSeq(String d63s4LfcyctrSeq) {
+        this.d63s4LfcyctrSeq = d63s4LfcyctrSeq;
+    }
+
+    public String getD63s5LfcyctrTot() {
+        return d63s5LfcyctrTot;
+    }
+
+    public void setD63s5LfcyctrTot(String d63s5LfcyctrTot) {
+        this.d63s5LfcyctrTot = d63s5LfcyctrTot;
+    }
+
+    public Long getD93TrDestInst() {
+        return d93TrDestInst;
+    }
+
+    public void setD93TrDestInst(Long d93TrDestInst) {
+        this.d93TrDestInst = d93TrDestInst;
+    }
+
+    public Long getD94TrOrgInst() {
+        return d94TrOrgInst;
+    }
+
+    public void setD94TrOrgInst(Long d94TrOrgInst) {
+        this.d94TrOrgInst = d94TrOrgInst;
+    }
+
+    public Long getD100RecvInstId() {
+        return d100RecvInstId;
+    }
+
+    public void setD100RecvInstId(Long d100RecvInstId) {
+        this.d100RecvInstId = d100RecvInstId;
+    }
+
+    public String getD123AddtlDat3() {
+        return d123AddtlDat3;
+    }
+
+    public void setD123AddtlDat3(String d123AddtlDat3) {
+        this.d123AddtlDat3 = d123AddtlDat3;
+    }
+
+    public String getD124AddtlDat4() {
+        return d124AddtlDat4;
+    }
+
+    public void setD124AddtlDat4(String d124AddtlDat4) {
+        this.d124AddtlDat4 = d124AddtlDat4;
+    }
+
+    public String getD125AddtlDat5() {
+        return d125AddtlDat5;
+    }
+
+    public void setD125AddtlDat5(String d125AddtlDat5) {
+        this.d125AddtlDat5 = d125AddtlDat5;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (mcAddGenDtlPK != null ? mcAddGenDtlPK.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof McAddGenDtl)) {
+            return false;
+        }
+        McAddGenDtl other = (McAddGenDtl) object;
+        if ((this.mcAddGenDtlPK == null && other.mcAddGenDtlPK != null) || (this.mcAddGenDtlPK != null && !this.mcAddGenDtlPK.equals(other.mcAddGenDtlPK))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.corpay.dao.cxxcow.McAddGenDtl[ mcAddGenDtlPK=" + mcAddGenDtlPK + " ]";
+    }
+    
+}
