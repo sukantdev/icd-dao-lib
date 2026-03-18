@@ -3,6 +3,7 @@
   <persistence-unit name="dao-lib" transaction-type="JTA">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <jta-data-source>db2/dataSource</jta-data-source>
+    <mapping-file>META-INF/named-queries.xml</mapping-file>
     <properties>
       <!-- Hibernate Dialect for DB2 -->
       <property name="hibernate.dialect" value="org.hibernate.dialect.DB2Dialect"/>
