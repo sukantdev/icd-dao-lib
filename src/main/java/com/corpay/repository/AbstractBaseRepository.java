@@ -1,15 +1,16 @@
 package com.corpay.repository;
 
+import java.io.Serializable;
+import java.util.List;
+import java.util.Optional;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
-
-import java.io.Serializable;
-import java.util.List;
-import java.util.Optional;
 
 public abstract class AbstractBaseRepository<T, ID extends Serializable> implements BaseRepository<T, ID> {
 
@@ -120,5 +121,27 @@ public abstract class AbstractBaseRepository<T, ID extends Serializable> impleme
             query.setParameter((String) params[i], params[i + 1]);
         }
         return query.getResultList();
+    }
+
+    @SuppressWarnings("unchecked")
+    protected List<T> executeNativeQuery(String sql) {
+        return entityManager.createNativeQuery(sql, entityClass).getResultList();
+    }
+
+    @SuppressWarnings("unchecked")
+    protected List<T> executeNativeQuery(String sql, Object... params) {
+        Query query = entityManager.createNativeQuery(sql, entityClass);
+        for (int i = 0; i < params.length; i += 2) {
+            query.setParameter((String) params[i], params[i + 1]);
+        }
+        return query.getResultList();
+    }
+
+    protected int executeNativeUpdate(String sql, Object... params) {
+        Query query = entityManager.createNativeQuery(sql);
+        for (int i = 0; i < params.length; i += 2) {
+            query.setParameter((String) params[i], params[i + 1]);
+        }
+        return query.executeUpdate();
     }
 }
