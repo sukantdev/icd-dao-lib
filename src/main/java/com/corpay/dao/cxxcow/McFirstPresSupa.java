@@ -1,37 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_FIRST_PRES_SUPA", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McFirstPresSupa.findAll", query = "SELECT m FROM McFirstPresSupa m"),
-    @NamedQuery(name = "McFirstPresSupa.findByP105s1FileTy", query = "SELECT m FROM McFirstPresSupa m WHERE m.mcFirstPresSupaPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McFirstPresSupa.findByP105s2FileRDt", query = "SELECT m FROM McFirstPresSupa m WHERE m.mcFirstPresSupaPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McFirstPresSupa.findByP105s3ProcId", query = "SELECT m FROM McFirstPresSupa m WHERE m.mcFirstPresSupaPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McFirstPresSupa.findByP105s4FileSeqNo", query = "SELECT m FROM McFirstPresSupa m WHERE m.mcFirstPresSupaPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McFirstPresSupa.findByD71MsgNo", query = "SELECT m FROM McFirstPresSupa m WHERE m.mcFirstPresSupaPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McFirstPresSupa.findByD14ExpDt", query = "SELECT m FROM McFirstPresSupa m WHERE m.d14ExpDt = :d14ExpDt"),
-    @NamedQuery(name = "McFirstPresSupa.findByP022RecPmtInd", query = "SELECT m FROM McFirstPresSupa m WHERE m.p022RecPmtInd = :p022RecPmtInd"),
-    @NamedQuery(name = "McFirstPresSupa.findByP043PgmRegstn", query = "SELECT m FROM McFirstPresSupa m WHERE m.p043PgmRegstn = :p043PgmRegstn"),
-    @NamedQuery(name = "McFirstPresSupa.findByP172SoleProNm", query = "SELECT m FROM McFirstPresSupa m WHERE m.p172SoleProNm = :p172SoleProNm"),
-    @NamedQuery(name = "McFirstPresSupa.findByP044s1CvcValInd", query = "SELECT m FROM McFirstPresSupa m WHERE m.p044s1CvcValInd = :p044s1CvcValInd"),
-    @NamedQuery(name = "McFirstPresSupa.findByP044s2QpsCbInd", query = "SELECT m FROM McFirstPresSupa m WHERE m.p044s2QpsCbInd = :p044s2QpsCbInd")})
 public class McFirstPresSupa implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -134,7 +111,7 @@ public class McFirstPresSupa implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McFirstPresSupa)) {
             return false;
         }
@@ -149,5 +126,5 @@ public class McFirstPresSupa implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McFirstPresSupa[ mcFirstPresSupaPK=" + mcFirstPresSupaPK + " ]";
     }
-    
+
 }

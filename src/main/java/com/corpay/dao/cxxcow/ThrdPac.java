@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,35 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "THRD_PAC", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "ThrdPac.findAll", query = "SELECT t FROM ThrdPac t"),
-    @NamedQuery(name = "ThrdPac.findByThrdPacId", query = "SELECT t FROM ThrdPac t WHERE t.thrdPacPK.thrdPacId = :thrdPacId"),
-    @NamedQuery(name = "ThrdPac.findByThrdPacXrefNbr", query = "SELECT t FROM ThrdPac t WHERE t.thrdPacPK.thrdPacXrefNbr = :thrdPacXrefNbr"),
-    @NamedQuery(name = "ThrdPac.findByAcctCd", query = "SELECT t FROM ThrdPac t WHERE t.acctCd = :acctCd"),
-    @NamedQuery(name = "ThrdPac.findByCustId", query = "SELECT t FROM ThrdPac t WHERE t.custId = :custId"),
-    @NamedQuery(name = "ThrdPac.findByCrdTknNbr", query = "SELECT t FROM ThrdPac t WHERE t.crdTknNbr = :crdTknNbr"),
-    @NamedQuery(name = "ThrdPac.findByUnitNbr", query = "SELECT t FROM ThrdPac t WHERE t.unitNbr = :unitNbr"),
-    @NamedQuery(name = "ThrdPac.findByVinNbr", query = "SELECT t FROM ThrdPac t WHERE t.vinNbr = :vinNbr"),
-    @NamedQuery(name = "ThrdPac.findByMrchId", query = "SELECT t FROM ThrdPac t WHERE t.mrchId = :mrchId"),
-    @NamedQuery(name = "ThrdPac.findByLatNbr", query = "SELECT t FROM ThrdPac t WHERE t.latNbr = :latNbr"),
-    @NamedQuery(name = "ThrdPac.findByLongNbr", query = "SELECT t FROM ThrdPac t WHERE t.longNbr = :longNbr"),
-    @NamedQuery(name = "ThrdPac.findByLimFuelQty", query = "SELECT t FROM ThrdPac t WHERE t.limFuelQty = :limFuelQty"),
-    @NamedQuery(name = "ThrdPac.findByApprFlg", query = "SELECT t FROM ThrdPac t WHERE t.apprFlg = :apprFlg"),
-    @NamedQuery(name = "ThrdPac.findByRejRsn", query = "SELECT t FROM ThrdPac t WHERE t.rejRsn = :rejRsn"),
-    @NamedQuery(name = "ThrdPac.findByTimeOutFlg", query = "SELECT t FROM ThrdPac t WHERE t.timeOutFlg = :timeOutFlg"),
-    @NamedQuery(name = "ThrdPac.findByReqTs", query = "SELECT t FROM ThrdPac t WHERE t.reqTs = :reqTs"),
-    @NamedQuery(name = "ThrdPac.findByRespTs", query = "SELECT t FROM ThrdPac t WHERE t.respTs = :respTs"),
-    @NamedQuery(name = "ThrdPac.findByCrdLockExpTs", query = "SELECT t FROM ThrdPac t WHERE t.crdLockExpTs = :crdLockExpTs"),
-    @NamedQuery(name = "ThrdPac.findByCrtTs", query = "SELECT t FROM ThrdPac t WHERE t.crtTs = :crtTs"),
-    @NamedQuery(name = "ThrdPac.findByCrtUsr", query = "SELECT t FROM ThrdPac t WHERE t.crtUsr = :crtUsr"),
-    @NamedQuery(name = "ThrdPac.findByMdyTs", query = "SELECT t FROM ThrdPac t WHERE t.mdyTs = :mdyTs"),
-    @NamedQuery(name = "ThrdPac.findByMdyUsr", query = "SELECT t FROM ThrdPac t WHERE t.mdyUsr = :mdyUsr")})
 public class ThrdPac implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -69,7 +36,7 @@ public class ThrdPac implements Serializable {
     @Basic(optional = false)
     @Column(name = "MRCH_ID")
     private String mrchId;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "LAT_NBR")
     private BigDecimal latNbr;
@@ -318,7 +285,7 @@ public class ThrdPac implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof ThrdPac)) {
             return false;
         }
@@ -333,5 +300,5 @@ public class ThrdPac implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.ThrdPac[ thrdPacPK=" + thrdPacPK + " ]";
     }
-    
+
 }

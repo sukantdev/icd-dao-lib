@@ -1,39 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_SUPLM_DATA", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McSuplmData.findAll", query = "SELECT m FROM McSuplmData m"),
-    @NamedQuery(name = "McSuplmData.findByP105s1FileTy", query = "SELECT m FROM McSuplmData m WHERE m.mcSuplmDataPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McSuplmData.findByP105s2FileRDt", query = "SELECT m FROM McSuplmData m WHERE m.mcSuplmDataPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McSuplmData.findByP105s3ProcId", query = "SELECT m FROM McSuplmData m WHERE m.mcSuplmDataPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McSuplmData.findByP105s4FileSeqNo", query = "SELECT m FROM McSuplmData m WHERE m.mcSuplmDataPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McSuplmData.findByD71MsgNo", query = "SELECT m FROM McSuplmData m WHERE m.mcSuplmDataPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McSuplmData.findByOccInd", query = "SELECT m FROM McSuplmData m WHERE m.mcSuplmDataPK.occInd = :occInd"),
-    @NamedQuery(name = "McSuplmData.findBySdataTyp", query = "SELECT m FROM McSuplmData m WHERE m.mcSuplmDataPK.sdataTyp = :sdataTyp"),
-    @NamedQuery(name = "McSuplmData.findByP604s1SdataDesc1", query = "SELECT m FROM McSuplmData m WHERE m.p604s1SdataDesc1 = :p604s1SdataDesc1"),
-    @NamedQuery(name = "McSuplmData.findByP604s2Sdata1", query = "SELECT m FROM McSuplmData m WHERE m.p604s2Sdata1 = :p604s2Sdata1"),
-    @NamedQuery(name = "McSuplmData.findByP604s3SDataCd1", query = "SELECT m FROM McSuplmData m WHERE m.p604s3SDataCd1 = :p604s3SDataCd1"),
-    @NamedQuery(name = "McSuplmData.findByP604s1SdataDesc2", query = "SELECT m FROM McSuplmData m WHERE m.p604s1SdataDesc2 = :p604s1SdataDesc2"),
-    @NamedQuery(name = "McSuplmData.findByP604s2Sdata2", query = "SELECT m FROM McSuplmData m WHERE m.p604s2Sdata2 = :p604s2Sdata2"),
-    @NamedQuery(name = "McSuplmData.findByP604s3SDataCd2", query = "SELECT m FROM McSuplmData m WHERE m.p604s3SDataCd2 = :p604s3SDataCd2")})
 public class McSuplmData implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -144,7 +119,7 @@ public class McSuplmData implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McSuplmData)) {
             return false;
         }
@@ -159,5 +134,5 @@ public class McSuplmData implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McSuplmData[ mcSuplmDataPK=" + mcSuplmDataPK + " ]";
     }
-    
+
 }

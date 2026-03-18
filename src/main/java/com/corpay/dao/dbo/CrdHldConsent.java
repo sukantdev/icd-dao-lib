@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,14 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CRD_HLD_CONSENT", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "CrdHldConsent.findAll", query = "SELECT c FROM CrdHldConsent c")})
 public class CrdHldConsent implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -57,7 +45,7 @@ public class CrdHldConsent implements Serializable {
     @Basic(optional = false)
     @Column(name = "FEE01_DESC")
     private String fee01Desc;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "FEE01_VAL")
     private BigDecimal fee01Val;
@@ -930,7 +918,7 @@ public class CrdHldConsent implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof CrdHldConsent)) {
             return false;
         }
@@ -945,5 +933,5 @@ public class CrdHldConsent implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.CrdHldConsent[ crdHldConsentPK=" + crdHldConsentPK + " ]";
     }
-    
+
 }

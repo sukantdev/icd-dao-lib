@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
@@ -10,8 +6,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -20,14 +14,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CIP_COUNTRY_CD_LST", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "CipCountryCdLst.findAll", query = "SELECT c FROM CipCountryCdLst c")})
 public class CipCountryCdLst implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -136,7 +124,7 @@ public class CipCountryCdLst implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof CipCountryCdLst)) {
             return false;
         }
@@ -151,5 +139,5 @@ public class CipCountryCdLst implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.CipCountryCdLst[ countryCd=" + countryCd + " ]";
     }
-    
+
 }

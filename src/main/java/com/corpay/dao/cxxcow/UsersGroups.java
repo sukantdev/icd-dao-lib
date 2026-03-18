@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -10,26 +6,14 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "USERS_GROUPS", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "UsersGroups.findAll", query = "SELECT u FROM UsersGroups u"),
-    @NamedQuery(name = "UsersGroups.findByGroupId", query = "SELECT u FROM UsersGroups u WHERE u.usersGroupsPK.groupId = :groupId"),
-    @NamedQuery(name = "UsersGroups.findByUserId", query = "SELECT u FROM UsersGroups u WHERE u.usersGroupsPK.userId = :userId"),
-    @NamedQuery(name = "UsersGroups.findByUsrgpUptDte", query = "SELECT u FROM UsersGroups u WHERE u.usrgpUptDte = :usrgpUptDte"),
-    @NamedQuery(name = "UsersGroups.findByUsrgpUptUsr", query = "SELECT u FROM UsersGroups u WHERE u.usrgpUptUsr = :usrgpUptUsr")})
 public class UsersGroups implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -104,7 +88,7 @@ public class UsersGroups implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof UsersGroups)) {
             return false;
         }
@@ -119,5 +103,5 @@ public class UsersGroups implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.UsersGroups[ usersGroupsPK=" + usersGroupsPK + " ]";
     }
-    
+
 }

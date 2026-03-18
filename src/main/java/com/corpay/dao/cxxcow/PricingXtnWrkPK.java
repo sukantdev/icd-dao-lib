@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -9,10 +5,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Embeddable
 public class PricingXtnWrkPK implements Serializable {
 
@@ -122,7 +114,7 @@ public class PricingXtnWrkPK implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof PricingXtnWrkPK)) {
             return false;
         }
@@ -155,5 +147,5 @@ public class PricingXtnWrkPK implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.PricingXtnWrkPK[ xwrTiP105s1FileTy=" + xwrTiP105s1FileTy + ", xwrTiP105s2FileRDt=" + xwrTiP105s2FileRDt + ", xwrTiP105s3ProcId=" + xwrTiP105s3ProcId + ", xwrTiP105s4FileSeqNo=" + xwrTiP105s4FileSeqNo + ", xwrTiD71MsgNo=" + xwrTiD71MsgNo + ", xwrRecordType=" + xwrRecordType + ", xwrRecordOccInd=" + xwrRecordOccInd + " ]";
     }
-    
+
 }

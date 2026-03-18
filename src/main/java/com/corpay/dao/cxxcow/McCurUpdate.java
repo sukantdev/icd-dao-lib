@@ -1,43 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_CUR_UPDATE", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McCurUpdate.findAll", query = "SELECT m FROM McCurUpdate m"),
-    @NamedQuery(name = "McCurUpdate.findByP105s1FileTy", query = "SELECT m FROM McCurUpdate m WHERE m.mcCurUpdatePK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McCurUpdate.findByP105s2FileRDt", query = "SELECT m FROM McCurUpdate m WHERE m.mcCurUpdatePK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McCurUpdate.findByP105s3ProcId", query = "SELECT m FROM McCurUpdate m WHERE m.mcCurUpdatePK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McCurUpdate.findByP105s4FileSeqNo", query = "SELECT m FROM McCurUpdate m WHERE m.mcCurUpdatePK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McCurUpdate.findByMsgTyId", query = "SELECT m FROM McCurUpdate m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McCurUpdate.findByBitMapPri", query = "SELECT m FROM McCurUpdate m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McCurUpdate.findByD1BitMapSec", query = "SELECT m FROM McCurUpdate m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McCurUpdate.findByD24FuncCd", query = "SELECT m FROM McCurUpdate m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McCurUpdate.findByD48AddtlDat", query = "SELECT m FROM McCurUpdate m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McCurUpdate.findByP280s1FileTy", query = "SELECT m FROM McCurUpdate m WHERE m.p280s1FileTy = :p280s1FileTy"),
-    @NamedQuery(name = "McCurUpdate.findByP280s2FileRfDt", query = "SELECT m FROM McCurUpdate m WHERE m.p280s2FileRfDt = :p280s2FileRfDt"),
-    @NamedQuery(name = "McCurUpdate.findByP280s3ProcId", query = "SELECT m FROM McCurUpdate m WHERE m.p280s3ProcId = :p280s3ProcId"),
-    @NamedQuery(name = "McCurUpdate.findByP280s4FileSqNo", query = "SELECT m FROM McCurUpdate m WHERE m.p280s4FileSqNo = :p280s4FileSqNo"),
-    @NamedQuery(name = "McCurUpdate.findByD50ReconCurCd", query = "SELECT m FROM McCurUpdate m WHERE m.d50ReconCurCd = :d50ReconCurCd"),
-    @NamedQuery(name = "McCurUpdate.findByD71MsgNo", query = "SELECT m FROM McCurUpdate m WHERE m.mcCurUpdatePK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McCurUpdate.findByD93TrDestInst", query = "SELECT m FROM McCurUpdate m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McCurUpdate.findByD94TrOrgInst", query = "SELECT m FROM McCurUpdate m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McCurUpdate.findByD100RecvInstId", query = "SELECT m FROM McCurUpdate m WHERE m.d100RecvInstId = :d100RecvInstId")})
 public class McCurUpdate implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -202,7 +172,7 @@ public class McCurUpdate implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McCurUpdate)) {
             return false;
         }
@@ -217,5 +187,5 @@ public class McCurUpdate implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McCurUpdate[ mcCurUpdatePK=" + mcCurUpdatePK + " ]";
     }
-    
+
 }

@@ -1,44 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_DELV", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McDelv.findAll", query = "SELECT m FROM McDelv m"),
-    @NamedQuery(name = "McDelv.findByP105s1FileTy", query = "SELECT m FROM McDelv m WHERE m.mcDelvPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McDelv.findByP105s2FileRDt", query = "SELECT m FROM McDelv m WHERE m.mcDelvPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McDelv.findByP105s3ProcId", query = "SELECT m FROM McDelv m WHERE m.mcDelvPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McDelv.findByP105s4FileSeqNo", query = "SELECT m FROM McDelv m WHERE m.mcDelvPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McDelv.findByD71MsgNo", query = "SELECT m FROM McDelv m WHERE m.mcDelvPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McDelv.findByP748s1DelvNm1", query = "SELECT m FROM McDelv m WHERE m.p748s1DelvNm1 = :p748s1DelvNm1"),
-    @NamedQuery(name = "McDelv.findByP748s1DelvNm2", query = "SELECT m FROM McDelv m WHERE m.p748s1DelvNm2 = :p748s1DelvNm2"),
-    @NamedQuery(name = "McDelv.findByP748s1DelvNm3", query = "SELECT m FROM McDelv m WHERE m.p748s1DelvNm3 = :p748s1DelvNm3"),
-    @NamedQuery(name = "McDelv.findByP749s1DelvAddr1", query = "SELECT m FROM McDelv m WHERE m.p749s1DelvAddr1 = :p749s1DelvAddr1"),
-    @NamedQuery(name = "McDelv.findByP749s1DelvAddr2", query = "SELECT m FROM McDelv m WHERE m.p749s1DelvAddr2 = :p749s1DelvAddr2"),
-    @NamedQuery(name = "McDelv.findByP749s1DelvAddr3", query = "SELECT m FROM McDelv m WHERE m.p749s1DelvAddr3 = :p749s1DelvAddr3"),
-    @NamedQuery(name = "McDelv.findByP749s1DelvAddr4", query = "SELECT m FROM McDelv m WHERE m.p749s1DelvAddr4 = :p749s1DelvAddr4"),
-    @NamedQuery(name = "McDelv.findByP749s1DelvAddr5", query = "SELECT m FROM McDelv m WHERE m.p749s1DelvAddr5 = :p749s1DelvAddr5"),
-    @NamedQuery(name = "McDelv.findByP749s1DelvAddr6", query = "SELECT m FROM McDelv m WHERE m.p749s1DelvAddr6 = :p749s1DelvAddr6"),
-    @NamedQuery(name = "McDelv.findByP750s1DelvCity", query = "SELECT m FROM McDelv m WHERE m.p750s1DelvCity = :p750s1DelvCity"),
-    @NamedQuery(name = "McDelv.findByP750s2DelvSt", query = "SELECT m FROM McDelv m WHERE m.p750s2DelvSt = :p750s2DelvSt"),
-    @NamedQuery(name = "McDelv.findByP750s3DelvCrty", query = "SELECT m FROM McDelv m WHERE m.p750s3DelvCrty = :p750s3DelvCrty"),
-    @NamedQuery(name = "McDelv.findByP750s4DelvZip", query = "SELECT m FROM McDelv m WHERE m.p750s4DelvZip = :p750s4DelvZip")})
 public class McDelv implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -233,7 +203,7 @@ public class McDelv implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McDelv)) {
             return false;
         }
@@ -248,5 +218,5 @@ public class McDelv implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McDelv[ mcDelvPK=" + mcDelvPK + " ]";
     }
-    
+
 }

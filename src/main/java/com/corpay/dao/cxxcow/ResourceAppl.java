@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -11,24 +7,13 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.util.Collection;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "RESOURCE_APPL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "ResourceAppl.findAll", query = "SELECT r FROM ResourceAppl r"),
-    @NamedQuery(name = "ResourceAppl.findByApresId", query = "SELECT r FROM ResourceAppl r WHERE r.resourceApplPK.apresId = :apresId"),
-    @NamedQuery(name = "ResourceAppl.findByRsrcId", query = "SELECT r FROM ResourceAppl r WHERE r.resourceApplPK.rsrcId = :rsrcId"),
-    @NamedQuery(name = "ResourceAppl.findByResapDesc", query = "SELECT r FROM ResourceAppl r WHERE r.resapDesc = :resapDesc")})
 public class ResourceAppl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -110,7 +95,7 @@ public class ResourceAppl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof ResourceAppl)) {
             return false;
         }
@@ -125,5 +110,5 @@ public class ResourceAppl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.ResourceAppl[ resourceApplPK=" + resourceApplPK + " ]";
     }
-    
+
 }

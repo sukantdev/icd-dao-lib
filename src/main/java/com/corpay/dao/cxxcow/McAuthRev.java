@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,35 +11,14 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_AUTH_REV", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAuthRev.findAll", query = "SELECT m FROM McAuthRev m"),
-    @NamedQuery(name = "McAuthRev.findByAuthPan", query = "SELECT m FROM McAuthRev m WHERE m.mcAuthRevPK.authPan = :authPan"),
-    @NamedQuery(name = "McAuthRev.findByAuthUtDt", query = "SELECT m FROM McAuthRev m WHERE m.mcAuthRevPK.authUtDt = :authUtDt"),
-    @NamedQuery(name = "McAuthRev.findByAuthApprovCd", query = "SELECT m FROM McAuthRev m WHERE m.mcAuthRevPK.authApprovCd = :authApprovCd"),
-    @NamedQuery(name = "McAuthRev.findByAuthLocalTs", query = "SELECT m FROM McAuthRev m WHERE m.mcAuthRevPK.authLocalTs = :authLocalTs"),
-    @NamedQuery(name = "McAuthRev.findByRevOcc", query = "SELECT m FROM McAuthRev m WHERE m.mcAuthRevPK.revOcc = :revOcc"),
-    @NamedQuery(name = "McAuthRev.findByRevHldOrigAmt", query = "SELECT m FROM McAuthRev m WHERE m.revHldOrigAmt = :revHldOrigAmt"),
-    @NamedQuery(name = "McAuthRev.findByRevHldNewAmt", query = "SELECT m FROM McAuthRev m WHERE m.revHldNewAmt = :revHldNewAmt"),
-    @NamedQuery(name = "McAuthRev.findByRevHldCumAmt", query = "SELECT m FROM McAuthRev m WHERE m.revHldCumAmt = :revHldCumAmt"),
-    @NamedQuery(name = "McAuthRev.findByRevRplcmntAmt", query = "SELECT m FROM McAuthRev m WHERE m.revRplcmntAmt = :revRplcmntAmt"),
-    @NamedQuery(name = "McAuthRev.findByRevTs", query = "SELECT m FROM McAuthRev m WHERE m.revTs = :revTs"),
-    @NamedQuery(name = "McAuthRev.findByRevReason", query = "SELECT m FROM McAuthRev m WHERE m.revReason = :revReason"),
-    @NamedQuery(name = "McAuthRev.findByCrtTs", query = "SELECT m FROM McAuthRev m WHERE m.crtTs = :crtTs"),
-    @NamedQuery(name = "McAuthRev.findByCrtUsr", query = "SELECT m FROM McAuthRev m WHERE m.crtUsr = :crtUsr"),
-    @NamedQuery(name = "McAuthRev.findByMdyTs", query = "SELECT m FROM McAuthRev m WHERE m.mdyTs = :mdyTs"),
-    @NamedQuery(name = "McAuthRev.findByMdyUsr", query = "SELECT m FROM McAuthRev m WHERE m.mdyUsr = :mdyUsr")})
 public class McAuthRev implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected McAuthRevPK mcAuthRevPK;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "REV_HLD_ORIG_AMT")
     private BigDecimal revHldOrigAmt;
@@ -202,7 +175,7 @@ public class McAuthRev implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAuthRev)) {
             return false;
         }
@@ -217,5 +190,5 @@ public class McAuthRev implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAuthRev[ mcAuthRevPK=" + mcAuthRevPK + " ]";
     }
-    
+
 }

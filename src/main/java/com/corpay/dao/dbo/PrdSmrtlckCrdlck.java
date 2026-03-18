@@ -1,29 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PRD_SMRTLCK_CRDLCK", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "PrdSmrtlckCrdlck.findAll", query = "SELECT p FROM PrdSmrtlckCrdlck p")})
 public class PrdSmrtlckCrdlck implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -354,7 +342,7 @@ public class PrdSmrtlckCrdlck implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof PrdSmrtlckCrdlck)) {
             return false;
         }
@@ -369,5 +357,5 @@ public class PrdSmrtlckCrdlck implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.PrdSmrtlckCrdlck[ prdSmrtlckCrdlckPK=" + prdSmrtlckCrdlckPK + " ]";
     }
-    
+
 }

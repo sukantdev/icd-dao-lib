@@ -1,34 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_PARTY_DTL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McPartyDtl.findAll", query = "SELECT m FROM McPartyDtl m"),
-    @NamedQuery(name = "McPartyDtl.findByP105s1FileTy", query = "SELECT m FROM McPartyDtl m WHERE m.mcPartyDtlPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McPartyDtl.findByP105s2FileRDt", query = "SELECT m FROM McPartyDtl m WHERE m.mcPartyDtlPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McPartyDtl.findByP105s3ProcId", query = "SELECT m FROM McPartyDtl m WHERE m.mcPartyDtlPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McPartyDtl.findByP105s4FileSeqNo", query = "SELECT m FROM McPartyDtl m WHERE m.mcPartyDtlPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McPartyDtl.findByD71MsgNo", query = "SELECT m FROM McPartyDtl m WHERE m.mcPartyDtlPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McPartyDtl.findByOccInd", query = "SELECT m FROM McPartyDtl m WHERE m.mcPartyDtlPK.occInd = :occInd"),
-    @NamedQuery(name = "McPartyDtl.findByP594s1PartyDesc", query = "SELECT m FROM McPartyDtl m WHERE m.p594s1PartyDesc = :p594s1PartyDesc"),
-    @NamedQuery(name = "McPartyDtl.findByP594s2PartyCntct", query = "SELECT m FROM McPartyDtl m WHERE m.p594s2PartyCntct = :p594s2PartyCntct")})
 public class McPartyDtl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -91,7 +71,7 @@ public class McPartyDtl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McPartyDtl)) {
             return false;
         }
@@ -106,5 +86,5 @@ public class McPartyDtl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McPartyDtl[ mcPartyDtlPK=" + mcPartyDtlPK + " ]";
     }
-    
+
 }

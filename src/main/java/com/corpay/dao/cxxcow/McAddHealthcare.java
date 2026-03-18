@@ -1,65 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_HEALTHCARE", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddHealthcare.findAll", query = "SELECT m FROM McAddHealthcare m"),
-    @NamedQuery(name = "McAddHealthcare.findByP105s1FileTy", query = "SELECT m FROM McAddHealthcare m WHERE m.mcAddHealthcarePK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddHealthcare.findByP105s2FileRDt", query = "SELECT m FROM McAddHealthcare m WHERE m.mcAddHealthcarePK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddHealthcare.findByP105s3ProcId", query = "SELECT m FROM McAddHealthcare m WHERE m.mcAddHealthcarePK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddHealthcare.findByP105s4FileSeqNo", query = "SELECT m FROM McAddHealthcare m WHERE m.mcAddHealthcarePK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddHealthcare.findByP501s4MsgNo", query = "SELECT m FROM McAddHealthcare m WHERE m.mcAddHealthcarePK.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddHealthcare.findByP501s3OccInd", query = "SELECT m FROM McAddHealthcare m WHERE m.mcAddHealthcarePK.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddHealthcare.findByD71MsgNo", query = "SELECT m FROM McAddHealthcare m WHERE m.mcAddHealthcarePK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddHealthcare.findByMsgTyId", query = "SELECT m FROM McAddHealthcare m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddHealthcare.findByBitMapPri", query = "SELECT m FROM McAddHealthcare m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddHealthcare.findByD1BitMapSec", query = "SELECT m FROM McAddHealthcare m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddHealthcare.findByD24FuncCd", query = "SELECT m FROM McAddHealthcare m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddHealthcare.findByD32AcqInstIdCd", query = "SELECT m FROM McAddHealthcare m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddHealthcare.findByD33FwdngInstCd", query = "SELECT m FROM McAddHealthcare m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddHealthcare.findByP191OrMsgFmt", query = "SELECT m FROM McAddHealthcare m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddHealthcare.findByP501s1UsageCd", query = "SELECT m FROM McAddHealthcare m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddHealthcare.findByP501s2IndstyRec", query = "SELECT m FROM McAddHealthcare m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddHealthcare.findByP642ItmDesc", query = "SELECT m FROM McAddHealthcare m WHERE m.p642ItmDesc = :p642ItmDesc"),
-    @NamedQuery(name = "McAddHealthcare.findByA642ItmDesc", query = "SELECT m FROM McAddHealthcare m WHERE m.a642ItmDesc = :a642ItmDesc"),
-    @NamedQuery(name = "McAddHealthcare.findByP643s1ItmQty", query = "SELECT m FROM McAddHealthcare m WHERE m.p643s1ItmQty = :p643s1ItmQty"),
-    @NamedQuery(name = "McAddHealthcare.findByA643s1ItmQty", query = "SELECT m FROM McAddHealthcare m WHERE m.a643s1ItmQty = :a643s1ItmQty"),
-    @NamedQuery(name = "McAddHealthcare.findByP643s2ItmQtyExp", query = "SELECT m FROM McAddHealthcare m WHERE m.p643s2ItmQtyExp = :p643s2ItmQtyExp"),
-    @NamedQuery(name = "McAddHealthcare.findByP646s1UnitPrc", query = "SELECT m FROM McAddHealthcare m WHERE m.p646s1UnitPrc = :p646s1UnitPrc"),
-    @NamedQuery(name = "McAddHealthcare.findByA646s1UnitPrc", query = "SELECT m FROM McAddHealthcare m WHERE m.a646s1UnitPrc = :a646s1UnitPrc"),
-    @NamedQuery(name = "McAddHealthcare.findByP646s2UnitPrcExp", query = "SELECT m FROM McAddHealthcare m WHERE m.p646s2UnitPrcExp = :p646s2UnitPrcExp"),
-    @NamedQuery(name = "McAddHealthcare.findByP764HlthcrEligStInd", query = "SELECT m FROM McAddHealthcare m WHERE m.p764HlthcrEligStInd = :p764HlthcrEligStInd"),
-    @NamedQuery(name = "McAddHealthcare.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddHealthcare m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddHealthcare.findByD63s2TraceId", query = "SELECT m FROM McAddHealthcare m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddHealthcare.findByD63s3ValidnCd", query = "SELECT m FROM McAddHealthcare m WHERE m.d63s3ValidnCd = :d63s3ValidnCd"),
-    @NamedQuery(name = "McAddHealthcare.findByD63s4LfcyctrSeq", query = "SELECT m FROM McAddHealthcare m WHERE m.d63s4LfcyctrSeq = :d63s4LfcyctrSeq"),
-    @NamedQuery(name = "McAddHealthcare.findByD63s5LfcyctrTot", query = "SELECT m FROM McAddHealthcare m WHERE m.d63s5LfcyctrTot = :d63s5LfcyctrTot"),
-    @NamedQuery(name = "McAddHealthcare.findByD93TrDestInst", query = "SELECT m FROM McAddHealthcare m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddHealthcare.findByD94TrOrgInst", query = "SELECT m FROM McAddHealthcare m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddHealthcare.findByD100RecvInstId", query = "SELECT m FROM McAddHealthcare m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddHealthcare.findByD48AddtlDat", query = "SELECT m FROM McAddHealthcare m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddHealthcare.findByD62AddtlDat2", query = "SELECT m FROM McAddHealthcare m WHERE m.d62AddtlDat2 = :d62AddtlDat2"),
-    @NamedQuery(name = "McAddHealthcare.findByD123AddtlDat3", query = "SELECT m FROM McAddHealthcare m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddHealthcare.findByD124AddtlDat4", query = "SELECT m FROM McAddHealthcare m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddHealthcare.findByD125AddtlDat5", query = "SELECT m FROM McAddHealthcare m WHERE m.d125AddtlDat5 = :d125AddtlDat5")})
 public class McAddHealthcare implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -98,7 +48,7 @@ public class McAddHealthcare implements Serializable {
     @Basic(optional = false)
     @Column(name = "A642_ITM_DESC")
     private String a642ItmDesc;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "P643S1_ITM_QTY")
     private BigDecimal p643s1ItmQty;
@@ -471,7 +421,7 @@ public class McAddHealthcare implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddHealthcare)) {
             return false;
         }
@@ -486,5 +436,5 @@ public class McAddHealthcare implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddHealthcare[ mcAddHealthcarePK=" + mcAddHealthcarePK + " ]";
     }
-    
+
 }

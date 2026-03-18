@@ -1,88 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_PASS_TRNSP", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddPassTrnsp.findAll", query = "SELECT m FROM McAddPassTrnsp m"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP105s1FileTy", query = "SELECT m FROM McAddPassTrnsp m WHERE m.mcAddPassTrnspPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP105s2FileRDt", query = "SELECT m FROM McAddPassTrnsp m WHERE m.mcAddPassTrnspPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP105s3ProcId", query = "SELECT m FROM McAddPassTrnsp m WHERE m.mcAddPassTrnspPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP105s4FileSeqNo", query = "SELECT m FROM McAddPassTrnsp m WHERE m.mcAddPassTrnspPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddPassTrnsp.findByMsgTyId", query = "SELECT m FROM McAddPassTrnsp m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddPassTrnsp.findByBitMapPri", query = "SELECT m FROM McAddPassTrnsp m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD1BitMapSec", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD24FuncCd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD32AcqInstIdCd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD33FwdngInstCd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD48AddtlDat", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP191OrMsgFmt", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP501s1UsageCd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP501s2IndstyRec", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP501s3OccInd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.mcAddPassTrnspPK.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP501s4MsgNo", query = "SELECT m FROM McAddPassTrnsp m WHERE m.mcAddPassTrnspPK.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP520TravelDt", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p520TravelDt = :p520TravelDt"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP521CarrierCd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p521CarrierCd = :p521CarrierCd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP522SrvcClCd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p522SrvcClCd = :p522SrvcClCd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP523CtyOrigAp", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p523CtyOrigAp = :p523CtyOrigAp"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP537Taxes", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p537Taxes = :p537Taxes"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD71MsgNo", query = "SELECT m FROM McAddPassTrnsp m WHERE m.mcAddPassTrnspPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP524CtyDestAp", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p524CtyDestAp = :p524CtyDestAp"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP525StopOver", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p525StopOver = :p525StopOver"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP526ConjTicket", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p526ConjTicket = :p526ConjTicket"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP527ExchgTicket", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p527ExchgTicket = :p527ExchgTicket"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP528CouponNo", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p528CouponNo = :p528CouponNo"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP529FareBasis", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p529FareBasis = :p529FareBasis"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP530FlightNo", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p530FlightNo = :p530FlightNo"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP531s1DepTm", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p531s1DepTm = :p531s1DepTm"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP531s2DepTmSg", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p531s2DepTmSg = :p531s2DepTmSg"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP533s1ArrTm", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p533s1ArrTm = :p533s1ArrTm"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP533s2ArrTmSg", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p533s2ArrTmSg = :p533s2ArrTmSg"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP535Fare", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p535Fare = :p535Fare"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP536Fee", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p536Fee = :p536Fee"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP538EndRest", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p538EndRest = :p538EndRest"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD62AddtlData2", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD63s2TraceId", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD63s3ValidnCd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d63s3ValidnCd = :d63s3ValidnCd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD63s4LfcyctrSeq", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d63s4LfcyctrSeq = :d63s4LfcyctrSeq"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD63s5LfcyctrTot", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d63s5LfcyctrTot = :d63s5LfcyctrTot"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD93TrDestInst", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD94TrOrgInst", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD100RecvInstId", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD123AddtlDat3", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD124AddtlDat4", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddPassTrnsp.findByD125AddtlDat5", query = "SELECT m FROM McAddPassTrnsp m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP597s1TtxAmt", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p597s1TtxAmt = :p597s1TtxAmt"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP597s2TtxAmtExp", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p597s2TtxAmtExp = :p597s2TtxAmtExp"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP597s3TtxAmtSig", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p597s3TtxAmtSig = :p597s3TtxAmtSig"),
-    @NamedQuery(name = "McAddPassTrnsp.findByP598TaxCltnInd", query = "SELECT m FROM McAddPassTrnsp m WHERE m.p598TaxCltnInd = :p598TaxCltnInd"),
-    @NamedQuery(name = "McAddPassTrnsp.findByTaxAmtTs", query = "SELECT m FROM McAddPassTrnsp m WHERE m.taxAmtTs = :taxAmtTs"),
-    @NamedQuery(name = "McAddPassTrnsp.findByTaxAmt682Ind", query = "SELECT m FROM McAddPassTrnsp m WHERE m.taxAmt682Ind = :taxAmt682Ind"),
-    @NamedQuery(name = "McAddPassTrnsp.findByTaxAmt683Ind", query = "SELECT m FROM McAddPassTrnsp m WHERE m.taxAmt683Ind = :taxAmt683Ind"),
-    @NamedQuery(name = "McAddPassTrnsp.findByTaxAmt684Ind", query = "SELECT m FROM McAddPassTrnsp m WHERE m.taxAmt684Ind = :taxAmt684Ind"),
-    @NamedQuery(name = "McAddPassTrnsp.findByTaxAmt751Ind", query = "SELECT m FROM McAddPassTrnsp m WHERE m.taxAmt751Ind = :taxAmt751Ind"),
-    @NamedQuery(name = "McAddPassTrnsp.findByTaxAmt752Ind", query = "SELECT m FROM McAddPassTrnsp m WHERE m.taxAmt752Ind = :taxAmt752Ind"),
-    @NamedQuery(name = "McAddPassTrnsp.findByTaxAmt753Ind", query = "SELECT m FROM McAddPassTrnsp m WHERE m.taxAmt753Ind = :taxAmt753Ind"),
-    @NamedQuery(name = "McAddPassTrnsp.findByA597s1TtxAmt", query = "SELECT m FROM McAddPassTrnsp m WHERE m.a597s1TtxAmt = :a597s1TtxAmt"),
-    @NamedQuery(name = "McAddPassTrnsp.findByA535Fare", query = "SELECT m FROM McAddPassTrnsp m WHERE m.a535Fare = :a535Fare")})
 public class McAddPassTrnsp implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -116,7 +43,7 @@ public class McAddPassTrnsp implements Serializable {
     private String p522SrvcClCd;
     @Column(name = "P523_CTY_ORIG_AP")
     private String p523CtyOrigAp;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "P537_TAXES")
     private BigDecimal p537Taxes;
     @Column(name = "P524_CTY_DEST_AP")
@@ -688,7 +615,7 @@ public class McAddPassTrnsp implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddPassTrnsp)) {
             return false;
         }
@@ -703,5 +630,5 @@ public class McAddPassTrnsp implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddPassTrnsp[ mcAddPassTrnspPK=" + mcAddPassTrnspPK + " ]";
     }
-    
+
 }

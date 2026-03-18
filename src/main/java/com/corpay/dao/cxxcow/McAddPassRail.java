@@ -1,95 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_PASS_RAIL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddPassRail.findAll", query = "SELECT m FROM McAddPassRail m"),
-    @NamedQuery(name = "McAddPassRail.findByP105s1FileTy", query = "SELECT m FROM McAddPassRail m WHERE m.mcAddPassRailPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddPassRail.findByP105s2FileRDt", query = "SELECT m FROM McAddPassRail m WHERE m.mcAddPassRailPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddPassRail.findByP105s3ProcId", query = "SELECT m FROM McAddPassRail m WHERE m.mcAddPassRailPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddPassRail.findByP105s4FileSeqNo", query = "SELECT m FROM McAddPassRail m WHERE m.mcAddPassRailPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddPassRail.findByMsgTyId", query = "SELECT m FROM McAddPassRail m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddPassRail.findByBitMapPri", query = "SELECT m FROM McAddPassRail m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddPassRail.findByD1BitMapSec", query = "SELECT m FROM McAddPassRail m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddPassRail.findByD24FuncCd", query = "SELECT m FROM McAddPassRail m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddPassRail.findByD32AcqInstIdCd", query = "SELECT m FROM McAddPassRail m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddPassRail.findByD33FwdngInstCd", query = "SELECT m FROM McAddPassRail m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddPassRail.findByD48AddtlDat", query = "SELECT m FROM McAddPassRail m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddPassRail.findByP191OrMsgFmt", query = "SELECT m FROM McAddPassRail m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddPassRail.findByP501s1UsageCd", query = "SELECT m FROM McAddPassRail m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddPassRail.findByP501s2IndstyRec", query = "SELECT m FROM McAddPassRail m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddPassRail.findByP501s3OccInd", query = "SELECT m FROM McAddPassRail m WHERE m.mcAddPassRailPK.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddPassRail.findByP501s4MsgNo", query = "SELECT m FROM McAddPassRail m WHERE m.mcAddPassRailPK.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddPassRail.findByP505PsgrNm", query = "SELECT m FROM McAddPassRail m WHERE m.p505PsgrNm = :p505PsgrNm"),
-    @NamedQuery(name = "McAddPassRail.findByP506TicketNo", query = "SELECT m FROM McAddPassRail m WHERE m.p506TicketNo = :p506TicketNo"),
-    @NamedQuery(name = "McAddPassRail.findByP510TravAgncy", query = "SELECT m FROM McAddPassRail m WHERE m.p510TravAgncy = :p510TravAgncy"),
-    @NamedQuery(name = "McAddPassRail.findByP511TravAgNm", query = "SELECT m FROM McAddPassRail m WHERE m.p511TravAgNm = :p511TravAgNm"),
-    @NamedQuery(name = "McAddPassRail.findByP520TravelDt", query = "SELECT m FROM McAddPassRail m WHERE m.p520TravelDt = :p520TravelDt"),
-    @NamedQuery(name = "McAddPassRail.findByP611SeqNo", query = "SELECT m FROM McAddPassRail m WHERE m.p611SeqNo = :p611SeqNo"),
-    @NamedQuery(name = "McAddPassRail.findByP651ProcId", query = "SELECT m FROM McAddPassRail m WHERE m.p651ProcId = :p651ProcId"),
-    @NamedQuery(name = "McAddPassRail.findByP652s1SrvcTyp", query = "SELECT m FROM McAddPassRail m WHERE m.p652s1SrvcTyp = :p652s1SrvcTyp"),
-    @NamedQuery(name = "McAddPassRail.findByP652s2SrvcNature", query = "SELECT m FROM McAddPassRail m WHERE m.p652s2SrvcNature = :p652s2SrvcNature"),
-    @NamedQuery(name = "McAddPassRail.findByP653s1SrvcAmt", query = "SELECT m FROM McAddPassRail m WHERE m.p653s1SrvcAmt = :p653s1SrvcAmt"),
-    @NamedQuery(name = "McAddPassRail.findByP653s2SrvcExp", query = "SELECT m FROM McAddPassRail m WHERE m.p653s2SrvcExp = :p653s2SrvcExp"),
-    @NamedQuery(name = "McAddPassRail.findByP653s3SrvcSgn", query = "SELECT m FROM McAddPassRail m WHERE m.p653s3SrvcSgn = :p653s3SrvcSgn"),
-    @NamedQuery(name = "McAddPassRail.findByP656s1FullvatAmt", query = "SELECT m FROM McAddPassRail m WHERE m.p656s1FullvatAmt = :p656s1FullvatAmt"),
-    @NamedQuery(name = "McAddPassRail.findByP656s2FullvatExp", query = "SELECT m FROM McAddPassRail m WHERE m.p656s2FullvatExp = :p656s2FullvatExp"),
-    @NamedQuery(name = "McAddPassRail.findByP656s3FullvatSgn", query = "SELECT m FROM McAddPassRail m WHERE m.p656s3FullvatSgn = :p656s3FullvatSgn"),
-    @NamedQuery(name = "McAddPassRail.findByP656s4FullvatAmt", query = "SELECT m FROM McAddPassRail m WHERE m.p656s4FullvatAmt = :p656s4FullvatAmt"),
-    @NamedQuery(name = "McAddPassRail.findByP656s5FullvatExp", query = "SELECT m FROM McAddPassRail m WHERE m.p656s5FullvatExp = :p656s5FullvatExp"),
-    @NamedQuery(name = "McAddPassRail.findByP656s6FullvatSgn", query = "SELECT m FROM McAddPassRail m WHERE m.p656s6FullvatSgn = :p656s6FullvatSgn"),
-    @NamedQuery(name = "McAddPassRail.findByP657s1HalfvatAmt", query = "SELECT m FROM McAddPassRail m WHERE m.p657s1HalfvatAmt = :p657s1HalfvatAmt"),
-    @NamedQuery(name = "McAddPassRail.findByP657s2HalfvatExp", query = "SELECT m FROM McAddPassRail m WHERE m.p657s2HalfvatExp = :p657s2HalfvatExp"),
-    @NamedQuery(name = "McAddPassRail.findByP657s3HalfvatSgn", query = "SELECT m FROM McAddPassRail m WHERE m.p657s3HalfvatSgn = :p657s3HalfvatSgn"),
-    @NamedQuery(name = "McAddPassRail.findByP657s4HalfvatAmt", query = "SELECT m FROM McAddPassRail m WHERE m.p657s4HalfvatAmt = :p657s4HalfvatAmt"),
-    @NamedQuery(name = "McAddPassRail.findByP657s5HalfvatExp", query = "SELECT m FROM McAddPassRail m WHERE m.p657s5HalfvatExp = :p657s5HalfvatExp"),
-    @NamedQuery(name = "McAddPassRail.findByP657s6HalfvatSgn", query = "SELECT m FROM McAddPassRail m WHERE m.p657s6HalfvatSgn = :p657s6HalfvatSgn"),
-    @NamedQuery(name = "McAddPassRail.findByP661TrafficCd", query = "SELECT m FROM McAddPassRail m WHERE m.p661TrafficCd = :p661TrafficCd"),
-    @NamedQuery(name = "McAddPassRail.findByP662SampleNo", query = "SELECT m FROM McAddPassRail m WHERE m.p662SampleNo = :p662SampleNo"),
-    @NamedQuery(name = "McAddPassRail.findByP664StartStation", query = "SELECT m FROM McAddPassRail m WHERE m.p664StartStation = :p664StartStation"),
-    @NamedQuery(name = "McAddPassRail.findByP665DestStation", query = "SELECT m FROM McAddPassRail m WHERE m.p665DestStation = :p665DestStation"),
-    @NamedQuery(name = "McAddPassRail.findByP667s1GenericCd", query = "SELECT m FROM McAddPassRail m WHERE m.p667s1GenericCd = :p667s1GenericCd"),
-    @NamedQuery(name = "McAddPassRail.findByP667s2GenericNo", query = "SELECT m FROM McAddPassRail m WHERE m.p667s2GenericNo = :p667s2GenericNo"),
-    @NamedQuery(name = "McAddPassRail.findByP667s3Generic2Cd", query = "SELECT m FROM McAddPassRail m WHERE m.p667s3Generic2Cd = :p667s3Generic2Cd"),
-    @NamedQuery(name = "McAddPassRail.findByP667s4Generic2No", query = "SELECT m FROM McAddPassRail m WHERE m.p667s4Generic2No = :p667s4Generic2No"),
-    @NamedQuery(name = "McAddPassRail.findByP668s1ReductnCd", query = "SELECT m FROM McAddPassRail m WHERE m.p668s1ReductnCd = :p668s1ReductnCd"),
-    @NamedQuery(name = "McAddPassRail.findByP668s2ReductnNo", query = "SELECT m FROM McAddPassRail m WHERE m.p668s2ReductnNo = :p668s2ReductnNo"),
-    @NamedQuery(name = "McAddPassRail.findByP668s3ReductnCd", query = "SELECT m FROM McAddPassRail m WHERE m.p668s3ReductnCd = :p668s3ReductnCd"),
-    @NamedQuery(name = "McAddPassRail.findByP668s4ReductnNo", query = "SELECT m FROM McAddPassRail m WHERE m.p668s4ReductnNo = :p668s4ReductnNo"),
-    @NamedQuery(name = "McAddPassRail.findByP669TrnspOthCd", query = "SELECT m FROM McAddPassRail m WHERE m.p669TrnspOthCd = :p669TrnspOthCd"),
-    @NamedQuery(name = "McAddPassRail.findByP756s1AdultCnt", query = "SELECT m FROM McAddPassRail m WHERE m.p756s1AdultCnt = :p756s1AdultCnt"),
-    @NamedQuery(name = "McAddPassRail.findByP756s2ChildCnt", query = "SELECT m FROM McAddPassRail m WHERE m.p756s2ChildCnt = :p756s2ChildCnt"),
-    @NamedQuery(name = "McAddPassRail.findByP756s3Class", query = "SELECT m FROM McAddPassRail m WHERE m.p756s3Class = :p756s3Class"),
-    @NamedQuery(name = "McAddPassRail.findByP757TrnspSvcPrv", query = "SELECT m FROM McAddPassRail m WHERE m.p757TrnspSvcPrv = :p757TrnspSvcPrv"),
-    @NamedQuery(name = "McAddPassRail.findByP758TrnspSvcOfr", query = "SELECT m FROM McAddPassRail m WHERE m.p758TrnspSvcOfr = :p758TrnspSvcOfr"),
-    @NamedQuery(name = "McAddPassRail.findByD62AddtlData2", query = "SELECT m FROM McAddPassRail m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McAddPassRail.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddPassRail m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddPassRail.findByD63s2TraceId", query = "SELECT m FROM McAddPassRail m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddPassRail.findByD71MsgNo", query = "SELECT m FROM McAddPassRail m WHERE m.mcAddPassRailPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddPassRail.findByD93TrDestInst", query = "SELECT m FROM McAddPassRail m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddPassRail.findByD94TrOrgInst", query = "SELECT m FROM McAddPassRail m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddPassRail.findByD100RecvInstId", query = "SELECT m FROM McAddPassRail m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddPassRail.findByD123AddtlDat3", query = "SELECT m FROM McAddPassRail m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddPassRail.findByD124AddtlDat4", query = "SELECT m FROM McAddPassRail m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddPassRail.findByD125AddtlDat5", query = "SELECT m FROM McAddPassRail m WHERE m.d125AddtlDat5 = :d125AddtlDat5")})
 public class McAddPassRail implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -152,7 +72,7 @@ public class McAddPassRail implements Serializable {
     @Basic(optional = false)
     @Column(name = "P652S2_SRVC_NATURE")
     private String p652s2SrvcNature;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "P653S1_SRVC_AMT")
     private BigDecimal p653s1SrvcAmt;
@@ -861,7 +781,7 @@ public class McAddPassRail implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddPassRail)) {
             return false;
         }
@@ -876,5 +796,5 @@ public class McAddPassRail implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddPassRail[ mcAddPassRailPK=" + mcAddPassRailPK + " ]";
     }
-    
+
 }

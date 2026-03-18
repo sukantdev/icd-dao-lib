@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
@@ -12,10 +8,6 @@ import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Embeddable
 public class FnHeaderPK implements Serializable {
 
@@ -61,7 +53,7 @@ public class FnHeaderPK implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof FnHeaderPK)) {
             return false;
         }
@@ -79,5 +71,5 @@ public class FnHeaderPK implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.FnHeaderPK[ fileDt=" + fileDt + ", fileSeq=" + fileSeq + " ]";
     }
-    
+
 }

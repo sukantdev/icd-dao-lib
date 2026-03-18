@@ -1,36 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
+
+import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import java.io.Serializable;
-import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CRITERIA_CIP_MAINTENANCE_MST", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "CriteriaCipMaintenanceMst.findAll", query = "SELECT c FROM CriteriaCipMaintenanceMst c"),
-    @NamedQuery(name = "CriteriaCipMaintenanceMst.findByCriteriaId", query = "SELECT c FROM CriteriaCipMaintenanceMst c WHERE c.criteriaId = :criteriaId"),
-    @NamedQuery(name = "CriteriaCipMaintenanceMst.findByCriteriaName", query = "SELECT c FROM CriteriaCipMaintenanceMst c WHERE c.criteriaName = :criteriaName"),
-    @NamedQuery(name = "CriteriaCipMaintenanceMst.findByCriteriaDesc", query = "SELECT c FROM CriteriaCipMaintenanceMst c WHERE c.criteriaDesc = :criteriaDesc"),
-    @NamedQuery(name = "CriteriaCipMaintenanceMst.findByCrtTs", query = "SELECT c FROM CriteriaCipMaintenanceMst c WHERE c.crtTs = :crtTs"),
-    @NamedQuery(name = "CriteriaCipMaintenanceMst.findByCrtUsr", query = "SELECT c FROM CriteriaCipMaintenanceMst c WHERE c.crtUsr = :crtUsr"),
-    @NamedQuery(name = "CriteriaCipMaintenanceMst.findByMdyTs", query = "SELECT c FROM CriteriaCipMaintenanceMst c WHERE c.mdyTs = :mdyTs"),
-    @NamedQuery(name = "CriteriaCipMaintenanceMst.findByMdyUsr", query = "SELECT c FROM CriteriaCipMaintenanceMst c WHERE c.mdyUsr = :mdyUsr")})
 public class CriteriaCipMaintenanceMst implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -139,7 +121,7 @@ public class CriteriaCipMaintenanceMst implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof CriteriaCipMaintenanceMst)) {
             return false;
         }
@@ -154,5 +136,5 @@ public class CriteriaCipMaintenanceMst implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.CriteriaCipMaintenanceMst[ criteriaId=" + criteriaId + " ]";
     }
-    
+
 }

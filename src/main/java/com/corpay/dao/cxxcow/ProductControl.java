@@ -1,29 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PRODUCT_CONTROL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "ProductControl.findAll", query = "SELECT p FROM ProductControl p"),
-    @NamedQuery(name = "ProductControl.findByProdcId", query = "SELECT p FROM ProductControl p WHERE p.prodcId = :prodcId"),
-    @NamedQuery(name = "ProductControl.findByProdcDesc", query = "SELECT p FROM ProductControl p WHERE p.prodcDesc = :prodcDesc"),
-    @NamedQuery(name = "ProductControl.findByMrchGrp", query = "SELECT p FROM ProductControl p WHERE p.mrchGrp = :mrchGrp")})
 public class ProductControl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -84,7 +69,7 @@ public class ProductControl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof ProductControl)) {
             return false;
         }
@@ -99,5 +84,5 @@ public class ProductControl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.ProductControl[ prodcId=" + prodcId + " ]";
     }
-    
+
 }

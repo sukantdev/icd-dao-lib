@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -10,35 +6,14 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "USERS_RESOURCES", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "UsersResources.findAll", query = "SELECT u FROM UsersResources u"),
-    @NamedQuery(name = "UsersResources.findByRsrcId", query = "SELECT u FROM UsersResources u WHERE u.usersResourcesPK.rsrcId = :rsrcId"),
-    @NamedQuery(name = "UsersResources.findByUserId", query = "SELECT u FROM UsersResources u WHERE u.usersResourcesPK.userId = :userId"),
-    @NamedQuery(name = "UsersResources.findByUrInsertFg", query = "SELECT u FROM UsersResources u WHERE u.urInsertFg = :urInsertFg"),
-    @NamedQuery(name = "UsersResources.findByUrInquiryFg", query = "SELECT u FROM UsersResources u WHERE u.urInquiryFg = :urInquiryFg"),
-    @NamedQuery(name = "UsersResources.findByUrUpdteFg", query = "SELECT u FROM UsersResources u WHERE u.urUpdteFg = :urUpdteFg"),
-    @NamedQuery(name = "UsersResources.findByUrDeleteFg", query = "SELECT u FROM UsersResources u WHERE u.urDeleteFg = :urDeleteFg"),
-    @NamedQuery(name = "UsersResources.findByUrBrowseFg", query = "SELECT u FROM UsersResources u WHERE u.urBrowseFg = :urBrowseFg"),
-    @NamedQuery(name = "UsersResources.findByUrOpencloseFg", query = "SELECT u FROM UsersResources u WHERE u.urOpencloseFg = :urOpencloseFg"),
-    @NamedQuery(name = "UsersResources.findByUrUptDte", query = "SELECT u FROM UsersResources u WHERE u.urUptDte = :urUptDte"),
-    @NamedQuery(name = "UsersResources.findByUrUptUsr", query = "SELECT u FROM UsersResources u WHERE u.urUptUsr = :urUptUsr"),
-    @NamedQuery(name = "UsersResources.findByUrAccessDte", query = "SELECT u FROM UsersResources u WHERE u.urAccessDte = :urAccessDte"),
-    @NamedQuery(name = "UsersResources.findByUrAccessUsr", query = "SELECT u FROM UsersResources u WHERE u.urAccessUsr = :urAccessUsr"),
-    @NamedQuery(name = "UsersResources.findByUrCodeWord", query = "SELECT u FROM UsersResources u WHERE u.urCodeWord = :urCodeWord")})
 public class UsersResources implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -222,7 +197,7 @@ public class UsersResources implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof UsersResources)) {
             return false;
         }
@@ -237,5 +212,5 @@ public class UsersResources implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.UsersResources[ usersResourcesPK=" + usersResourcesPK + " ]";
     }
-    
+
 }

@@ -1,57 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_EI_PTY", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddEiPty.findAll", query = "SELECT m FROM McAddEiPty m"),
-    @NamedQuery(name = "McAddEiPty.findByP105s1FileTy", query = "SELECT m FROM McAddEiPty m WHERE m.mcAddEiPtyPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddEiPty.findByP105s2FileRDt", query = "SELECT m FROM McAddEiPty m WHERE m.mcAddEiPtyPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddEiPty.findByP105s3ProcId", query = "SELECT m FROM McAddEiPty m WHERE m.mcAddEiPtyPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddEiPty.findByP105s4FileSeqNo", query = "SELECT m FROM McAddEiPty m WHERE m.mcAddEiPtyPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddEiPty.findByMsgTyId", query = "SELECT m FROM McAddEiPty m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddEiPty.findByBitMapPri", query = "SELECT m FROM McAddEiPty m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddEiPty.findByD1BitMapSec", query = "SELECT m FROM McAddEiPty m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddEiPty.findByD24FuncCd", query = "SELECT m FROM McAddEiPty m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddEiPty.findByD32AcqInstIdCd", query = "SELECT m FROM McAddEiPty m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddEiPty.findByD33FwdngInstCd", query = "SELECT m FROM McAddEiPty m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddEiPty.findByP191OrMsgFmt", query = "SELECT m FROM McAddEiPty m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddEiPty.findByP501s1UsageCd", query = "SELECT m FROM McAddEiPty m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddEiPty.findByP501s2IndstyRec", query = "SELECT m FROM McAddEiPty m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddEiPty.findByP501s3OccInd", query = "SELECT m FROM McAddEiPty m WHERE m.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddEiPty.findByP501s4MsgNo", query = "SELECT m FROM McAddEiPty m WHERE m.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddEiPty.findByP590PtyId", query = "SELECT m FROM McAddEiPty m WHERE m.p590PtyId = :p590PtyId"),
-    @NamedQuery(name = "McAddEiPty.findByP601PtyNatOfFl", query = "SELECT m FROM McAddEiPty m WHERE m.p601PtyNatOfFl = :p601PtyNatOfFl"),
-    @NamedQuery(name = "McAddEiPty.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddEiPty m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddEiPty.findByD63s2TraceId", query = "SELECT m FROM McAddEiPty m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddEiPty.findByD63s3ValidnCd", query = "SELECT m FROM McAddEiPty m WHERE m.d63s3ValidnCd = :d63s3ValidnCd"),
-    @NamedQuery(name = "McAddEiPty.findByD63s4LfcyctrSeq", query = "SELECT m FROM McAddEiPty m WHERE m.d63s4LfcyctrSeq = :d63s4LfcyctrSeq"),
-    @NamedQuery(name = "McAddEiPty.findByD63s5LfcyctrTot", query = "SELECT m FROM McAddEiPty m WHERE m.d63s5LfcyctrTot = :d63s5LfcyctrTot"),
-    @NamedQuery(name = "McAddEiPty.findByD71MsgNo", query = "SELECT m FROM McAddEiPty m WHERE m.mcAddEiPtyPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddEiPty.findByD93TrDestInst", query = "SELECT m FROM McAddEiPty m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddEiPty.findByD94TrOrgInst", query = "SELECT m FROM McAddEiPty m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddEiPty.findByD100RecvInstId", query = "SELECT m FROM McAddEiPty m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddEiPty.findByD48AddtlDat", query = "SELECT m FROM McAddEiPty m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddEiPty.findByD62AddtlData2", query = "SELECT m FROM McAddEiPty m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McAddEiPty.findByD123AddtlDat3", query = "SELECT m FROM McAddEiPty m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddEiPty.findByD124AddtlDat4", query = "SELECT m FROM McAddEiPty m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddEiPty.findByD125AddtlDat5", query = "SELECT m FROM McAddEiPty m WHERE m.d125AddtlDat5 = :d125AddtlDat5")})
 public class McAddEiPty implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -402,7 +359,7 @@ public class McAddEiPty implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddEiPty)) {
             return false;
         }
@@ -417,5 +374,5 @@ public class McAddEiPty implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddEiPty[ mcAddEiPtyPK=" + mcAddEiPtyPK + " ]";
     }
-    
+
 }

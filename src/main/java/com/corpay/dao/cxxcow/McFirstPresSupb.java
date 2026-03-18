@@ -1,81 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_FIRST_PRES_SUPB", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McFirstPresSupb.findAll", query = "SELECT m FROM McFirstPresSupb m"),
-    @NamedQuery(name = "McFirstPresSupb.findByP105s1FileTy", query = "SELECT m FROM McFirstPresSupb m WHERE m.mcFirstPresSupbPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McFirstPresSupb.findByP105s2FileRDt", query = "SELECT m FROM McFirstPresSupb m WHERE m.mcFirstPresSupbPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McFirstPresSupb.findByP105s3ProcId", query = "SELECT m FROM McFirstPresSupb m WHERE m.mcFirstPresSupbPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McFirstPresSupb.findByP105s4FileSeqNo", query = "SELECT m FROM McFirstPresSupb m WHERE m.mcFirstPresSupbPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McFirstPresSupb.findByD71MsgNo", query = "SELECT m FROM McFirstPresSupb m WHERE m.mcFirstPresSupbPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McFirstPresSupb.findByD8ChBlFeeAmt", query = "SELECT m FROM McFirstPresSupb m WHERE m.d8ChBlFeeAmt = :d8ChBlFeeAmt"),
-    @NamedQuery(name = "McFirstPresSupb.findByD35Track2Data", query = "SELECT m FROM McFirstPresSupb m WHERE m.d35Track2Data = :d35Track2Data"),
-    @NamedQuery(name = "McFirstPresSupb.findByD45Track1Dat", query = "SELECT m FROM McFirstPresSupb m WHERE m.d45Track1Dat = :d45Track1Dat"),
-    @NamedQuery(name = "McFirstPresSupb.findByP020IccrEffDt", query = "SELECT m FROM McFirstPresSupb m WHERE m.p020IccrEffDt = :p020IccrEffDt"),
-    @NamedQuery(name = "McFirstPresSupb.findByP021IccrPerc", query = "SELECT m FROM McFirstPresSupb m WHERE m.p021IccrPerc = :p021IccrPerc"),
-    @NamedQuery(name = "McFirstPresSupb.findByP161s1SSrvcTai", query = "SELECT m FROM McFirstPresSupb m WHERE m.p161s1SSrvcTai = :p161s1SSrvcTai"),
-    @NamedQuery(name = "McFirstPresSupb.findByP161s2SSrvcTaa", query = "SELECT m FROM McFirstPresSupb m WHERE m.p161s2SSrvcTaa = :p161s2SSrvcTaa"),
-    @NamedQuery(name = "McFirstPresSupb.findByP161s3SSrvcLvl", query = "SELECT m FROM McFirstPresSupb m WHERE m.p161s3SSrvcLvl = :p161s3SSrvcLvl"),
-    @NamedQuery(name = "McFirstPresSupb.findByP161s4SSrvcId", query = "SELECT m FROM McFirstPresSupb m WHERE m.p161s4SSrvcId = :p161s4SSrvcId"),
-    @NamedQuery(name = "McFirstPresSupb.findByP161s5SFeRtCl", query = "SELECT m FROM McFirstPresSupb m WHERE m.p161s5SFeRtCl = :p161s5SFeRtCl"),
-    @NamedQuery(name = "McFirstPresSupb.findByP161s6ReconDt", query = "SELECT m FROM McFirstPresSupb m WHERE m.p161s6ReconDt = :p161s6ReconDt"),
-    @NamedQuery(name = "McFirstPresSupb.findByP161s7ReconCycle", query = "SELECT m FROM McFirstPresSupb m WHERE m.p161s7ReconCycle = :p161s7ReconCycle"),
-    @NamedQuery(name = "McFirstPresSupb.findByP161s8SDt", query = "SELECT m FROM McFirstPresSupb m WHERE m.p161s8SDt = :p161s8SDt"),
-    @NamedQuery(name = "McFirstPresSupb.findByP161s9SCycle", query = "SELECT m FROM McFirstPresSupb m WHERE m.p161s9SCycle = :p161s9SCycle"),
-    @NamedQuery(name = "McFirstPresSupb.findByP171s1ChrSetInd", query = "SELECT m FROM McFirstPresSupb m WHERE m.p171s1ChrSetInd = :p171s1ChrSetInd"),
-    @NamedQuery(name = "McFirstPresSupb.findByP171s2CrdAcpdsc", query = "SELECT m FROM McFirstPresSupb m WHERE m.p171s2CrdAcpdsc = :p171s2CrdAcpdsc"),
-    @NamedQuery(name = "McFirstPresSupb.findByP175CrdAcpUrl", query = "SELECT m FROM McFirstPresSupb m WHERE m.p175CrdAcpUrl = :p175CrdAcpUrl"),
-    @NamedQuery(name = "McFirstPresSupb.findByP189s1FormatNo", query = "SELECT m FROM McFirstPresSupb m WHERE m.p189s1FormatNo = :p189s1FormatNo"),
-    @NamedQuery(name = "McFirstPresSupb.findByP189s2PhoneDat", query = "SELECT m FROM McFirstPresSupb m WHERE m.p189s2PhoneDat = :p189s2PhoneDat"),
-    @NamedQuery(name = "McFirstPresSupb.findByP190PartIdCd", query = "SELECT m FROM McFirstPresSupb m WHERE m.p190PartIdCd = :p190PartIdCd"),
-    @NamedQuery(name = "McFirstPresSupb.findByP375MbrRcnInd", query = "SELECT m FROM McFirstPresSupb m WHERE m.p375MbrRcnInd = :p375MbrRcnInd"),
-    @NamedQuery(name = "McFirstPresSupb.findByP376MbrRcnInd", query = "SELECT m FROM McFirstPresSupb m WHERE m.p376MbrRcnInd = :p376MbrRcnInd"),
-    @NamedQuery(name = "McFirstPresSupb.findByD55IntdCirSys", query = "SELECT m FROM McFirstPresSupb m WHERE m.d55IntdCirSys = :d55IntdCirSys"),
-    @NamedQuery(name = "McFirstPresSupb.findByD62AddtlData2", query = "SELECT m FROM McFirstPresSupb m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McFirstPresSupb.findByD123AddtlDat3", query = "SELECT m FROM McFirstPresSupb m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McFirstPresSupb.findByD124AddtlDat4", query = "SELECT m FROM McFirstPresSupb m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McFirstPresSupb.findByD125AddtlDat5", query = "SELECT m FROM McFirstPresSupb m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McFirstPresSupb.findByP2ProdId", query = "SELECT m FROM McFirstPresSupb m WHERE m.p2ProdId = :p2ProdId"),
-    @NamedQuery(name = "McFirstPresSupb.findByP52s1SecuProt", query = "SELECT m FROM McFirstPresSupb m WHERE m.p52s1SecuProt = :p52s1SecuProt"),
-    @NamedQuery(name = "McFirstPresSupb.findByP52s2ChAuth", query = "SELECT m FROM McFirstPresSupb m WHERE m.p52s2ChAuth = :p52s2ChAuth"),
-    @NamedQuery(name = "McFirstPresSupb.findByP52s3UcafColind", query = "SELECT m FROM McFirstPresSupb m WHERE m.p52s3UcafColind = :p52s3UcafColind"),
-    @NamedQuery(name = "McFirstPresSupb.findByD54s1AdtlAcctTy", query = "SELECT m FROM McFirstPresSupb m WHERE m.d54s1AdtlAcctTy = :d54s1AdtlAcctTy"),
-    @NamedQuery(name = "McFirstPresSupb.findByD54s2AdtlAmtTyp", query = "SELECT m FROM McFirstPresSupb m WHERE m.d54s2AdtlAmtTyp = :d54s2AdtlAmtTyp"),
-    @NamedQuery(name = "McFirstPresSupb.findByD54s3AdtlCurrCd", query = "SELECT m FROM McFirstPresSupb m WHERE m.d54s3AdtlCurrCd = :d54s3AdtlCurrCd"),
-    @NamedQuery(name = "McFirstPresSupb.findByD54s4AdtlAmtSgn", query = "SELECT m FROM McFirstPresSupb m WHERE m.d54s4AdtlAmtSgn = :d54s4AdtlAmtSgn"),
-    @NamedQuery(name = "McFirstPresSupb.findByD54s5AdtlAmt", query = "SELECT m FROM McFirstPresSupb m WHERE m.d54s5AdtlAmt = :d54s5AdtlAmt"),
-    @NamedQuery(name = "McFirstPresSupb.findByD111MccrAmt", query = "SELECT m FROM McFirstPresSupb m WHERE m.d111MccrAmt = :d111MccrAmt"),
-    @NamedQuery(name = "McFirstPresSupb.findByP177s1XborderInd", query = "SELECT m FROM McFirstPresSupb m WHERE m.p177s1XborderInd = :p177s1XborderInd"),
-    @NamedQuery(name = "McFirstPresSupb.findByP177s2CurrInd", query = "SELECT m FROM McFirstPresSupb m WHERE m.p177s2CurrInd = :p177s2CurrInd"),
-    @NamedQuery(name = "McFirstPresSupb.findByP001s1PpasActTy", query = "SELECT m FROM McFirstPresSupb m WHERE m.p001s1PpasActTy = :p001s1PpasActTy"),
-    @NamedQuery(name = "McFirstPresSupb.findByP001s2PpasActNo", query = "SELECT m FROM McFirstPresSupb m WHERE m.p001s2PpasActNo = :p001s2PpasActNo"),
-    @NamedQuery(name = "McFirstPresSupb.findByP057TranCatInd", query = "SELECT m FROM McFirstPresSupb m WHERE m.p057TranCatInd = :p057TranCatInd"),
-    @NamedQuery(name = "McFirstPresSupb.findByP192PmtInit", query = "SELECT m FROM McFirstPresSupb m WHERE m.p192PmtInit = :p192PmtInit")})
 public class McFirstPresSupb implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected McFirstPresSupbPK mcFirstPresSupbPK;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "D8_CH_BL_FEE_AMT")
     private BigDecimal d8ChBlFeeAmt;
     @Column(name = "D35_TRACK_2_DATA")
@@ -563,7 +503,7 @@ public class McFirstPresSupb implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McFirstPresSupb)) {
             return false;
         }
@@ -578,5 +518,5 @@ public class McFirstPresSupb implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McFirstPresSupb[ mcFirstPresSupbPK=" + mcFirstPresSupbPK + " ]";
     }
-    
+
 }

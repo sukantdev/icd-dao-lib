@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,50 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_STLMT_DTL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McStlmtDtl.findAll", query = "SELECT m FROM McStlmtDtl m"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlStlmtId", query = "SELECT m FROM McStlmtDtl m WHERE m.mcStlmtDtlPK.dtlStlmtId = :dtlStlmtId"),
-    @NamedQuery(name = "McStlmtDtl.findByMrchId", query = "SELECT m FROM McStlmtDtl m WHERE m.mcStlmtDtlPK.mrchId = :mrchId"),
-    @NamedQuery(name = "McStlmtDtl.findByStlmtId", query = "SELECT m FROM McStlmtDtl m WHERE m.mcStlmtDtlPK.stlmtId = :stlmtId"),
-    @NamedQuery(name = "McStlmtDtl.findByBtchId", query = "SELECT m FROM McStlmtDtl m WHERE m.mcStlmtDtlPK.btchId = :btchId"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlCdholdAcc", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlCdholdAcc = :dtlCdholdAcc"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlAcqRefNo", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlAcqRefNo = :dtlAcqRefNo"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlTranDtRaw", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlTranDtRaw = :dtlTranDtRaw"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlRecCdType", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlRecCdType = :dtlRecCdType"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlRecCdTrans", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlRecCdTrans = :dtlRecCdTrans"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlAmtTranCurr", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlAmtTranCurr = :dtlAmtTranCurr"),
-    @NamedQuery(name = "McStlmtDtl.findByDtl0amtTranCurr", query = "SELECT m FROM McStlmtDtl m WHERE m.dtl0amtTranCurr = :dtl0amtTranCurr"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlAuthCd", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlAuthCd = :dtlAuthCd"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlTransAmtCur", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlTransAmtCur = :dtlTransAmtCur"),
-    @NamedQuery(name = "McStlmtDtl.findByDtl0transAmtCur", query = "SELECT m FROM McStlmtDtl m WHERE m.dtl0transAmtCur = :dtl0transAmtCur"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlTransCurrExp", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlTransCurrExp = :dtlTransCurrExp"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlTransCurrCd", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlTransCurrCd = :dtlTransCurrCd"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlCnversionDt", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlCnversionDt = :dtlCnversionDt"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlMerchAddCity", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlMerchAddCity = :dtlMerchAddCity"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlStateCntryCd", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlStateCntryCd = :dtlStateCntryCd"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlDetailList", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlDetailList = :dtlDetailList"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlTranAmtIss", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlTranAmtIss = :dtlTranAmtIss"),
-    @NamedQuery(name = "McStlmtDtl.findByDtl0tranAmtIss", query = "SELECT m FROM McStlmtDtl m WHERE m.dtl0tranAmtIss = :dtl0tranAmtIss"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlIssCurrExp", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlIssCurrExp = :dtlIssCurrExp"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlIssCurrCd", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlIssCurrCd = :dtlIssCurrCd"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlCurCnvDtRaw", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlCurCnvDtRaw = :dtlCurCnvDtRaw"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlCurCnvDt", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlCurCnvDt = :dtlCurCnvDt"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlPostDt", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlPostDt = :dtlPostDt"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlBillDt", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlBillDt = :dtlBillDt"),
-    @NamedQuery(name = "McStlmtDtl.findByNoteid", query = "SELECT m FROM McStlmtDtl m WHERE m.noteid = :noteid"),
-    @NamedQuery(name = "McStlmtDtl.findByClusterKey", query = "SELECT m FROM McStlmtDtl m WHERE m.clusterKey = :clusterKey"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlTranDt", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlTranDt = :dtlTranDt"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlProcessedFlg", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlProcessedFlg = :dtlProcessedFlg"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlSafeStatus", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlSafeStatus = :dtlSafeStatus"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlBtchCurId", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlBtchCurId = :dtlBtchCurId"),
-    @NamedQuery(name = "McStlmtDtl.findByDtlRcdSeqNo", query = "SELECT m FROM McStlmtDtl m WHERE m.dtlRcdSeqNo = :dtlRcdSeqNo"),
-    @NamedQuery(name = "McStlmtDtl.findByFilteredFlags", query = "SELECT m FROM McStlmtDtl m WHERE m.filteredFlags = :filteredFlags")})
 public class McStlmtDtl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -84,7 +36,7 @@ public class McStlmtDtl implements Serializable {
     @Basic(optional = false)
     @Column(name = "DTL_AMT_TRAN_CURR")
     private int dtlAmtTranCurr;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "DTL0AMT_TRAN_CURR")
     private BigDecimal dtl0amtTranCurr;
@@ -488,7 +440,7 @@ public class McStlmtDtl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McStlmtDtl)) {
             return false;
         }
@@ -503,5 +455,5 @@ public class McStlmtDtl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McStlmtDtl[ mcStlmtDtlPK=" + mcStlmtDtlPK + " ]";
     }
-    
+
 }

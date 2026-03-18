@@ -1,67 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_FLEETCARD2", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddFleetcard2.findAll", query = "SELECT m FROM McAddFleetcard2 m"),
-    @NamedQuery(name = "McAddFleetcard2.findByStlmtId", query = "SELECT m FROM McAddFleetcard2 m WHERE m.mcAddFleetcard2PK.stlmtId = :stlmtId"),
-    @NamedQuery(name = "McAddFleetcard2.findByBtchId", query = "SELECT m FROM McAddFleetcard2 m WHERE m.mcAddFleetcard2PK.btchId = :btchId"),
-    @NamedQuery(name = "McAddFleetcard2.findByMrchId", query = "SELECT m FROM McAddFleetcard2 m WHERE m.mcAddFleetcard2PK.mrchId = :mrchId"),
-    @NamedQuery(name = "McAddFleetcard2.findByDtlStlmtId", query = "SELECT m FROM McAddFleetcard2 m WHERE m.mcAddFleetcard2PK.dtlStlmtId = :dtlStlmtId"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2AddId", query = "SELECT m FROM McAddFleetcard2 m WHERE m.mcAddFleetcard2PK.flt2AddId = :flt2AddId"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2ProdCd", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2ProdCd = :flt2ProdCd"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2ItemDesc", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2ItemDesc = :flt2ItemDesc"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2ItemQty", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2ItemQty = :flt2ItemQty"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt20itemQty", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt20itemQty = :flt20itemQty"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2ItemUnMeas", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2ItemUnMeas = :flt2ItemUnMeas"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2ExtItemAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2ExtItemAmt = :flt2ExtItemAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt20extItemAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt20extItemAmt = :flt20extItemAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2DiscFlg", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2DiscFlg = :flt2DiscFlg"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2DiscAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2DiscAmt = :flt2DiscAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt20discAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt20discAmt = :flt20discAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2NetGrossFlg", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2NetGrossFlg = :flt2NetGrossFlg"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2TaxRateAppl", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2TaxRateAppl = :flt2TaxRateAppl"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2TaxTypeAppl", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2TaxTypeAppl = :flt2TaxTypeAppl"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2TaxAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2TaxAmt = :flt2TaxAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt20taxAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt20taxAmt = :flt20taxAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2DebCredInd", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2DebCredInd = :flt2DebCredInd"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2AltTaxId", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2AltTaxId = :flt2AltTaxId"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2AddendSeq", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2AddendSeq = :flt2AddendSeq"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2TotalAddenda", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2TotalAddenda = :flt2TotalAddenda"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2AddendUseCd", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2AddendUseCd = :flt2AddendUseCd"),
-    @NamedQuery(name = "McAddFleetcard2.findByNoteid", query = "SELECT m FROM McAddFleetcard2 m WHERE m.noteid = :noteid"),
-    @NamedQuery(name = "McAddFleetcard2.findByClusterKey", query = "SELECT m FROM McAddFleetcard2 m WHERE m.clusterKey = :clusterKey"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt20adjItemAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt20adjItemAmt = :flt20adjItemAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2AdjDebCred", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2AdjDebCred = :flt2AdjDebCred"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2aitemDesc", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2aitemDesc = :flt2aitemDesc"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2aitemQty", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2aitemQty = :flt2aitemQty"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2aextItemAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2aextItemAmt = :flt2aextItemAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2adiscAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2adiscAmt = :flt2adiscAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2ataxAmt", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2ataxAmt = :flt2ataxAmt"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2adebCredInd", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2adebCredInd = :flt2adebCredInd"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2anetGrossFlg", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2anetGrossFlg = :flt2anetGrossFlg"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2adiscFlg", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2adiscFlg = :flt2adiscFlg"),
-    @NamedQuery(name = "McAddFleetcard2.findByFlt2aprodCd", query = "SELECT m FROM McAddFleetcard2 m WHERE m.flt2aprodCd = :flt2aprodCd"),
-    @NamedQuery(name = "McAddFleetcard2.findByFilteredFlags", query = "SELECT m FROM McAddFleetcard2 m WHERE m.filteredFlags = :filteredFlags")})
 public class McAddFleetcard2 implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -76,7 +25,7 @@ public class McAddFleetcard2 implements Serializable {
     @Basic(optional = false)
     @Column(name = "FLT2_ITEM_QTY")
     private String flt2ItemQty;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "FLT20ITEM_QTY")
     private BigDecimal flt20itemQty;
@@ -509,7 +458,7 @@ public class McAddFleetcard2 implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddFleetcard2)) {
             return false;
         }
@@ -524,5 +473,5 @@ public class McAddFleetcard2 implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddFleetcard2[ mcAddFleetcard2PK=" + mcAddFleetcard2PK + " ]";
     }
-    
+
 }

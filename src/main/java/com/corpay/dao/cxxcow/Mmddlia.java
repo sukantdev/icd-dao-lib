@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,20 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MMDDLIA", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "Mmddlia.findAll", query = "SELECT m FROM Mmddlia m"),
-    @NamedQuery(name = "Mmddlia.findByDdliaAccountId", query = "SELECT m FROM Mmddlia m WHERE m.mmddliaPK.ddliaAccountId = :ddliaAccountId"),
-    @NamedQuery(name = "Mmddlia.findByDdliaCustomerId", query = "SELECT m FROM Mmddlia m WHERE m.mmddliaPK.ddliaCustomerId = :ddliaCustomerId"),
-    @NamedQuery(name = "Mmddlia.findByDdliaEmployeeNr", query = "SELECT m FROM Mmddlia m WHERE m.mmddliaPK.ddliaEmployeeNr = :ddliaEmployeeNr"),
-    @NamedQuery(name = "Mmddlia.findByDdliaReferenceNr", query = "SELECT m FROM Mmddlia m WHERE m.mmddliaPK.ddliaReferenceNr = :ddliaReferenceNr"),
-    @NamedQuery(name = "Mmddlia.findByDdliaAvailDate", query = "SELECT m FROM Mmddlia m WHERE m.ddliaAvailDate = :ddliaAvailDate"),
-    @NamedQuery(name = "Mmddlia.findByDdliaAmount", query = "SELECT m FROM Mmddlia m WHERE m.ddliaAmount = :ddliaAmount")})
 public class Mmddlia implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,7 +22,7 @@ public class Mmddlia implements Serializable {
     @Column(name = "DDLIA_AVAIL_DATE")
     @Temporal(TemporalType.DATE)
     private Date ddliaAvailDate;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "DDLIA_AMOUNT")
     private BigDecimal ddliaAmount;
@@ -95,7 +77,7 @@ public class Mmddlia implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof Mmddlia)) {
             return false;
         }
@@ -110,5 +92,5 @@ public class Mmddlia implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.Mmddlia[ mmddliaPK=" + mmddliaPK + " ]";
     }
-    
+
 }

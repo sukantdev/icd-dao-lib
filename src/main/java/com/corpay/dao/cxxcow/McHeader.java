@@ -1,54 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_HEADER", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McHeader.findAll", query = "SELECT m FROM McHeader m"),
-    @NamedQuery(name = "McHeader.findByMsgTyId", query = "SELECT m FROM McHeader m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McHeader.findByBitMapPri", query = "SELECT m FROM McHeader m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McHeader.findByD1BitMapSec", query = "SELECT m FROM McHeader m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McHeader.findByD2PriAccntNo", query = "SELECT m FROM McHeader m WHERE m.d2PriAccntNo = :d2PriAccntNo"),
-    @NamedQuery(name = "McHeader.findByD24FuncCd", query = "SELECT m FROM McHeader m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McHeader.findByD48AddtlDat", query = "SELECT m FROM McHeader m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McHeader.findByP026s1FileRev", query = "SELECT m FROM McHeader m WHERE m.p026s1FileRev = :p026s1FileRev"),
-    @NamedQuery(name = "McHeader.findByP026s2Cprdtor", query = "SELECT m FROM McHeader m WHERE m.p026s2Cprdtor = :p026s2Cprdtor"),
-    @NamedQuery(name = "McHeader.findByP105s1FileTy", query = "SELECT m FROM McHeader m WHERE m.mcHeaderPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McHeader.findByP105s2FileRDt", query = "SELECT m FROM McHeader m WHERE m.mcHeaderPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McHeader.findByP105s3ProcId", query = "SELECT m FROM McHeader m WHERE m.mcHeaderPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McHeader.findByP105s4FileSeqNo", query = "SELECT m FROM McHeader m WHERE m.mcHeaderPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McHeader.findByP110s1TranmsnTy", query = "SELECT m FROM McHeader m WHERE m.p110s1TranmsnTy = :p110s1TranmsnTy"),
-    @NamedQuery(name = "McHeader.findByP110s2TrnmRDt", query = "SELECT m FROM McHeader m WHERE m.p110s2TrnmRDt = :p110s2TrnmRDt"),
-    @NamedQuery(name = "McHeader.findByP110s3ProcId", query = "SELECT m FROM McHeader m WHERE m.p110s3ProcId = :p110s3ProcId"),
-    @NamedQuery(name = "McHeader.findByP110s4TrnmSeq", query = "SELECT m FROM McHeader m WHERE m.p110s4TrnmSeq = :p110s4TrnmSeq"),
-    @NamedQuery(name = "McHeader.findByP122PrcsngMd", query = "SELECT m FROM McHeader m WHERE m.p122PrcsngMd = :p122PrcsngMd"),
-    @NamedQuery(name = "McHeader.findByP191OrMsgFmt", query = "SELECT m FROM McHeader m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McHeader.findByD71MsgNo", query = "SELECT m FROM McHeader m WHERE m.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McHeader.findByFpProcFlag", query = "SELECT m FROM McHeader m WHERE m.fpProcFlag = :fpProcFlag"),
-    @NamedQuery(name = "McHeader.findByFpProcDt", query = "SELECT m FROM McHeader m WHERE m.fpProcDt = :fpProcDt"),
-    @NamedQuery(name = "McHeader.findByMcFilteredFlg", query = "SELECT m FROM McHeader m WHERE m.mcFilteredFlg = :mcFilteredFlg"),
-    @NamedQuery(name = "McHeader.findByMcCanFtrdFlg", query = "SELECT m FROM McHeader m WHERE m.mcCanFtrdFlg = :mcCanFtrdFlg"),
-    @NamedQuery(name = "McHeader.findByStSlctrFlg", query = "SELECT m FROM McHeader m WHERE m.stSlctrFlg = :stSlctrFlg"),
-    @NamedQuery(name = "McHeader.findByFltadvProcFlg", query = "SELECT m FROM McHeader m WHERE m.fltadvProcFlg = :fltadvProcFlg")})
 public class McHeader implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -306,7 +269,7 @@ public class McHeader implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McHeader)) {
             return false;
         }
@@ -321,5 +284,5 @@ public class McHeader implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McHeader[ mcHeaderPK=" + mcHeaderPK + " ]";
     }
-    
+
 }

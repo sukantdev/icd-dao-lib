@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -10,10 +6,6 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Embeddable
 public class McDispHistOldPK implements Serializable {
 
@@ -23,7 +15,7 @@ public class McDispHistOldPK implements Serializable {
     @Basic(optional = false)
     @Column(name = "D12S1_LOCAL_TR_DT")
     private int d12s1LocalTrDt;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "D30S1_TR_ORIG_AMT")
     private BigDecimal d30s1TrOrigAmt;
@@ -176,7 +168,7 @@ public class McDispHistOldPK implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McDispHistOldPK)) {
             return false;
         }
@@ -221,5 +213,5 @@ public class McDispHistOldPK implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McDispHistOldPK[ d2PriAccntNo=" + d2PriAccntNo + ", d12s1LocalTrDt=" + d12s1LocalTrDt + ", d30s1TrOrigAmt=" + d30s1TrOrigAmt + ", d31s1IcRtDsgtr=" + d31s1IcRtDsgtr + ", d31s2AcquirBin=" + d31s2AcquirBin + ", d31s3JulPrcDt=" + d31s3JulPrcDt + ", d31s4AcqSeqNo=" + d31s4AcqSeqNo + ", d31s5CheckDigit=" + d31s5CheckDigit + ", d38ApprvlCd=" + d38ApprvlCd + ", u0002AddedDt=" + u0002AddedDt + ", u0003AddedTm=" + u0003AddedTm + " ]";
     }
-    
+
 }

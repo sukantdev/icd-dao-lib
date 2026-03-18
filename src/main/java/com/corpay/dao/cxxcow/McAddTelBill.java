@@ -1,77 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_TEL_BILL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddTelBill.findAll", query = "SELECT m FROM McAddTelBill m"),
-    @NamedQuery(name = "McAddTelBill.findByP105s1FileTy", query = "SELECT m FROM McAddTelBill m WHERE m.mcAddTelBillPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddTelBill.findByP105s2FileRDt", query = "SELECT m FROM McAddTelBill m WHERE m.mcAddTelBillPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddTelBill.findByP105s3ProcId", query = "SELECT m FROM McAddTelBill m WHERE m.mcAddTelBillPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddTelBill.findByP105s4FileSeqNo", query = "SELECT m FROM McAddTelBill m WHERE m.mcAddTelBillPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddTelBill.findByMsgTyId", query = "SELECT m FROM McAddTelBill m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddTelBill.findByBitMapPri", query = "SELECT m FROM McAddTelBill m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddTelBill.findByD1BitMapSec", query = "SELECT m FROM McAddTelBill m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddTelBill.findByD24FuncCd", query = "SELECT m FROM McAddTelBill m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddTelBill.findByD32AcqInstIdCd", query = "SELECT m FROM McAddTelBill m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddTelBill.findByD33FwdngInstCd", query = "SELECT m FROM McAddTelBill m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddTelBill.findByP191OrMsgFmt", query = "SELECT m FROM McAddTelBill m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddTelBill.findByP501s1UsageCd", query = "SELECT m FROM McAddTelBill m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddTelBill.findByP501s2IndstyRec", query = "SELECT m FROM McAddTelBill m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddTelBill.findByP501s3OccInd", query = "SELECT m FROM McAddTelBill m WHERE m.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddTelBill.findByP501s4MsgNo", query = "SELECT m FROM McAddTelBill m WHERE m.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddTelBill.findByP597s1TtxAmt", query = "SELECT m FROM McAddTelBill m WHERE m.p597s1TtxAmt = :p597s1TtxAmt"),
-    @NamedQuery(name = "McAddTelBill.findByP597s2TtxAmtExp", query = "SELECT m FROM McAddTelBill m WHERE m.p597s2TtxAmtExp = :p597s2TtxAmtExp"),
-    @NamedQuery(name = "McAddTelBill.findByP597s3TtxAmtSig", query = "SELECT m FROM McAddTelBill m WHERE m.p597s3TtxAmtSig = :p597s3TtxAmtSig"),
-    @NamedQuery(name = "McAddTelBill.findByP598TaxCltnInd", query = "SELECT m FROM McAddTelBill m WHERE m.p598TaxCltnInd = :p598TaxCltnInd"),
-    @NamedQuery(name = "McAddTelBill.findByP619UsrNm", query = "SELECT m FROM McAddTelBill m WHERE m.p619UsrNm = :p619UsrNm"),
-    @NamedQuery(name = "McAddTelBill.findByP624UsrAcctNbr", query = "SELECT m FROM McAddTelBill m WHERE m.p624UsrAcctNbr = :p624UsrAcctNbr"),
-    @NamedQuery(name = "McAddTelBill.findByP625UsrPhNbr", query = "SELECT m FROM McAddTelBill m WHERE m.p625UsrPhNbr = :p625UsrPhNbr"),
-    @NamedQuery(name = "McAddTelBill.findByP626s1BillStmtS", query = "SELECT m FROM McAddTelBill m WHERE m.p626s1BillStmtS = :p626s1BillStmtS"),
-    @NamedQuery(name = "McAddTelBill.findByP626s2BillStmtE", query = "SELECT m FROM McAddTelBill m WHERE m.p626s2BillStmtE = :p626s2BillStmtE"),
-    @NamedQuery(name = "McAddTelBill.findByP755s1LitmTotAm", query = "SELECT m FROM McAddTelBill m WHERE m.p755s1LitmTotAm = :p755s1LitmTotAm"),
-    @NamedQuery(name = "McAddTelBill.findByP755s2LitmTotEx", query = "SELECT m FROM McAddTelBill m WHERE m.p755s2LitmTotEx = :p755s2LitmTotEx"),
-    @NamedQuery(name = "McAddTelBill.findByP755s3LitmTotSg", query = "SELECT m FROM McAddTelBill m WHERE m.p755s3LitmTotSg = :p755s3LitmTotSg"),
-    @NamedQuery(name = "McAddTelBill.findByTaxAmtTs", query = "SELECT m FROM McAddTelBill m WHERE m.taxAmtTs = :taxAmtTs"),
-    @NamedQuery(name = "McAddTelBill.findByTaxAmt682Ind", query = "SELECT m FROM McAddTelBill m WHERE m.taxAmt682Ind = :taxAmt682Ind"),
-    @NamedQuery(name = "McAddTelBill.findByTaxAmt683Ind", query = "SELECT m FROM McAddTelBill m WHERE m.taxAmt683Ind = :taxAmt683Ind"),
-    @NamedQuery(name = "McAddTelBill.findByTaxAmt684Ind", query = "SELECT m FROM McAddTelBill m WHERE m.taxAmt684Ind = :taxAmt684Ind"),
-    @NamedQuery(name = "McAddTelBill.findByTaxAmt751Ind", query = "SELECT m FROM McAddTelBill m WHERE m.taxAmt751Ind = :taxAmt751Ind"),
-    @NamedQuery(name = "McAddTelBill.findByTaxAmt752Ind", query = "SELECT m FROM McAddTelBill m WHERE m.taxAmt752Ind = :taxAmt752Ind"),
-    @NamedQuery(name = "McAddTelBill.findByTaxAmt753Ind", query = "SELECT m FROM McAddTelBill m WHERE m.taxAmt753Ind = :taxAmt753Ind"),
-    @NamedQuery(name = "McAddTelBill.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddTelBill m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddTelBill.findByD63s2TraceId", query = "SELECT m FROM McAddTelBill m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddTelBill.findByD63s3ValidnCd", query = "SELECT m FROM McAddTelBill m WHERE m.d63s3ValidnCd = :d63s3ValidnCd"),
-    @NamedQuery(name = "McAddTelBill.findByD63s4LfcyctrSeq", query = "SELECT m FROM McAddTelBill m WHERE m.d63s4LfcyctrSeq = :d63s4LfcyctrSeq"),
-    @NamedQuery(name = "McAddTelBill.findByD63s5LfcyctrTot", query = "SELECT m FROM McAddTelBill m WHERE m.d63s5LfcyctrTot = :d63s5LfcyctrTot"),
-    @NamedQuery(name = "McAddTelBill.findByD71MsgNo", query = "SELECT m FROM McAddTelBill m WHERE m.mcAddTelBillPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddTelBill.findByD93TrDestInst", query = "SELECT m FROM McAddTelBill m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddTelBill.findByD94TrOrgInst", query = "SELECT m FROM McAddTelBill m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddTelBill.findByD100RecvInstId", query = "SELECT m FROM McAddTelBill m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddTelBill.findByD48AddtlDat", query = "SELECT m FROM McAddTelBill m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddTelBill.findByD62AddtlData2", query = "SELECT m FROM McAddTelBill m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McAddTelBill.findByD123AddtlDat3", query = "SELECT m FROM McAddTelBill m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddTelBill.findByD124AddtlDat4", query = "SELECT m FROM McAddTelBill m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddTelBill.findByD125AddtlDat5", query = "SELECT m FROM McAddTelBill m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McAddTelBill.findByA597s1TtxAmt", query = "SELECT m FROM McAddTelBill m WHERE m.a597s1TtxAmt = :a597s1TtxAmt"),
-    @NamedQuery(name = "McAddTelBill.findByA755s1LitmTotAmt", query = "SELECT m FROM McAddTelBill m WHERE m.a755s1LitmTotAmt = :a755s1LitmTotAmt")})
 public class McAddTelBill implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -110,7 +48,7 @@ public class McAddTelBill implements Serializable {
     @Basic(optional = false)
     @Column(name = "P501S4_MSG_NO")
     private int p501s4MsgNo;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "P597S1_TTX_AMT")
     private BigDecimal p597s1TtxAmt;
@@ -651,7 +589,7 @@ public class McAddTelBill implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddTelBill)) {
             return false;
         }
@@ -666,5 +604,5 @@ public class McAddTelBill implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddTelBill[ mcAddTelBillPK=" + mcAddTelBillPK + " ]";
     }
-    
+
 }

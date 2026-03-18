@@ -1,35 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "USERS_DPT", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "UsersDpt.findAll", query = "SELECT u FROM UsersDpt u"),
-    @NamedQuery(name = "UsersDpt.findByUsrId", query = "SELECT u FROM UsersDpt u WHERE u.usersDptPK.usrId = :usrId"),
-    @NamedQuery(name = "UsersDpt.findByDptId", query = "SELECT u FROM UsersDpt u WHERE u.usersDptPK.dptId = :dptId"),
-    @NamedQuery(name = "UsersDpt.findByCrtTs", query = "SELECT u FROM UsersDpt u WHERE u.crtTs = :crtTs"),
-    @NamedQuery(name = "UsersDpt.findByCrtUsr", query = "SELECT u FROM UsersDpt u WHERE u.crtUsr = :crtUsr"),
-    @NamedQuery(name = "UsersDpt.findByMdyTs", query = "SELECT u FROM UsersDpt u WHERE u.mdyTs = :mdyTs"),
-    @NamedQuery(name = "UsersDpt.findByMdyUsr", query = "SELECT u FROM UsersDpt u WHERE u.mdyUsr = :mdyUsr")})
 public class UsersDpt implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -118,7 +100,7 @@ public class UsersDpt implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof UsersDpt)) {
             return false;
         }
@@ -133,5 +115,5 @@ public class UsersDpt implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.UsersDpt[ usersDptPK=" + usersDptPK + " ]";
     }
-    
+
 }

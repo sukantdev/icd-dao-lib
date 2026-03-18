@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,85 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PRICING_XTN_WRK_DTL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "PricingXtnWrkDtl.findAll", query = "SELECT p FROM PricingXtnWrkDtl p"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdTiP105s1FileTy", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.pricingXtnWrkDtlPK.xwdTiP105s1FileTy = :xwdTiP105s1FileTy"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdTiP105s2FileRDt", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.pricingXtnWrkDtlPK.xwdTiP105s2FileRDt = :xwdTiP105s2FileRDt"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdTiP105s3ProcId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.pricingXtnWrkDtlPK.xwdTiP105s3ProcId = :xwdTiP105s3ProcId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdTiP105s4FileSeqNo", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.pricingXtnWrkDtlPK.xwdTiP105s4FileSeqNo = :xwdTiP105s4FileSeqNo"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdTiD71MsgNo", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.pricingXtnWrkDtlPK.xwdTiD71MsgNo = :xwdTiD71MsgNo"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdRecordType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.pricingXtnWrkDtlPK.xwdRecordType = :xwdRecordType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdRecordOccInd", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.pricingXtnWrkDtlPK.xwdRecordOccInd = :xwdRecordOccInd"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSeqNbr", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSeqNbr = :xwdSeqNbr"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdXdLiPrdCd", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdXdLiPrdCd = :xwdXdLiPrdCd"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdXdLiQty", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdXdLiQty = :xwdXdLiQty"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdXdLiPpu", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdXdLiPpu = :xwdXdLiPpu"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdXdLiCost", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdXdLiCost = :xwdXdLiCost"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdXdLiCrDbInd", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdXdLiCrDbInd = :xwdXdLiCrDbInd"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscInd", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscInd = :xwdSvcDiscInd"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscPriority", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscPriority = :xwdSvcDiscPriority"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscGrpId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscGrpId = :xwdSvcDiscGrpId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscGrpDesc", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscGrpDesc = :xwdSvcDiscGrpDesc"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscRmType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscRmType = :xwdSvcDiscRmType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscRmFromVal", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscRmFromVal = :xwdSvcDiscRmFromVal"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscRmToVal", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscRmToVal = :xwdSvcDiscRmToVal"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscRt", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscRt = :xwdSvcDiscRt"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscRtType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscRtType = :xwdSvcDiscRtType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscAmt", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscAmt = :xwdSvcDiscAmt"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscMktrId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscMktrId = :xwdSvcDiscMktrId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscMktrNm", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscMktrNm = :xwdSvcDiscMktrNm"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiscMktrBlngId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiscMktrBlngId = :xwdSvcDiscMktrBlngId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebInd", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebInd = :xwdSvcRebInd"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebPriority", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebPriority = :xwdSvcRebPriority"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebGrpId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebGrpId = :xwdSvcRebGrpId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebGrpDesc", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebGrpDesc = :xwdSvcRebGrpDesc"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebRmType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebRmType = :xwdSvcRebRmType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebRmFromVal", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebRmFromVal = :xwdSvcRebRmFromVal"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebRmToVal", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebRmToVal = :xwdSvcRebRmToVal"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebRt", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebRt = :xwdSvcRebRt"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebRtType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebRtType = :xwdSvcRebRtType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebAmt", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebAmt = :xwdSvcRebAmt"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebMktrId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebMktrId = :xwdSvcRebMktrId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebMktrNm", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebMktrNm = :xwdSvcRebMktrNm"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcRebMktrBlngId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcRebMktrBlngId = :xwdSvcRebMktrBlngId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdSvcDiffFndInd", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdSvcDiffFndInd = :xwdSvcDiffFndInd"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscInd", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscInd = :xwdCdnDiscInd"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscPriority", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscPriority = :xwdCdnDiscPriority"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscGrpId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscGrpId = :xwdCdnDiscGrpId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscGrpDesc", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscGrpDesc = :xwdCdnDiscGrpDesc"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscRmType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscRmType = :xwdCdnDiscRmType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscRmFromVal", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscRmFromVal = :xwdCdnDiscRmFromVal"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscRmToVal", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscRmToVal = :xwdCdnDiscRmToVal"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscRt", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscRt = :xwdCdnDiscRt"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscRtType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscRtType = :xwdCdnDiscRtType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscAmt", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscAmt = :xwdCdnDiscAmt"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscMktrId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscMktrId = :xwdCdnDiscMktrId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscMktrNm", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscMktrNm = :xwdCdnDiscMktrNm"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnDiscMktrBlngId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnDiscMktrBlngId = :xwdCdnDiscMktrBlngId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebInd", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebInd = :xwdCdnRebInd"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebPriority", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebPriority = :xwdCdnRebPriority"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebGrpId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebGrpId = :xwdCdnRebGrpId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebGrpDesc", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebGrpDesc = :xwdCdnRebGrpDesc"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebRmType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebRmType = :xwdCdnRebRmType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebRmFromVal", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebRmFromVal = :xwdCdnRebRmFromVal"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebRmToVal", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebRmToVal = :xwdCdnRebRmToVal"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebRt", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebRt = :xwdCdnRebRt"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebRtType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebRtType = :xwdCdnRebRtType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebAmt", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebAmt = :xwdCdnRebAmt"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebMktrId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebMktrId = :xwdCdnRebMktrId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebMktrNm", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebMktrNm = :xwdCdnRebMktrNm"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdCdnRebMktrBlngId", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdCdnRebMktrBlngId = :xwdCdnRebMktrBlngId"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByXwdXdLiMigrType", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.xwdXdLiMigrType = :xwdXdLiMigrType"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByCrtTs", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.crtTs = :crtTs"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByCrtUsr", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.crtUsr = :crtUsr"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByMdyTs", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.mdyTs = :mdyTs"),
-    @NamedQuery(name = "PricingXtnWrkDtl.findByMdyUsr", query = "SELECT p FROM PricingXtnWrkDtl p WHERE p.mdyUsr = :mdyUsr")})
 public class PricingXtnWrkDtl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -107,7 +24,7 @@ public class PricingXtnWrkDtl implements Serializable {
     @Basic(optional = false)
     @Column(name = "XWD_XD_LI_PRD_CD")
     private short xwdXdLiPrdCd;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "XWD_XD_LI_QTY")
     private BigDecimal xwdXdLiQty;
@@ -905,7 +822,7 @@ public class PricingXtnWrkDtl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof PricingXtnWrkDtl)) {
             return false;
         }
@@ -920,5 +837,5 @@ public class PricingXtnWrkDtl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.PricingXtnWrkDtl[ pricingXtnWrkDtlPK=" + pricingXtnWrkDtlPK + " ]";
     }
-    
+
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
@@ -12,10 +8,6 @@ import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Embeddable
 public class RetMinusDiscPK implements Serializable {
 
@@ -126,7 +118,7 @@ public class RetMinusDiscPK implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof RetMinusDiscPK)) {
             return false;
         }
@@ -159,5 +151,5 @@ public class RetMinusDiscPK implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.RetMinusDiscPK[ custId=" + custId + ", locCd=" + locCd + ", discPrdCd=" + discPrdCd + ", discEffctvTs=" + discEffctvTs + ", discPrdGrpCd=" + discPrdGrpCd + ", directbillFundedFlg=" + directbillFundedFlg + ", discSrcCd=" + discSrcCd + " ]";
     }
-    
+
 }

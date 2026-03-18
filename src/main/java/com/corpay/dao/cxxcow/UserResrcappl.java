@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -11,23 +7,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "USER_RESRCAPPL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "UserResrcappl.findAll", query = "SELECT u FROM UserResrcappl u"),
-    @NamedQuery(name = "UserResrcappl.findByApresId", query = "SELECT u FROM UserResrcappl u WHERE u.userResrcapplPK.apresId = :apresId"),
-    @NamedQuery(name = "UserResrcappl.findByRsrcId", query = "SELECT u FROM UserResrcappl u WHERE u.userResrcapplPK.rsrcId = :rsrcId"),
-    @NamedQuery(name = "UserResrcappl.findByUserId", query = "SELECT u FROM UserResrcappl u WHERE u.userResrcapplPK.userId = :userId"),
-    @NamedQuery(name = "UserResrcappl.findByUserrsraValue", query = "SELECT u FROM UserResrcappl u WHERE u.userrsraValue = :userrsraValue")})
 public class UserResrcappl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -91,7 +75,7 @@ public class UserResrcappl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof UserResrcappl)) {
             return false;
         }
@@ -106,5 +90,5 @@ public class UserResrcappl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.UserResrcappl[ userResrcapplPK=" + userResrcapplPK + " ]";
     }
-    
+
 }

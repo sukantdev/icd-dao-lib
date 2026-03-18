@@ -1,40 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_TRAILER", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McTrailer.findAll", query = "SELECT m FROM McTrailer m"),
-    @NamedQuery(name = "McTrailer.findByP105s1FileTy", query = "SELECT m FROM McTrailer m WHERE m.mcTrailerPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McTrailer.findByP105s2FileRDt", query = "SELECT m FROM McTrailer m WHERE m.mcTrailerPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McTrailer.findByP105s3ProcId", query = "SELECT m FROM McTrailer m WHERE m.mcTrailerPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McTrailer.findByP105s4FileSeqNo", query = "SELECT m FROM McTrailer m WHERE m.mcTrailerPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McTrailer.findByMsgTyId", query = "SELECT m FROM McTrailer m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McTrailer.findByBitMapPri", query = "SELECT m FROM McTrailer m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McTrailer.findByD1BitMapSec", query = "SELECT m FROM McTrailer m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McTrailer.findByD2PriAccntNo", query = "SELECT m FROM McTrailer m WHERE m.d2PriAccntNo = :d2PriAccntNo"),
-    @NamedQuery(name = "McTrailer.findByD24FuncCd", query = "SELECT m FROM McTrailer m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McTrailer.findByD48AddtlDat", query = "SELECT m FROM McTrailer m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McTrailer.findByP191OrMsgFmt", query = "SELECT m FROM McTrailer m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McTrailer.findByP301CheksumAmt", query = "SELECT m FROM McTrailer m WHERE m.p301CheksumAmt = :p301CheksumAmt"),
-    @NamedQuery(name = "McTrailer.findByP306CntsFMsg", query = "SELECT m FROM McTrailer m WHERE m.p306CntsFMsg = :p306CntsFMsg"),
-    @NamedQuery(name = "McTrailer.findByD71MsgNo", query = "SELECT m FROM McTrailer m WHERE m.d71MsgNo = :d71MsgNo")})
 public class McTrailer implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -54,7 +28,7 @@ public class McTrailer implements Serializable {
     private String d48AddtlDat;
     @Column(name = "P191_OR_MSG_FMT")
     private Short p191OrMsgFmt;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "P301_CHEKSUM_AMT")
     private BigDecimal p301CheksumAmt;
     @Column(name = "P306_CNTS_F_MSG")
@@ -170,7 +144,7 @@ public class McTrailer implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McTrailer)) {
             return false;
         }
@@ -185,5 +159,5 @@ public class McTrailer implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McTrailer[ mcTrailerPK=" + mcTrailerPK + " ]";
     }
-    
+
 }

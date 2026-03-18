@@ -1,43 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_DTL_TAX", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McDtlTax.findAll", query = "SELECT m FROM McDtlTax m"),
-    @NamedQuery(name = "McDtlTax.findByTaxAmtTs", query = "SELECT m FROM McDtlTax m WHERE m.mcDtlTaxPK.taxAmtTs = :taxAmtTs"),
-    @NamedQuery(name = "McDtlTax.findByTaxAmtOccInd", query = "SELECT m FROM McDtlTax m WHERE m.mcDtlTaxPK.taxAmtOccInd = :taxAmtOccInd"),
-    @NamedQuery(name = "McDtlTax.findByParentTable", query = "SELECT m FROM McDtlTax m WHERE m.mcDtlTaxPK.parentTable = :parentTable"),
-    @NamedQuery(name = "McDtlTax.findByTaxAmtId", query = "SELECT m FROM McDtlTax m WHERE m.taxAmtId = :taxAmtId"),
-    @NamedQuery(name = "McDtlTax.findByTaxAmt", query = "SELECT m FROM McDtlTax m WHERE m.taxAmt = :taxAmt"),
-    @NamedQuery(name = "McDtlTax.findByTaxRt", query = "SELECT m FROM McDtlTax m WHERE m.taxRt = :taxRt"),
-    @NamedQuery(name = "McDtlTax.findByTaxRtExp", query = "SELECT m FROM McDtlTax m WHERE m.taxRtExp = :taxRtExp"),
-    @NamedQuery(name = "McDtlTax.findByTaxTypApp", query = "SELECT m FROM McDtlTax m WHERE m.taxTypApp = :taxTypApp"),
-    @NamedQuery(name = "McDtlTax.findByTaxTypId", query = "SELECT m FROM McDtlTax m WHERE m.taxTypId = :taxTypId"),
-    @NamedQuery(name = "McDtlTax.findByCrdAcceptance", query = "SELECT m FROM McDtlTax m WHERE m.crdAcceptance = :crdAcceptance"),
-    @NamedQuery(name = "McDtlTax.findByTaxAmtSign", query = "SELECT m FROM McDtlTax m WHERE m.taxAmtSign = :taxAmtSign"),
-    @NamedQuery(name = "McDtlTax.findByATaxAmt", query = "SELECT m FROM McDtlTax m WHERE m.aTaxAmt = :aTaxAmt"),
-    @NamedQuery(name = "McDtlTax.findByATaxRt", query = "SELECT m FROM McDtlTax m WHERE m.aTaxRt = :aTaxRt"),
-    @NamedQuery(name = "McDtlTax.findByATaxTypApp", query = "SELECT m FROM McDtlTax m WHERE m.aTaxTypApp = :aTaxTypApp"),
-    @NamedQuery(name = "McDtlTax.findByATaxTypId", query = "SELECT m FROM McDtlTax m WHERE m.aTaxTypId = :aTaxTypId"),
-    @NamedQuery(name = "McDtlTax.findByDtlTaxAdded", query = "SELECT m FROM McDtlTax m WHERE m.dtlTaxAdded = :dtlTaxAdded")})
 public class McDtlTax implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -46,7 +18,7 @@ public class McDtlTax implements Serializable {
     @Basic(optional = false)
     @Column(name = "TAX_AMT_ID")
     private Character taxAmtId;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "TAX_AMT")
     private BigDecimal taxAmt;
@@ -233,7 +205,7 @@ public class McDtlTax implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McDtlTax)) {
             return false;
         }
@@ -248,5 +220,5 @@ public class McDtlTax implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McDtlTax[ mcDtlTaxPK=" + mcDtlTaxPK + " ]";
     }
-    
+
 }

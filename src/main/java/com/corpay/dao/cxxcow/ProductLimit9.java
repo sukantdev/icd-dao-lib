@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,40 +11,14 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PRODUCT_LIMIT9", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "ProductLimit9.findAll", query = "SELECT p FROM ProductLimit9 p"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlCustId", query = "SELECT p FROM ProductLimit9 p WHERE p.productLimit9PK.prdlCustId = :prdlCustId"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlCcType", query = "SELECT p FROM ProductLimit9 p WHERE p.productLimit9PK.prdlCcType = :prdlCcType"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlProfileId", query = "SELECT p FROM ProductLimit9 p WHERE p.productLimit9PK.prdlProfileId = :prdlProfileId"),
-    @NamedQuery(name = "ProductLimit9.findByProdcId", query = "SELECT p FROM ProductLimit9 p WHERE p.productLimit9PK.prodcId = :prodcId"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlXtnAmt", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlXtnAmt = :prdlXtnAmt"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlXtnQty", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlXtnQty = :prdlXtnQty"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlDayAmt", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlDayAmt = :prdlDayAmt"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlDayXtns", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlDayXtns = :prdlDayXtns"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlDayQty", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlDayQty = :prdlDayQty"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlCycFlag", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlCycFlag = :prdlCycFlag"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlCycReset", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlCycReset = :prdlCycReset"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlCycAmt", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlCycAmt = :prdlCycAmt"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlCycQty", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlCycQty = :prdlCycQty"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlCycXtns", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlCycXtns = :prdlCycXtns"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlPoAmt", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlPoAmt = :prdlPoAmt"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlPoQty", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlPoQty = :prdlPoQty"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlAvailFlag", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlAvailFlag = :prdlAvailFlag"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlOpenClosed", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlOpenClosed = :prdlOpenClosed"),
-    @NamedQuery(name = "ProductLimit9.findByPrdlUpdateTs", query = "SELECT p FROM ProductLimit9 p WHERE p.prdlUpdateTs = :prdlUpdateTs"),
-    @NamedQuery(name = "ProductLimit9.findByRowChgTs", query = "SELECT p FROM ProductLimit9 p WHERE p.rowChgTs = :rowChgTs")})
 public class ProductLimit9 implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected ProductLimit9PK productLimit9PK;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "PRDL_XTN_AMT")
     private BigDecimal prdlXtnAmt;
@@ -278,7 +246,7 @@ public class ProductLimit9 implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof ProductLimit9)) {
             return false;
         }
@@ -293,5 +261,5 @@ public class ProductLimit9 implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.ProductLimit9[ productLimit9PK=" + productLimit9PK + " ]";
     }
-    
+
 }

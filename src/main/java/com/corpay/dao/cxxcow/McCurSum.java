@@ -1,57 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_CUR_SUM", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McCurSum.findAll", query = "SELECT m FROM McCurSum m"),
-    @NamedQuery(name = "McCurSum.findByP105s1FileTy", query = "SELECT m FROM McCurSum m WHERE m.mcCurSumPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McCurSum.findByP105s2FileRDt", query = "SELECT m FROM McCurSum m WHERE m.mcCurSumPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McCurSum.findByP105s3ProcId", query = "SELECT m FROM McCurSum m WHERE m.mcCurSumPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McCurSum.findByP105s4FileSeqNo", query = "SELECT m FROM McCurSum m WHERE m.mcCurSumPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McCurSum.findByD71MsgNo", query = "SELECT m FROM McCurSum m WHERE m.mcCurSumPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McCurSum.findByMsgTyId", query = "SELECT m FROM McCurSum m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McCurSum.findByBitMapPri", query = "SELECT m FROM McCurSum m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McCurSum.findByD1BitMapSec", query = "SELECT m FROM McCurSum m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McCurSum.findByD24FuncCd", query = "SELECT m FROM McCurSum m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McCurSum.findByD25MsgRsnCd", query = "SELECT m FROM McCurSum m WHERE m.d25MsgRsnCd = :d25MsgRsnCd"),
-    @NamedQuery(name = "McCurSum.findByD48AddtlDat", query = "SELECT m FROM McCurSum m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McCurSum.findByP300s1FileTy", query = "SELECT m FROM McCurSum m WHERE m.p300s1FileTy = :p300s1FileTy"),
-    @NamedQuery(name = "McCurSum.findByP300s2FileRefDt", query = "SELECT m FROM McCurSum m WHERE m.p300s2FileRefDt = :p300s2FileRefDt"),
-    @NamedQuery(name = "McCurSum.findByP300s3ProcId", query = "SELECT m FROM McCurSum m WHERE m.p300s3ProcId = :p300s3ProcId"),
-    @NamedQuery(name = "McCurSum.findByP300s4FileSeqNo", query = "SELECT m FROM McCurSum m WHERE m.p300s4FileSeqNo = :p300s4FileSeqNo"),
-    @NamedQuery(name = "McCurSum.findByP380s1DbCrInd", query = "SELECT m FROM McCurSum m WHERE m.p380s1DbCrInd = :p380s1DbCrInd"),
-    @NamedQuery(name = "McCurSum.findByP380s2TranAmt", query = "SELECT m FROM McCurSum m WHERE m.p380s2TranAmt = :p380s2TranAmt"),
-    @NamedQuery(name = "McCurSum.findByP381s1DbCrInd", query = "SELECT m FROM McCurSum m WHERE m.p381s1DbCrInd = :p381s1DbCrInd"),
-    @NamedQuery(name = "McCurSum.findByP381s2TranAmt", query = "SELECT m FROM McCurSum m WHERE m.p381s2TranAmt = :p381s2TranAmt"),
-    @NamedQuery(name = "McCurSum.findByP384s1DbCrInd", query = "SELECT m FROM McCurSum m WHERE m.p384s1DbCrInd = :p384s1DbCrInd"),
-    @NamedQuery(name = "McCurSum.findByP384s2NetAmt", query = "SELECT m FROM McCurSum m WHERE m.p384s2NetAmt = :p384s2NetAmt"),
-    @NamedQuery(name = "McCurSum.findByP400TranNoDbs", query = "SELECT m FROM McCurSum m WHERE m.p400TranNoDbs = :p400TranNoDbs"),
-    @NamedQuery(name = "McCurSum.findByP401TranNoCrs", query = "SELECT m FROM McCurSum m WHERE m.p401TranNoCrs = :p401TranNoCrs"),
-    @NamedQuery(name = "McCurSum.findByP402TranNoTot", query = "SELECT m FROM McCurSum m WHERE m.p402TranNoTot = :p402TranNoTot"),
-    @NamedQuery(name = "McCurSum.findByD49TranCurrCd", query = "SELECT m FROM McCurSum m WHERE m.d49TranCurrCd = :d49TranCurrCd"),
-    @NamedQuery(name = "McCurSum.findByD62AddtlData2", query = "SELECT m FROM McCurSum m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McCurSum.findByD93TrDestInst", query = "SELECT m FROM McCurSum m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McCurSum.findByD100RecvInstId", query = "SELECT m FROM McCurSum m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McCurSum.findByD123AddtlDat3", query = "SELECT m FROM McCurSum m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McCurSum.findByD124AddtlDat4", query = "SELECT m FROM McCurSum m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McCurSum.findByD125AddtlDat5", query = "SELECT m FROM McCurSum m WHERE m.d125AddtlDat5 = :d125AddtlDat5")})
 public class McCurSum implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -79,7 +36,7 @@ public class McCurSum implements Serializable {
     private Integer p300s4FileSeqNo;
     @Column(name = "P380S1_DB_CR_IND")
     private Character p380s1DbCrInd;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "P380S2_TRAN_AMT")
     private BigDecimal p380s2TranAmt;
     @Column(name = "P381S1_DB_CR_IND")
@@ -347,7 +304,7 @@ public class McCurSum implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McCurSum)) {
             return false;
         }
@@ -362,5 +319,5 @@ public class McCurSum implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McCurSum[ mcCurSumPK=" + mcCurSumPK + " ]";
     }
-    
+
 }

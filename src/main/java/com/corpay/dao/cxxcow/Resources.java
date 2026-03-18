@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -12,8 +8,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -22,28 +16,8 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "RESOURCES", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "Resources.findAll", query = "SELECT r FROM Resources r"),
-    @NamedQuery(name = "Resources.findByRsrcId", query = "SELECT r FROM Resources r WHERE r.rsrcId = :rsrcId"),
-    @NamedQuery(name = "Resources.findByRsrcInquiryFg", query = "SELECT r FROM Resources r WHERE r.rsrcInquiryFg = :rsrcInquiryFg"),
-    @NamedQuery(name = "Resources.findByRsrcDeleteFg", query = "SELECT r FROM Resources r WHERE r.rsrcDeleteFg = :rsrcDeleteFg"),
-    @NamedQuery(name = "Resources.findByRsrcBrowseFg", query = "SELECT r FROM Resources r WHERE r.rsrcBrowseFg = :rsrcBrowseFg"),
-    @NamedQuery(name = "Resources.findByRsrcUpdteFg", query = "SELECT r FROM Resources r WHERE r.rsrcUpdteFg = :rsrcUpdteFg"),
-    @NamedQuery(name = "Resources.findByRsrcInsertFg", query = "SELECT r FROM Resources r WHERE r.rsrcInsertFg = :rsrcInsertFg"),
-    @NamedQuery(name = "Resources.findByRsrcType", query = "SELECT r FROM Resources r WHERE r.rsrcType = :rsrcType"),
-    @NamedQuery(name = "Resources.findByRsrcOpencloseFg", query = "SELECT r FROM Resources r WHERE r.rsrcOpencloseFg = :rsrcOpencloseFg"),
-    @NamedQuery(name = "Resources.findByRsrcDesc", query = "SELECT r FROM Resources r WHERE r.rsrcDesc = :rsrcDesc"),
-    @NamedQuery(name = "Resources.findByRsrcUptDte", query = "SELECT r FROM Resources r WHERE r.rsrcUptDte = :rsrcUptDte"),
-    @NamedQuery(name = "Resources.findByRsrcUptUsr", query = "SELECT r FROM Resources r WHERE r.rsrcUptUsr = :rsrcUptUsr"),
-    @NamedQuery(name = "Resources.findByRsrcAccessDte", query = "SELECT r FROM Resources r WHERE r.rsrcAccessDte = :rsrcAccessDte"),
-    @NamedQuery(name = "Resources.findByRsrcAccessUsr", query = "SELECT r FROM Resources r WHERE r.rsrcAccessUsr = :rsrcAccessUsr"),
-    @NamedQuery(name = "Resources.findByRsrcApplData", query = "SELECT r FROM Resources r WHERE r.rsrcApplData = :rsrcApplData")})
 public class Resources implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -291,7 +265,7 @@ public class Resources implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof Resources)) {
             return false;
         }
@@ -306,5 +280,5 @@ public class Resources implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.Resources[ rsrcId=" + rsrcId + " ]";
     }
-    
+
 }

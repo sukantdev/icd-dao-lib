@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,24 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_MERCH_SLOC", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McMerchSloc.findAll", query = "SELECT m FROM McMerchSloc m"),
-    @NamedQuery(name = "McMerchSloc.findByMcMerchId", query = "SELECT m FROM McMerchSloc m WHERE m.mcMerchSlocPK.mcMerchId = :mcMerchId"),
-    @NamedQuery(name = "McMerchSloc.findByP0216S0001SlocCtyNm", query = "SELECT m FROM McMerchSloc m WHERE m.mcMerchSlocPK.p0216S0001SlocCtyNm = :p0216S0001SlocCtyNm"),
-    @NamedQuery(name = "McMerchSloc.findByP0216S0002SlocCtrySubCd", query = "SELECT m FROM McMerchSloc m WHERE m.mcMerchSlocPK.p0216S0002SlocCtrySubCd = :p0216S0002SlocCtrySubCd"),
-    @NamedQuery(name = "McMerchSloc.findByP0216S0003SlocCtryCd", query = "SELECT m FROM McMerchSloc m WHERE m.mcMerchSlocPK.p0216S0003SlocCtryCd = :p0216S0003SlocCtryCd"),
-    @NamedQuery(name = "McMerchSloc.findByP0216S0004SlocPstlCd", query = "SELECT m FROM McMerchSloc m WHERE m.mcMerchSlocPK.p0216S0004SlocPstlCd = :p0216S0004SlocPstlCd"),
-    @NamedQuery(name = "McMerchSloc.findByP0216S0006SlocGeoCord", query = "SELECT m FROM McMerchSloc m WHERE m.mcMerchSlocPK.p0216S0006SlocGeoCord = :p0216S0006SlocGeoCord"),
-    @NamedQuery(name = "McMerchSloc.findByMcMerchIdSloc", query = "SELECT m FROM McMerchSloc m WHERE m.mcMerchIdSloc = :mcMerchIdSloc"),
-    @NamedQuery(name = "McMerchSloc.findByMcMidSlocLastUsed", query = "SELECT m FROM McMerchSloc m WHERE m.mcMidSlocLastUsed = :mcMidSlocLastUsed"),
-    @NamedQuery(name = "McMerchSloc.findByMcSlocLatNbr", query = "SELECT m FROM McMerchSloc m WHERE m.mcSlocLatNbr = :mcSlocLatNbr"),
-    @NamedQuery(name = "McMerchSloc.findByMcSlocLongNbr", query = "SELECT m FROM McMerchSloc m WHERE m.mcSlocLongNbr = :mcSlocLongNbr")})
 public class McMerchSloc implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -48,7 +26,7 @@ public class McMerchSloc implements Serializable {
     @Column(name = "MC_MID_SLOC_LAST_USED")
     @Temporal(TemporalType.DATE)
     private Date mcMidSlocLastUsed;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "MC_SLOC_LAT_NBR")
     private BigDecimal mcSlocLatNbr;
@@ -124,7 +102,7 @@ public class McMerchSloc implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McMerchSloc)) {
             return false;
         }
@@ -139,5 +117,5 @@ public class McMerchSloc implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McMerchSloc[ mcMerchSlocPK=" + mcMerchSlocPK + " ]";
     }
-    
+
 }

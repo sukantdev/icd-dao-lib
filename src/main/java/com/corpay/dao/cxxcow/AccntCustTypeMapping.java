@@ -1,38 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
+
+import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import java.io.Serializable;
-import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "ACCNT_CUST_TYPE_MAPPING", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "AccntCustTypeMapping.findAll", query = "SELECT a FROM AccntCustTypeMapping a"),
-    @NamedQuery(name = "AccntCustTypeMapping.findByCustTypeId", query = "SELECT a FROM AccntCustTypeMapping a WHERE a.accntCustTypeMappingPK.custTypeId = :custTypeId"),
-    @NamedQuery(name = "AccntCustTypeMapping.findByPlsdAcctNbr", query = "SELECT a FROM AccntCustTypeMapping a WHERE a.accntCustTypeMappingPK.plsdAcctNbr = :plsdAcctNbr"),
-    @NamedQuery(name = "AccntCustTypeMapping.findByPlsdAcctDesc", query = "SELECT a FROM AccntCustTypeMapping a WHERE a.plsdAcctDesc = :plsdAcctDesc"),
-    @NamedQuery(name = "AccntCustTypeMapping.findByCrtTs", query = "SELECT a FROM AccntCustTypeMapping a WHERE a.crtTs = :crtTs"),
-    @NamedQuery(name = "AccntCustTypeMapping.findByCrtUsr", query = "SELECT a FROM AccntCustTypeMapping a WHERE a.crtUsr = :crtUsr"),
-    @NamedQuery(name = "AccntCustTypeMapping.findByMdyTs", query = "SELECT a FROM AccntCustTypeMapping a WHERE a.mdyTs = :mdyTs"),
-    @NamedQuery(name = "AccntCustTypeMapping.findByMdyUsr", query = "SELECT a FROM AccntCustTypeMapping a WHERE a.mdyUsr = :mdyUsr"),
-    @NamedQuery(name = "AccntCustTypeMapping.findByFisUserId", query = "SELECT a FROM AccntCustTypeMapping a WHERE a.fisUserId = :fisUserId"),
-    @NamedQuery(name = "AccntCustTypeMapping.findByFisUserPassword", query = "SELECT a FROM AccntCustTypeMapping a WHERE a.fisUserPassword = :fisUserPassword")})
 public class AccntCustTypeMapping implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -151,7 +131,7 @@ public class AccntCustTypeMapping implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof AccntCustTypeMapping)) {
             return false;
         }
@@ -166,5 +146,5 @@ public class AccntCustTypeMapping implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.AccntCustTypeMapping[ accntCustTypeMappingPK=" + accntCustTypeMappingPK + " ]";
     }
-    
+
 }

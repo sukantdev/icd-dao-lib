@@ -1,44 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_SHPNG", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McShpng.findAll", query = "SELECT m FROM McShpng m"),
-    @NamedQuery(name = "McShpng.findByP105s1FileTy", query = "SELECT m FROM McShpng m WHERE m.mcShpngPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McShpng.findByP105s2FileRDt", query = "SELECT m FROM McShpng m WHERE m.mcShpngPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McShpng.findByP105s3ProcId", query = "SELECT m FROM McShpng m WHERE m.mcShpngPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McShpng.findByP105s4FileSeqNo", query = "SELECT m FROM McShpng m WHERE m.mcShpngPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McShpng.findByD71MsgNo", query = "SELECT m FROM McShpng m WHERE m.mcShpngPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McShpng.findByP744s1ShpngNm1", query = "SELECT m FROM McShpng m WHERE m.p744s1ShpngNm1 = :p744s1ShpngNm1"),
-    @NamedQuery(name = "McShpng.findByP744s1ShpngNm2", query = "SELECT m FROM McShpng m WHERE m.p744s1ShpngNm2 = :p744s1ShpngNm2"),
-    @NamedQuery(name = "McShpng.findByP744s1ShpngNm3", query = "SELECT m FROM McShpng m WHERE m.p744s1ShpngNm3 = :p744s1ShpngNm3"),
-    @NamedQuery(name = "McShpng.findByP745s1ShpngAddr1", query = "SELECT m FROM McShpng m WHERE m.p745s1ShpngAddr1 = :p745s1ShpngAddr1"),
-    @NamedQuery(name = "McShpng.findByP745s1ShpngAddr2", query = "SELECT m FROM McShpng m WHERE m.p745s1ShpngAddr2 = :p745s1ShpngAddr2"),
-    @NamedQuery(name = "McShpng.findByP745s1ShpngAddr3", query = "SELECT m FROM McShpng m WHERE m.p745s1ShpngAddr3 = :p745s1ShpngAddr3"),
-    @NamedQuery(name = "McShpng.findByP745s1ShpngAddr4", query = "SELECT m FROM McShpng m WHERE m.p745s1ShpngAddr4 = :p745s1ShpngAddr4"),
-    @NamedQuery(name = "McShpng.findByP745s1ShpngAddr5", query = "SELECT m FROM McShpng m WHERE m.p745s1ShpngAddr5 = :p745s1ShpngAddr5"),
-    @NamedQuery(name = "McShpng.findByP745s1ShpngAddr6", query = "SELECT m FROM McShpng m WHERE m.p745s1ShpngAddr6 = :p745s1ShpngAddr6"),
-    @NamedQuery(name = "McShpng.findByP746s1ShpngCity", query = "SELECT m FROM McShpng m WHERE m.p746s1ShpngCity = :p746s1ShpngCity"),
-    @NamedQuery(name = "McShpng.findByP746s2ShpngSt", query = "SELECT m FROM McShpng m WHERE m.p746s2ShpngSt = :p746s2ShpngSt"),
-    @NamedQuery(name = "McShpng.findByP746s3ShpngCrty", query = "SELECT m FROM McShpng m WHERE m.p746s3ShpngCrty = :p746s3ShpngCrty"),
-    @NamedQuery(name = "McShpng.findByP746s4ShpngZip", query = "SELECT m FROM McShpng m WHERE m.p746s4ShpngZip = :p746s4ShpngZip")})
 public class McShpng implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -233,7 +203,7 @@ public class McShpng implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McShpng)) {
             return false;
         }
@@ -248,5 +218,5 @@ public class McShpng implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McShpng[ mcShpngPK=" + mcShpngPK + " ]";
     }
-    
+
 }

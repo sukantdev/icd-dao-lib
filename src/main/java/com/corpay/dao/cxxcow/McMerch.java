@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,28 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_MERCH", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McMerch.findAll", query = "SELECT m FROM McMerch m"),
-    @NamedQuery(name = "McMerch.findByD43s1CrdAcpNm", query = "SELECT m FROM McMerch m WHERE m.mcMerchPK.d43s1CrdAcpNm = :d43s1CrdAcpNm"),
-    @NamedQuery(name = "McMerch.findByD43s2CrdAcpStr", query = "SELECT m FROM McMerch m WHERE m.mcMerchPK.d43s2CrdAcpStr = :d43s2CrdAcpStr"),
-    @NamedQuery(name = "McMerch.findByD43s3CrdAcpCty", query = "SELECT m FROM McMerch m WHERE m.mcMerchPK.d43s3CrdAcpCty = :d43s3CrdAcpCty"),
-    @NamedQuery(name = "McMerch.findByD43s4CrdAcpZip", query = "SELECT m FROM McMerch m WHERE m.mcMerchPK.d43s4CrdAcpZip = :d43s4CrdAcpZip"),
-    @NamedQuery(name = "McMerch.findByD43s5CrdAcpSt", query = "SELECT m FROM McMerch m WHERE m.mcMerchPK.d43s5CrdAcpSt = :d43s5CrdAcpSt"),
-    @NamedQuery(name = "McMerch.findByD43s6CrdAcpCtry", query = "SELECT m FROM McMerch m WHERE m.mcMerchPK.d43s6CrdAcpCtry = :d43s6CrdAcpCtry"),
-    @NamedQuery(name = "McMerch.findByA43s4CrdAcpZip", query = "SELECT m FROM McMerch m WHERE m.a43s4CrdAcpZip = :a43s4CrdAcpZip"),
-    @NamedQuery(name = "McMerch.findByA43s5CrdAcpSt", query = "SELECT m FROM McMerch m WHERE m.a43s5CrdAcpSt = :a43s5CrdAcpSt"),
-    @NamedQuery(name = "McMerch.findByMcMerchId", query = "SELECT m FROM McMerch m WHERE m.mcMerchId = :mcMerchId"),
-    @NamedQuery(name = "McMerch.findByMcMidLastUsed", query = "SELECT m FROM McMerch m WHERE m.mcMidLastUsed = :mcMidLastUsed"),
-    @NamedQuery(name = "McMerch.findByFilteredFlags", query = "SELECT m FROM McMerch m WHERE m.filteredFlags = :filteredFlags"),
-    @NamedQuery(name = "McMerch.findByP0216S0005AcptGeoCord", query = "SELECT m FROM McMerch m WHERE m.p0216S0005AcptGeoCord = :p0216S0005AcptGeoCord"),
-    @NamedQuery(name = "McMerch.findByMcAcptLatNbr", query = "SELECT m FROM McMerch m WHERE m.mcAcptLatNbr = :mcAcptLatNbr"),
-    @NamedQuery(name = "McMerch.findByMcAcptLongNbr", query = "SELECT m FROM McMerch m WHERE m.mcAcptLongNbr = :mcAcptLongNbr")})
 public class McMerch implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -61,7 +35,7 @@ public class McMerch implements Serializable {
     @Basic(optional = false)
     @Column(name = "P0216_S0005_ACPT_GEO_CORD")
     private String p0216S0005AcptGeoCord;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "MC_ACPT_LAT_NBR")
     private BigDecimal mcAcptLatNbr;
@@ -170,7 +144,7 @@ public class McMerch implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McMerch)) {
             return false;
         }
@@ -185,5 +159,5 @@ public class McMerch implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McMerch[ mcMerchPK=" + mcMerchPK + " ]";
     }
-    
+
 }

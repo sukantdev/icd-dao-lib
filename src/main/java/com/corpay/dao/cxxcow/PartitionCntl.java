@@ -1,37 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PARTITION_CNTL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "PartitionCntl.findAll", query = "SELECT p FROM PartitionCntl p"),
-    @NamedQuery(name = "PartitionCntl.findByPcName", query = "SELECT p FROM PartitionCntl p WHERE p.pcName = :pcName"),
-    @NamedQuery(name = "PartitionCntl.findByPcMax", query = "SELECT p FROM PartitionCntl p WHERE p.pcMax = :pcMax"),
-    @NamedQuery(name = "PartitionCntl.findByPcIntervalType", query = "SELECT p FROM PartitionCntl p WHERE p.pcIntervalType = :pcIntervalType"),
-    @NamedQuery(name = "PartitionCntl.findByPcInterval", query = "SELECT p FROM PartitionCntl p WHERE p.pcInterval = :pcInterval"),
-    @NamedQuery(name = "PartitionCntl.findByPcActCluster", query = "SELECT p FROM PartitionCntl p WHERE p.pcActCluster = :pcActCluster"),
-    @NamedQuery(name = "PartitionCntl.findByPcActDate", query = "SELECT p FROM PartitionCntl p WHERE p.pcActDate = :pcActDate"),
-    @NamedQuery(name = "PartitionCntl.findByPcLoadSw", query = "SELECT p FROM PartitionCntl p WHERE p.pcLoadSw = :pcLoadSw"),
-    @NamedQuery(name = "PartitionCntl.findByPcStatusSw", query = "SELECT p FROM PartitionCntl p WHERE p.pcStatusSw = :pcStatusSw")})
 public class PartitionCntl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -153,7 +133,7 @@ public class PartitionCntl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof PartitionCntl)) {
             return false;
         }
@@ -168,5 +148,5 @@ public class PartitionCntl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.PartitionCntl[ pcName=" + pcName + " ]";
     }
-    
+
 }

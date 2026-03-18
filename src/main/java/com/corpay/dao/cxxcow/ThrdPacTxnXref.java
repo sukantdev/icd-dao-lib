@@ -1,39 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "THRD_PAC_TXN_XREF", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "ThrdPacTxnXref.findAll", query = "SELECT t FROM ThrdPacTxnXref t"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByAuthPan", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.thrdPacTxnXrefPK.authPan = :authPan"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByAuthUtDt", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.thrdPacTxnXrefPK.authUtDt = :authUtDt"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByAuthApprovCd", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.thrdPacTxnXrefPK.authApprovCd = :authApprovCd"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByAuthLocalTs", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.thrdPacTxnXrefPK.authLocalTs = :authLocalTs"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByThrdPacId", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.thrdPacId = :thrdPacId"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByThrdPacXrefNbr", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.thrdPacXrefNbr = :thrdPacXrefNbr"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByCrtTs", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.crtTs = :crtTs"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByCrtUsr", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.crtUsr = :crtUsr"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByMdyTs", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.mdyTs = :mdyTs"),
-    @NamedQuery(name = "ThrdPacTxnXref.findByMdyUsr", query = "SELECT t FROM ThrdPacTxnXref t WHERE t.mdyUsr = :mdyUsr")})
 public class ThrdPacTxnXref implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -146,7 +124,7 @@ public class ThrdPacTxnXref implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof ThrdPacTxnXref)) {
             return false;
         }
@@ -161,5 +139,5 @@ public class ThrdPacTxnXref implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.ThrdPacTxnXref[ thrdPacTxnXrefPK=" + thrdPacTxnXrefPK + " ]";
     }
-    
+
 }

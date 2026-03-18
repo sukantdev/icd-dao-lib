@@ -1,35 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "DPT_TYP", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "DptTyp.findAll", query = "SELECT d FROM DptTyp d"),
-    @NamedQuery(name = "DptTyp.findByDptTyp", query = "SELECT d FROM DptTyp d WHERE d.dptTyp = :dptTyp"),
-    @NamedQuery(name = "DptTyp.findByTypDesc", query = "SELECT d FROM DptTyp d WHERE d.typDesc = :typDesc"),
-    @NamedQuery(name = "DptTyp.findByCrtTs", query = "SELECT d FROM DptTyp d WHERE d.crtTs = :crtTs"),
-    @NamedQuery(name = "DptTyp.findByCrtUsr", query = "SELECT d FROM DptTyp d WHERE d.crtUsr = :crtUsr"),
-    @NamedQuery(name = "DptTyp.findByMdyTs", query = "SELECT d FROM DptTyp d WHERE d.mdyTs = :mdyTs"),
-    @NamedQuery(name = "DptTyp.findByMdyUsr", query = "SELECT d FROM DptTyp d WHERE d.mdyUsr = :mdyUsr")})
 public class DptTyp implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -128,7 +110,7 @@ public class DptTyp implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof DptTyp)) {
             return false;
         }
@@ -143,5 +125,5 @@ public class DptTyp implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.DptTyp[ dptTyp=" + dptTyp + " ]";
     }
-    
+
 }

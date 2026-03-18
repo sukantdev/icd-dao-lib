@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,14 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "WD_AUDT_LOG", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "WdAudtLog.findAll", query = "SELECT w FROM WdAudtLog w")})
 public class WdAudtLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -36,7 +24,7 @@ public class WdAudtLog implements Serializable {
     @Basic(optional = false)
     @Column(name = "BT_BNK_REF_NBR")
     private String btBnkRefNbr;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "BT_PMT_AMT")
     private BigDecimal btPmtAmt;
@@ -209,7 +197,7 @@ public class WdAudtLog implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof WdAudtLog)) {
             return false;
         }
@@ -224,5 +212,5 @@ public class WdAudtLog implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.WdAudtLog[ crtTs=" + crtTs + " ]";
     }
-    
+
 }

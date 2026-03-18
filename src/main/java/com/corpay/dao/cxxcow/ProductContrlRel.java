@@ -1,26 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PRODUCT_CONTRL_REL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "ProductContrlRel.findAll", query = "SELECT p FROM ProductContrlRel p"),
-    @NamedQuery(name = "ProductContrlRel.findByProdcId", query = "SELECT p FROM ProductContrlRel p WHERE p.productContrlRelPK.prodcId = :prodcId"),
-    @NamedQuery(name = "ProductContrlRel.findByProdcIdSub", query = "SELECT p FROM ProductContrlRel p WHERE p.productContrlRelPK.prodcIdSub = :prodcIdSub")})
 public class ProductContrlRel implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -55,7 +41,7 @@ public class ProductContrlRel implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof ProductContrlRel)) {
             return false;
         }
@@ -70,5 +56,5 @@ public class ProductContrlRel implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.ProductContrlRel[ productContrlRelPK=" + productContrlRelPK + " ]";
     }
-    
+
 }

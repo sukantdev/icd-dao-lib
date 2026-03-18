@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -10,34 +6,14 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "GROUPS_RESOURCE", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "GroupsResource.findAll", query = "SELECT g FROM GroupsResource g"),
-    @NamedQuery(name = "GroupsResource.findByRsrcId", query = "SELECT g FROM GroupsResource g WHERE g.groupsResourcePK.rsrcId = :rsrcId"),
-    @NamedQuery(name = "GroupsResource.findByGroupId", query = "SELECT g FROM GroupsResource g WHERE g.groupsResourcePK.groupId = :groupId"),
-    @NamedQuery(name = "GroupsResource.findByGrInsertFg", query = "SELECT g FROM GroupsResource g WHERE g.grInsertFg = :grInsertFg"),
-    @NamedQuery(name = "GroupsResource.findByGrInquiryFg", query = "SELECT g FROM GroupsResource g WHERE g.grInquiryFg = :grInquiryFg"),
-    @NamedQuery(name = "GroupsResource.findByGrUpdteFg", query = "SELECT g FROM GroupsResource g WHERE g.grUpdteFg = :grUpdteFg"),
-    @NamedQuery(name = "GroupsResource.findByGrDeleteFg", query = "SELECT g FROM GroupsResource g WHERE g.grDeleteFg = :grDeleteFg"),
-    @NamedQuery(name = "GroupsResource.findByGrBrowseFg", query = "SELECT g FROM GroupsResource g WHERE g.grBrowseFg = :grBrowseFg"),
-    @NamedQuery(name = "GroupsResource.findByGrOpencloseFg", query = "SELECT g FROM GroupsResource g WHERE g.grOpencloseFg = :grOpencloseFg"),
-    @NamedQuery(name = "GroupsResource.findByGrUptDte", query = "SELECT g FROM GroupsResource g WHERE g.grUptDte = :grUptDte"),
-    @NamedQuery(name = "GroupsResource.findByGrUptUsr", query = "SELECT g FROM GroupsResource g WHERE g.grUptUsr = :grUptUsr"),
-    @NamedQuery(name = "GroupsResource.findByGrAccessDte", query = "SELECT g FROM GroupsResource g WHERE g.grAccessDte = :grAccessDte"),
-    @NamedQuery(name = "GroupsResource.findByGrAccessUsr", query = "SELECT g FROM GroupsResource g WHERE g.grAccessUsr = :grAccessUsr")})
 public class GroupsResource implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -220,7 +196,7 @@ public class GroupsResource implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof GroupsResource)) {
             return false;
         }
@@ -235,5 +211,5 @@ public class GroupsResource implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.GroupsResource[ groupsResourcePK=" + groupsResourcePK + " ]";
     }
-    
+
 }

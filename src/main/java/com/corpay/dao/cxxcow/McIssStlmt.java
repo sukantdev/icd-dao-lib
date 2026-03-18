@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,113 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ISS_STLMT", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McIssStlmt.findAll", query = "SELECT m FROM McIssStlmt m"),
-    @NamedQuery(name = "McIssStlmt.findByStlmtId", query = "SELECT m FROM McIssStlmt m WHERE m.stlmtId = :stlmtId"),
-    @NamedQuery(name = "McIssStlmt.findByIsSendIca", query = "SELECT m FROM McIssStlmt m WHERE m.isSendIca = :isSendIca"),
-    @NamedQuery(name = "McIssStlmt.findByIsRecType", query = "SELECT m FROM McIssStlmt m WHERE m.isRecType = :isRecType"),
-    @NamedQuery(name = "McIssStlmt.findByIsXmitIdno", query = "SELECT m FROM McIssStlmt m WHERE m.isXmitIdno = :isXmitIdno"),
-    @NamedQuery(name = "McIssStlmt.findByIsXmitJulian", query = "SELECT m FROM McIssStlmt m WHERE m.isXmitJulian = :isXmitJulian"),
-    @NamedQuery(name = "McIssStlmt.findByIsXmitSendIca", query = "SELECT m FROM McIssStlmt m WHERE m.isXmitSendIca = :isXmitSendIca"),
-    @NamedQuery(name = "McIssStlmt.findByIsXmitIdSeqNo", query = "SELECT m FROM McIssStlmt m WHERE m.isXmitIdSeqNo = :isXmitIdSeqNo"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoCashDisb", query = "SELECT m FROM McIssStlmt m WHERE m.isNoCashDisb = :isNoCashDisb"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtCashDisb", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtCashDisb = :isAmtCashDisb"),
-    @NamedQuery(name = "McIssStlmt.findByIsCashDisbInd", query = "SELECT m FROM McIssStlmt m WHERE m.isCashDisbInd = :isCashDisbInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtCashFees", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtCashFees = :isAmtCashFees"),
-    @NamedQuery(name = "McIssStlmt.findByIsCashFeesInd", query = "SELECT m FROM McIssStlmt m WHERE m.isCashFeesInd = :isCashFeesInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoRtlSales", query = "SELECT m FROM McIssStlmt m WHERE m.isNoRtlSales = :isNoRtlSales"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtRtlSales", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtRtlSales = :isAmtRtlSales"),
-    @NamedQuery(name = "McIssStlmt.findByIsRtlSalesInd", query = "SELECT m FROM McIssStlmt m WHERE m.isRtlSalesInd = :isRtlSalesInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoCred", query = "SELECT m FROM McIssStlmt m WHERE m.isNoCred = :isNoCred"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtCred", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtCred = :isAmtCred"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtCredInd", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtCredInd = :isAmtCredInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoUniqXact", query = "SELECT m FROM McIssStlmt m WHERE m.isNoUniqXact = :isNoUniqXact"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtUniqXact", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtUniqXact = :isAmtUniqXact"),
-    @NamedQuery(name = "McIssStlmt.findByIsUniqXactInd", query = "SELECT m FROM McIssStlmt m WHERE m.isUniqXactInd = :isUniqXactInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoAtmCshDis", query = "SELECT m FROM McIssStlmt m WHERE m.isNoAtmCshDis = :isNoAtmCshDis"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtAtmCshDi", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtAtmCshDi = :isAmtAtmCshDi"),
-    @NamedQuery(name = "McIssStlmt.findByIsAtmCshDisInd", query = "SELECT m FROM McIssStlmt m WHERE m.isAtmCshDisInd = :isAtmCshDisInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtAtmCshFee", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtAtmCshFee = :isAmtAtmCshFee"),
-    @NamedQuery(name = "McIssStlmt.findByIsAtmCshFeeInd", query = "SELECT m FROM McIssStlmt m WHERE m.isAtmCshFeeInd = :isAtmCshFeeInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsInterFees", query = "SELECT m FROM McIssStlmt m WHERE m.isInterFees = :isInterFees"),
-    @NamedQuery(name = "McIssStlmt.findByIsInterFeesInd", query = "SELECT m FROM McIssStlmt m WHERE m.isInterFeesInd = :isInterFeesInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoNonstdXact", query = "SELECT m FROM McIssStlmt m WHERE m.isNoNonstdXact = :isNoNonstdXact"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtNonstdXact", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtNonstdXact = :isAmtNonstdXact"),
-    @NamedQuery(name = "McIssStlmt.findByIsNonstdXactInd", query = "SELECT m FROM McIssStlmt m WHERE m.isNonstdXactInd = :isNonstdXactInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNonstdIntFee", query = "SELECT m FROM McIssStlmt m WHERE m.isNonstdIntFee = :isNonstdIntFee"),
-    @NamedQuery(name = "McIssStlmt.findByIsNstdIntFeInd", query = "SELECT m FROM McIssStlmt m WHERE m.isNstdIntFeInd = :isNstdIntFeInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoIntlCshDis", query = "SELECT m FROM McIssStlmt m WHERE m.isNoIntlCshDis = :isNoIntlCshDis"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtIntlCshDi", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtIntlCshDi = :isAmtIntlCshDi"),
-    @NamedQuery(name = "McIssStlmt.findByIsIntlCshDiInd", query = "SELECT m FROM McIssStlmt m WHERE m.isIntlCshDiInd = :isIntlCshDiInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtCshDisFee", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtCshDisFee = :isAmtCshDisFee"),
-    @NamedQuery(name = "McIssStlmt.findByIsCshDisFeeInd", query = "SELECT m FROM McIssStlmt m WHERE m.isCshDisFeeInd = :isCshDisFeeInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoIntlRtlSa", query = "SELECT m FROM McIssStlmt m WHERE m.isNoIntlRtlSa = :isNoIntlRtlSa"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtIntlRtlSa", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtIntlRtlSa = :isAmtIntlRtlSa"),
-    @NamedQuery(name = "McIssStlmt.findByIsIntlRtlInd", query = "SELECT m FROM McIssStlmt m WHERE m.isIntlRtlInd = :isIntlRtlInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoIntlCrdSa", query = "SELECT m FROM McIssStlmt m WHERE m.isNoIntlCrdSa = :isNoIntlCrdSa"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtIntlCred", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtIntlCred = :isAmtIntlCred"),
-    @NamedQuery(name = "McIssStlmt.findByIsIntlCrdInd", query = "SELECT m FROM McIssStlmt m WHERE m.isIntlCrdInd = :isIntlCrdInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoIntlUnXmit", query = "SELECT m FROM McIssStlmt m WHERE m.isNoIntlUnXmit = :isNoIntlUnXmit"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtIntlUnXmi", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtIntlUnXmi = :isAmtIntlUnXmi"),
-    @NamedQuery(name = "McIssStlmt.findByIsIntlUnXmiInd", query = "SELECT m FROM McIssStlmt m WHERE m.isIntlUnXmiInd = :isIntlUnXmiInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoInAtmCaD", query = "SELECT m FROM McIssStlmt m WHERE m.isNoInAtmCaD = :isNoInAtmCaD"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtInAtmCaD", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtInAtmCaD = :isAmtInAtmCaD"),
-    @NamedQuery(name = "McIssStlmt.findByIsInAtmCaDInd", query = "SELECT m FROM McIssStlmt m WHERE m.isInAtmCaDInd = :isInAtmCaDInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsIntAtmCDFee", query = "SELECT m FROM McIssStlmt m WHERE m.isIntAtmCDFee = :isIntAtmCDFee"),
-    @NamedQuery(name = "McIssStlmt.findByIsInAtmCDFIn", query = "SELECT m FROM McIssStlmt m WHERE m.isInAtmCDFIn = :isInAtmCDFIn"),
-    @NamedQuery(name = "McIssStlmt.findByIsIntlIntchgFee", query = "SELECT m FROM McIssStlmt m WHERE m.isIntlIntchgFee = :isIntlIntchgFee"),
-    @NamedQuery(name = "McIssStlmt.findByIsIntlIntchgInd", query = "SELECT m FROM McIssStlmt m WHERE m.isIntlIntchgInd = :isIntlIntchgInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoReqCpy", query = "SELECT m FROM McIssStlmt m WHERE m.isNoReqCpy = :isNoReqCpy"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoHardCpyReq", query = "SELECT m FROM McIssStlmt m WHERE m.isNoHardCpyReq = :isNoHardCpyReq"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoAcquRtrCpy", query = "SELECT m FROM McIssStlmt m WHERE m.isNoAcquRtrCpy = :isNoAcquRtrCpy"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoAcquRtrSub", query = "SELECT m FROM McIssStlmt m WHERE m.isNoAcquRtrSub = :isNoAcquRtrSub"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoFulfilCpy", query = "SELECT m FROM McIssStlmt m WHERE m.isNoFulfilCpy = :isNoFulfilCpy"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtRetrFfCpy", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtRetrFfCpy = :isAmtRetrFfCpy"),
-    @NamedQuery(name = "McIssStlmt.findByIsRetrFfCpyInd", query = "SELECT m FROM McIssStlmt m WHERE m.isRetrFfCpyInd = :isRetrFfCpyInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoRrFfHcSub", query = "SELECT m FROM McIssStlmt m WHERE m.isNoRrFfHcSub = :isNoRrFfHcSub"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtCpySubFee", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtCpySubFee = :isAmtCpySubFee"),
-    @NamedQuery(name = "McIssStlmt.findByIsCpySubFeeInd", query = "SELECT m FROM McIssStlmt m WHERE m.isCpySubFeeInd = :isCpySubFeeInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNo1stCback", query = "SELECT m FROM McIssStlmt m WHERE m.isNo1stCback = :isNo1stCback"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmt1stCback", query = "SELECT m FROM McIssStlmt m WHERE m.isAmt1stCback = :isAmt1stCback"),
-    @NamedQuery(name = "McIssStlmt.findByIs1stCbackInd", query = "SELECT m FROM McIssStlmt m WHERE m.is1stCbackInd = :is1stCbackInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmt1stCbackF", query = "SELECT m FROM McIssStlmt m WHERE m.isAmt1stCbackF = :isAmt1stCbackF"),
-    @NamedQuery(name = "McIssStlmt.findByIs1stCbackFInd", query = "SELECT m FROM McIssStlmt m WHERE m.is1stCbackFInd = :is1stCbackFInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNo2ndPresent", query = "SELECT m FROM McIssStlmt m WHERE m.isNo2ndPresent = :isNo2ndPresent"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmt2ndPresent", query = "SELECT m FROM McIssStlmt m WHERE m.isAmt2ndPresent = :isAmt2ndPresent"),
-    @NamedQuery(name = "McIssStlmt.findByIs2ndPresentInd", query = "SELECT m FROM McIssStlmt m WHERE m.is2ndPresentInd = :is2ndPresentInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmt2ndPrFees", query = "SELECT m FROM McIssStlmt m WHERE m.isAmt2ndPrFees = :isAmt2ndPrFees"),
-    @NamedQuery(name = "McIssStlmt.findByIs2ndPrFeesInd", query = "SELECT m FROM McIssStlmt m WHERE m.is2ndPrFeesInd = :is2ndPrFeesInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoArbitCback", query = "SELECT m FROM McIssStlmt m WHERE m.isNoArbitCback = :isNoArbitCback"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtArbitCback", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtArbitCback = :isAmtArbitCback"),
-    @NamedQuery(name = "McIssStlmt.findByIsArbCbackInd", query = "SELECT m FROM McIssStlmt m WHERE m.isArbCbackInd = :isArbCbackInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtArbCbFee", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtArbCbFee = :isAmtArbCbFee"),
-    @NamedQuery(name = "McIssStlmt.findByIsArbCbFeeInd", query = "SELECT m FROM McIssStlmt m WHERE m.isArbCbFeeInd = :isArbCbFeeInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtIntCbFee", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtIntCbFee = :isAmtIntCbFee"),
-    @NamedQuery(name = "McIssStlmt.findByIsIntCbFeeInd", query = "SELECT m FROM McIssStlmt m WHERE m.isIntCbFeeInd = :isIntCbFeeInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtInPresFee", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtInPresFee = :isAmtInPresFee"),
-    @NamedQuery(name = "McIssStlmt.findByIsInPresFeeInd", query = "SELECT m FROM McIssStlmt m WHERE m.isInPresFeeInd = :isInPresFeeInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoMiscXact", query = "SELECT m FROM McIssStlmt m WHERE m.isNoMiscXact = :isNoMiscXact"),
-    @NamedQuery(name = "McIssStlmt.findByIsAmtMiscXact", query = "SELECT m FROM McIssStlmt m WHERE m.isAmtMiscXact = :isAmtMiscXact"),
-    @NamedQuery(name = "McIssStlmt.findByIsMiscXactInd", query = "SELECT m FROM McIssStlmt m WHERE m.isMiscXactInd = :isMiscXactInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNetStlmtAmt", query = "SELECT m FROM McIssStlmt m WHERE m.isNetStlmtAmt = :isNetStlmtAmt"),
-    @NamedQuery(name = "McIssStlmt.findByIsStlmtAmtInd", query = "SELECT m FROM McIssStlmt m WHERE m.isStlmtAmtInd = :isStlmtAmtInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNetAmMonXact", query = "SELECT m FROM McIssStlmt m WHERE m.isNetAmMonXact = :isNetAmMonXact"),
-    @NamedQuery(name = "McIssStlmt.findByIsNetMonXacInd", query = "SELECT m FROM McIssStlmt m WHERE m.isNetMonXacInd = :isNetMonXacInd"),
-    @NamedQuery(name = "McIssStlmt.findByIsNoMonRcds", query = "SELECT m FROM McIssStlmt m WHERE m.isNoMonRcds = :isNoMonRcds"),
-    @NamedQuery(name = "McIssStlmt.findByIsXmissRejCd", query = "SELECT m FROM McIssStlmt m WHERE m.isXmissRejCd = :isXmissRejCd"),
-    @NamedQuery(name = "McIssStlmt.findByNoteid", query = "SELECT m FROM McIssStlmt m WHERE m.noteid = :noteid"),
-    @NamedQuery(name = "McIssStlmt.findByClusterKey", query = "SELECT m FROM McIssStlmt m WHERE m.clusterKey = :clusterKey"),
-    @NamedQuery(name = "McIssStlmt.findByIsProcessedTs", query = "SELECT m FROM McIssStlmt m WHERE m.isProcessedTs = :isProcessedTs"),
-    @NamedQuery(name = "McIssStlmt.findByIsProcessedFlg", query = "SELECT m FROM McIssStlmt m WHERE m.isProcessedFlg = :isProcessedFlg"),
-    @NamedQuery(name = "McIssStlmt.findByIsFileName", query = "SELECT m FROM McIssStlmt m WHERE m.isFileName = :isFileName"),
-    @NamedQuery(name = "McIssStlmt.findByIsXmitJulianYr", query = "SELECT m FROM McIssStlmt m WHERE m.isXmitJulianYr = :isXmitJulianYr"),
-    @NamedQuery(name = "McIssStlmt.findByMcFilteredFlg", query = "SELECT m FROM McIssStlmt m WHERE m.mcFilteredFlg = :mcFilteredFlg")})
 public class McIssStlmt implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -153,7 +42,7 @@ public class McIssStlmt implements Serializable {
     @Basic(optional = false)
     @Column(name = "IS_NO_CASH_DISB")
     private int isNoCashDisb;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "IS_AMT_CASH_DISB")
     private BigDecimal isAmtCashDisb;
@@ -1339,7 +1228,7 @@ public class McIssStlmt implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McIssStlmt)) {
             return false;
         }
@@ -1354,5 +1243,5 @@ public class McIssStlmt implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McIssStlmt[ stlmtId=" + stlmtId + " ]";
     }
-    
+
 }

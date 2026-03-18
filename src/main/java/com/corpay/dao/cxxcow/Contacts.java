@@ -1,42 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
+
+import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import java.io.Serializable;
-import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CONTACTS", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "Contacts.findAll", query = "SELECT c FROM Contacts c"),
-    @NamedQuery(name = "Contacts.findByCcUniqueId", query = "SELECT c FROM Contacts c WHERE c.ccUniqueId = :ccUniqueId"),
-    @NamedQuery(name = "Contacts.findByDeptCode", query = "SELECT c FROM Contacts c WHERE c.deptCode = :deptCode"),
-    @NamedQuery(name = "Contacts.findByCcName", query = "SELECT c FROM Contacts c WHERE c.ccName = :ccName"),
-    @NamedQuery(name = "Contacts.findByCcPhoneNbr", query = "SELECT c FROM Contacts c WHERE c.ccPhoneNbr = :ccPhoneNbr"),
-    @NamedQuery(name = "Contacts.findByCcCompanyName", query = "SELECT c FROM Contacts c WHERE c.ccCompanyName = :ccCompanyName"),
-    @NamedQuery(name = "Contacts.findByCcNarrative", query = "SELECT c FROM Contacts c WHERE c.ccNarrative = :ccNarrative"),
-    @NamedQuery(name = "Contacts.findByCcUptDate", query = "SELECT c FROM Contacts c WHERE c.ccUptDate = :ccUptDate"),
-    @NamedQuery(name = "Contacts.findByCcStatusCode", query = "SELECT c FROM Contacts c WHERE c.ccStatusCode = :ccStatusCode"),
-    @NamedQuery(name = "Contacts.findByCcEmail", query = "SELECT c FROM Contacts c WHERE c.ccEmail = :ccEmail"),
-    @NamedQuery(name = "Contacts.findByCcPhnExt", query = "SELECT c FROM Contacts c WHERE c.ccPhnExt = :ccPhnExt"),
-    @NamedQuery(name = "Contacts.findByCcNbrTrucks", query = "SELECT c FROM Contacts c WHERE c.ccNbrTrucks = :ccNbrTrucks"),
-    @NamedQuery(name = "Contacts.findByCcPlatform", query = "SELECT c FROM Contacts c WHERE c.ccPlatform = :ccPlatform"),
-    @NamedQuery(name = "Contacts.findByCcSubject", query = "SELECT c FROM Contacts c WHERE c.ccSubject = :ccSubject")})
 public class Contacts implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -207,7 +183,7 @@ public class Contacts implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof Contacts)) {
             return false;
         }
@@ -222,5 +198,5 @@ public class Contacts implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.Contacts[ ccUniqueId=" + ccUniqueId + " ]";
     }
-    
+
 }

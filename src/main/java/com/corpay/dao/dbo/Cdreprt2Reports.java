@@ -1,27 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CDREPRT2_REPORTS", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "Cdreprt2Reports.findAll", query = "SELECT c FROM Cdreprt2Reports c")})
 public class Cdreprt2Reports implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -39,7 +27,7 @@ public class Cdreprt2Reports implements Serializable {
     @Basic(optional = false)
     @Column(name = "STYLE")
     private String style;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "REPORT_CHARGE")
     private BigDecimal reportCharge;
@@ -721,7 +709,7 @@ public class Cdreprt2Reports implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof Cdreprt2Reports)) {
             return false;
         }
@@ -736,5 +724,5 @@ public class Cdreprt2Reports implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.Cdreprt2Reports[ cdreprt2ReportsPK=" + cdreprt2ReportsPK + " ]";
     }
-    
+
 }

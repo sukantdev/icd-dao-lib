@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,125 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_CC_COMMON", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddCcCommon.findAll", query = "SELECT m FROM McAddCcCommon m"),
-    @NamedQuery(name = "McAddCcCommon.findByP105s1FileTy", query = "SELECT m FROM McAddCcCommon m WHERE m.mcAddCcCommonPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddCcCommon.findByP105s2FileRDt", query = "SELECT m FROM McAddCcCommon m WHERE m.mcAddCcCommonPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddCcCommon.findByP105s3ProcId", query = "SELECT m FROM McAddCcCommon m WHERE m.mcAddCcCommonPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddCcCommon.findByP105s4FileSeqNo", query = "SELECT m FROM McAddCcCommon m WHERE m.mcAddCcCommonPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddCcCommon.findByMsgTyId", query = "SELECT m FROM McAddCcCommon m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddCcCommon.findByBitMapPri", query = "SELECT m FROM McAddCcCommon m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddCcCommon.findByD1BitMapSec", query = "SELECT m FROM McAddCcCommon m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddCcCommon.findByD24FuncCd", query = "SELECT m FROM McAddCcCommon m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddCcCommon.findByD32AcqInstIdCd", query = "SELECT m FROM McAddCcCommon m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddCcCommon.findByD33FwdngInstCd", query = "SELECT m FROM McAddCcCommon m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddCcCommon.findByD48AddtlDat", query = "SELECT m FROM McAddCcCommon m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddCcCommon.findByP191OrMsgFmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP501s1UsageCd", query = "SELECT m FROM McAddCcCommon m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddCcCommon.findByP501s2IndstyRec", query = "SELECT m FROM McAddCcCommon m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddCcCommon.findByP501s3OccInd", query = "SELECT m FROM McAddCcCommon m WHERE m.mcAddCcCommonPK.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddCcCommon.findByP501s4MsgNo", query = "SELECT m FROM McAddCcCommon m WHERE m.mcAddCcCommonPK.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddCcCommon.findByP508CustCd", query = "SELECT m FROM McAddCcCommon m WHERE m.p508CustCd = :p508CustCd"),
-    @NamedQuery(name = "McAddCcCommon.findByP595CrdAcpTy", query = "SELECT m FROM McAddCcCommon m WHERE m.p595CrdAcpTy = :p595CrdAcpTy"),
-    @NamedQuery(name = "McAddCcCommon.findByP596CrdAcpTx", query = "SELECT m FROM McAddCcCommon m WHERE m.p596CrdAcpTx = :p596CrdAcpTx"),
-    @NamedQuery(name = "McAddCcCommon.findByP597TaxAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p597TaxAmt = :p597TaxAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP598TaxCollInd", query = "SELECT m FROM McAddCcCommon m WHERE m.p598TaxCollInd = :p598TaxCollInd"),
-    @NamedQuery(name = "McAddCcCommon.findByP599CorpVatNo", query = "SELECT m FROM McAddCcCommon m WHERE m.p599CorpVatNo = :p599CorpVatNo"),
-    @NamedQuery(name = "McAddCcCommon.findByP600CrdAcpRef", query = "SELECT m FROM McAddCcCommon m WHERE m.p600CrdAcpRef = :p600CrdAcpRef"),
-    @NamedQuery(name = "McAddCcCommon.findByP606FreightAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p606FreightAmt = :p606FreightAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP607DutyAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p607DutyAmt = :p607DutyAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP608DestPostal", query = "SELECT m FROM McAddCcCommon m WHERE m.p608DestPostal = :p608DestPostal"),
-    @NamedQuery(name = "McAddCcCommon.findByP609DestSt", query = "SELECT m FROM McAddCcCommon m WHERE m.p609DestSt = :p609DestSt"),
-    @NamedQuery(name = "McAddCcCommon.findByP610DestCntry", query = "SELECT m FROM McAddCcCommon m WHERE m.p610DestCntry = :p610DestCntry"),
-    @NamedQuery(name = "McAddCcCommon.findByP611s1AlttaxInd", query = "SELECT m FROM McAddCcCommon m WHERE m.p611s1AlttaxInd = :p611s1AlttaxInd"),
-    @NamedQuery(name = "McAddCcCommon.findByP611s2AlttaxAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p611s2AlttaxAmt = :p611s2AlttaxAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP613ShipFrmPst", query = "SELECT m FROM McAddCcCommon m WHERE m.p613ShipFrmPst = :p613ShipFrmPst"),
-    @NamedQuery(name = "McAddCcCommon.findByP614OrderDt", query = "SELECT m FROM McAddCcCommon m WHERE m.p614OrderDt = :p614OrderDt"),
-    @NamedQuery(name = "McAddCcCommon.findByP676CrdAcpVat", query = "SELECT m FROM McAddCcCommon m WHERE m.p676CrdAcpVat = :p676CrdAcpVat"),
-    @NamedQuery(name = "McAddCcCommon.findByP677CustVatNo", query = "SELECT m FROM McAddCcCommon m WHERE m.p677CustVatNo = :p677CustVatNo"),
-    @NamedQuery(name = "McAddCcCommon.findByP678UniqueInv", query = "SELECT m FROM McAddCcCommon m WHERE m.p678UniqueInv = :p678UniqueInv"),
-    @NamedQuery(name = "McAddCcCommon.findByP679Commodity", query = "SELECT m FROM McAddCcCommon m WHERE m.p679Commodity = :p679Commodity"),
-    @NamedQuery(name = "McAddCcCommon.findByP680AuthConNm", query = "SELECT m FROM McAddCcCommon m WHERE m.p680AuthConNm = :p680AuthConNm"),
-    @NamedQuery(name = "McAddCcCommon.findByP681AuthConPh", query = "SELECT m FROM McAddCcCommon m WHERE m.p681AuthConPh = :p681AuthConPh"),
-    @NamedQuery(name = "McAddCcCommon.findByP682s1TxAmtInd", query = "SELECT m FROM McAddCcCommon m WHERE m.p682s1TxAmtInd = :p682s1TxAmtInd"),
-    @NamedQuery(name = "McAddCcCommon.findByP682s2TxAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p682s2TxAmt = :p682s2TxAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP682s3TxRt", query = "SELECT m FROM McAddCcCommon m WHERE m.p682s3TxRt = :p682s3TxRt"),
-    @NamedQuery(name = "McAddCcCommon.findByP682s4TxRtExp", query = "SELECT m FROM McAddCcCommon m WHERE m.p682s4TxRtExp = :p682s4TxRtExp"),
-    @NamedQuery(name = "McAddCcCommon.findByP682s5TxTyApp", query = "SELECT m FROM McAddCcCommon m WHERE m.p682s5TxTyApp = :p682s5TxTyApp"),
-    @NamedQuery(name = "McAddCcCommon.findByP682s6TxTyId", query = "SELECT m FROM McAddCcCommon m WHERE m.p682s6TxTyId = :p682s6TxTyId"),
-    @NamedQuery(name = "McAddCcCommon.findByP682s7CrdAcptx", query = "SELECT m FROM McAddCcCommon m WHERE m.p682s7CrdAcptx = :p682s7CrdAcptx"),
-    @NamedQuery(name = "McAddCcCommon.findByP683s1TxAmtInd", query = "SELECT m FROM McAddCcCommon m WHERE m.p683s1TxAmtInd = :p683s1TxAmtInd"),
-    @NamedQuery(name = "McAddCcCommon.findByP683s2TxAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p683s2TxAmt = :p683s2TxAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP683s3TxRt", query = "SELECT m FROM McAddCcCommon m WHERE m.p683s3TxRt = :p683s3TxRt"),
-    @NamedQuery(name = "McAddCcCommon.findByP683s4TxRtExp", query = "SELECT m FROM McAddCcCommon m WHERE m.p683s4TxRtExp = :p683s4TxRtExp"),
-    @NamedQuery(name = "McAddCcCommon.findByP683s5TxTyApp", query = "SELECT m FROM McAddCcCommon m WHERE m.p683s5TxTyApp = :p683s5TxTyApp"),
-    @NamedQuery(name = "McAddCcCommon.findByP683s6TaxTyId", query = "SELECT m FROM McAddCcCommon m WHERE m.p683s6TaxTyId = :p683s6TaxTyId"),
-    @NamedQuery(name = "McAddCcCommon.findByP683s7CrdAcptx", query = "SELECT m FROM McAddCcCommon m WHERE m.p683s7CrdAcptx = :p683s7CrdAcptx"),
-    @NamedQuery(name = "McAddCcCommon.findByP684s1TxAmtInd", query = "SELECT m FROM McAddCcCommon m WHERE m.p684s1TxAmtInd = :p684s1TxAmtInd"),
-    @NamedQuery(name = "McAddCcCommon.findByP684s2TxAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p684s2TxAmt = :p684s2TxAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP684s3TxRt", query = "SELECT m FROM McAddCcCommon m WHERE m.p684s3TxRt = :p684s3TxRt"),
-    @NamedQuery(name = "McAddCcCommon.findByP684s4TxRtExp", query = "SELECT m FROM McAddCcCommon m WHERE m.p684s4TxRtExp = :p684s4TxRtExp"),
-    @NamedQuery(name = "McAddCcCommon.findByP684s5TxTyApp", query = "SELECT m FROM McAddCcCommon m WHERE m.p684s5TxTyApp = :p684s5TxTyApp"),
-    @NamedQuery(name = "McAddCcCommon.findByP684s6TaxTyId", query = "SELECT m FROM McAddCcCommon m WHERE m.p684s6TaxTyId = :p684s6TaxTyId"),
-    @NamedQuery(name = "McAddCcCommon.findByP684s7CrdAcptx", query = "SELECT m FROM McAddCcCommon m WHERE m.p684s7CrdAcptx = :p684s7CrdAcptx"),
-    @NamedQuery(name = "McAddCcCommon.findByP686TaxExempt", query = "SELECT m FROM McAddCcCommon m WHERE m.p686TaxExempt = :p686TaxExempt"),
-    @NamedQuery(name = "McAddCcCommon.findByD62AddtlData2", query = "SELECT m FROM McAddCcCommon m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McAddCcCommon.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddCcCommon m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddCcCommon.findByD63s2TraceId", query = "SELECT m FROM McAddCcCommon m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddCcCommon.findByD63s3ValidnCd", query = "SELECT m FROM McAddCcCommon m WHERE m.d63s3ValidnCd = :d63s3ValidnCd"),
-    @NamedQuery(name = "McAddCcCommon.findByD63s4LfcyctrSeq", query = "SELECT m FROM McAddCcCommon m WHERE m.d63s4LfcyctrSeq = :d63s4LfcyctrSeq"),
-    @NamedQuery(name = "McAddCcCommon.findByD63s5LfcyctrTot", query = "SELECT m FROM McAddCcCommon m WHERE m.d63s5LfcyctrTot = :d63s5LfcyctrTot"),
-    @NamedQuery(name = "McAddCcCommon.findByD71MsgNo", query = "SELECT m FROM McAddCcCommon m WHERE m.mcAddCcCommonPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddCcCommon.findByD93TrDestInst", query = "SELECT m FROM McAddCcCommon m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddCcCommon.findByD94TrOrgInst", query = "SELECT m FROM McAddCcCommon m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddCcCommon.findByD100RecvInstId", query = "SELECT m FROM McAddCcCommon m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddCcCommon.findByD123AddtlDat3", query = "SELECT m FROM McAddCcCommon m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddCcCommon.findByD124AddtlDat4", query = "SELECT m FROM McAddCcCommon m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddCcCommon.findByD125AddtlDat5", query = "SELECT m FROM McAddCcCommon m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McAddCcCommon.findByP515AdcrdAcptIn", query = "SELECT m FROM McAddCcCommon m WHERE m.p515AdcrdAcptIn = :p515AdcrdAcptIn"),
-    @NamedQuery(name = "McAddCcCommon.findByP516AtetraNbr", query = "SELECT m FROM McAddCcCommon m WHERE m.p516AtetraNbr = :p516AtetraNbr"),
-    @NamedQuery(name = "McAddCcCommon.findByP517NaicsCd", query = "SELECT m FROM McAddCcCommon m WHERE m.p517NaicsCd = :p517NaicsCd"),
-    @NamedQuery(name = "McAddCcCommon.findByP595s1BusTyp", query = "SELECT m FROM McAddCcCommon m WHERE m.p595s1BusTyp = :p595s1BusTyp"),
-    @NamedQuery(name = "McAddCcCommon.findByP595s2BusOwnrTy", query = "SELECT m FROM McAddCcCommon m WHERE m.p595s2BusOwnrTy = :p595s2BusOwnrTy"),
-    @NamedQuery(name = "McAddCcCommon.findByP595s3BusCertTy", query = "SELECT m FROM McAddCcCommon m WHERE m.p595s3BusCertTy = :p595s3BusCertTy"),
-    @NamedQuery(name = "McAddCcCommon.findByP595s4BusRaceTy", query = "SELECT m FROM McAddCcCommon m WHERE m.p595s4BusRaceTy = :p595s4BusRaceTy"),
-    @NamedQuery(name = "McAddCcCommon.findByP595s5BustypPrcd", query = "SELECT m FROM McAddCcCommon m WHERE m.p595s5BustypPrcd = :p595s5BustypPrcd"),
-    @NamedQuery(name = "McAddCcCommon.findByP595s6BusownrPrc", query = "SELECT m FROM McAddCcCommon m WHERE m.p595s6BusownrPrc = :p595s6BusownrPrc"),
-    @NamedQuery(name = "McAddCcCommon.findByP595s7BuscertPrc", query = "SELECT m FROM McAddCcCommon m WHERE m.p595s7BuscertPrc = :p595s7BuscertPrc"),
-    @NamedQuery(name = "McAddCcCommon.findByP595s8BusracePrc", query = "SELECT m FROM McAddCcCommon m WHERE m.p595s8BusracePrc = :p595s8BusracePrc"),
-    @NamedQuery(name = "McAddCcCommon.findByP596s1CrdacpTxid", query = "SELECT m FROM McAddCcCommon m WHERE m.p596s1CrdacpTxid = :p596s1CrdacpTxid"),
-    @NamedQuery(name = "McAddCcCommon.findByP596s2CrdacpTxpc", query = "SELECT m FROM McAddCcCommon m WHERE m.p596s2CrdacpTxpc = :p596s2CrdacpTxpc"),
-    @NamedQuery(name = "McAddCcCommon.findByP597s1TtxAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p597s1TtxAmt = :p597s1TtxAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP597s2TtxAmtExp", query = "SELECT m FROM McAddCcCommon m WHERE m.p597s2TtxAmtExp = :p597s2TtxAmtExp"),
-    @NamedQuery(name = "McAddCcCommon.findByP597s3TtxAmtSig", query = "SELECT m FROM McAddCcCommon m WHERE m.p597s3TtxAmtSig = :p597s3TtxAmtSig"),
-    @NamedQuery(name = "McAddCcCommon.findByP606s1FrtAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p606s1FrtAmt = :p606s1FrtAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP606s2FrtAmtExp", query = "SELECT m FROM McAddCcCommon m WHERE m.p606s2FrtAmtExp = :p606s2FrtAmtExp"),
-    @NamedQuery(name = "McAddCcCommon.findByP606s3FrtAmtSig", query = "SELECT m FROM McAddCcCommon m WHERE m.p606s3FrtAmtSig = :p606s3FrtAmtSig"),
-    @NamedQuery(name = "McAddCcCommon.findByP607s1DutyAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p607s1DutyAmt = :p607s1DutyAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP607s2DutyAmtEx", query = "SELECT m FROM McAddCcCommon m WHERE m.p607s2DutyAmtEx = :p607s2DutyAmtEx"),
-    @NamedQuery(name = "McAddCcCommon.findByP607s3DutyAmtSi", query = "SELECT m FROM McAddCcCommon m WHERE m.p607s3DutyAmtSi = :p607s3DutyAmtSi"),
-    @NamedQuery(name = "McAddCcCommon.findByP732s1DiscAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.p732s1DiscAmt = :p732s1DiscAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByP732s2DiscAmtEx", query = "SELECT m FROM McAddCcCommon m WHERE m.p732s2DiscAmtEx = :p732s2DiscAmtEx"),
-    @NamedQuery(name = "McAddCcCommon.findByP732s3DiscAmtSi", query = "SELECT m FROM McAddCcCommon m WHERE m.p732s3DiscAmtSi = :p732s3DiscAmtSi"),
-    @NamedQuery(name = "McAddCcCommon.findByP732s4DiscTp", query = "SELECT m FROM McAddCcCommon m WHERE m.p732s4DiscTp = :p732s4DiscTp"),
-    @NamedQuery(name = "McAddCcCommon.findByTaxAmtTs", query = "SELECT m FROM McAddCcCommon m WHERE m.taxAmtTs = :taxAmtTs"),
-    @NamedQuery(name = "McAddCcCommon.findByTaxAmt682Ind", query = "SELECT m FROM McAddCcCommon m WHERE m.taxAmt682Ind = :taxAmt682Ind"),
-    @NamedQuery(name = "McAddCcCommon.findByTaxAmt683Ind", query = "SELECT m FROM McAddCcCommon m WHERE m.taxAmt683Ind = :taxAmt683Ind"),
-    @NamedQuery(name = "McAddCcCommon.findByTaxAmt684Ind", query = "SELECT m FROM McAddCcCommon m WHERE m.taxAmt684Ind = :taxAmt684Ind"),
-    @NamedQuery(name = "McAddCcCommon.findByTaxAmt751Ind", query = "SELECT m FROM McAddCcCommon m WHERE m.taxAmt751Ind = :taxAmt751Ind"),
-    @NamedQuery(name = "McAddCcCommon.findByTaxAmt752Ind", query = "SELECT m FROM McAddCcCommon m WHERE m.taxAmt752Ind = :taxAmt752Ind"),
-    @NamedQuery(name = "McAddCcCommon.findByTaxAmt753Ind", query = "SELECT m FROM McAddCcCommon m WHERE m.taxAmt753Ind = :taxAmt753Ind"),
-    @NamedQuery(name = "McAddCcCommon.findByP688CrdAcpEmail", query = "SELECT m FROM McAddCcCommon m WHERE m.p688CrdAcpEmail = :p688CrdAcpEmail"),
-    @NamedQuery(name = "McAddCcCommon.findByA597s1TtxAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.a597s1TtxAmt = :a597s1TtxAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByA606s1FrtAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.a606s1FrtAmt = :a606s1FrtAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByA607s1DutyAmt", query = "SELECT m FROM McAddCcCommon m WHERE m.a607s1DutyAmt = :a607s1DutyAmt"),
-    @NamedQuery(name = "McAddCcCommon.findByRowChgTs", query = "SELECT m FROM McAddCcCommon m WHERE m.rowChgTs = :rowChgTs")})
 public class McAddCcCommon implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -167,7 +44,7 @@ public class McAddCcCommon implements Serializable {
     private String p595CrdAcpTy;
     @Column(name = "P596_CRD_ACP_TX")
     private String p596CrdAcpTx;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "P597_TAX_AMT")
     private BigDecimal p597TaxAmt;
     @Column(name = "P598_TAX_COLL_IND")
@@ -1292,7 +1169,7 @@ public class McAddCcCommon implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddCcCommon)) {
             return false;
         }
@@ -1307,5 +1184,5 @@ public class McAddCcCommon implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddCcCommon[ mcAddCcCommonPK=" + mcAddCcCommonPK + " ]";
     }
-    
+
 }

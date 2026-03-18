@@ -11,6 +11,7 @@
       <!-- Show SQL queries in logs -->
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.use_sql_comments" value="true"/>
       <!-- Use JDBC batch processing for better performance -->
       <property name="hibernate.jdbc.batch_size" value="20"/>
       <property name="hibernate.order_inserts" value="true"/>

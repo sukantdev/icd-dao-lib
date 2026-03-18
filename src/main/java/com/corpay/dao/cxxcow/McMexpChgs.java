@@ -1,35 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_MEXP_CHGS", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McMexpChgs.findAll", query = "SELECT m FROM McMexpChgs m"),
-    @NamedQuery(name = "McMexpChgs.findByMexpTs", query = "SELECT m FROM McMexpChgs m WHERE m.mcMexpChgsPK.mexpTs = :mexpTs"),
-    @NamedQuery(name = "McMexpChgs.findByParentTable", query = "SELECT m FROM McMexpChgs m WHERE m.mcMexpChgsPK.parentTable = :parentTable"),
-    @NamedQuery(name = "McMexpChgs.findByOccInd", query = "SELECT m FROM McMexpChgs m WHERE m.mcMexpChgsPK.occInd = :occInd"),
-    @NamedQuery(name = "McMexpChgs.findByP734s1MexpDisc", query = "SELECT m FROM McMexpChgs m WHERE m.p734s1MexpDisc = :p734s1MexpDisc"),
-    @NamedQuery(name = "McMexpChgs.findByP734s2MexpAmt", query = "SELECT m FROM McMexpChgs m WHERE m.p734s2MexpAmt = :p734s2MexpAmt"),
-    @NamedQuery(name = "McMexpChgs.findByP734s3MexpAmtEx", query = "SELECT m FROM McMexpChgs m WHERE m.p734s3MexpAmtEx = :p734s3MexpAmtEx"),
-    @NamedQuery(name = "McMexpChgs.findByP734s4MexpAmtSi", query = "SELECT m FROM McMexpChgs m WHERE m.p734s4MexpAmtSi = :p734s4MexpAmtSi")})
 public class McMexpChgs implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -38,7 +19,7 @@ public class McMexpChgs implements Serializable {
     @Basic(optional = false)
     @Column(name = "P734S1_MEXP_DISC")
     private String p734s1MexpDisc;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "P734S2_MEXP_AMT")
     private BigDecimal p734s2MexpAmt;
@@ -117,7 +98,7 @@ public class McMexpChgs implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McMexpChgs)) {
             return false;
         }
@@ -132,5 +113,5 @@ public class McMexpChgs implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McMexpChgs[ mcMexpChgsPK=" + mcMexpChgsPK + " ]";
     }
-    
+
 }

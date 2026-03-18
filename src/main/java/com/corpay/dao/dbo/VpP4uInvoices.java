@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,14 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "VP_P4U_INVOICES", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "VpP4uInvoices.findAll", query = "SELECT v FROM VpP4uInvoices v")})
 public class VpP4uInvoices implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -38,7 +26,7 @@ public class VpP4uInvoices implements Serializable {
     @Basic(optional = false)
     @Column(name = "SF_MDY_USR")
     private String sfMdyUsr;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "AMT_PAID")
     private BigDecimal amtPaid;
@@ -268,7 +256,7 @@ public class VpP4uInvoices implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof VpP4uInvoices)) {
             return false;
         }
@@ -283,5 +271,5 @@ public class VpP4uInvoices implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.VpP4uInvoices[ sfInvId=" + sfInvId + " ]";
     }
-    
+
 }

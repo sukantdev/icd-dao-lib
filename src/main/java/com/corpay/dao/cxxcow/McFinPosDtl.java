@@ -1,106 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_FIN_POS_DTL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McFinPosDtl.findAll", query = "SELECT m FROM McFinPosDtl m"),
-    @NamedQuery(name = "McFinPosDtl.findByP105s1FileTy", query = "SELECT m FROM McFinPosDtl m WHERE m.mcFinPosDtlPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McFinPosDtl.findByP105s2FileRDt", query = "SELECT m FROM McFinPosDtl m WHERE m.mcFinPosDtlPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McFinPosDtl.findByP105s3ProcId", query = "SELECT m FROM McFinPosDtl m WHERE m.mcFinPosDtlPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McFinPosDtl.findByP105s4FileSeqNo", query = "SELECT m FROM McFinPosDtl m WHERE m.mcFinPosDtlPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McFinPosDtl.findByMsgTyId", query = "SELECT m FROM McFinPosDtl m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McFinPosDtl.findByBitMapPri", query = "SELECT m FROM McFinPosDtl m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McFinPosDtl.findByD1BitMapSec", query = "SELECT m FROM McFinPosDtl m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McFinPosDtl.findByD24FuncCd", query = "SELECT m FROM McFinPosDtl m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McFinPosDtl.findByD25MsgRsnCd", query = "SELECT m FROM McFinPosDtl m WHERE m.d25MsgRsnCd = :d25MsgRsnCd"),
-    @NamedQuery(name = "McFinPosDtl.findByD32AcqInstIdCd", query = "SELECT m FROM McFinPosDtl m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McFinPosDtl.findByD48AddtlDat", query = "SELECT m FROM McFinPosDtl m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McFinPosDtl.findByP165s1StlInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p165s1StlInd = :p165s1StlInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP165s2StlInfo", query = "SELECT m FROM McFinPosDtl m WHERE m.p165s2StlInfo = :p165s2StlInfo"),
-    @NamedQuery(name = "McFinPosDtl.findByP298s1TranmsnTy", query = "SELECT m FROM McFinPosDtl m WHERE m.p298s1TranmsnTy = :p298s1TranmsnTy"),
-    @NamedQuery(name = "McFinPosDtl.findByP298s2TrRefDt", query = "SELECT m FROM McFinPosDtl m WHERE m.p298s2TrRefDt = :p298s2TrRefDt"),
-    @NamedQuery(name = "McFinPosDtl.findByP298s3ProcId", query = "SELECT m FROM McFinPosDtl m WHERE m.p298s3ProcId = :p298s3ProcId"),
-    @NamedQuery(name = "McFinPosDtl.findByP298s4TrSeqNo", query = "SELECT m FROM McFinPosDtl m WHERE m.p298s4TrSeqNo = :p298s4TrSeqNo"),
-    @NamedQuery(name = "McFinPosDtl.findByP300s1FileTy", query = "SELECT m FROM McFinPosDtl m WHERE m.p300s1FileTy = :p300s1FileTy"),
-    @NamedQuery(name = "McFinPosDtl.findByP300s2FileRefDt", query = "SELECT m FROM McFinPosDtl m WHERE m.p300s2FileRefDt = :p300s2FileRefDt"),
-    @NamedQuery(name = "McFinPosDtl.findByP300s3ProcId", query = "SELECT m FROM McFinPosDtl m WHERE m.p300s3ProcId = :p300s3ProcId"),
-    @NamedQuery(name = "McFinPosDtl.findByP300s4FileSeqNo", query = "SELECT m FROM McFinPosDtl m WHERE m.p300s4FileSeqNo = :p300s4FileSeqNo"),
-    @NamedQuery(name = "McFinPosDtl.findByP302MbrActRec", query = "SELECT m FROM McFinPosDtl m WHERE m.p302MbrActRec = :p302MbrActRec"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s1AcpBrand", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s1AcpBrand = :p358s1AcpBrand"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s2BusSrvcLv", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s2BusSrvcLv = :p358s2BusSrvcLv"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s3BusSrvcId", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s3BusSrvcId = :p358s3BusSrvcId"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s4IRtDsgntr", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s4IRtDsgntr = :p358s4IRtDsgntr"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s5BusDt", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s5BusDt = :p358s5BusDt"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s6BusCycle", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s6BusCycle = :p358s6BusCycle"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s7MccOvr", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s7MccOvr = :p358s7MccOvr"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s8ProdOvr", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s8ProdOvr = :p358s8ProdOvr"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s9CorpIncrt", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s9CorpIncrt = :p358s9CorpIncrt"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s10QualLvl", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s10QualLvl = :p358s10QualLvl"),
-    @NamedQuery(name = "McFinPosDtl.findByP359s1StlsrvcTai", query = "SELECT m FROM McFinPosDtl m WHERE m.p359s1StlsrvcTai = :p359s1StlsrvcTai"),
-    @NamedQuery(name = "McFinPosDtl.findByP359s2StlsrvcTaa", query = "SELECT m FROM McFinPosDtl m WHERE m.p359s2StlsrvcTaa = :p359s2StlsrvcTaa"),
-    @NamedQuery(name = "McFinPosDtl.findByP359s3StlsrvcLvl", query = "SELECT m FROM McFinPosDtl m WHERE m.p359s3StlsrvcLvl = :p359s3StlsrvcLvl"),
-    @NamedQuery(name = "McFinPosDtl.findByP359s4StlsrvcId", query = "SELECT m FROM McFinPosDtl m WHERE m.p359s4StlsrvcId = :p359s4StlsrvcId"),
-    @NamedQuery(name = "McFinPosDtl.findByP359s5StlfexRtC", query = "SELECT m FROM McFinPosDtl m WHERE m.p359s5StlfexRtC = :p359s5StlfexRtC"),
-    @NamedQuery(name = "McFinPosDtl.findByP359s6ReconDt", query = "SELECT m FROM McFinPosDtl m WHERE m.p359s6ReconDt = :p359s6ReconDt"),
-    @NamedQuery(name = "McFinPosDtl.findByP359s7ReconCd", query = "SELECT m FROM McFinPosDtl m WHERE m.p359s7ReconCd = :p359s7ReconCd"),
-    @NamedQuery(name = "McFinPosDtl.findByP359s8StlDt", query = "SELECT m FROM McFinPosDtl m WHERE m.p359s8StlDt = :p359s8StlDt"),
-    @NamedQuery(name = "McFinPosDtl.findByP359s9StlCycle", query = "SELECT m FROM McFinPosDtl m WHERE m.p359s9StlCycle = :p359s9StlCycle"),
-    @NamedQuery(name = "McFinPosDtl.findByP370s1BegActRng", query = "SELECT m FROM McFinPosDtl m WHERE m.p370s1BegActRng = :p370s1BegActRng"),
-    @NamedQuery(name = "McFinPosDtl.findByP370s2EndActRng", query = "SELECT m FROM McFinPosDtl m WHERE m.p370s2EndActRng = :p370s2EndActRng"),
-    @NamedQuery(name = "McFinPosDtl.findByP371MsgRsnCdR", query = "SELECT m FROM McFinPosDtl m WHERE m.p371MsgRsnCdR = :p371MsgRsnCdR"),
-    @NamedQuery(name = "McFinPosDtl.findByP372s1MsgTyId", query = "SELECT m FROM McFinPosDtl m WHERE m.p372s1MsgTyId = :p372s1MsgTyId"),
-    @NamedQuery(name = "McFinPosDtl.findByP372s2FuncCd", query = "SELECT m FROM McFinPosDtl m WHERE m.p372s2FuncCd = :p372s2FuncCd"),
-    @NamedQuery(name = "McFinPosDtl.findByP373CrdaidRcn", query = "SELECT m FROM McFinPosDtl m WHERE m.p373CrdaidRcn = :p373CrdaidRcn"),
-    @NamedQuery(name = "McFinPosDtl.findByP374PrccdRcn", query = "SELECT m FROM McFinPosDtl m WHERE m.p374PrccdRcn = :p374PrccdRcn"),
-    @NamedQuery(name = "McFinPosDtl.findByP375MbrRcnInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p375MbrRcnInd = :p375MbrRcnInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP376MbrRcnInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p376MbrRcnInd = :p376MbrRcnInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP378OrgRevTot", query = "SELECT m FROM McFinPosDtl m WHERE m.p378OrgRevTot = :p378OrgRevTot"),
-    @NamedQuery(name = "McFinPosDtl.findByP380s1DbCrInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p380s1DbCrInd = :p380s1DbCrInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP380s2TranAmt", query = "SELECT m FROM McFinPosDtl m WHERE m.p380s2TranAmt = :p380s2TranAmt"),
-    @NamedQuery(name = "McFinPosDtl.findByP381s1DbCrInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p381s1DbCrInd = :p381s1DbCrInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP381s2TranAmt", query = "SELECT m FROM McFinPosDtl m WHERE m.p381s2TranAmt = :p381s2TranAmt"),
-    @NamedQuery(name = "McFinPosDtl.findByP384s1DbCrInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p384s1DbCrInd = :p384s1DbCrInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP384s2NetAmt", query = "SELECT m FROM McFinPosDtl m WHERE m.p384s2NetAmt = :p384s2NetAmt"),
-    @NamedQuery(name = "McFinPosDtl.findByP390s1DbInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p390s1DbInd = :p390s1DbInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP390s2TranAmt", query = "SELECT m FROM McFinPosDtl m WHERE m.p390s2TranAmt = :p390s2TranAmt"),
-    @NamedQuery(name = "McFinPosDtl.findByP391s1CrInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p391s1CrInd = :p391s1CrInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP391s2TranAmt", query = "SELECT m FROM McFinPosDtl m WHERE m.p391s2TranAmt = :p391s2TranAmt"),
-    @NamedQuery(name = "McFinPosDtl.findByP394s1NetDbInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p394s1NetDbInd = :p394s1NetDbInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP394s2NetTrAmt", query = "SELECT m FROM McFinPosDtl m WHERE m.p394s2NetTrAmt = :p394s2NetTrAmt"),
-    @NamedQuery(name = "McFinPosDtl.findByP395s1NetCrInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p395s1NetCrInd = :p395s1NetCrInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP395s2NetTrnAmt", query = "SELECT m FROM McFinPosDtl m WHERE m.p395s2NetTrnAmt = :p395s2NetTrnAmt"),
-    @NamedQuery(name = "McFinPosDtl.findByP396s1NetInd", query = "SELECT m FROM McFinPosDtl m WHERE m.p396s1NetInd = :p396s1NetInd"),
-    @NamedQuery(name = "McFinPosDtl.findByP396s2NetTrnAmt", query = "SELECT m FROM McFinPosDtl m WHERE m.p396s2NetTrnAmt = :p396s2NetTrnAmt"),
-    @NamedQuery(name = "McFinPosDtl.findByP400TranNoDbs", query = "SELECT m FROM McFinPosDtl m WHERE m.p400TranNoDbs = :p400TranNoDbs"),
-    @NamedQuery(name = "McFinPosDtl.findByP401TranNoCrs", query = "SELECT m FROM McFinPosDtl m WHERE m.p401TranNoCrs = :p401TranNoCrs"),
-    @NamedQuery(name = "McFinPosDtl.findByP402TranNoTot", query = "SELECT m FROM McFinPosDtl m WHERE m.p402TranNoTot = :p402TranNoTot"),
-    @NamedQuery(name = "McFinPosDtl.findByD49TranCurrCd", query = "SELECT m FROM McFinPosDtl m WHERE m.d49TranCurrCd = :d49TranCurrCd"),
-    @NamedQuery(name = "McFinPosDtl.findByD50ReconCurCd", query = "SELECT m FROM McFinPosDtl m WHERE m.d50ReconCurCd = :d50ReconCurCd"),
-    @NamedQuery(name = "McFinPosDtl.findByD62AddtlData2", query = "SELECT m FROM McFinPosDtl m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McFinPosDtl.findByD71MsgNo", query = "SELECT m FROM McFinPosDtl m WHERE m.mcFinPosDtlPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McFinPosDtl.findByD93TrDestInst", query = "SELECT m FROM McFinPosDtl m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McFinPosDtl.findByD100RecvInstId", query = "SELECT m FROM McFinPosDtl m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McFinPosDtl.findByD123AddtlDat3", query = "SELECT m FROM McFinPosDtl m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McFinPosDtl.findByD124AddtlDat4", query = "SELECT m FROM McFinPosDtl m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McFinPosDtl.findByD125AddtlDat5", query = "SELECT m FROM McFinPosDtl m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McFinPosDtl.findByP358s11McmrchOvr", query = "SELECT m FROM McFinPosDtl m WHERE m.p358s11McmrchOvr = :p358s11McmrchOvr")})
 public class McFinPosDtl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -202,7 +110,7 @@ public class McFinPosDtl implements Serializable {
     private Character p378OrgRevTot;
     @Column(name = "P380S1_DB_CR_IND")
     private Character p380s1DbCrInd;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "P380S2_TRAN_AMT")
     private BigDecimal p380s2TranAmt;
     @Column(name = "P381S1_DB_CR_IND")
@@ -886,7 +794,7 @@ public class McFinPosDtl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McFinPosDtl)) {
             return false;
         }
@@ -901,5 +809,5 @@ public class McFinPosDtl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McFinPosDtl[ mcFinPosDtlPK=" + mcFinPosDtlPK + " ]";
     }
-    
+
 }

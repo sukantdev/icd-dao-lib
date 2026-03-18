@@ -1,212 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_LODG_DTL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddLodgDtl.findAll", query = "SELECT m FROM McAddLodgDtl m"),
-    @NamedQuery(name = "McAddLodgDtl.findByP105s1FileTy", query = "SELECT m FROM McAddLodgDtl m WHERE m.mcAddLodgDtlPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddLodgDtl.findByP105s2FileRDt", query = "SELECT m FROM McAddLodgDtl m WHERE m.mcAddLodgDtlPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP105s3ProcId", query = "SELECT m FROM McAddLodgDtl m WHERE m.mcAddLodgDtlPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddLodgDtl.findByP105s4FileSeqNo", query = "SELECT m FROM McAddLodgDtl m WHERE m.mcAddLodgDtlPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddLodgDtl.findByMsgTyId", query = "SELECT m FROM McAddLodgDtl m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddLodgDtl.findByBitMapPri", query = "SELECT m FROM McAddLodgDtl m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddLodgDtl.findByD1BitMapSec", query = "SELECT m FROM McAddLodgDtl m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddLodgDtl.findByD24FuncCd", query = "SELECT m FROM McAddLodgDtl m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddLodgDtl.findByD32AcqInstIdCd", query = "SELECT m FROM McAddLodgDtl m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddLodgDtl.findByD33FwdngInstCd", query = "SELECT m FROM McAddLodgDtl m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddLodgDtl.findByD48AddtlDat", query = "SELECT m FROM McAddLodgDtl m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddLodgDtl.findByP191OrMsgFmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP501s1UsageCd", query = "SELECT m FROM McAddLodgDtl m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP501s2IndstyRec", query = "SELECT m FROM McAddLodgDtl m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddLodgDtl.findByP501s3OccInd", query = "SELECT m FROM McAddLodgDtl m WHERE m.mcAddLodgDtlPK.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP501s4MsgNo", query = "SELECT m FROM McAddLodgDtl m WHERE m.mcAddLodgDtlPK.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddLodgDtl.findByP552CustsrvcTf", query = "SELECT m FROM McAddLodgDtl m WHERE m.p552CustsrvcTf = :p552CustsrvcTf"),
-    @NamedQuery(name = "McAddLodgDtl.findByP574ArrDt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p574ArrDt = :p574ArrDt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP575DepDt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p575DepDt = :p575DepDt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP576FolioNo", query = "SELECT m FROM McAddLodgDtl m WHERE m.p576FolioNo = :p576FolioNo"),
-    @NamedQuery(name = "McAddLodgDtl.findByP577PropertyPh", query = "SELECT m FROM McAddLodgDtl m WHERE m.p577PropertyPh = :p577PropertyPh"),
-    @NamedQuery(name = "McAddLodgDtl.findByP578s1BlAdjInd", query = "SELECT m FROM McAddLodgDtl m WHERE m.p578s1BlAdjInd = :p578s1BlAdjInd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP578s2BlAdjAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p578s2BlAdjAmt = :p578s2BlAdjAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP580RoomRt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p580RoomRt = :p580RoomRt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP581RoomTax", query = "SELECT m FROM McAddLodgDtl m WHERE m.p581RoomTax = :p581RoomTax"),
-    @NamedQuery(name = "McAddLodgDtl.findByP582PgmCd", query = "SELECT m FROM McAddLodgDtl m WHERE m.p582PgmCd = :p582PgmCd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP583PhChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p583PhChrg = :p583PhChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP584RestrmChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p584RestrmChrg = :p584RestrmChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP585BarChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p585BarChrg = :p585BarChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP586GiftshpChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p586GiftshpChrg = :p586GiftshpChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP587LaundChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p587LaundChrg = :p587LaundChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP588s1OSrvCd", query = "SELECT m FROM McAddLodgDtl m WHERE m.p588s1OSrvCd = :p588s1OSrvCd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP588s2OSrvChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p588s2OSrvChrg = :p588s2OSrvChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP679Commodity", query = "SELECT m FROM McAddLodgDtl m WHERE m.p679Commodity = :p679Commodity"),
-    @NamedQuery(name = "McAddLodgDtl.findByP682s1TxAmtInd", query = "SELECT m FROM McAddLodgDtl m WHERE m.p682s1TxAmtInd = :p682s1TxAmtInd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP682s2TxAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p682s2TxAmt = :p682s2TxAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP682s3TxRt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p682s3TxRt = :p682s3TxRt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP682s4TxRtExp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p682s4TxRtExp = :p682s4TxRtExp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP682s5TxTyApp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p682s5TxTyApp = :p682s5TxTyApp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP682s6TxTyId", query = "SELECT m FROM McAddLodgDtl m WHERE m.p682s6TxTyId = :p682s6TxTyId"),
-    @NamedQuery(name = "McAddLodgDtl.findByP682s7CrdAcptx", query = "SELECT m FROM McAddLodgDtl m WHERE m.p682s7CrdAcptx = :p682s7CrdAcptx"),
-    @NamedQuery(name = "McAddLodgDtl.findByP683s1TxAmtInd", query = "SELECT m FROM McAddLodgDtl m WHERE m.p683s1TxAmtInd = :p683s1TxAmtInd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP683s2TxAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p683s2TxAmt = :p683s2TxAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP683s3TxRt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p683s3TxRt = :p683s3TxRt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP683s4TxRtExp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p683s4TxRtExp = :p683s4TxRtExp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP683s5TxTyApp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p683s5TxTyApp = :p683s5TxTyApp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP683s6TaxTyId", query = "SELECT m FROM McAddLodgDtl m WHERE m.p683s6TaxTyId = :p683s6TaxTyId"),
-    @NamedQuery(name = "McAddLodgDtl.findByP683s7CrdAcptx", query = "SELECT m FROM McAddLodgDtl m WHERE m.p683s7CrdAcptx = :p683s7CrdAcptx"),
-    @NamedQuery(name = "McAddLodgDtl.findByP684s1TxAmtInd", query = "SELECT m FROM McAddLodgDtl m WHERE m.p684s1TxAmtInd = :p684s1TxAmtInd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP684s2TxAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p684s2TxAmt = :p684s2TxAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP684s3TxRt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p684s3TxRt = :p684s3TxRt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP684s4TxRtExp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p684s4TxRtExp = :p684s4TxRtExp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP684s5TxTyApp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p684s5TxTyApp = :p684s5TxTyApp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP684s6TaxTyId", query = "SELECT m FROM McAddLodgDtl m WHERE m.p684s6TaxTyId = :p684s6TaxTyId"),
-    @NamedQuery(name = "McAddLodgDtl.findByP684s7CrdAcptx", query = "SELECT m FROM McAddLodgDtl m WHERE m.p684s7CrdAcptx = :p684s7CrdAcptx"),
-    @NamedQuery(name = "McAddLodgDtl.findByP686TaxExempt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p686TaxExempt = :p686TaxExempt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP690NoShowInd", query = "SELECT m FROM McAddLodgDtl m WHERE m.p690NoShowInd = :p690NoShowInd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP693TotauthAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p693TotauthAmt = :p693TotauthAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP699TotTaxAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p699TotTaxAmt = :p699TotTaxAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP701ExtChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p701ExtChrg = :p701ExtChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP702OtherChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p702OtherChrg = :p702OtherChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP703Totrmnights", query = "SELECT m FROM McAddLodgDtl m WHERE m.p703Totrmnights = :p703Totrmnights"),
-    @NamedQuery(name = "McAddLodgDtl.findByP704PpdExpns", query = "SELECT m FROM McAddLodgDtl m WHERE m.p704PpdExpns = :p704PpdExpns"),
-    @NamedQuery(name = "McAddLodgDtl.findByP705Totnraxamt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p705Totnraxamt = :p705Totnraxamt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP706CashAdv", query = "SELECT m FROM McAddLodgDtl m WHERE m.p706CashAdv = :p706CashAdv"),
-    @NamedQuery(name = "McAddLodgDtl.findByP707ValetChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p707ValetChrg = :p707ValetChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP708MoveChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p708MoveChrg = :p708MoveChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP709BusCntChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p709BusCntChrg = :p709BusCntChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP710HealthChrg", query = "SELECT m FROM McAddLodgDtl m WHERE m.p710HealthChrg = :p710HealthChrg"),
-    @NamedQuery(name = "McAddLodgDtl.findByP711FiresafActI", query = "SELECT m FROM McAddLodgDtl m WHERE m.p711FiresafActI = :p711FiresafActI"),
-    @NamedQuery(name = "McAddLodgDtl.findByD62AddtlData2", query = "SELECT m FROM McAddLodgDtl m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McAddLodgDtl.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddLodgDtl m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddLodgDtl.findByD63s2TraceId", query = "SELECT m FROM McAddLodgDtl m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddLodgDtl.findByD63s3ValidnCd", query = "SELECT m FROM McAddLodgDtl m WHERE m.d63s3ValidnCd = :d63s3ValidnCd"),
-    @NamedQuery(name = "McAddLodgDtl.findByD63s4LfcyctrSeq", query = "SELECT m FROM McAddLodgDtl m WHERE m.d63s4LfcyctrSeq = :d63s4LfcyctrSeq"),
-    @NamedQuery(name = "McAddLodgDtl.findByD63s5LfcyctrTot", query = "SELECT m FROM McAddLodgDtl m WHERE m.d63s5LfcyctrTot = :d63s5LfcyctrTot"),
-    @NamedQuery(name = "McAddLodgDtl.findByD71MsgNo", query = "SELECT m FROM McAddLodgDtl m WHERE m.mcAddLodgDtlPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddLodgDtl.findByD93TrDestInst", query = "SELECT m FROM McAddLodgDtl m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddLodgDtl.findByD94TrOrgInst", query = "SELECT m FROM McAddLodgDtl m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddLodgDtl.findByD100RecvInstId", query = "SELECT m FROM McAddLodgDtl m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddLodgDtl.findByD123AddtlDat3", query = "SELECT m FROM McAddLodgDtl m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddLodgDtl.findByD124AddtlDat4", query = "SELECT m FROM McAddLodgDtl m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddLodgDtl.findByD125AddtlDat5", query = "SELECT m FROM McAddLodgDtl m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McAddLodgDtl.findByP521CarrierCode", query = "SELECT m FROM McAddLodgDtl m WHERE m.p521CarrierCode = :p521CarrierCode"),
-    @NamedQuery(name = "McAddLodgDtl.findByP530FlightNbr", query = "SELECT m FROM McAddLodgDtl m WHERE m.p530FlightNbr = :p530FlightNbr"),
-    @NamedQuery(name = "McAddLodgDtl.findByP532s1TotChgsAm", query = "SELECT m FROM McAddLodgDtl m WHERE m.p532s1TotChgsAm = :p532s1TotChgsAm"),
-    @NamedQuery(name = "McAddLodgDtl.findByP532s2TotChgsEx", query = "SELECT m FROM McAddLodgDtl m WHERE m.p532s2TotChgsEx = :p532s2TotChgsEx"),
-    @NamedQuery(name = "McAddLodgDtl.findByP532s3TotChgsSi", query = "SELECT m FROM McAddLodgDtl m WHERE m.p532s3TotChgsSi = :p532s3TotChgsSi"),
-    @NamedQuery(name = "McAddLodgDtl.findByP534s1TotNrchgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p534s1TotNrchgA = :p534s1TotNrchgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP534s2TotNrchgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p534s2TotNrchgE = :p534s2TotNrchgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP534s3TotNrchgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p534s3TotNrchgS = :p534s3TotNrchgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP539s1TotChrgCa", query = "SELECT m FROM McAddLodgDtl m WHERE m.p539s1TotChrgCa = :p539s1TotChrgCa"),
-    @NamedQuery(name = "McAddLodgDtl.findByP539s2TotChrgCe", query = "SELECT m FROM McAddLodgDtl m WHERE m.p539s2TotChrgCe = :p539s2TotChrgCe"),
-    @NamedQuery(name = "McAddLodgDtl.findByP539s3TotChrgCs", query = "SELECT m FROM McAddLodgDtl m WHERE m.p539s3TotChrgCs = :p539s3TotChrgCs"),
-    @NamedQuery(name = "McAddLodgDtl.findByP540s1RmsrvChgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p540s1RmsrvChgA = :p540s1RmsrvChgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP540s2RmsrvChgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p540s2RmsrvChgE = :p540s2RmsrvChgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP540s3RmsrvChgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p540s3RmsrvChgS = :p540s3RmsrvChgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP541s1BarChrgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p541s1BarChrgA = :p541s1BarChrgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP541s2BarChrgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p541s2BarChrgE = :p541s2BarChrgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP541s3BarChrgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p541s3BarChrgS = :p541s3BarChrgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP542s1TrnspChgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p542s1TrnspChgA = :p542s1TrnspChgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP542s2TrnspChgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p542s2TrnspChgE = :p542s2TrnspChgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP542s3TrnspChgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p542s3TrnspChgS = :p542s3TrnspChgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP543s1GrtyChrgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p543s1GrtyChrgA = :p543s1GrtyChrgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP543s2GrtyChrgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p543s2GrtyChrgE = :p543s2GrtyChrgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP543s3GrtyChrgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p543s3GrtyChrgS = :p543s3GrtyChrgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP554s1CfrmChrgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p554s1CfrmChrgA = :p554s1CfrmChrgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP554s2CfrmChrgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p554s2CfrmChrgE = :p554s2CfrmChrgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP554s3CfrmChrgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p554s3CfrmChrgS = :p554s3CfrmChrgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP560s1AuvisChgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p560s1AuvisChgA = :p560s1AuvisChgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP560s2AuvisChgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p560s2AuvisChgE = :p560s2AuvisChgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP560s3AuvisChgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p560s3AuvisChgS = :p560s3AuvisChgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP562s1BqutChgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p562s1BqutChgA = :p562s1BqutChgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP562s2BqutChgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p562s2BqutChgE = :p562s2BqutChgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP562s3BqutChgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p562s3BqutChgS = :p562s3BqutChgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP569s1IntntChgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p569s1IntntChgA = :p569s1IntntChgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP569s2IntntChgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p569s2IntntChgE = :p569s2IntntChgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP569s3IntntChgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p569s3IntntChgS = :p569s3IntntChgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP570s1ElyDeprCa", query = "SELECT m FROM McAddLodgDtl m WHERE m.p570s1ElyDeprCa = :p570s1ElyDeprCa"),
-    @NamedQuery(name = "McAddLodgDtl.findByP570s2ElyDeprCe", query = "SELECT m FROM McAddLodgDtl m WHERE m.p570s2ElyDeprCe = :p570s2ElyDeprCe"),
-    @NamedQuery(name = "McAddLodgDtl.findByP570s3ElyDeprCs", query = "SELECT m FROM McAddLodgDtl m WHERE m.p570s3ElyDeprCs = :p570s3ElyDeprCs"),
-    @NamedQuery(name = "McAddLodgDtl.findByP571GuestNm", query = "SELECT m FROM McAddLodgDtl m WHERE m.p571GuestNm = :p571GuestNm"),
-    @NamedQuery(name = "McAddLodgDtl.findByP572GuestNbr", query = "SELECT m FROM McAddLodgDtl m WHERE m.p572GuestNbr = :p572GuestNbr"),
-    @NamedQuery(name = "McAddLodgDtl.findByP578s3BlAdjExp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p578s3BlAdjExp = :p578s3BlAdjExp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP578s4BlAdjSign", query = "SELECT m FROM McAddLodgDtl m WHERE m.p578s4BlAdjSign = :p578s4BlAdjSign"),
-    @NamedQuery(name = "McAddLodgDtl.findByP580s1RmRtAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p580s1RmRtAmt = :p580s1RmRtAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP580s2RmRtExp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p580s2RmRtExp = :p580s2RmRtExp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP581s1TotRmTaxa", query = "SELECT m FROM McAddLodgDtl m WHERE m.p581s1TotRmTaxa = :p581s1TotRmTaxa"),
-    @NamedQuery(name = "McAddLodgDtl.findByP581s2TotRmTaxe", query = "SELECT m FROM McAddLodgDtl m WHERE m.p581s2TotRmTaxe = :p581s2TotRmTaxe"),
-    @NamedQuery(name = "McAddLodgDtl.findByP581s3TotRmTaxs", query = "SELECT m FROM McAddLodgDtl m WHERE m.p581s3TotRmTaxs = :p581s3TotRmTaxs"),
-    @NamedQuery(name = "McAddLodgDtl.findByP583s1PhChrgAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p583s1PhChrgAmt = :p583s1PhChrgAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP583s2PhChrgExp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p583s2PhChrgExp = :p583s2PhChrgExp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP583s3PhChrgSig", query = "SELECT m FROM McAddLodgDtl m WHERE m.p583s3PhChrgSig = :p583s3PhChrgSig"),
-    @NamedQuery(name = "McAddLodgDtl.findByP584s1RstChrgAm", query = "SELECT m FROM McAddLodgDtl m WHERE m.p584s1RstChrgAm = :p584s1RstChrgAm"),
-    @NamedQuery(name = "McAddLodgDtl.findByP584s2RstChrgEx", query = "SELECT m FROM McAddLodgDtl m WHERE m.p584s2RstChrgEx = :p584s2RstChrgEx"),
-    @NamedQuery(name = "McAddLodgDtl.findByP584s3RstChrgSi", query = "SELECT m FROM McAddLodgDtl m WHERE m.p584s3RstChrgSi = :p584s3RstChrgSi"),
-    @NamedQuery(name = "McAddLodgDtl.findByP585s1MinibarCha", query = "SELECT m FROM McAddLodgDtl m WHERE m.p585s1MinibarCha = :p585s1MinibarCha"),
-    @NamedQuery(name = "McAddLodgDtl.findByP585s2MinibarChe", query = "SELECT m FROM McAddLodgDtl m WHERE m.p585s2MinibarChe = :p585s2MinibarChe"),
-    @NamedQuery(name = "McAddLodgDtl.findByP585s3MinibarChs", query = "SELECT m FROM McAddLodgDtl m WHERE m.p585s3MinibarChs = :p585s3MinibarChs"),
-    @NamedQuery(name = "McAddLodgDtl.findByP586s1GiftshopCa", query = "SELECT m FROM McAddLodgDtl m WHERE m.p586s1GiftshopCa = :p586s1GiftshopCa"),
-    @NamedQuery(name = "McAddLodgDtl.findByP586s2GiftshopCe", query = "SELECT m FROM McAddLodgDtl m WHERE m.p586s2GiftshopCe = :p586s2GiftshopCe"),
-    @NamedQuery(name = "McAddLodgDtl.findByP586s3GiftshopCs", query = "SELECT m FROM McAddLodgDtl m WHERE m.p586s3GiftshopCs = :p586s3GiftshopCs"),
-    @NamedQuery(name = "McAddLodgDtl.findByP587s1LndyChrgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p587s1LndyChrgA = :p587s1LndyChrgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP587s2LndyChrgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p587s2LndyChrgE = :p587s2LndyChrgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP587s3LndyChrgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p587s3LndyChrgS = :p587s3LndyChrgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP597s1TtxAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p597s1TtxAmt = :p597s1TtxAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP597s2TtxAmtExp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p597s2TtxAmtExp = :p597s2TtxAmtExp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP597s3TtxAmtSig", query = "SELECT m FROM McAddLodgDtl m WHERE m.p597s3TtxAmtSig = :p597s3TtxAmtSig"),
-    @NamedQuery(name = "McAddLodgDtl.findByP598TaxCltnInd", query = "SELECT m FROM McAddLodgDtl m WHERE m.p598TaxCltnInd = :p598TaxCltnInd"),
-    @NamedQuery(name = "McAddLodgDtl.findByP693s1TotauthAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.p693s1TotauthAmt = :p693s1TotauthAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByP693s2TotauthExp", query = "SELECT m FROM McAddLodgDtl m WHERE m.p693s2TotauthExp = :p693s2TotauthExp"),
-    @NamedQuery(name = "McAddLodgDtl.findByP693s3TotauthSig", query = "SELECT m FROM McAddLodgDtl m WHERE m.p693s3TotauthSig = :p693s3TotauthSig"),
-    @NamedQuery(name = "McAddLodgDtl.findByP699s1LdgTotTxa", query = "SELECT m FROM McAddLodgDtl m WHERE m.p699s1LdgTotTxa = :p699s1LdgTotTxa"),
-    @NamedQuery(name = "McAddLodgDtl.findByP699s2LdgTotTxe", query = "SELECT m FROM McAddLodgDtl m WHERE m.p699s2LdgTotTxe = :p699s2LdgTotTxe"),
-    @NamedQuery(name = "McAddLodgDtl.findByP699s3LdgTotTxs", query = "SELECT m FROM McAddLodgDtl m WHERE m.p699s3LdgTotTxs = :p699s3LdgTotTxs"),
-    @NamedQuery(name = "McAddLodgDtl.findByP704s1PpdExpsAm", query = "SELECT m FROM McAddLodgDtl m WHERE m.p704s1PpdExpsAm = :p704s1PpdExpsAm"),
-    @NamedQuery(name = "McAddLodgDtl.findByP704s2PpdExpsEx", query = "SELECT m FROM McAddLodgDtl m WHERE m.p704s2PpdExpsEx = :p704s2PpdExpsEx"),
-    @NamedQuery(name = "McAddLodgDtl.findByP704s3PpdExpsSi", query = "SELECT m FROM McAddLodgDtl m WHERE m.p704s3PpdExpsSi = :p704s3PpdExpsSi"),
-    @NamedQuery(name = "McAddLodgDtl.findByP705s1TotNrtaxA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p705s1TotNrtaxA = :p705s1TotNrtaxA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP705s2TotNrtaxE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p705s2TotNrtaxE = :p705s2TotNrtaxE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP705s3TotNrtaxS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p705s3TotNrtaxS = :p705s3TotNrtaxS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP706s1CashAdvAm", query = "SELECT m FROM McAddLodgDtl m WHERE m.p706s1CashAdvAm = :p706s1CashAdvAm"),
-    @NamedQuery(name = "McAddLodgDtl.findByP706s2CashAdvEx", query = "SELECT m FROM McAddLodgDtl m WHERE m.p706s2CashAdvEx = :p706s2CashAdvEx"),
-    @NamedQuery(name = "McAddLodgDtl.findByP706s3CashAdvSi", query = "SELECT m FROM McAddLodgDtl m WHERE m.p706s3CashAdvSi = :p706s3CashAdvSi"),
-    @NamedQuery(name = "McAddLodgDtl.findByP707s1VletChrgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p707s1VletChrgA = :p707s1VletChrgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP707s2VletChrgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p707s2VletChrgE = :p707s2VletChrgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP707s3VletChrgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p707s3VletChrgS = :p707s3VletChrgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP708s1MvieChrgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p708s1MvieChrgA = :p708s1MvieChrgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP708s2MvieChrgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p708s2MvieChrgE = :p708s2MvieChrgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP708s3MvieChrgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p708s3MvieChrgS = :p708s3MvieChrgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByP709s1BuscntChga", query = "SELECT m FROM McAddLodgDtl m WHERE m.p709s1BuscntChga = :p709s1BuscntChga"),
-    @NamedQuery(name = "McAddLodgDtl.findByP709s2BuscntChge", query = "SELECT m FROM McAddLodgDtl m WHERE m.p709s2BuscntChge = :p709s2BuscntChge"),
-    @NamedQuery(name = "McAddLodgDtl.findByP709s3BuscntChgs", query = "SELECT m FROM McAddLodgDtl m WHERE m.p709s3BuscntChgs = :p709s3BuscntChgs"),
-    @NamedQuery(name = "McAddLodgDtl.findByP710s1HlthChrgA", query = "SELECT m FROM McAddLodgDtl m WHERE m.p710s1HlthChrgA = :p710s1HlthChrgA"),
-    @NamedQuery(name = "McAddLodgDtl.findByP710s2HlthChrgE", query = "SELECT m FROM McAddLodgDtl m WHERE m.p710s2HlthChrgE = :p710s2HlthChrgE"),
-    @NamedQuery(name = "McAddLodgDtl.findByP710s3HlthChrgS", query = "SELECT m FROM McAddLodgDtl m WHERE m.p710s3HlthChrgS = :p710s3HlthChrgS"),
-    @NamedQuery(name = "McAddLodgDtl.findByTaxAmtTs", query = "SELECT m FROM McAddLodgDtl m WHERE m.taxAmtTs = :taxAmtTs"),
-    @NamedQuery(name = "McAddLodgDtl.findByTaxAmt682Ind", query = "SELECT m FROM McAddLodgDtl m WHERE m.taxAmt682Ind = :taxAmt682Ind"),
-    @NamedQuery(name = "McAddLodgDtl.findByTaxAmt683Ind", query = "SELECT m FROM McAddLodgDtl m WHERE m.taxAmt683Ind = :taxAmt683Ind"),
-    @NamedQuery(name = "McAddLodgDtl.findByTaxAmt684Ind", query = "SELECT m FROM McAddLodgDtl m WHERE m.taxAmt684Ind = :taxAmt684Ind"),
-    @NamedQuery(name = "McAddLodgDtl.findByTaxAmt751Ind", query = "SELECT m FROM McAddLodgDtl m WHERE m.taxAmt751Ind = :taxAmt751Ind"),
-    @NamedQuery(name = "McAddLodgDtl.findByTaxAmt752Ind", query = "SELECT m FROM McAddLodgDtl m WHERE m.taxAmt752Ind = :taxAmt752Ind"),
-    @NamedQuery(name = "McAddLodgDtl.findByTaxAmt753Ind", query = "SELECT m FROM McAddLodgDtl m WHERE m.taxAmt753Ind = :taxAmt753Ind"),
-    @NamedQuery(name = "McAddLodgDtl.findByA597s1TtxAmt", query = "SELECT m FROM McAddLodgDtl m WHERE m.a597s1TtxAmt = :a597s1TtxAmt"),
-    @NamedQuery(name = "McAddLodgDtl.findByA693s1Totauth", query = "SELECT m FROM McAddLodgDtl m WHERE m.a693s1Totauth = :a693s1Totauth")})
 public class McAddLodgDtl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -244,7 +47,7 @@ public class McAddLodgDtl implements Serializable {
     private String p577PropertyPh;
     @Column(name = "P578S1_BL_ADJ_IND")
     private Character p578s1BlAdjInd;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "P578S2_BL_ADJ_AMT")
     private BigDecimal p578s2BlAdjAmt;
     @Column(name = "P580_ROOM_RT")
@@ -2230,7 +2033,7 @@ public class McAddLodgDtl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddLodgDtl)) {
             return false;
         }
@@ -2245,5 +2048,5 @@ public class McAddLodgDtl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddLodgDtl[ mcAddLodgDtlPK=" + mcAddLodgDtlPK + " ]";
     }
-    
+
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
@@ -12,22 +8,14 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "ET_TENANT_ERP", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "EtTenantErp.findAll", query = "SELECT e FROM EtTenantErp e")})
 public class EtTenantErp implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -152,7 +140,7 @@ public class EtTenantErp implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof EtTenantErp)) {
             return false;
         }
@@ -167,5 +155,5 @@ public class EtTenantErp implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.EtTenantErp[ etTenantErpPK=" + etTenantErpPK + " ]";
     }
-    
+
 }

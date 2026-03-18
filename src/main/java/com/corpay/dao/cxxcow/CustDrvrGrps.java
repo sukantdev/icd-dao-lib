@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
+
+import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
@@ -11,26 +10,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import java.io.Serializable;
-import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CUST_DRVR_GRPS", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "CustDrvrGrps.findAll", query = "SELECT c FROM CustDrvrGrps c"),
-    @NamedQuery(name = "CustDrvrGrps.findByDrgrCustId", query = "SELECT c FROM CustDrvrGrps c WHERE c.custDrvrGrpsPK.drgrCustId = :drgrCustId"),
-    @NamedQuery(name = "CustDrvrGrps.findByDrgrGrpId", query = "SELECT c FROM CustDrvrGrps c WHERE c.custDrvrGrpsPK.drgrGrpId = :drgrGrpId"),
-    @NamedQuery(name = "CustDrvrGrps.findByDrgrDrvrId", query = "SELECT c FROM CustDrvrGrps c WHERE c.custDrvrGrpsPK.drgrDrvrId = :drgrDrvrId"),
-    @NamedQuery(name = "CustDrvrGrps.findByDrgrUpdateTs", query = "SELECT c FROM CustDrvrGrps c WHERE c.drgrUpdateTs = :drgrUpdateTs")})
 public class CustDrvrGrps implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -95,7 +80,7 @@ public class CustDrvrGrps implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof CustDrvrGrps)) {
             return false;
         }
@@ -110,5 +95,5 @@ public class CustDrvrGrps implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.CustDrvrGrps[ custDrvrGrpsPK=" + custDrvrGrpsPK + " ]";
     }
-    
+
 }

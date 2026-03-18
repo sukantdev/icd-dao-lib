@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,33 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_POST_XREF", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McPostXref.findAll", query = "SELECT m FROM McPostXref m"),
-    @NamedQuery(name = "McPostXref.findByAuthUpdateTs", query = "SELECT m FROM McPostXref m WHERE m.authUpdateTs = :authUpdateTs"),
-    @NamedQuery(name = "McPostXref.findByAuthPan", query = "SELECT m FROM McPostXref m WHERE m.authPan = :authPan"),
-    @NamedQuery(name = "McPostXref.findByAuthUtDt", query = "SELECT m FROM McPostXref m WHERE m.authUtDt = :authUtDt"),
-    @NamedQuery(name = "McPostXref.findByAuthApprovCd", query = "SELECT m FROM McPostXref m WHERE m.authApprovCd = :authApprovCd"),
-    @NamedQuery(name = "McPostXref.findByAuthLocalTs", query = "SELECT m FROM McPostXref m WHERE m.authLocalTs = :authLocalTs"),
-    @NamedQuery(name = "McPostXref.findByP105s1FileTy", query = "SELECT m FROM McPostXref m WHERE m.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McPostXref.findByP105s2FileRDt", query = "SELECT m FROM McPostXref m WHERE m.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McPostXref.findByP105s3ProcId", query = "SELECT m FROM McPostXref m WHERE m.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McPostXref.findByP105s4FileSeqNo", query = "SELECT m FROM McPostXref m WHERE m.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McPostXref.findByD71MsgNo", query = "SELECT m FROM McPostXref m WHERE m.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McPostXref.findByAuthD48s63TraceId", query = "SELECT m FROM McPostXref m WHERE m.authD48s63TraceId = :authD48s63TraceId"),
-    @NamedQuery(name = "McPostXref.findByAuthPostedDt", query = "SELECT m FROM McPostXref m WHERE m.authPostedDt = :authPostedDt"),
-    @NamedQuery(name = "McPostXref.findByAuthPostedTm", query = "SELECT m FROM McPostXref m WHERE m.authPostedTm = :authPostedTm"),
-    @NamedQuery(name = "McPostXref.findByXpndCtlNbr", query = "SELECT m FROM McPostXref m WHERE m.xpndCtlNbr = :xpndCtlNbr"),
-    @NamedQuery(name = "McPostXref.findByAuthPostMsgNo", query = "SELECT m FROM McPostXref m WHERE m.authPostMsgNo = :authPostMsgNo"),
-    @NamedQuery(name = "McPostXref.findByAuthPostedAmt", query = "SELECT m FROM McPostXref m WHERE m.authPostedAmt = :authPostedAmt"),
-    @NamedQuery(name = "McPostXref.findByD63s2TraceId", query = "SELECT m FROM McPostXref m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McPostXref.findByXborderFeeAmt", query = "SELECT m FROM McPostXref m WHERE m.xborderFeeAmt = :xborderFeeAmt"),
-    @NamedQuery(name = "McPostXref.findByRowChgTs", query = "SELECT m FROM McPostXref m WHERE m.rowChgTs = :rowChgTs")})
 public class McPostXref implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -98,7 +67,7 @@ public class McPostXref implements Serializable {
     @Basic(optional = false)
     @Column(name = "AUTH_POST_MSG_NO")
     private int authPostMsgNo;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "AUTH_POSTED_AMT")
     private BigDecimal authPostedAmt;
@@ -303,7 +272,7 @@ public class McPostXref implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McPostXref)) {
             return false;
         }
@@ -318,5 +287,5 @@ public class McPostXref implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McPostXref[ authUpdateTs=" + authUpdateTs + " ]";
     }
-    
+
 }

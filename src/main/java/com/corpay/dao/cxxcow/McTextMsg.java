@@ -1,39 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_TEXT_MSG", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McTextMsg.findAll", query = "SELECT m FROM McTextMsg m"),
-    @NamedQuery(name = "McTextMsg.findByP105s1FileTy", query = "SELECT m FROM McTextMsg m WHERE m.mcTextMsgPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McTextMsg.findByP105s2FileRDt", query = "SELECT m FROM McTextMsg m WHERE m.mcTextMsgPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McTextMsg.findByP105s3ProcId", query = "SELECT m FROM McTextMsg m WHERE m.mcTextMsgPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McTextMsg.findByP105s4FileSeqNo", query = "SELECT m FROM McTextMsg m WHERE m.mcTextMsgPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McTextMsg.findByD71MsgNo", query = "SELECT m FROM McTextMsg m WHERE m.mcTextMsgPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McTextMsg.findByMsgTyId", query = "SELECT m FROM McTextMsg m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McTextMsg.findByBitMapPri", query = "SELECT m FROM McTextMsg m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McTextMsg.findByD1BitMapSec", query = "SELECT m FROM McTextMsg m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McTextMsg.findByD24FuncCd", query = "SELECT m FROM McTextMsg m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McTextMsg.findByD25MsgRsnCd", query = "SELECT m FROM McTextMsg m WHERE m.d25MsgRsnCd = :d25MsgRsnCd"),
-    @NamedQuery(name = "McTextMsg.findByD72DataRec", query = "SELECT m FROM McTextMsg m WHERE m.d72DataRec = :d72DataRec"),
-    @NamedQuery(name = "McTextMsg.findByD93TrDestInst", query = "SELECT m FROM McTextMsg m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McTextMsg.findByD94TrOrgInst", query = "SELECT m FROM McTextMsg m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McTextMsg.findByD100RecvInstId", query = "SELECT m FROM McTextMsg m WHERE m.d100RecvInstId = :d100RecvInstId")})
 public class McTextMsg implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -158,7 +132,7 @@ public class McTextMsg implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McTextMsg)) {
             return false;
         }
@@ -173,5 +147,5 @@ public class McTextMsg implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McTextMsg[ mcTextMsgPK=" + mcTextMsgPK + " ]";
     }
-    
+
 }

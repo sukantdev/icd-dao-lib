@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
@@ -12,8 +8,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -23,14 +17,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "RB_APP_MOD", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "RbAppMod.findAll", query = "SELECT r FROM RbAppMod r")})
 public class RbAppMod implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -194,7 +182,7 @@ public class RbAppMod implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof RbAppMod)) {
             return false;
         }
@@ -209,5 +197,5 @@ public class RbAppMod implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.RbAppMod[ modId=" + modId + " ]";
     }
-    
+
 }

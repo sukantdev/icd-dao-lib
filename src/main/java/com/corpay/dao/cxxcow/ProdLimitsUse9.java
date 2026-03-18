@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,39 +11,14 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PROD_LIMITS_USE9", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "ProdLimitsUse9.findAll", query = "SELECT p FROM ProdLimitsUse9 p"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduCustId", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prodLimitsUse9PK.prduCustId = :prduCustId"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduCcType", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prodLimitsUse9PK.prduCcType = :prduCcType"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduProfileId", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prodLimitsUse9PK.prduProfileId = :prduProfileId"),
-    @NamedQuery(name = "ProdLimitsUse9.findByProdcId", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prodLimitsUse9PK.prodcId = :prodcId"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduDayAmtUsed", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduDayAmtUsed = :prduDayAmtUsed"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduDayXtnsUsed", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduDayXtnsUsed = :prduDayXtnsUsed"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduDayQtyUsed", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduDayQtyUsed = :prduDayQtyUsed"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduCycAmtUsed", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduCycAmtUsed = :prduCycAmtUsed"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduCycQtyUsed", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduCycQtyUsed = :prduCycQtyUsed"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduCycXtnsUsed", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduCycXtnsUsed = :prduCycXtnsUsed"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduDayAmtHold", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduDayAmtHold = :prduDayAmtHold"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduDayXtnsHold", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduDayXtnsHold = :prduDayXtnsHold"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduDayQtyHold", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduDayQtyHold = :prduDayQtyHold"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduCycAmtHold", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduCycAmtHold = :prduCycAmtHold"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduCycXtnsHold", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduCycXtnsHold = :prduCycXtnsHold"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduCycQtyHold", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduCycQtyHold = :prduCycQtyHold"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduLastXtnDate", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduLastXtnDate = :prduLastXtnDate"),
-    @NamedQuery(name = "ProdLimitsUse9.findByPrduLastResDate", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.prduLastResDate = :prduLastResDate"),
-    @NamedQuery(name = "ProdLimitsUse9.findByRowChgTs", query = "SELECT p FROM ProdLimitsUse9 p WHERE p.rowChgTs = :rowChgTs")})
 public class ProdLimitsUse9 implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected ProdLimitsUse9PK prodLimitsUse9PK;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "PRDU_DAY_AMT_USED")
     private BigDecimal prduDayAmtUsed;
@@ -266,7 +235,7 @@ public class ProdLimitsUse9 implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof ProdLimitsUse9)) {
             return false;
         }
@@ -281,5 +250,5 @@ public class ProdLimitsUse9 implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.ProdLimitsUse9[ prodLimitsUse9PK=" + prodLimitsUse9PK + " ]";
     }
-    
+
 }

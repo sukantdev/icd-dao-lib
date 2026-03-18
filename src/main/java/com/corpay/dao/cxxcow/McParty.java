@@ -1,44 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_PARTY", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McParty.findAll", query = "SELECT m FROM McParty m"),
-    @NamedQuery(name = "McParty.findByP105s1FileTy", query = "SELECT m FROM McParty m WHERE m.mcPartyPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McParty.findByP105s2FileRDt", query = "SELECT m FROM McParty m WHERE m.mcPartyPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McParty.findByP105s3ProcId", query = "SELECT m FROM McParty m WHERE m.mcPartyPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McParty.findByP105s4FileSeqNo", query = "SELECT m FROM McParty m WHERE m.mcPartyPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McParty.findByD71MsgNo", query = "SELECT m FROM McParty m WHERE m.mcPartyPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McParty.findByP591s1PtyNm1", query = "SELECT m FROM McParty m WHERE m.p591s1PtyNm1 = :p591s1PtyNm1"),
-    @NamedQuery(name = "McParty.findByP591s1PtyNm2", query = "SELECT m FROM McParty m WHERE m.p591s1PtyNm2 = :p591s1PtyNm2"),
-    @NamedQuery(name = "McParty.findByP591s1PtyNm3", query = "SELECT m FROM McParty m WHERE m.p591s1PtyNm3 = :p591s1PtyNm3"),
-    @NamedQuery(name = "McParty.findByP592s1PtyAddr1", query = "SELECT m FROM McParty m WHERE m.p592s1PtyAddr1 = :p592s1PtyAddr1"),
-    @NamedQuery(name = "McParty.findByP592s1PtyAddr2", query = "SELECT m FROM McParty m WHERE m.p592s1PtyAddr2 = :p592s1PtyAddr2"),
-    @NamedQuery(name = "McParty.findByP592s1PtyAddr3", query = "SELECT m FROM McParty m WHERE m.p592s1PtyAddr3 = :p592s1PtyAddr3"),
-    @NamedQuery(name = "McParty.findByP592s1PtyAddr4", query = "SELECT m FROM McParty m WHERE m.p592s1PtyAddr4 = :p592s1PtyAddr4"),
-    @NamedQuery(name = "McParty.findByP592s1PtyAddr5", query = "SELECT m FROM McParty m WHERE m.p592s1PtyAddr5 = :p592s1PtyAddr5"),
-    @NamedQuery(name = "McParty.findByP592s1PtyAddr6", query = "SELECT m FROM McParty m WHERE m.p592s1PtyAddr6 = :p592s1PtyAddr6"),
-    @NamedQuery(name = "McParty.findByP593s1PtyCty", query = "SELECT m FROM McParty m WHERE m.p593s1PtyCty = :p593s1PtyCty"),
-    @NamedQuery(name = "McParty.findByP593s2PtySt", query = "SELECT m FROM McParty m WHERE m.p593s2PtySt = :p593s2PtySt"),
-    @NamedQuery(name = "McParty.findByP593s3PtyCrty", query = "SELECT m FROM McParty m WHERE m.p593s3PtyCrty = :p593s3PtyCrty"),
-    @NamedQuery(name = "McParty.findByP593s4PtyZip", query = "SELECT m FROM McParty m WHERE m.p593s4PtyZip = :p593s4PtyZip")})
 public class McParty implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -233,7 +203,7 @@ public class McParty implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McParty)) {
             return false;
         }
@@ -248,5 +218,5 @@ public class McParty implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McParty[ mcPartyPK=" + mcPartyPK + " ]";
     }
-    
+
 }

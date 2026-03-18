@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -11,23 +7,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "GROUP_RESRCAPPL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "GroupResrcappl.findAll", query = "SELECT g FROM GroupResrcappl g"),
-    @NamedQuery(name = "GroupResrcappl.findByApresId", query = "SELECT g FROM GroupResrcappl g WHERE g.groupResrcapplPK.apresId = :apresId"),
-    @NamedQuery(name = "GroupResrcappl.findByRsrcId", query = "SELECT g FROM GroupResrcappl g WHERE g.groupResrcapplPK.rsrcId = :rsrcId"),
-    @NamedQuery(name = "GroupResrcappl.findByGroupId", query = "SELECT g FROM GroupResrcappl g WHERE g.groupResrcapplPK.groupId = :groupId"),
-    @NamedQuery(name = "GroupResrcappl.findByGrprscaValue", query = "SELECT g FROM GroupResrcappl g WHERE g.grprscaValue = :grprscaValue")})
 public class GroupResrcappl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -102,7 +86,7 @@ public class GroupResrcappl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof GroupResrcappl)) {
             return false;
         }
@@ -117,5 +101,5 @@ public class GroupResrcappl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.GroupResrcappl[ groupResrcapplPK=" + groupResrcapplPK + " ]";
     }
-    
+
 }

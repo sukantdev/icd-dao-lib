@@ -1,36 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MCC_EXCEPTION", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "MccException.findAll", query = "SELECT m FROM MccException m"),
-    @NamedQuery(name = "MccException.findByMceLocNm", query = "SELECT m FROM MccException m WHERE m.mceLocNm = :mceLocNm"),
-    @NamedQuery(name = "MccException.findByMceAllowConvFlg", query = "SELECT m FROM MccException m WHERE m.mceAllowConvFlg = :mceAllowConvFlg"),
-    @NamedQuery(name = "MccException.findByMceMcc", query = "SELECT m FROM MccException m WHERE m.mceMcc = :mceMcc"),
-    @NamedQuery(name = "MccException.findByMceDtEntered", query = "SELECT m FROM MccException m WHERE m.mceDtEntered = :mceDtEntered"),
-    @NamedQuery(name = "MccException.findByMceDtActivated", query = "SELECT m FROM MccException m WHERE m.mceDtActivated = :mceDtActivated"),
-    @NamedQuery(name = "MccException.findByMceActivatedBy", query = "SELECT m FROM MccException m WHERE m.mceActivatedBy = :mceActivatedBy"),
-    @NamedQuery(name = "MccException.findByMceLastTranDt", query = "SELECT m FROM MccException m WHERE m.mceLastTranDt = :mceLastTranDt")})
 public class MccException implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -142,7 +123,7 @@ public class MccException implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof MccException)) {
             return false;
         }
@@ -157,5 +138,5 @@ public class MccException implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.MccException[ mceLocNm=" + mceLocNm + " ]";
     }
-    
+
 }

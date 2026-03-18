@@ -1,35 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "USER_IP_RESOURCES", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "UserIpResources.findAll", query = "SELECT u FROM UserIpResources u"),
-    @NamedQuery(name = "UserIpResources.findByUserId", query = "SELECT u FROM UserIpResources u WHERE u.userIpResourcesPK.userId = :userId"),
-    @NamedQuery(name = "UserIpResources.findByUserIp", query = "SELECT u FROM UserIpResources u WHERE u.userIpResourcesPK.userIp = :userIp"),
-    @NamedQuery(name = "UserIpResources.findByCrtTs", query = "SELECT u FROM UserIpResources u WHERE u.crtTs = :crtTs"),
-    @NamedQuery(name = "UserIpResources.findByCrtUsr", query = "SELECT u FROM UserIpResources u WHERE u.crtUsr = :crtUsr"),
-    @NamedQuery(name = "UserIpResources.findByMdyTs", query = "SELECT u FROM UserIpResources u WHERE u.mdyTs = :mdyTs"),
-    @NamedQuery(name = "UserIpResources.findByMdyUsr", query = "SELECT u FROM UserIpResources u WHERE u.mdyUsr = :mdyUsr")})
 public class UserIpResources implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -118,7 +100,7 @@ public class UserIpResources implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof UserIpResources)) {
             return false;
         }
@@ -133,5 +115,5 @@ public class UserIpResources implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.UserIpResources[ userIpResourcesPK=" + userIpResourcesPK + " ]";
     }
-    
+
 }

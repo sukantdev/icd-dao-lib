@@ -1,33 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_SEQUENCE", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McSequence.findAll", query = "SELECT m FROM McSequence m"),
-    @NamedQuery(name = "McSequence.findBySeqKey", query = "SELECT m FROM McSequence m WHERE m.seqKey = :seqKey"),
-    @NamedQuery(name = "McSequence.findBySeqValue", query = "SELECT m FROM McSequence m WHERE m.seqValue = :seqValue"),
-    @NamedQuery(name = "McSequence.findBySeqSvalue", query = "SELECT m FROM McSequence m WHERE m.seqSvalue = :seqSvalue"),
-    @NamedQuery(name = "McSequence.findBySeqAppMtrTs", query = "SELECT m FROM McSequence m WHERE m.seqAppMtrTs = :seqAppMtrTs")})
 public class McSequence implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -101,7 +85,7 @@ public class McSequence implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McSequence)) {
             return false;
         }
@@ -116,5 +100,5 @@ public class McSequence implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McSequence[ seqKey=" + seqKey + " ]";
     }
-    
+
 }

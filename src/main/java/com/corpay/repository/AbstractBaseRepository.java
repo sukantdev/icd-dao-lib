@@ -12,12 +12,12 @@ import java.util.List;
 import java.util.Optional;
 
 public abstract class AbstractBaseRepository<T, ID extends Serializable> implements BaseRepository<T, ID> {
-    
+
     @PersistenceContext(unitName = "dao-lib")
     protected EntityManager entityManager;
-    
+
     private final Class<T> entityClass;
-    
+
     protected AbstractBaseRepository(Class<T> entityClass) {
         this.entityClass = entityClass;
     }
@@ -25,24 +25,24 @@ public abstract class AbstractBaseRepository<T, ID extends Serializable> impleme
     public void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
-    
+
     @Override
     public T save(T entity) {
         entityManager.persist(entity);
         return entity;
     }
-    
+
     @Override
     public T saveOrUpdate(T entity) {
         return entityManager.merge(entity);
     }
-    
+
     @Override
     public Optional<T> findById(ID id) {
         T entity = entityManager.find(entityClass, id);
         return Optional.ofNullable(entity);
     }
-    
+
     @Override
     public List<T> findAll() {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -51,7 +51,7 @@ public abstract class AbstractBaseRepository<T, ID extends Serializable> impleme
         cq.select(root);
         return entityManager.createQuery(cq).getResultList();
     }
-    
+
     @Override
     public List<T> findAll(int offset, int limit) {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -63,7 +63,7 @@ public abstract class AbstractBaseRepository<T, ID extends Serializable> impleme
         query.setMaxResults(limit);
         return query.getResultList();
     }
-    
+
     @Override
     public long count() {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -72,7 +72,7 @@ public abstract class AbstractBaseRepository<T, ID extends Serializable> impleme
         cq.select(cb.count(root));
         return entityManager.createQuery(cq).getSingleResult();
     }
-    
+
     @Override
     public void delete(T entity) {
         if (entityManager.contains(entity)) {
@@ -81,22 +81,22 @@ public abstract class AbstractBaseRepository<T, ID extends Serializable> impleme
             entityManager.remove(entityManager.merge(entity));
         }
     }
-    
+
     @Override
     public void deleteById(ID id) {
         findById(id).ifPresent(this::delete);
     }
-    
+
     @Override
     public boolean existsById(ID id) {
         return findById(id).isPresent();
     }
-    
+
     @Override
     public void flush() {
         entityManager.flush();
     }
-    
+
     @Override
     public void refresh(T entity) {
         entityManager.refresh(entity);

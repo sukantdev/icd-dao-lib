@@ -1,59 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_LODG_ACCT", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddLodgAcct.findAll", query = "SELECT m FROM McAddLodgAcct m"),
-    @NamedQuery(name = "McAddLodgAcct.findByP105s1FileTy", query = "SELECT m FROM McAddLodgAcct m WHERE m.mcAddLodgAcctPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddLodgAcct.findByP105s2FileRDt", query = "SELECT m FROM McAddLodgAcct m WHERE m.mcAddLodgAcctPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddLodgAcct.findByP105s3ProcId", query = "SELECT m FROM McAddLodgAcct m WHERE m.mcAddLodgAcctPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddLodgAcct.findByP105s4FileSeqNo", query = "SELECT m FROM McAddLodgAcct m WHERE m.mcAddLodgAcctPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddLodgAcct.findByMsgTyId", query = "SELECT m FROM McAddLodgAcct m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddLodgAcct.findByBitMapPri", query = "SELECT m FROM McAddLodgAcct m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddLodgAcct.findByD1BitMapSec", query = "SELECT m FROM McAddLodgAcct m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddLodgAcct.findByD24FuncCd", query = "SELECT m FROM McAddLodgAcct m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddLodgAcct.findByD32AcqInstIdCd", query = "SELECT m FROM McAddLodgAcct m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddLodgAcct.findByD33FwdngInstCd", query = "SELECT m FROM McAddLodgAcct m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddLodgAcct.findByD48AddtlDat", query = "SELECT m FROM McAddLodgAcct m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddLodgAcct.findByP191OrMsgFmt", query = "SELECT m FROM McAddLodgAcct m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddLodgAcct.findByP501s1UsageCd", query = "SELECT m FROM McAddLodgAcct m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddLodgAcct.findByP501s2IndstyRec", query = "SELECT m FROM McAddLodgAcct m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddLodgAcct.findByP501s3OccInd", query = "SELECT m FROM McAddLodgAcct m WHERE m.mcAddLodgAcctPK.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddLodgAcct.findByP501s4MsgNo", query = "SELECT m FROM McAddLodgAcct m WHERE m.mcAddLodgAcctPK.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddLodgAcct.findByP502s1CustIdTyp", query = "SELECT m FROM McAddLodgAcct m WHERE m.p502s1CustIdTyp = :p502s1CustIdTyp"),
-    @NamedQuery(name = "McAddLodgAcct.findByP502s2CustIdDtl", query = "SELECT m FROM McAddLodgAcct m WHERE m.p502s2CustIdDtl = :p502s2CustIdDtl"),
-    @NamedQuery(name = "McAddLodgAcct.findByP759DelvrOrdrNo", query = "SELECT m FROM McAddLodgAcct m WHERE m.p759DelvrOrdrNo = :p759DelvrOrdrNo"),
-    @NamedQuery(name = "McAddLodgAcct.findByP760CcrdSlipNo", query = "SELECT m FROM McAddLodgAcct m WHERE m.p760CcrdSlipNo = :p760CcrdSlipNo"),
-    @NamedQuery(name = "McAddLodgAcct.findByP761TrvlAgncyNo", query = "SELECT m FROM McAddLodgAcct m WHERE m.p761TrvlAgncyNo = :p761TrvlAgncyNo"),
-    @NamedQuery(name = "McAddLodgAcct.findByP762DataSource", query = "SELECT m FROM McAddLodgAcct m WHERE m.p762DataSource = :p762DataSource"),
-    @NamedQuery(name = "McAddLodgAcct.findByP763VatSuprsInd", query = "SELECT m FROM McAddLodgAcct m WHERE m.p763VatSuprsInd = :p763VatSuprsInd"),
-    @NamedQuery(name = "McAddLodgAcct.findByD62AddtlData2", query = "SELECT m FROM McAddLodgAcct m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McAddLodgAcct.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddLodgAcct m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddLodgAcct.findByD63s2TraceId", query = "SELECT m FROM McAddLodgAcct m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddLodgAcct.findByD71MsgNo", query = "SELECT m FROM McAddLodgAcct m WHERE m.mcAddLodgAcctPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddLodgAcct.findByD93TrDestInst", query = "SELECT m FROM McAddLodgAcct m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddLodgAcct.findByD94TrOrgInst", query = "SELECT m FROM McAddLodgAcct m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddLodgAcct.findByD100RecvInstId", query = "SELECT m FROM McAddLodgAcct m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddLodgAcct.findByD123AddtlDat3", query = "SELECT m FROM McAddLodgAcct m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddLodgAcct.findByD124AddtlDat4", query = "SELECT m FROM McAddLodgAcct m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddLodgAcct.findByD125AddtlDat5", query = "SELECT m FROM McAddLodgAcct m WHERE m.d125AddtlDat5 = :d125AddtlDat5")})
 public class McAddLodgAcct implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -404,7 +359,7 @@ public class McAddLodgAcct implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddLodgAcct)) {
             return false;
         }
@@ -419,5 +374,5 @@ public class McAddLodgAcct implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddLodgAcct[ mcAddLodgAcctPK=" + mcAddLodgAcctPK + " ]";
     }
-    
+
 }

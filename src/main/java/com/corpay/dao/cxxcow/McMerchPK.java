@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -9,10 +5,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Embeddable
 public class McMerchPK implements Serializable {
 
@@ -109,7 +101,7 @@ public class McMerchPK implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McMerchPK)) {
             return false;
         }
@@ -139,5 +131,5 @@ public class McMerchPK implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McMerchPK[ d43s1CrdAcpNm=" + d43s1CrdAcpNm + ", d43s2CrdAcpStr=" + d43s2CrdAcpStr + ", d43s3CrdAcpCty=" + d43s3CrdAcpCty + ", d43s4CrdAcpZip=" + d43s4CrdAcpZip + ", d43s5CrdAcpSt=" + d43s5CrdAcpSt + ", d43s6CrdAcpCtry=" + d43s6CrdAcpCtry + " ]";
     }
-    
+
 }

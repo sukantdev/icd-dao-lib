@@ -1,27 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PRD_FEE", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "PrdFee.findAll", query = "SELECT p FROM PrdFee p")})
 public class PrdFee implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -30,7 +18,7 @@ public class PrdFee implements Serializable {
     @Basic(optional = false)
     @Column(name = "PRD_DESC")
     private String prdDesc;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "PRD_FEE")
     private BigDecimal prdFee;
@@ -85,7 +73,7 @@ public class PrdFee implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof PrdFee)) {
             return false;
         }
@@ -100,5 +88,5 @@ public class PrdFee implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.PrdFee[ prdFeePK=" + prdFeePK + " ]";
     }
-    
+
 }

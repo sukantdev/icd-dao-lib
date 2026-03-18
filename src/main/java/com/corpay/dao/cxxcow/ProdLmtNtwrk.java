@@ -1,37 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PROD_LMT_NTWRK", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "ProdLmtNtwrk.findAll", query = "SELECT p FROM ProdLmtNtwrk p"),
-    @NamedQuery(name = "ProdLmtNtwrk.findByPrdlnKey", query = "SELECT p FROM ProdLmtNtwrk p WHERE p.prodLmtNtwrkPK.prdlnKey = :prdlnKey"),
-    @NamedQuery(name = "ProdLmtNtwrk.findByProdcId", query = "SELECT p FROM ProdLmtNtwrk p WHERE p.prodLmtNtwrkPK.prodcId = :prodcId"),
-    @NamedQuery(name = "ProdLmtNtwrk.findByPrdlnXtnQty", query = "SELECT p FROM ProdLmtNtwrk p WHERE p.prdlnXtnQty = :prdlnXtnQty"),
-    @NamedQuery(name = "ProdLmtNtwrk.findByPrdlnAvalFlg", query = "SELECT p FROM ProdLmtNtwrk p WHERE p.prdlnAvalFlg = :prdlnAvalFlg"),
-    @NamedQuery(name = "ProdLmtNtwrk.findByCrtTs", query = "SELECT p FROM ProdLmtNtwrk p WHERE p.crtTs = :crtTs"),
-    @NamedQuery(name = "ProdLmtNtwrk.findByCrtUsr", query = "SELECT p FROM ProdLmtNtwrk p WHERE p.crtUsr = :crtUsr"),
-    @NamedQuery(name = "ProdLmtNtwrk.findByMdyTs", query = "SELECT p FROM ProdLmtNtwrk p WHERE p.mdyTs = :mdyTs"),
-    @NamedQuery(name = "ProdLmtNtwrk.findByMdyUsr", query = "SELECT p FROM ProdLmtNtwrk p WHERE p.mdyUsr = :mdyUsr")})
 public class ProdLmtNtwrk implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -144,7 +124,7 @@ public class ProdLmtNtwrk implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof ProdLmtNtwrk)) {
             return false;
         }
@@ -159,5 +139,5 @@ public class ProdLmtNtwrk implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.ProdLmtNtwrk[ prodLmtNtwrkPK=" + prodLmtNtwrkPK + " ]";
     }
-    
+
 }

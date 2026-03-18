@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,42 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "PRICING_XTN_WRK", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "PricingXtnWrk.findAll", query = "SELECT p FROM PricingXtnWrk p"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrTiP105s1FileTy", query = "SELECT p FROM PricingXtnWrk p WHERE p.pricingXtnWrkPK.xwrTiP105s1FileTy = :xwrTiP105s1FileTy"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrTiP105s2FileRDt", query = "SELECT p FROM PricingXtnWrk p WHERE p.pricingXtnWrkPK.xwrTiP105s2FileRDt = :xwrTiP105s2FileRDt"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrTiP105s3ProcId", query = "SELECT p FROM PricingXtnWrk p WHERE p.pricingXtnWrkPK.xwrTiP105s3ProcId = :xwrTiP105s3ProcId"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrTiP105s4FileSeqNo", query = "SELECT p FROM PricingXtnWrk p WHERE p.pricingXtnWrkPK.xwrTiP105s4FileSeqNo = :xwrTiP105s4FileSeqNo"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrTiD71MsgNo", query = "SELECT p FROM PricingXtnWrk p WHERE p.pricingXtnWrkPK.xwrTiD71MsgNo = :xwrTiD71MsgNo"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrRecordType", query = "SELECT p FROM PricingXtnWrk p WHERE p.pricingXtnWrkPK.xwrRecordType = :xwrRecordType"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrRecordOccInd", query = "SELECT p FROM PricingXtnWrk p WHERE p.pricingXtnWrkPK.xwrRecordOccInd = :xwrRecordOccInd"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrSecNbr", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrSecNbr = :xwrSecNbr"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01AcctCd", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01AcctCd = :xwrXd01AcctCd"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01CustNbr", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01CustNbr = :xwrXd01CustNbr"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01XtnTotAmt", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01XtnTotAmt = :xwrXd01XtnTotAmt"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01InterchangeFee", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01InterchangeFee = :xwrXd01InterchangeFee"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01CreditInd", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01CreditInd = :xwrXd01CreditInd"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01AcctDiscInd", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01AcctDiscInd = :xwrXd01AcctDiscInd"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01AcctRebInd", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01AcctRebInd = :xwrXd01AcctRebInd"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01XborderInd", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01XborderInd = :xwrXd01XborderInd"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01MccCd", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01MccCd = :xwrXd01MccCd"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01SiteId", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01SiteId = :xwrXd01SiteId"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01TtlDiscCdn", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01TtlDiscCdn = :xwrXd01TtlDiscCdn"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01TtlRebCdn", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01TtlRebCdn = :xwrXd01TtlRebCdn"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01TtlDiscSvc", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01TtlDiscSvc = :xwrXd01TtlDiscSvc"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01TtlRebSvc", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01TtlRebSvc = :xwrXd01TtlRebSvc"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01MigrType", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01MigrType = :xwrXd01MigrType"),
-    @NamedQuery(name = "PricingXtnWrk.findByXwrXd01DiffFndInd", query = "SELECT p FROM PricingXtnWrk p WHERE p.xwrXd01DiffFndInd = :xwrXd01DiffFndInd"),
-    @NamedQuery(name = "PricingXtnWrk.findByCrtTs", query = "SELECT p FROM PricingXtnWrk p WHERE p.crtTs = :crtTs"),
-    @NamedQuery(name = "PricingXtnWrk.findByCrtUsr", query = "SELECT p FROM PricingXtnWrk p WHERE p.crtUsr = :crtUsr"),
-    @NamedQuery(name = "PricingXtnWrk.findByMdyTs", query = "SELECT p FROM PricingXtnWrk p WHERE p.mdyTs = :mdyTs"),
-    @NamedQuery(name = "PricingXtnWrk.findByMdyUsr", query = "SELECT p FROM PricingXtnWrk p WHERE p.mdyUsr = :mdyUsr")})
 public class PricingXtnWrk implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -67,7 +27,7 @@ public class PricingXtnWrk implements Serializable {
     @Basic(optional = false)
     @Column(name = "XWR_XD_01_CUST_NBR")
     private String xwrXd01CustNbr;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "XWR_XD_01_XTN_TOT_AMT")
     private BigDecimal xwrXd01XtnTotAmt;
@@ -346,7 +306,7 @@ public class PricingXtnWrk implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof PricingXtnWrk)) {
             return false;
         }
@@ -361,5 +321,5 @@ public class PricingXtnWrk implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.PricingXtnWrk[ pricingXtnWrkPK=" + pricingXtnWrkPK + " ]";
     }
-    
+
 }

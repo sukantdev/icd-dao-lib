@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,14 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "LOAD_PAY_NETWRK_LOADS", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "LoadPayNetwrkLoads.findAll", query = "SELECT l FROM LoadPayNetwrkLoads l")})
 public class LoadPayNetwrkLoads implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -54,7 +42,7 @@ public class LoadPayNetwrkLoads implements Serializable {
     @Basic(optional = false)
     @Column(name = "DEST_ZIP")
     private int destZip;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "LOAD_RECVD_AMT")
     private BigDecimal loadRecvdAmt;
@@ -882,7 +870,7 @@ public class LoadPayNetwrkLoads implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof LoadPayNetwrkLoads)) {
             return false;
         }
@@ -897,5 +885,5 @@ public class LoadPayNetwrkLoads implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.LoadPayNetwrkLoads[ loadPayNetwrkLoadsPK=" + loadPayNetwrkLoadsPK + " ]";
     }
-    
+
 }

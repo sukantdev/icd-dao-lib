@@ -1,35 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_DB_RECON_CUR", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McDbReconCur.findAll", query = "SELECT m FROM McDbReconCur m"),
-    @NamedQuery(name = "McDbReconCur.findByP105s1FileTy", query = "SELECT m FROM McDbReconCur m WHERE m.mcDbReconCurPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McDbReconCur.findByP105s2FileRDt", query = "SELECT m FROM McDbReconCur m WHERE m.mcDbReconCurPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McDbReconCur.findByP105s3ProcId", query = "SELECT m FROM McDbReconCur m WHERE m.mcDbReconCurPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McDbReconCur.findByP105s4FileSeqNo", query = "SELECT m FROM McDbReconCur m WHERE m.mcDbReconCurPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McDbReconCur.findByP392s1FeeTyCd", query = "SELECT m FROM McDbReconCur m WHERE m.p392s1FeeTyCd = :p392s1FeeTyCd"),
-    @NamedQuery(name = "McDbReconCur.findByP392s2DbCrInd", query = "SELECT m FROM McDbReconCur m WHERE m.p392s2DbCrInd = :p392s2DbCrInd"),
-    @NamedQuery(name = "McDbReconCur.findByP392s3FeeAmt", query = "SELECT m FROM McDbReconCur m WHERE m.p392s3FeeAmt = :p392s3FeeAmt"),
-    @NamedQuery(name = "McDbReconCur.findByD71MsgNo", query = "SELECT m FROM McDbReconCur m WHERE m.mcDbReconCurPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McDbReconCur.findByOccInd", query = "SELECT m FROM McDbReconCur m WHERE m.mcDbReconCurPK.occInd = :occInd")})
 public class McDbReconCur implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -39,7 +18,7 @@ public class McDbReconCur implements Serializable {
     private Short p392s1FeeTyCd;
     @Column(name = "P392S2_DB_CR_IND")
     private Character p392s2DbCrInd;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "P392S3_FEE_AMT")
     private BigDecimal p392s3FeeAmt;
 
@@ -95,7 +74,7 @@ public class McDbReconCur implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McDbReconCur)) {
             return false;
         }
@@ -110,5 +89,5 @@ public class McDbReconCur implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McDbReconCur[ mcDbReconCurPK=" + mcDbReconCurPK + " ]";
     }
-    
+
 }

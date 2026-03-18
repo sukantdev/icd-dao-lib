@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,14 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "FUEL_FILTER_PARMS", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "FuelFilterParms.findAll", query = "SELECT f FROM FuelFilterParms f")})
 public class FuelFilterParms implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -32,7 +20,7 @@ public class FuelFilterParms implements Serializable {
     @Basic(optional = false)
     @Column(name = "CNTRY_CD")
     private String cntryCd;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "COMPARE_AMT")
     private BigDecimal compareAmt;
@@ -196,7 +184,7 @@ public class FuelFilterParms implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof FuelFilterParms)) {
             return false;
         }
@@ -211,5 +199,5 @@ public class FuelFilterParms implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.FuelFilterParms[ cntryCd=" + cntryCd + " ]";
     }
-    
+
 }

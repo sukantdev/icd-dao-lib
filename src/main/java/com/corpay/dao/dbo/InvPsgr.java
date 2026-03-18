@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,14 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "INV_PSGR", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "InvPsgr.findAll", query = "SELECT i FROM InvPsgr i")})
 public class InvPsgr implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -72,7 +60,7 @@ public class InvPsgr implements Serializable {
     @Column(name = "ARVL_TM")
     @Temporal(TemporalType.TIME)
     private Date arvlTm;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "FARE")
     private BigDecimal fare;
@@ -321,7 +309,7 @@ public class InvPsgr implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof InvPsgr)) {
             return false;
         }
@@ -336,5 +324,5 @@ public class InvPsgr implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.InvPsgr[ invPsgrPK=" + invPsgrPK + " ]";
     }
-    
+
 }

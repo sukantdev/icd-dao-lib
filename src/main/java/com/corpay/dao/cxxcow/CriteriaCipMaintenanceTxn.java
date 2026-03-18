@@ -1,41 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
+
+import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import java.io.Serializable;
-import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CRITERIA_CIP_MAINTENANCE_TXN", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findAll", query = "SELECT c FROM CriteriaCipMaintenanceTxn c"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByTxnId", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.txnId = :txnId"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByCriteriaId", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.criteriaId = :criteriaId"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByAcctNm", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.acctNm = :acctNm"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByAcctCd", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.acctCd = :acctCd"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByCriteriaCipChk", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.criteriaCipChk = :criteriaCipChk"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findBySsn", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.ssn = :ssn"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByDlNbr", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.dlNbr = :dlNbr"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByPassportNbr", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.passportNbr = :passportNbr"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByCrtTs", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.crtTs = :crtTs"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByCrtUsr", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.crtUsr = :crtUsr"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByMdyTs", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.mdyTs = :mdyTs"),
-    @NamedQuery(name = "CriteriaCipMaintenanceTxn.findByMdyUsr", query = "SELECT c FROM CriteriaCipMaintenanceTxn c WHERE c.mdyUsr = :mdyUsr")})
 public class CriteriaCipMaintenanceTxn implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -200,7 +177,7 @@ public class CriteriaCipMaintenanceTxn implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof CriteriaCipMaintenanceTxn)) {
             return false;
         }
@@ -215,5 +192,5 @@ public class CriteriaCipMaintenanceTxn implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.CriteriaCipMaintenanceTxn[ txnId=" + txnId + " ]";
     }
-    
+
 }

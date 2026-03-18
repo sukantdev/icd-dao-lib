@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,14 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_SAFE", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "McSafe.findAll", query = "SELECT m FROM McSafe m")})
 public class McSafe implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -123,7 +111,7 @@ public class McSafe implements Serializable {
     @Basic(optional = false)
     @Column(name = "D31S5_CHECK_DIGIT")
     private short d31s5CheckDigit;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "D4_TRAN_AMT")
     private BigDecimal d4TranAmt;
@@ -619,7 +607,7 @@ public class McSafe implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McSafe)) {
             return false;
         }
@@ -634,5 +622,5 @@ public class McSafe implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.McSafe[ mcSafePK=" + mcSafePK + " ]";
     }
-    
+
 }

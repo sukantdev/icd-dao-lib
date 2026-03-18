@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,62 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_BATCH_INFO", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McBatchInfo.findAll", query = "SELECT m FROM McBatchInfo m"),
-    @NamedQuery(name = "McBatchInfo.findByBtchId", query = "SELECT m FROM McBatchInfo m WHERE m.mcBatchInfoPK.btchId = :btchId"),
-    @NamedQuery(name = "McBatchInfo.findByStlmtId", query = "SELECT m FROM McBatchInfo m WHERE m.mcBatchInfoPK.stlmtId = :stlmtId"),
-    @NamedQuery(name = "McBatchInfo.findByBtSendIcaNo", query = "SELECT m FROM McBatchInfo m WHERE m.btSendIcaNo = :btSendIcaNo"),
-    @NamedQuery(name = "McBatchInfo.findByBtRcvIcaNo", query = "SELECT m FROM McBatchInfo m WHERE m.btRcvIcaNo = :btRcvIcaNo"),
-    @NamedQuery(name = "McBatchInfo.findByBtJulProcDt", query = "SELECT m FROM McBatchInfo m WHERE m.btJulProcDt = :btJulProcDt"),
-    @NamedQuery(name = "McBatchInfo.findByBtJulProcDtRaw", query = "SELECT m FROM McBatchInfo m WHERE m.btJulProcDtRaw = :btJulProcDtRaw"),
-    @NamedQuery(name = "McBatchInfo.findByBtBatchDtRaw", query = "SELECT m FROM McBatchInfo m WHERE m.btBatchDtRaw = :btBatchDtRaw"),
-    @NamedQuery(name = "McBatchInfo.findByBtBatchDt", query = "SELECT m FROM McBatchInfo m WHERE m.btBatchDt = :btBatchDt"),
-    @NamedQuery(name = "McBatchInfo.findByBtBatchNo", query = "SELECT m FROM McBatchInfo m WHERE m.btBatchNo = :btBatchNo"),
-    @NamedQuery(name = "McBatchInfo.findByBtRcdType", query = "SELECT m FROM McBatchInfo m WHERE m.btRcdType = :btRcdType"),
-    @NamedQuery(name = "McBatchInfo.findByBtNoCshAtmDisb", query = "SELECT m FROM McBatchInfo m WHERE m.btNoCshAtmDisb = :btNoCshAtmDisb"),
-    @NamedQuery(name = "McBatchInfo.findByBtAmtCshAtmDis", query = "SELECT m FROM McBatchInfo m WHERE m.btAmtCshAtmDis = :btAmtCshAtmDis"),
-    @NamedQuery(name = "McBatchInfo.findByBt0amtCshAtmDis", query = "SELECT m FROM McBatchInfo m WHERE m.bt0amtCshAtmDis = :bt0amtCshAtmDis"),
-    @NamedQuery(name = "McBatchInfo.findByBtCshAtmDisFee", query = "SELECT m FROM McBatchInfo m WHERE m.btCshAtmDisFee = :btCshAtmDisFee"),
-    @NamedQuery(name = "McBatchInfo.findByBtNoRtlSls", query = "SELECT m FROM McBatchInfo m WHERE m.btNoRtlSls = :btNoRtlSls"),
-    @NamedQuery(name = "McBatchInfo.findByBtAmtRtlSls", query = "SELECT m FROM McBatchInfo m WHERE m.btAmtRtlSls = :btAmtRtlSls"),
-    @NamedQuery(name = "McBatchInfo.findByBt0amtRtlSls", query = "SELECT m FROM McBatchInfo m WHERE m.bt0amtRtlSls = :bt0amtRtlSls"),
-    @NamedQuery(name = "McBatchInfo.findByBtNoCreds", query = "SELECT m FROM McBatchInfo m WHERE m.btNoCreds = :btNoCreds"),
-    @NamedQuery(name = "McBatchInfo.findByBtAmtCreds", query = "SELECT m FROM McBatchInfo m WHERE m.btAmtCreds = :btAmtCreds"),
-    @NamedQuery(name = "McBatchInfo.findByBt0amtCreds", query = "SELECT m FROM McBatchInfo m WHERE m.bt0amtCreds = :bt0amtCreds"),
-    @NamedQuery(name = "McBatchInfo.findByBtNoUniqXact", query = "SELECT m FROM McBatchInfo m WHERE m.btNoUniqXact = :btNoUniqXact"),
-    @NamedQuery(name = "McBatchInfo.findByBtAmtUniqXact", query = "SELECT m FROM McBatchInfo m WHERE m.btAmtUniqXact = :btAmtUniqXact"),
-    @NamedQuery(name = "McBatchInfo.findByBt0amtUniqXact", query = "SELECT m FROM McBatchInfo m WHERE m.bt0amtUniqXact = :bt0amtUniqXact"),
-    @NamedQuery(name = "McBatchInfo.findByBtFeeApldStld", query = "SELECT m FROM McBatchInfo m WHERE m.btFeeApldStld = :btFeeApldStld"),
-    @NamedQuery(name = "McBatchInfo.findByBtBatchAmt", query = "SELECT m FROM McBatchInfo m WHERE m.btBatchAmt = :btBatchAmt"),
-    @NamedQuery(name = "McBatchInfo.findByBt0batchAmt", query = "SELECT m FROM McBatchInfo m WHERE m.bt0batchAmt = :bt0batchAmt"),
-    @NamedQuery(name = "McBatchInfo.findByBtAmtFinDtls", query = "SELECT m FROM McBatchInfo m WHERE m.btAmtFinDtls = :btAmtFinDtls"),
-    @NamedQuery(name = "McBatchInfo.findByBt0amtFinDtls", query = "SELECT m FROM McBatchInfo m WHERE m.bt0amtFinDtls = :bt0amtFinDtls"),
-    @NamedQuery(name = "McBatchInfo.findByBtStlmntMthd", query = "SELECT m FROM McBatchInfo m WHERE m.btStlmntMthd = :btStlmntMthd"),
-    @NamedQuery(name = "McBatchInfo.findByBtXactCurrCd", query = "SELECT m FROM McBatchInfo m WHERE m.btXactCurrCd = :btXactCurrCd"),
-    @NamedQuery(name = "McBatchInfo.findByBtXactAmtExp", query = "SELECT m FROM McBatchInfo m WHERE m.btXactAmtExp = :btXactAmtExp"),
-    @NamedQuery(name = "McBatchInfo.findByBtStlmntCurrCd", query = "SELECT m FROM McBatchInfo m WHERE m.btStlmntCurrCd = :btStlmntCurrCd"),
-    @NamedQuery(name = "McBatchInfo.findByBtStlmntCurrExp", query = "SELECT m FROM McBatchInfo m WHERE m.btStlmntCurrExp = :btStlmntCurrExp"),
-    @NamedQuery(name = "McBatchInfo.findByBtIssuerCurrCd", query = "SELECT m FROM McBatchInfo m WHERE m.btIssuerCurrCd = :btIssuerCurrCd"),
-    @NamedQuery(name = "McBatchInfo.findByBtIssuerCurrExp", query = "SELECT m FROM McBatchInfo m WHERE m.btIssuerCurrExp = :btIssuerCurrExp"),
-    @NamedQuery(name = "McBatchInfo.findByBtNetAmtXctCur", query = "SELECT m FROM McBatchInfo m WHERE m.btNetAmtXctCur = :btNetAmtXctCur"),
-    @NamedQuery(name = "McBatchInfo.findByBt0netAmtXctCur", query = "SELECT m FROM McBatchInfo m WHERE m.bt0netAmtXctCur = :bt0netAmtXctCur"),
-    @NamedQuery(name = "McBatchInfo.findByBtNetAmtXctCrd", query = "SELECT m FROM McBatchInfo m WHERE m.btNetAmtXctCrd = :btNetAmtXctCrd"),
-    @NamedQuery(name = "McBatchInfo.findByBtNetAmtStCurr", query = "SELECT m FROM McBatchInfo m WHERE m.btNetAmtStCurr = :btNetAmtStCurr"),
-    @NamedQuery(name = "McBatchInfo.findByBt0netAmtStCurr", query = "SELECT m FROM McBatchInfo m WHERE m.bt0netAmtStCurr = :bt0netAmtStCurr"),
-    @NamedQuery(name = "McBatchInfo.findByBtNetAmtStCrd", query = "SELECT m FROM McBatchInfo m WHERE m.btNetAmtStCrd = :btNetAmtStCrd"),
-    @NamedQuery(name = "McBatchInfo.findByBtNoteid", query = "SELECT m FROM McBatchInfo m WHERE m.btNoteid = :btNoteid"),
-    @NamedQuery(name = "McBatchInfo.findByClusterKey", query = "SELECT m FROM McBatchInfo m WHERE m.clusterKey = :clusterKey"),
-    @NamedQuery(name = "McBatchInfo.findByBtFeeApldAmt", query = "SELECT m FROM McBatchInfo m WHERE m.btFeeApldAmt = :btFeeApldAmt"),
-    @NamedQuery(name = "McBatchInfo.findByBt0feeApldAmt", query = "SELECT m FROM McBatchInfo m WHERE m.bt0feeApldAmt = :bt0feeApldAmt"),
-    @NamedQuery(name = "McBatchInfo.findByBtFeeApldInd", query = "SELECT m FROM McBatchInfo m WHERE m.btFeeApldInd = :btFeeApldInd"),
-    @NamedQuery(name = "McBatchInfo.findByBtBatchAmtInd", query = "SELECT m FROM McBatchInfo m WHERE m.btBatchAmtInd = :btBatchAmtInd"),
-    @NamedQuery(name = "McBatchInfo.findByBtAmtFinDtlInd", query = "SELECT m FROM McBatchInfo m WHERE m.btAmtFinDtlInd = :btAmtFinDtlInd")})
 public class McBatchInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -110,7 +50,7 @@ public class McBatchInfo implements Serializable {
     @Basic(optional = false)
     @Column(name = "BT_AMT_CSH_ATM_DIS")
     private long btAmtCshAtmDis;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "BT0AMT_CSH_ATM_DIS")
     private BigDecimal bt0amtCshAtmDis;
@@ -666,7 +606,7 @@ public class McBatchInfo implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McBatchInfo)) {
             return false;
         }
@@ -681,5 +621,5 @@ public class McBatchInfo implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McBatchInfo[ mcBatchInfoPK=" + mcBatchInfoPK + " ]";
     }
-    
+
 }

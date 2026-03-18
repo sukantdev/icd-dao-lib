@@ -1,40 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_PRMPT_DATA", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McPrmptData.findAll", query = "SELECT m FROM McPrmptData m"),
-    @NamedQuery(name = "McPrmptData.findByAuthPan", query = "SELECT m FROM McPrmptData m WHERE m.mcPrmptDataPK.authPan = :authPan"),
-    @NamedQuery(name = "McPrmptData.findByAuthUtDt", query = "SELECT m FROM McPrmptData m WHERE m.mcPrmptDataPK.authUtDt = :authUtDt"),
-    @NamedQuery(name = "McPrmptData.findByAuthApprovCd", query = "SELECT m FROM McPrmptData m WHERE m.mcPrmptDataPK.authApprovCd = :authApprovCd"),
-    @NamedQuery(name = "McPrmptData.findByAuthLocalTs", query = "SELECT m FROM McPrmptData m WHERE m.mcPrmptDataPK.authLocalTs = :authLocalTs"),
-    @NamedQuery(name = "McPrmptData.findByPrmptSeqNo", query = "SELECT m FROM McPrmptData m WHERE m.mcPrmptDataPK.prmptSeqNo = :prmptSeqNo"),
-    @NamedQuery(name = "McPrmptData.findByPrmptId", query = "SELECT m FROM McPrmptData m WHERE m.prmptId = :prmptId"),
-    @NamedQuery(name = "McPrmptData.findByPrmptValue", query = "SELECT m FROM McPrmptData m WHERE m.prmptValue = :prmptValue"),
-    @NamedQuery(name = "McPrmptData.findByCrtTs", query = "SELECT m FROM McPrmptData m WHERE m.crtTs = :crtTs"),
-    @NamedQuery(name = "McPrmptData.findByCrtUsr", query = "SELECT m FROM McPrmptData m WHERE m.crtUsr = :crtUsr"),
-    @NamedQuery(name = "McPrmptData.findByMdyTs", query = "SELECT m FROM McPrmptData m WHERE m.mdyTs = :mdyTs"),
-    @NamedQuery(name = "McPrmptData.findByMdyUsr", query = "SELECT m FROM McPrmptData m WHERE m.mdyUsr = :mdyUsr")})
 public class McPrmptData implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -147,7 +124,7 @@ public class McPrmptData implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McPrmptData)) {
             return false;
         }
@@ -162,5 +139,5 @@ public class McPrmptData implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McPrmptData[ mcPrmptDataPK=" + mcPrmptDataPK + " ]";
     }
-    
+
 }

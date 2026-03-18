@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,27 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_AUTH_NON_FUEL_INFO", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAuthNonFuelInfo.findAll", query = "SELECT m FROM McAuthNonFuelInfo m"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByAuthPan", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.mcAuthNonFuelInfoPK.authPan = :authPan"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByAuthUtDt", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.mcAuthNonFuelInfoPK.authUtDt = :authUtDt"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByAuthApprovCd", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.mcAuthNonFuelInfoPK.authApprovCd = :authApprovCd"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByAuthLocalTs", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.mcAuthNonFuelInfoPK.authLocalTs = :authLocalTs"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByPrdSeqNo", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.mcAuthNonFuelInfoPK.prdSeqNo = :prdSeqNo"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByPrdCd", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.prdCd = :prdCd"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByPrdQty", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.prdQty = :prdQty"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByUnitOfMsr", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.unitOfMsr = :unitOfMsr"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByPrdAmt", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.prdAmt = :prdAmt"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByCrtTs", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.crtTs = :crtTs"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByCrtUsr", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.crtUsr = :crtUsr"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByMdyTs", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.mdyTs = :mdyTs"),
-    @NamedQuery(name = "McAuthNonFuelInfo.findByMdyUsr", query = "SELECT m FROM McAuthNonFuelInfo m WHERE m.mdyUsr = :mdyUsr")})
 public class McAuthNonFuelInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -46,7 +21,7 @@ public class McAuthNonFuelInfo implements Serializable {
     @Basic(optional = false)
     @Column(name = "PRD_CD")
     private String prdCd;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "PRD_QTY")
     private BigDecimal prdQty;
@@ -175,7 +150,7 @@ public class McAuthNonFuelInfo implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAuthNonFuelInfo)) {
             return false;
         }
@@ -190,5 +165,5 @@ public class McAuthNonFuelInfo implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAuthNonFuelInfo[ mcAuthNonFuelInfoPK=" + mcAuthNonFuelInfoPK + " ]";
     }
-    
+
 }

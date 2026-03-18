@@ -1,36 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "FC_MRCH_LOC", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "FcMrchLoc.findAll", query = "SELECT f FROM FcMrchLoc f"),
-    @NamedQuery(name = "FcMrchLoc.findByMrchId", query = "SELECT f FROM FcMrchLoc f WHERE f.mrchId = :mrchId"),
-    @NamedQuery(name = "FcMrchLoc.findByAcqId", query = "SELECT f FROM FcMrchLoc f WHERE f.acqId = :acqId"),
-    @NamedQuery(name = "FcMrchLoc.findByFcSiteId", query = "SELECT f FROM FcMrchLoc f WHERE f.fcSiteId = :fcSiteId"),
-    @NamedQuery(name = "FcMrchLoc.findByCrtTs", query = "SELECT f FROM FcMrchLoc f WHERE f.crtTs = :crtTs"),
-    @NamedQuery(name = "FcMrchLoc.findByCrtUsr", query = "SELECT f FROM FcMrchLoc f WHERE f.crtUsr = :crtUsr"),
-    @NamedQuery(name = "FcMrchLoc.findByMdyTs", query = "SELECT f FROM FcMrchLoc f WHERE f.mdyTs = :mdyTs"),
-    @NamedQuery(name = "FcMrchLoc.findByMdyUsr", query = "SELECT f FROM FcMrchLoc f WHERE f.mdyUsr = :mdyUsr")})
 public class FcMrchLoc implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -141,7 +122,7 @@ public class FcMrchLoc implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof FcMrchLoc)) {
             return false;
         }
@@ -156,5 +137,5 @@ public class FcMrchLoc implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.FcMrchLoc[ mrchId=" + mrchId + " ]";
     }
-    
+
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -9,33 +5,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MESSAGES", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "Messages.findAll", query = "SELECT m FROM Messages m"),
-    @NamedQuery(name = "Messages.findByMsgId", query = "SELECT m FROM Messages m WHERE m.msgId = :msgId"),
-    @NamedQuery(name = "Messages.findByMsgText", query = "SELECT m FROM Messages m WHERE m.msgText = :msgText"),
-    @NamedQuery(name = "Messages.findByMsgTitle", query = "SELECT m FROM Messages m WHERE m.msgTitle = :msgTitle"),
-    @NamedQuery(name = "Messages.findByMsgTyp", query = "SELECT m FROM Messages m WHERE m.msgTyp = :msgTyp"),
-    @NamedQuery(name = "Messages.findByMsgSta", query = "SELECT m FROM Messages m WHERE m.msgSta = :msgSta"),
-    @NamedQuery(name = "Messages.findByMsgStp", query = "SELECT m FROM Messages m WHERE m.msgStp = :msgStp"),
-    @NamedQuery(name = "Messages.findByCrtTs", query = "SELECT m FROM Messages m WHERE m.crtTs = :crtTs"),
-    @NamedQuery(name = "Messages.findByCrtUsr", query = "SELECT m FROM Messages m WHERE m.crtUsr = :crtUsr"),
-    @NamedQuery(name = "Messages.findByMdyTs", query = "SELECT m FROM Messages m WHERE m.mdyTs = :mdyTs"),
-    @NamedQuery(name = "Messages.findByMdyUsr", query = "SELECT m FROM Messages m WHERE m.mdyUsr = :mdyUsr"),
-    @NamedQuery(name = "Messages.findByDb2GeneratedRowidForLobs", query = "SELECT m FROM Messages m WHERE m.db2GeneratedRowidForLobs = :db2GeneratedRowidForLobs")})
 public class Messages implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -208,7 +185,7 @@ public class Messages implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof Messages)) {
             return false;
         }
@@ -223,5 +200,5 @@ public class Messages implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.Messages[ msgId=" + msgId + " ]";
     }
-    
+
 }

@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,14 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CR_APPL_CPS", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "CrApplCps.findAll", query = "SELECT c FROM CrApplCps c")})
 public class CrApplCps implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -65,7 +53,7 @@ public class CrApplCps implements Serializable {
     @Basic(optional = false)
     @Column(name = "TR_CNTCT_LST_NM")
     private String trCntctLstNm;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "INTRCHG_PLUS_PRCG")
     private BigDecimal intrchgPlusPrcg;
@@ -856,7 +844,7 @@ public class CrApplCps implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof CrApplCps)) {
             return false;
         }
@@ -871,5 +859,5 @@ public class CrApplCps implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.CrApplCps[ applNbr=" + applNbr + " ]";
     }
-    
+
 }

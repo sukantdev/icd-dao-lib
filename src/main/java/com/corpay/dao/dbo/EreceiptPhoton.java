@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
@@ -9,22 +5,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Lob;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "ERECEIPT_PHOTON", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "EreceiptPhoton.findAll", query = "SELECT e FROM EreceiptPhoton e")})
 public class EreceiptPhoton implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -1058,7 +1046,7 @@ public class EreceiptPhoton implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof EreceiptPhoton)) {
             return false;
         }
@@ -1073,5 +1061,5 @@ public class EreceiptPhoton implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.EreceiptPhoton[ ereceiptPhotonPK=" + ereceiptPhotonPK + " ]";
     }
-    
+
 }

@@ -1,36 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_CUR_CRSS_RT", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McCurCrssRt.findAll", query = "SELECT m FROM McCurCrssRt m"),
-    @NamedQuery(name = "McCurCrssRt.findByP105s1FileTy", query = "SELECT m FROM McCurCrssRt m WHERE m.mcCurCrssRtPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McCurCrssRt.findByP105s2FileRDt", query = "SELECT m FROM McCurCrssRt m WHERE m.mcCurCrssRtPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McCurCrssRt.findByP105s3ProcId", query = "SELECT m FROM McCurCrssRt m WHERE m.mcCurCrssRtPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McCurCrssRt.findByP105s4FileSeqNo", query = "SELECT m FROM McCurCrssRt m WHERE m.mcCurCrssRtPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McCurCrssRt.findByD71MsgNo", query = "SELECT m FROM McCurCrssRt m WHERE m.mcCurCrssRtPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McCurCrssRt.findByP164s1CurrCd", query = "SELECT m FROM McCurCrssRt m WHERE m.p164s1CurrCd = :p164s1CurrCd"),
-    @NamedQuery(name = "McCurCrssRt.findByP164s2CurCnvRt", query = "SELECT m FROM McCurCrssRt m WHERE m.p164s2CurCnvRt = :p164s2CurCnvRt"),
-    @NamedQuery(name = "McCurCrssRt.findByP164s3CurCnvTy", query = "SELECT m FROM McCurCrssRt m WHERE m.p164s3CurCnvTy = :p164s3CurCnvTy"),
-    @NamedQuery(name = "McCurCrssRt.findByP164s4BusDt", query = "SELECT m FROM McCurCrssRt m WHERE m.p164s4BusDt = :p164s4BusDt"),
-    @NamedQuery(name = "McCurCrssRt.findByP164s5ClCyc", query = "SELECT m FROM McCurCrssRt m WHERE m.p164s5ClCyc = :p164s5ClCyc"),
-    @NamedQuery(name = "McCurCrssRt.findByOccInd", query = "SELECT m FROM McCurCrssRt m WHERE m.mcCurCrssRtPK.occInd = :occInd")})
 public class McCurCrssRt implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -115,7 +92,7 @@ public class McCurCrssRt implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McCurCrssRt)) {
             return false;
         }
@@ -130,5 +107,5 @@ public class McCurCrssRt implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McCurCrssRt[ mcCurCrssRtPK=" + mcCurCrssRtPK + " ]";
     }
-    
+
 }

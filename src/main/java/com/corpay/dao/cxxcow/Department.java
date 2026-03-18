@@ -1,40 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "DEPARTMENT", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "Department.findAll", query = "SELECT d FROM Department d"),
-    @NamedQuery(name = "Department.findByDptId", query = "SELECT d FROM Department d WHERE d.dptId = :dptId"),
-    @NamedQuery(name = "Department.findByDptTyp", query = "SELECT d FROM Department d WHERE d.dptTyp = :dptTyp"),
-    @NamedQuery(name = "Department.findByCompNbr", query = "SELECT d FROM Department d WHERE d.compNbr = :compNbr"),
-    @NamedQuery(name = "Department.findByDptNbr", query = "SELECT d FROM Department d WHERE d.dptNbr = :dptNbr"),
-    @NamedQuery(name = "Department.findByDptDesc", query = "SELECT d FROM Department d WHERE d.dptDesc = :dptDesc"),
-    @NamedQuery(name = "Department.findByActFlg", query = "SELECT d FROM Department d WHERE d.actFlg = :actFlg"),
-    @NamedQuery(name = "Department.findByDptOrderBy", query = "SELECT d FROM Department d WHERE d.dptOrderBy = :dptOrderBy"),
-    @NamedQuery(name = "Department.findByCrtTs", query = "SELECT d FROM Department d WHERE d.crtTs = :crtTs"),
-    @NamedQuery(name = "Department.findByCrtUsr", query = "SELECT d FROM Department d WHERE d.crtUsr = :crtUsr"),
-    @NamedQuery(name = "Department.findByMdyTs", query = "SELECT d FROM Department d WHERE d.mdyTs = :mdyTs"),
-    @NamedQuery(name = "Department.findByMdyUsr", query = "SELECT d FROM Department d WHERE d.mdyUsr = :mdyUsr")})
 public class Department implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -193,7 +170,7 @@ public class Department implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof Department)) {
             return false;
         }
@@ -208,5 +185,5 @@ public class Department implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.Department[ dptId=" + dptId + " ]";
     }
-    
+
 }

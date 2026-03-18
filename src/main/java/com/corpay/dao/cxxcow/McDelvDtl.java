@@ -1,34 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_DELV_DTL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McDelvDtl.findAll", query = "SELECT m FROM McDelvDtl m"),
-    @NamedQuery(name = "McDelvDtl.findByP105s1FileTy", query = "SELECT m FROM McDelvDtl m WHERE m.mcDelvDtlPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McDelvDtl.findByP105s2FileRDt", query = "SELECT m FROM McDelvDtl m WHERE m.mcDelvDtlPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McDelvDtl.findByP105s3ProcId", query = "SELECT m FROM McDelvDtl m WHERE m.mcDelvDtlPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McDelvDtl.findByP105s4FileSeqNo", query = "SELECT m FROM McDelvDtl m WHERE m.mcDelvDtlPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McDelvDtl.findByD71MsgNo", query = "SELECT m FROM McDelvDtl m WHERE m.mcDelvDtlPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McDelvDtl.findByOccInd", query = "SELECT m FROM McDelvDtl m WHERE m.mcDelvDtlPK.occInd = :occInd"),
-    @NamedQuery(name = "McDelvDtl.findByP754s1DelvDesc", query = "SELECT m FROM McDelvDtl m WHERE m.p754s1DelvDesc = :p754s1DelvDesc"),
-    @NamedQuery(name = "McDelvDtl.findByP754s2DelvCntct", query = "SELECT m FROM McDelvDtl m WHERE m.p754s2DelvCntct = :p754s2DelvCntct")})
 public class McDelvDtl implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -91,7 +71,7 @@ public class McDelvDtl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McDelvDtl)) {
             return false;
         }
@@ -106,5 +86,5 @@ public class McDelvDtl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McDelvDtl[ mcDelvDtlPK=" + mcDelvDtlPK + " ]";
     }
-    
+
 }

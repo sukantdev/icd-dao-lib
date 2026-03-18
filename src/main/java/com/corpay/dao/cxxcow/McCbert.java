@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,215 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_CBERT", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McCbert.findAll", query = "SELECT m FROM McCbert m"),
-    @NamedQuery(name = "McCbert.findByD2PriAccntNo", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d2PriAccntNo = :d2PriAccntNo"),
-    @NamedQuery(name = "McCbert.findByD3s1ChTranTy", query = "SELECT m FROM McCbert m WHERE m.d3s1ChTranTy = :d3s1ChTranTy"),
-    @NamedQuery(name = "McCbert.findByD3s2ChFraccntty", query = "SELECT m FROM McCbert m WHERE m.d3s2ChFraccntty = :d3s2ChFraccntty"),
-    @NamedQuery(name = "McCbert.findByD3s3ChToaccntty", query = "SELECT m FROM McCbert m WHERE m.d3s3ChToaccntty = :d3s3ChToaccntty"),
-    @NamedQuery(name = "McCbert.findByD4TranAmt", query = "SELECT m FROM McCbert m WHERE m.d4TranAmt = :d4TranAmt"),
-    @NamedQuery(name = "McCbert.findByD5ReconAmt", query = "SELECT m FROM McCbert m WHERE m.d5ReconAmt = :d5ReconAmt"),
-    @NamedQuery(name = "McCbert.findByD6ChBillingAmt", query = "SELECT m FROM McCbert m WHERE m.d6ChBillingAmt = :d6ChBillingAmt"),
-    @NamedQuery(name = "McCbert.findByD9ReconConvRt", query = "SELECT m FROM McCbert m WHERE m.d9ReconConvRt = :d9ReconConvRt"),
-    @NamedQuery(name = "McCbert.findByD12s1LocalTrDt", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d12s1LocalTrDt = :d12s1LocalTrDt"),
-    @NamedQuery(name = "McCbert.findByD12s2LocalTrTm", query = "SELECT m FROM McCbert m WHERE m.d12s2LocalTrTm = :d12s2LocalTrTm"),
-    @NamedQuery(name = "McCbert.findByD14ExpDt", query = "SELECT m FROM McCbert m WHERE m.d14ExpDt = :d14ExpDt"),
-    @NamedQuery(name = "McCbert.findByD22s1Crddatincp", query = "SELECT m FROM McCbert m WHERE m.d22s1Crddatincp = :d22s1Crddatincp"),
-    @NamedQuery(name = "McCbert.findByD22s2ChAthCap", query = "SELECT m FROM McCbert m WHERE m.d22s2ChAthCap = :d22s2ChAthCap"),
-    @NamedQuery(name = "McCbert.findByD22s3CrdcapCpblt", query = "SELECT m FROM McCbert m WHERE m.d22s3CrdcapCpblt = :d22s3CrdcapCpblt"),
-    @NamedQuery(name = "McCbert.findByD22s4TermopEnv", query = "SELECT m FROM McCbert m WHERE m.d22s4TermopEnv = :d22s4TermopEnv"),
-    @NamedQuery(name = "McCbert.findByD22s5ChPsntDat", query = "SELECT m FROM McCbert m WHERE m.d22s5ChPsntDat = :d22s5ChPsntDat"),
-    @NamedQuery(name = "McCbert.findByD22s6CrdPsntDat", query = "SELECT m FROM McCbert m WHERE m.d22s6CrdPsntDat = :d22s6CrdPsntDat"),
-    @NamedQuery(name = "McCbert.findByD22s7CrdDatMd", query = "SELECT m FROM McCbert m WHERE m.d22s7CrdDatMd = :d22s7CrdDatMd"),
-    @NamedQuery(name = "McCbert.findByD22s8ChAthmtd", query = "SELECT m FROM McCbert m WHERE m.d22s8ChAthmtd = :d22s8ChAthmtd"),
-    @NamedQuery(name = "McCbert.findByD22s9ChAthent", query = "SELECT m FROM McCbert m WHERE m.d22s9ChAthent = :d22s9ChAthent"),
-    @NamedQuery(name = "McCbert.findByD22s10Crddatocap", query = "SELECT m FROM McCbert m WHERE m.d22s10Crddatocap = :d22s10Crddatocap"),
-    @NamedQuery(name = "McCbert.findByD22s11Trmocpblt", query = "SELECT m FROM McCbert m WHERE m.d22s11Trmocpblt = :d22s11Trmocpblt"),
-    @NamedQuery(name = "McCbert.findByD22s12PinCapCap", query = "SELECT m FROM McCbert m WHERE m.d22s12PinCapCap = :d22s12PinCapCap"),
-    @NamedQuery(name = "McCbert.findByD23CardSeqNo", query = "SELECT m FROM McCbert m WHERE m.d23CardSeqNo = :d23CardSeqNo"),
-    @NamedQuery(name = "McCbert.findByD24FuncCd", query = "SELECT m FROM McCbert m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McCbert.findByD25MsgRsnCd", query = "SELECT m FROM McCbert m WHERE m.d25MsgRsnCd = :d25MsgRsnCd"),
-    @NamedQuery(name = "McCbert.findByD26CrdAcptrbus", query = "SELECT m FROM McCbert m WHERE m.d26CrdAcptrbus = :d26CrdAcptrbus"),
-    @NamedQuery(name = "McCbert.findByD30s1TrOrigAmt", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d30s1TrOrigAmt = :d30s1TrOrigAmt"),
-    @NamedQuery(name = "McCbert.findByD30s2RnOrigAmt", query = "SELECT m FROM McCbert m WHERE m.d30s2RnOrigAmt = :d30s2RnOrigAmt"),
-    @NamedQuery(name = "McCbert.findByD31s1IcRtDsgtr", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d31s1IcRtDsgtr = :d31s1IcRtDsgtr"),
-    @NamedQuery(name = "McCbert.findByD31s2AcquirBin", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d31s2AcquirBin = :d31s2AcquirBin"),
-    @NamedQuery(name = "McCbert.findByD31s3JulPrcDt", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d31s3JulPrcDt = :d31s3JulPrcDt"),
-    @NamedQuery(name = "McCbert.findByD31s4AcqSeqNo", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d31s4AcqSeqNo = :d31s4AcqSeqNo"),
-    @NamedQuery(name = "McCbert.findByD31s5CheckDigit", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d31s5CheckDigit = :d31s5CheckDigit"),
-    @NamedQuery(name = "McCbert.findByD32AcqInstIdCd", query = "SELECT m FROM McCbert m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McCbert.findByD33FwdngInstCd", query = "SELECT m FROM McCbert m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McCbert.findByD35Track2Data", query = "SELECT m FROM McCbert m WHERE m.d35Track2Data = :d35Track2Data"),
-    @NamedQuery(name = "McCbert.findByD37RetrRefNo", query = "SELECT m FROM McCbert m WHERE m.d37RetrRefNo = :d37RetrRefNo"),
-    @NamedQuery(name = "McCbert.findByD38ApprvlCd", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d38ApprvlCd = :d38ApprvlCd"),
-    @NamedQuery(name = "McCbert.findByD41CrdAcprTrm", query = "SELECT m FROM McCbert m WHERE m.d41CrdAcprTrm = :d41CrdAcprTrm"),
-    @NamedQuery(name = "McCbert.findByD42CrdAcprId", query = "SELECT m FROM McCbert m WHERE m.d42CrdAcprId = :d42CrdAcprId"),
-    @NamedQuery(name = "McCbert.findByD43s1CrdAcpNm", query = "SELECT m FROM McCbert m WHERE m.d43s1CrdAcpNm = :d43s1CrdAcpNm"),
-    @NamedQuery(name = "McCbert.findByD43s2CrdAcpStr", query = "SELECT m FROM McCbert m WHERE m.d43s2CrdAcpStr = :d43s2CrdAcpStr"),
-    @NamedQuery(name = "McCbert.findByD43s3CrdAcpCty", query = "SELECT m FROM McCbert m WHERE m.d43s3CrdAcpCty = :d43s3CrdAcpCty"),
-    @NamedQuery(name = "McCbert.findByD43s4CrdAcpZip", query = "SELECT m FROM McCbert m WHERE m.d43s4CrdAcpZip = :d43s4CrdAcpZip"),
-    @NamedQuery(name = "McCbert.findByD43s5CrdAcpSt", query = "SELECT m FROM McCbert m WHERE m.d43s5CrdAcpSt = :d43s5CrdAcpSt"),
-    @NamedQuery(name = "McCbert.findByD43s6CrdAcpCtry", query = "SELECT m FROM McCbert m WHERE m.d43s6CrdAcpCtry = :d43s6CrdAcpCtry"),
-    @NamedQuery(name = "McCbert.findByD45Track1Dat", query = "SELECT m FROM McCbert m WHERE m.d45Track1Dat = :d45Track1Dat"),
-    @NamedQuery(name = "McCbert.findByD48AddtlDat", query = "SELECT m FROM McCbert m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McCbert.findByD49TranCurrCd", query = "SELECT m FROM McCbert m WHERE m.d49TranCurrCd = :d49TranCurrCd"),
-    @NamedQuery(name = "McCbert.findByD50ReconCurCd", query = "SELECT m FROM McCbert m WHERE m.d50ReconCurCd = :d50ReconCurCd"),
-    @NamedQuery(name = "McCbert.findByD55IntdCirSys", query = "SELECT m FROM McCbert m WHERE m.d55IntdCirSys = :d55IntdCirSys"),
-    @NamedQuery(name = "McCbert.findByD62AddtlData2", query = "SELECT m FROM McCbert m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McCbert.findByD63s1LfcycSpInd", query = "SELECT m FROM McCbert m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McCbert.findByD63s2TraceId", query = "SELECT m FROM McCbert m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McCbert.findByD71MsgNo", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McCbert.findByD72DataRec", query = "SELECT m FROM McCbert m WHERE m.d72DataRec = :d72DataRec"),
-    @NamedQuery(name = "McCbert.findByD73ActionDt", query = "SELECT m FROM McCbert m WHERE m.d73ActionDt = :d73ActionDt"),
-    @NamedQuery(name = "McCbert.findByD93TrDestInst", query = "SELECT m FROM McCbert m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McCbert.findByD94TrOrgInst", query = "SELECT m FROM McCbert m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McCbert.findByD95CrdIssuerRef", query = "SELECT m FROM McCbert m WHERE m.d95CrdIssuerRef = :d95CrdIssuerRef"),
-    @NamedQuery(name = "McCbert.findByD100RecvInstId", query = "SELECT m FROM McCbert m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McCbert.findByD123AddtlDat3", query = "SELECT m FROM McCbert m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McCbert.findByD124AddtlDat4", query = "SELECT m FROM McCbert m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McCbert.findByD125AddtlDat5", query = "SELECT m FROM McCbert m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McCbert.findByP2ProdId", query = "SELECT m FROM McCbert m WHERE m.p2ProdId = :p2ProdId"),
-    @NamedQuery(name = "McCbert.findByP020IccrEffDt", query = "SELECT m FROM McCbert m WHERE m.p020IccrEffDt = :p020IccrEffDt"),
-    @NamedQuery(name = "McCbert.findByP023TermTy", query = "SELECT m FROM McCbert m WHERE m.p023TermTy = :p023TermTy"),
-    @NamedQuery(name = "McCbert.findByP025s1MsgRev", query = "SELECT m FROM McCbert m WHERE m.p025s1MsgRev = :p025s1MsgRev"),
-    @NamedQuery(name = "McCbert.findByP025s2Cprdtorig", query = "SELECT m FROM McCbert m WHERE m.p025s2Cprdtorig = :p025s2Cprdtorig"),
-    @NamedQuery(name = "McCbert.findByP043PgmRegstn", query = "SELECT m FROM McCbert m WHERE m.p043PgmRegstn = :p043PgmRegstn"),
-    @NamedQuery(name = "McCbert.findByP52s1SecuProt", query = "SELECT m FROM McCbert m WHERE m.p52s1SecuProt = :p52s1SecuProt"),
-    @NamedQuery(name = "McCbert.findByP52s2ChAuth", query = "SELECT m FROM McCbert m WHERE m.p52s2ChAuth = :p52s2ChAuth"),
-    @NamedQuery(name = "McCbert.findByP52s3UcafColind", query = "SELECT m FROM McCbert m WHERE m.p52s3UcafColind = :p52s3UcafColind"),
-    @NamedQuery(name = "McCbert.findByP137FeeColCntl", query = "SELECT m FROM McCbert m WHERE m.p137FeeColCntl = :p137FeeColCntl"),
-    @NamedQuery(name = "McCbert.findByP146s1TrnfeeTy", query = "SELECT m FROM McCbert m WHERE m.p146s1TrnfeeTy = :p146s1TrnfeeTy"),
-    @NamedQuery(name = "McCbert.findByP146s2TrnfeePrc", query = "SELECT m FROM McCbert m WHERE m.p146s2TrnfeePrc = :p146s2TrnfeePrc"),
-    @NamedQuery(name = "McCbert.findByP146s3TrnfeeStl", query = "SELECT m FROM McCbert m WHERE m.p146s3TrnfeeStl = :p146s3TrnfeeStl"),
-    @NamedQuery(name = "McCbert.findByP146s4TrnfeeCurr", query = "SELECT m FROM McCbert m WHERE m.p146s4TrnfeeCurr = :p146s4TrnfeeCurr"),
-    @NamedQuery(name = "McCbert.findByP146s5TrnfeeAmt", query = "SELECT m FROM McCbert m WHERE m.p146s5TrnfeeAmt = :p146s5TrnfeeAmt"),
-    @NamedQuery(name = "McCbert.findByP146s6Trnfeercur", query = "SELECT m FROM McCbert m WHERE m.p146s6Trnfeercur = :p146s6Trnfeercur"),
-    @NamedQuery(name = "McCbert.findByP146s7TrnfeerAmt", query = "SELECT m FROM McCbert m WHERE m.p146s7TrnfeerAmt = :p146s7TrnfeerAmt"),
-    @NamedQuery(name = "McCbert.findByP148s1CurrCd", query = "SELECT m FROM McCbert m WHERE m.p148s1CurrCd = :p148s1CurrCd"),
-    @NamedQuery(name = "McCbert.findByP148s2CurrExp", query = "SELECT m FROM McCbert m WHERE m.p148s2CurrExp = :p148s2CurrExp"),
-    @NamedQuery(name = "McCbert.findByP149s1OrTaCur", query = "SELECT m FROM McCbert m WHERE m.p149s1OrTaCur = :p149s1OrTaCur"),
-    @NamedQuery(name = "McCbert.findByP149s2OrRcncur", query = "SELECT m FROM McCbert m WHERE m.p149s2OrRcncur = :p149s2OrRcncur"),
-    @NamedQuery(name = "McCbert.findByP158s1ApBrandId", query = "SELECT m FROM McCbert m WHERE m.p158s1ApBrandId = :p158s1ApBrandId"),
-    @NamedQuery(name = "McCbert.findByP158s2BusSrvcLv", query = "SELECT m FROM McCbert m WHERE m.p158s2BusSrvcLv = :p158s2BusSrvcLv"),
-    @NamedQuery(name = "McCbert.findByP158s3BusSrvcId", query = "SELECT m FROM McCbert m WHERE m.p158s3BusSrvcId = :p158s3BusSrvcId"),
-    @NamedQuery(name = "McCbert.findByP158s4IcgRtDsgn", query = "SELECT m FROM McCbert m WHERE m.p158s4IcgRtDsgn = :p158s4IcgRtDsgn"),
-    @NamedQuery(name = "McCbert.findByP158s5BusDt", query = "SELECT m FROM McCbert m WHERE m.p158s5BusDt = :p158s5BusDt"),
-    @NamedQuery(name = "McCbert.findByP158s6BusCycle", query = "SELECT m FROM McCbert m WHERE m.p158s6BusCycle = :p158s6BusCycle"),
-    @NamedQuery(name = "McCbert.findByP158s7MccOvr", query = "SELECT m FROM McCbert m WHERE m.p158s7MccOvr = :p158s7MccOvr"),
-    @NamedQuery(name = "McCbert.findByP158s8ProdOvr", query = "SELECT m FROM McCbert m WHERE m.p158s8ProdOvr = :p158s8ProdOvr"),
-    @NamedQuery(name = "McCbert.findByP158s9CorpIncrt", query = "SELECT m FROM McCbert m WHERE m.p158s9CorpIncrt = :p158s9CorpIncrt"),
-    @NamedQuery(name = "McCbert.findByP158s10QualLvl", query = "SELECT m FROM McCbert m WHERE m.p158s10QualLvl = :p158s10QualLvl"),
-    @NamedQuery(name = "McCbert.findByP159s1SSrvcTai", query = "SELECT m FROM McCbert m WHERE m.p159s1SSrvcTai = :p159s1SSrvcTai"),
-    @NamedQuery(name = "McCbert.findByP159s2SSrvctaa", query = "SELECT m FROM McCbert m WHERE m.p159s2SSrvctaa = :p159s2SSrvctaa"),
-    @NamedQuery(name = "McCbert.findByP159s3SSrvcLvl", query = "SELECT m FROM McCbert m WHERE m.p159s3SSrvcLvl = :p159s3SSrvcLvl"),
-    @NamedQuery(name = "McCbert.findByP159s4SSrvcId", query = "SELECT m FROM McCbert m WHERE m.p159s4SSrvcId = :p159s4SSrvcId"),
-    @NamedQuery(name = "McCbert.findByP159s5SFrnexCl", query = "SELECT m FROM McCbert m WHERE m.p159s5SFrnexCl = :p159s5SFrnexCl"),
-    @NamedQuery(name = "McCbert.findByP159s6ReconDt", query = "SELECT m FROM McCbert m WHERE m.p159s6ReconDt = :p159s6ReconDt"),
-    @NamedQuery(name = "McCbert.findByP159s7ReconCycle", query = "SELECT m FROM McCbert m WHERE m.p159s7ReconCycle = :p159s7ReconCycle"),
-    @NamedQuery(name = "McCbert.findByP159s8StlDt", query = "SELECT m FROM McCbert m WHERE m.p159s8StlDt = :p159s8StlDt"),
-    @NamedQuery(name = "McCbert.findByP159s9StlCycle", query = "SELECT m FROM McCbert m WHERE m.p159s9StlCycle = :p159s9StlCycle"),
-    @NamedQuery(name = "McCbert.findByP161s1SSrvcTai", query = "SELECT m FROM McCbert m WHERE m.p161s1SSrvcTai = :p161s1SSrvcTai"),
-    @NamedQuery(name = "McCbert.findByP161s2SSrvcTaa", query = "SELECT m FROM McCbert m WHERE m.p161s2SSrvcTaa = :p161s2SSrvcTaa"),
-    @NamedQuery(name = "McCbert.findByP161s3SSrvcLvl", query = "SELECT m FROM McCbert m WHERE m.p161s3SSrvcLvl = :p161s3SSrvcLvl"),
-    @NamedQuery(name = "McCbert.findByP161s4SSrvcId", query = "SELECT m FROM McCbert m WHERE m.p161s4SSrvcId = :p161s4SSrvcId"),
-    @NamedQuery(name = "McCbert.findByP161s5SFeRtCl", query = "SELECT m FROM McCbert m WHERE m.p161s5SFeRtCl = :p161s5SFeRtCl"),
-    @NamedQuery(name = "McCbert.findByP161s6ReconDt", query = "SELECT m FROM McCbert m WHERE m.p161s6ReconDt = :p161s6ReconDt"),
-    @NamedQuery(name = "McCbert.findByP161s7ReconCycle", query = "SELECT m FROM McCbert m WHERE m.p161s7ReconCycle = :p161s7ReconCycle"),
-    @NamedQuery(name = "McCbert.findByP161s8SDt", query = "SELECT m FROM McCbert m WHERE m.p161s8SDt = :p161s8SDt"),
-    @NamedQuery(name = "McCbert.findByP161s9SCycle", query = "SELECT m FROM McCbert m WHERE m.p161s9SCycle = :p161s9SCycle"),
-    @NamedQuery(name = "McCbert.findByP165s1StlInd", query = "SELECT m FROM McCbert m WHERE m.p165s1StlInd = :p165s1StlInd"),
-    @NamedQuery(name = "McCbert.findByP165s2StlInfo", query = "SELECT m FROM McCbert m WHERE m.p165s2StlInfo = :p165s2StlInfo"),
-    @NamedQuery(name = "McCbert.findByP170s1CustsvcPh", query = "SELECT m FROM McCbert m WHERE m.p170s1CustsvcPh = :p170s1CustsvcPh"),
-    @NamedQuery(name = "McCbert.findByP170s2CrdAcpPh", query = "SELECT m FROM McCbert m WHERE m.p170s2CrdAcpPh = :p170s2CrdAcpPh"),
-    @NamedQuery(name = "McCbert.findByP170s3AdtlCtInf", query = "SELECT m FROM McCbert m WHERE m.p170s3AdtlCtInf = :p170s3AdtlCtInf"),
-    @NamedQuery(name = "McCbert.findByP171s1ChrSetInd", query = "SELECT m FROM McCbert m WHERE m.p171s1ChrSetInd = :p171s1ChrSetInd"),
-    @NamedQuery(name = "McCbert.findByP171s2CrdAcpdsc", query = "SELECT m FROM McCbert m WHERE m.p171s2CrdAcpdsc = :p171s2CrdAcpdsc"),
-    @NamedQuery(name = "McCbert.findByP172SoleProNm", query = "SELECT m FROM McCbert m WHERE m.p172SoleProNm = :p172SoleProNm"),
-    @NamedQuery(name = "McCbert.findByP173LegCorpNm", query = "SELECT m FROM McCbert m WHERE m.p173LegCorpNm = :p173LegCorpNm"),
-    @NamedQuery(name = "McCbert.findByP174DunBradNo", query = "SELECT m FROM McCbert m WHERE m.p174DunBradNo = :p174DunBradNo"),
-    @NamedQuery(name = "McCbert.findByP175CrdAcpUrl", query = "SELECT m FROM McCbert m WHERE m.p175CrdAcpUrl = :p175CrdAcpUrl"),
-    @NamedQuery(name = "McCbert.findByP189s1FormatNo", query = "SELECT m FROM McCbert m WHERE m.p189s1FormatNo = :p189s1FormatNo"),
-    @NamedQuery(name = "McCbert.findByP189s2PhoneDat", query = "SELECT m FROM McCbert m WHERE m.p189s2PhoneDat = :p189s2PhoneDat"),
-    @NamedQuery(name = "McCbert.findByP190PartIdCd", query = "SELECT m FROM McCbert m WHERE m.p190PartIdCd = :p190PartIdCd"),
-    @NamedQuery(name = "McCbert.findByP191OrMsgFmt", query = "SELECT m FROM McCbert m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McCbert.findByP228RetrDoc", query = "SELECT m FROM McCbert m WHERE m.p228RetrDoc = :p228RetrDoc"),
-    @NamedQuery(name = "McCbert.findByP230FulDocCd", query = "SELECT m FROM McCbert m WHERE m.p230FulDocCd = :p230FulDocCd"),
-    @NamedQuery(name = "McCbert.findByP241MstcCntl", query = "SELECT m FROM McCbert m WHERE m.p241MstcCntl = :p241MstcCntl"),
-    @NamedQuery(name = "McCbert.findByP242MstcSrvcI", query = "SELECT m FROM McCbert m WHERE m.p242MstcSrvcI = :p242MstcSrvcI"),
-    @NamedQuery(name = "McCbert.findByP243s1McomIRdt", query = "SELECT m FROM McCbert m WHERE m.p243s1McomIRdt = :p243s1McomIRdt"),
-    @NamedQuery(name = "McCbert.findByP243s2McomAcqRs", query = "SELECT m FROM McCbert m WHERE m.p243s2McomAcqRs = :p243s2McomAcqRs"),
-    @NamedQuery(name = "McCbert.findByP243s3McomARdt", query = "SELECT m FROM McCbert m WHERE m.p243s3McomARdt = :p243s3McomARdt"),
-    @NamedQuery(name = "McCbert.findByP243s4McomIRc", query = "SELECT m FROM McCbert m WHERE m.p243s4McomIRc = :p243s4McomIRc"),
-    @NamedQuery(name = "McCbert.findByP243s5McomIRDt", query = "SELECT m FROM McCbert m WHERE m.p243s5McomIRDt = :p243s5McomIRDt"),
-    @NamedQuery(name = "McCbert.findByP243s6McomIRejr", query = "SELECT m FROM McCbert m WHERE m.p243s6McomIRejr = :p243s6McomIRejr"),
-    @NamedQuery(name = "McCbert.findByP243s7McomImRv", query = "SELECT m FROM McCbert m WHERE m.p243s7McomImRv = :p243s7McomImRv"),
-    @NamedQuery(name = "McCbert.findByP243s8McomImRdt", query = "SELECT m FROM McCbert m WHERE m.p243s8McomImRdt = :p243s8McomImRdt"),
-    @NamedQuery(name = "McCbert.findByP244s1McomCbDt", query = "SELECT m FROM McCbert m WHERE m.p244s1McomCbDt = :p244s1McomCbDt"),
-    @NamedQuery(name = "McCbert.findByP244s2McomCbDt2", query = "SELECT m FROM McCbert m WHERE m.p244s2McomCbDt2 = :p244s2McomCbDt2"),
-    @NamedQuery(name = "McCbert.findByP260s1ExcReqCd", query = "SELECT m FROM McCbert m WHERE m.p260s1ExcReqCd = :p260s1ExcReqCd"),
-    @NamedQuery(name = "McCbert.findByP260s2ExcRsnCd", query = "SELECT m FROM McCbert m WHERE m.p260s2ExcRsnCd = :p260s2ExcRsnCd"),
-    @NamedQuery(name = "McCbert.findByP260s3ExcResCd", query = "SELECT m FROM McCbert m WHERE m.p260s3ExcResCd = :p260s3ExcResCd"),
-    @NamedQuery(name = "McCbert.findByP262DocIndctr", query = "SELECT m FROM McCbert m WHERE m.p262DocIndctr = :p262DocIndctr"),
-    @NamedQuery(name = "McCbert.findByP264OrRetrRsn", query = "SELECT m FROM McCbert m WHERE m.p264OrRetrRsn = :p264OrRetrRsn"),
-    @NamedQuery(name = "McCbert.findByP265s1IMsgRsn", query = "SELECT m FROM McCbert m WHERE m.p265s1IMsgRsn = :p265s1IMsgRsn"),
-    @NamedQuery(name = "McCbert.findByP265s2IPsntBus", query = "SELECT m FROM McCbert m WHERE m.p265s2IPsntBus = :p265s2IPsntBus"),
-    @NamedQuery(name = "McCbert.findByP265s3IDatRec", query = "SELECT m FROM McCbert m WHERE m.p265s3IDatRec = :p265s3IDatRec"),
-    @NamedQuery(name = "McCbert.findByP266s1MsgRsnCd", query = "SELECT m FROM McCbert m WHERE m.p266s1MsgRsnCd = :p266s1MsgRsnCd"),
-    @NamedQuery(name = "McCbert.findByP266s2FstrtnDt", query = "SELECT m FROM McCbert m WHERE m.p266s2FstrtnDt = :p266s2FstrtnDt"),
-    @NamedQuery(name = "McCbert.findByP266s3EditExRsn", query = "SELECT m FROM McCbert m WHERE m.p266s3EditExRsn = :p266s3EditExRsn"),
-    @NamedQuery(name = "McCbert.findByP266s4EditExRes", query = "SELECT m FROM McCbert m WHERE m.p266s4EditExRes = :p266s4EditExRes"),
-    @NamedQuery(name = "McCbert.findByP266s5FstrtnAmt", query = "SELECT m FROM McCbert m WHERE m.p266s5FstrtnAmt = :p266s5FstrtnAmt"),
-    @NamedQuery(name = "McCbert.findByP266s6FstRtnCur", query = "SELECT m FROM McCbert m WHERE m.p266s6FstRtnCur = :p266s6FstRtnCur"),
-    @NamedQuery(name = "McCbert.findByP266s7FstRtnDat", query = "SELECT m FROM McCbert m WHERE m.p266s7FstRtnDat = :p266s7FstRtnDat"),
-    @NamedQuery(name = "McCbert.findByP267s1MsgRsnCd", query = "SELECT m FROM McCbert m WHERE m.p267s1MsgRsnCd = :p267s1MsgRsnCd"),
-    @NamedQuery(name = "McCbert.findByP267s2SecRtnDt", query = "SELECT m FROM McCbert m WHERE m.p267s2SecRtnDt = :p267s2SecRtnDt"),
-    @NamedQuery(name = "McCbert.findByP267s3EditExRsn", query = "SELECT m FROM McCbert m WHERE m.p267s3EditExRsn = :p267s3EditExRsn"),
-    @NamedQuery(name = "McCbert.findByP267s4EditExRes", query = "SELECT m FROM McCbert m WHERE m.p267s4EditExRes = :p267s4EditExRes"),
-    @NamedQuery(name = "McCbert.findByP267s5SecRtnAmt", query = "SELECT m FROM McCbert m WHERE m.p267s5SecRtnAmt = :p267s5SecRtnAmt"),
-    @NamedQuery(name = "McCbert.findByP267s6SecRtnCur", query = "SELECT m FROM McCbert m WHERE m.p267s6SecRtnCur = :p267s6SecRtnCur"),
-    @NamedQuery(name = "McCbert.findByP267s7SecRtnDat", query = "SELECT m FROM McCbert m WHERE m.p267s7SecRtnDat = :p267s7SecRtnDat"),
-    @NamedQuery(name = "McCbert.findByP268s1PrtTrnAmt", query = "SELECT m FROM McCbert m WHERE m.p268s1PrtTrnAmt = :p268s1PrtTrnAmt"),
-    @NamedQuery(name = "McCbert.findByP268s2PrtTranCc", query = "SELECT m FROM McCbert m WHERE m.p268s2PrtTranCc = :p268s2PrtTranCc"),
-    @NamedQuery(name = "McCbert.findByP375MbrRcnInd", query = "SELECT m FROM McCbert m WHERE m.p375MbrRcnInd = :p375MbrRcnInd"),
-    @NamedQuery(name = "McCbert.findByP376MbrRcnInd", query = "SELECT m FROM McCbert m WHERE m.p376MbrRcnInd = :p376MbrRcnInd"),
-    @NamedQuery(name = "McCbert.findByP1000MbrToMbr", query = "SELECT m FROM McCbert m WHERE m.p1000MbrToMbr = :p1000MbrToMbr"),
-    @NamedQuery(name = "McCbert.findByU0000RecordType", query = "SELECT m FROM McCbert m WHERE m.mcCbertPK.u0000RecordType = :u0000RecordType"),
-    @NamedQuery(name = "McCbert.findByU0001Status", query = "SELECT m FROM McCbert m WHERE m.u0001Status = :u0001Status"),
-    @NamedQuery(name = "McCbert.findByU0002StatusMsg", query = "SELECT m FROM McCbert m WHERE m.u0002StatusMsg = :u0002StatusMsg"),
-    @NamedQuery(name = "McCbert.findByU0003CreatedId", query = "SELECT m FROM McCbert m WHERE m.u0003CreatedId = :u0003CreatedId"),
-    @NamedQuery(name = "McCbert.findByU0004CreatedDt", query = "SELECT m FROM McCbert m WHERE m.u0004CreatedDt = :u0004CreatedDt"),
-    @NamedQuery(name = "McCbert.findByU0005CreatedRm", query = "SELECT m FROM McCbert m WHERE m.u0005CreatedRm = :u0005CreatedRm"),
-    @NamedQuery(name = "McCbert.findByU0006LastupdId", query = "SELECT m FROM McCbert m WHERE m.u0006LastupdId = :u0006LastupdId"),
-    @NamedQuery(name = "McCbert.findByU0007LastupdDt", query = "SELECT m FROM McCbert m WHERE m.u0007LastupdDt = :u0007LastupdDt"),
-    @NamedQuery(name = "McCbert.findByU0008LastupdTm", query = "SELECT m FROM McCbert m WHERE m.u0008LastupdTm = :u0008LastupdTm"),
-    @NamedQuery(name = "McCbert.findByU0009FulfilStat", query = "SELECT m FROM McCbert m WHERE m.u0009FulfilStat = :u0009FulfilStat"),
-    @NamedQuery(name = "McCbert.findByU0010FulfilDt", query = "SELECT m FROM McCbert m WHERE m.u0010FulfilDt = :u0010FulfilDt"),
-    @NamedQuery(name = "McCbert.findByU0011NoActStat", query = "SELECT m FROM McCbert m WHERE m.u0011NoActStat = :u0011NoActStat"),
-    @NamedQuery(name = "McCbert.findByU0012NoActDt", query = "SELECT m FROM McCbert m WHERE m.u0012NoActDt = :u0012NoActDt"),
-    @NamedQuery(name = "McCbert.findByU0013CbInitDt", query = "SELECT m FROM McCbert m WHERE m.u0013CbInitDt = :u0013CbInitDt"),
-    @NamedQuery(name = "McCbert.findByU0014GeacRef", query = "SELECT m FROM McCbert m WHERE m.u0014GeacRef = :u0014GeacRef"),
-    @NamedQuery(name = "McCbert.findByU0015AcctCde", query = "SELECT m FROM McCbert m WHERE m.u0015AcctCde = :u0015AcctCde"),
-    @NamedQuery(name = "McCbert.findByU0016DateSent", query = "SELECT m FROM McCbert m WHERE m.u0016DateSent = :u0016DateSent"),
-    @NamedQuery(name = "McCbert.findByU0017DateInQ", query = "SELECT m FROM McCbert m WHERE m.u0017DateInQ = :u0017DateInQ"),
-    @NamedQuery(name = "McCbert.findByU00182ndDocInd", query = "SELECT m FROM McCbert m WHERE m.u00182ndDocInd = :u00182ndDocInd"),
-    @NamedQuery(name = "McCbert.findByU0019CameFrom", query = "SELECT m FROM McCbert m WHERE m.u0019CameFrom = :u0019CameFrom"),
-    @NamedQuery(name = "McCbert.findByU0100NoteDetail", query = "SELECT m FROM McCbert m WHERE m.u0100NoteDetail = :u0100NoteDetail"),
-    @NamedQuery(name = "McCbert.findByU0020FulDate", query = "SELECT m FROM McCbert m WHERE m.u0020FulDate = :u0020FulDate"),
-    @NamedQuery(name = "McCbert.findByU0021ActDate", query = "SELECT m FROM McCbert m WHERE m.u0021ActDate = :u0021ActDate"),
-    @NamedQuery(name = "McCbert.findByU0022InProcess", query = "SELECT m FROM McCbert m WHERE m.u0022InProcess = :u0022InProcess"),
-    @NamedQuery(name = "McCbert.findByP263LfcycCd", query = "SELECT m FROM McCbert m WHERE m.p263LfcycCd = :p263LfcycCd"),
-    @NamedQuery(name = "McCbert.findByP3ProdId", query = "SELECT m FROM McCbert m WHERE m.p3ProdId = :p3ProdId"),
-    @NamedQuery(name = "McCbert.findByP158s11McmrchOvr", query = "SELECT m FROM McCbert m WHERE m.p158s11McmrchOvr = :p158s11McmrchOvr"),
-    @NamedQuery(name = "McCbert.findByP176Mcmrch", query = "SELECT m FROM McCbert m WHERE m.p176Mcmrch = :p176Mcmrch"),
-    @NamedQuery(name = "McCbert.findByP208s1PayFacilId", query = "SELECT m FROM McCbert m WHERE m.p208s1PayFacilId = :p208s1PayFacilId"),
-    @NamedQuery(name = "McCbert.findByP208s2SubMerchId", query = "SELECT m FROM McCbert m WHERE m.p208s2SubMerchId = :p208s2SubMerchId"),
-    @NamedQuery(name = "McCbert.findByP209IndepSalOrgId", query = "SELECT m FROM McCbert m WHERE m.p209IndepSalOrgId = :p209IndepSalOrgId")})
 public class McCbert implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -237,7 +24,7 @@ public class McCbert implements Serializable {
     private Short d3s2ChFraccntty;
     @Column(name = "D3S3_CH_TOACCNTTY")
     private Short d3s3ChToaccntty;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "D4_TRAN_AMT")
     private BigDecimal d4TranAmt;
     @Column(name = "D5_RECON_AMT")
@@ -2200,7 +1987,7 @@ public class McCbert implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McCbert)) {
             return false;
         }
@@ -2215,5 +2002,5 @@ public class McCbert implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McCbert[ mcCbertPK=" + mcCbertPK + " ]";
     }
-    
+
 }

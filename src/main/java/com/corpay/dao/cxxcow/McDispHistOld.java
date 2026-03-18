@@ -1,51 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_DISP_HIST_OLD", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McDispHistOld.findAll", query = "SELECT m FROM McDispHistOld m"),
-    @NamedQuery(name = "McDispHistOld.findByD2PriAccntNo", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.d2PriAccntNo = :d2PriAccntNo"),
-    @NamedQuery(name = "McDispHistOld.findByD4TranAmt", query = "SELECT m FROM McDispHistOld m WHERE m.d4TranAmt = :d4TranAmt"),
-    @NamedQuery(name = "McDispHistOld.findByD12s1LocalTrDt", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.d12s1LocalTrDt = :d12s1LocalTrDt"),
-    @NamedQuery(name = "McDispHistOld.findByD30s1TrOrigAmt", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.d30s1TrOrigAmt = :d30s1TrOrigAmt"),
-    @NamedQuery(name = "McDispHistOld.findByD31s1IcRtDsgtr", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.d31s1IcRtDsgtr = :d31s1IcRtDsgtr"),
-    @NamedQuery(name = "McDispHistOld.findByD31s2AcquirBin", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.d31s2AcquirBin = :d31s2AcquirBin"),
-    @NamedQuery(name = "McDispHistOld.findByD31s3JulPrcDt", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.d31s3JulPrcDt = :d31s3JulPrcDt"),
-    @NamedQuery(name = "McDispHistOld.findByD31s4AcqSeqNo", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.d31s4AcqSeqNo = :d31s4AcqSeqNo"),
-    @NamedQuery(name = "McDispHistOld.findByD31s5CheckDigit", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.d31s5CheckDigit = :d31s5CheckDigit"),
-    @NamedQuery(name = "McDispHistOld.findByD38ApprvlCd", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.d38ApprvlCd = :d38ApprvlCd"),
-    @NamedQuery(name = "McDispHistOld.findByU0000RecordType", query = "SELECT m FROM McDispHistOld m WHERE m.u0000RecordType = :u0000RecordType"),
-    @NamedQuery(name = "McDispHistOld.findByU0001Status", query = "SELECT m FROM McDispHistOld m WHERE m.u0001Status = :u0001Status"),
-    @NamedQuery(name = "McDispHistOld.findByU0002AddedDt", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.u0002AddedDt = :u0002AddedDt"),
-    @NamedQuery(name = "McDispHistOld.findByU0003AddedTm", query = "SELECT m FROM McDispHistOld m WHERE m.mcDispHistOldPK.u0003AddedTm = :u0003AddedTm"),
-    @NamedQuery(name = "McDispHistOld.findByU0004AddedId", query = "SELECT m FROM McDispHistOld m WHERE m.u0004AddedId = :u0004AddedId"),
-    @NamedQuery(name = "McDispHistOld.findByD26CrdAcptrbus", query = "SELECT m FROM McDispHistOld m WHERE m.d26CrdAcptrbus = :d26CrdAcptrbus"),
-    @NamedQuery(name = "McDispHistOld.findByD93TrDestInst", query = "SELECT m FROM McDispHistOld m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McDispHistOld.findByU0005AcctCde", query = "SELECT m FROM McDispHistOld m WHERE m.u0005AcctCde = :u0005AcctCde")})
 public class McDispHistOld implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected McDispHistOldPK mcDispHistOldPK;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "D4_TRAN_AMT")
     private BigDecimal d4TranAmt;
@@ -163,7 +133,7 @@ public class McDispHistOld implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McDispHistOld)) {
             return false;
         }
@@ -178,5 +148,5 @@ public class McDispHistOld implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McDispHistOld[ mcDispHistOldPK=" + mcDispHistOldPK + " ]";
     }
-    
+
 }

@@ -1,34 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_MEM_TO_MEM", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McMemToMem.findAll", query = "SELECT m FROM McMemToMem m"),
-    @NamedQuery(name = "McMemToMem.findByP105s1FileTy", query = "SELECT m FROM McMemToMem m WHERE m.mcMemToMemPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McMemToMem.findByP105s2FileRDt", query = "SELECT m FROM McMemToMem m WHERE m.mcMemToMemPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McMemToMem.findByP105s3ProcId", query = "SELECT m FROM McMemToMem m WHERE m.mcMemToMemPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McMemToMem.findByP105s4FileSeqNo", query = "SELECT m FROM McMemToMem m WHERE m.mcMemToMemPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McMemToMem.findByP1000MbrToMbr", query = "SELECT m FROM McMemToMem m WHERE m.p1000MbrToMbr = :p1000MbrToMbr"),
-    @NamedQuery(name = "McMemToMem.findByP501s3OccInd", query = "SELECT m FROM McMemToMem m WHERE m.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McMemToMem.findByP501s4MsgNo", query = "SELECT m FROM McMemToMem m WHERE m.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McMemToMem.findByD71MsgNo", query = "SELECT m FROM McMemToMem m WHERE m.mcMemToMemPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McMemToMem.findByOccInd", query = "SELECT m FROM McMemToMem m WHERE m.mcMemToMemPK.occInd = :occInd")})
 public class McMemToMem implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -93,7 +72,7 @@ public class McMemToMem implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McMemToMem)) {
             return false;
         }
@@ -108,5 +87,5 @@ public class McMemToMem implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McMemToMem[ mcMemToMemPK=" + mcMemToMemPK + " ]";
     }
-    
+
 }

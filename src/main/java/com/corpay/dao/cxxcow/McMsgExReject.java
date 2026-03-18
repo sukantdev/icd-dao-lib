@@ -1,57 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_MSG_EX_REJECT", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McMsgExReject.findAll", query = "SELECT m FROM McMsgExReject m"),
-    @NamedQuery(name = "McMsgExReject.findByP105s1FileTy", query = "SELECT m FROM McMsgExReject m WHERE m.mcMsgExRejectPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McMsgExReject.findByP105s2FileRDt", query = "SELECT m FROM McMsgExReject m WHERE m.mcMsgExRejectPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McMsgExReject.findByP105s3ProcId", query = "SELECT m FROM McMsgExReject m WHERE m.mcMsgExRejectPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McMsgExReject.findByP105s4FileSeqNo", query = "SELECT m FROM McMsgExReject m WHERE m.mcMsgExRejectPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McMsgExReject.findByMsgTyId", query = "SELECT m FROM McMsgExReject m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McMsgExReject.findByBitMapPri", query = "SELECT m FROM McMsgExReject m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McMsgExReject.findByD1BitMapSec", query = "SELECT m FROM McMsgExReject m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McMsgExReject.findByD24FuncCd", query = "SELECT m FROM McMsgExReject m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McMsgExReject.findByD48AddtlDat", query = "SELECT m FROM McMsgExReject m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McMsgExReject.findByP025s1MsgRev", query = "SELECT m FROM McMsgExReject m WHERE m.p025s1MsgRev = :p025s1MsgRev"),
-    @NamedQuery(name = "McMsgExReject.findByP025s2Cprdtorig", query = "SELECT m FROM McMsgExReject m WHERE m.p025s2Cprdtorig = :p025s2Cprdtorig"),
-    @NamedQuery(name = "McMsgExReject.findByP026s1FileRev", query = "SELECT m FROM McMsgExReject m WHERE m.p026s1FileRev = :p026s1FileRev"),
-    @NamedQuery(name = "McMsgExReject.findByP026s2Cprdtor", query = "SELECT m FROM McMsgExReject m WHERE m.p026s2Cprdtor = :p026s2Cprdtor"),
-    @NamedQuery(name = "McMsgExReject.findByP138SrceMsg", query = "SELECT m FROM McMsgExReject m WHERE m.p138SrceMsg = :p138SrceMsg"),
-    @NamedQuery(name = "McMsgExReject.findByP165s1StlInd", query = "SELECT m FROM McMsgExReject m WHERE m.p165s1StlInd = :p165s1StlInd"),
-    @NamedQuery(name = "McMsgExReject.findByP165s2StlInfo", query = "SELECT m FROM McMsgExReject m WHERE m.p165s2StlInfo = :p165s2StlInfo"),
-    @NamedQuery(name = "McMsgExReject.findByP280s1FileTy", query = "SELECT m FROM McMsgExReject m WHERE m.p280s1FileTy = :p280s1FileTy"),
-    @NamedQuery(name = "McMsgExReject.findByP280s2FileRfDt", query = "SELECT m FROM McMsgExReject m WHERE m.p280s2FileRfDt = :p280s2FileRfDt"),
-    @NamedQuery(name = "McMsgExReject.findByP280s3ProcId", query = "SELECT m FROM McMsgExReject m WHERE m.p280s3ProcId = :p280s3ProcId"),
-    @NamedQuery(name = "McMsgExReject.findByP280s4FileSqNo", query = "SELECT m FROM McMsgExReject m WHERE m.p280s4FileSqNo = :p280s4FileSqNo"),
-    @NamedQuery(name = "McMsgExReject.findByD71MsgNo", query = "SELECT m FROM McMsgExReject m WHERE m.mcMsgExRejectPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McMsgExReject.findByD72DataRec", query = "SELECT m FROM McMsgExReject m WHERE m.d72DataRec = :d72DataRec"),
-    @NamedQuery(name = "McMsgExReject.findByD93TrDestInst", query = "SELECT m FROM McMsgExReject m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McMsgExReject.findByD94TrOrgInst", query = "SELECT m FROM McMsgExReject m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McMsgExReject.findByD100RecvInstId", query = "SELECT m FROM McMsgExReject m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McMsgExReject.findByD123AddtlDat3", query = "SELECT m FROM McMsgExReject m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McMsgExReject.findByD124AddtlDat4", query = "SELECT m FROM McMsgExReject m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McMsgExReject.findByD125AddtlDat5", query = "SELECT m FROM McMsgExReject m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McMsgExReject.findByP006s1AcptBrdId", query = "SELECT m FROM McMsgExReject m WHERE m.p006s1AcptBrdId = :p006s1AcptBrdId"),
-    @NamedQuery(name = "McMsgExReject.findByP006s2BussrvAtcd", query = "SELECT m FROM McMsgExReject m WHERE m.p006s2BussrvAtcd = :p006s2BussrvAtcd"),
-    @NamedQuery(name = "McMsgExReject.findByP006s3BussrvIdcd", query = "SELECT m FROM McMsgExReject m WHERE m.p006s3BussrvIdcd = :p006s3BussrvIdcd")})
 public class McMsgExReject implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -356,7 +313,7 @@ public class McMsgExReject implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McMsgExReject)) {
             return false;
         }
@@ -371,5 +328,5 @@ public class McMsgExReject implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McMsgExReject[ mcMsgExRejectPK=" + mcMsgExRejectPK + " ]";
     }
-    
+
 }

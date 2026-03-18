@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,23 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_PRD_AVG", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McPrdAvg.findAll", query = "SELECT m FROM McPrdAvg m"),
-    @NamedQuery(name = "McPrdAvg.findByMcPaDate", query = "SELECT m FROM McPrdAvg m WHERE m.mcPrdAvgPK.mcPaDate = :mcPaDate"),
-    @NamedQuery(name = "McPrdAvg.findByMcPaProduct", query = "SELECT m FROM McPrdAvg m WHERE m.mcPrdAvgPK.mcPaProduct = :mcPaProduct"),
-    @NamedQuery(name = "McPrdAvg.findByMcPaRecTy", query = "SELECT m FROM McPrdAvg m WHERE m.mcPrdAvgPK.mcPaRecTy = :mcPaRecTy"),
-    @NamedQuery(name = "McPrdAvg.findByMcPaRecId", query = "SELECT m FROM McPrdAvg m WHERE m.mcPrdAvgPK.mcPaRecId = :mcPaRecId"),
-    @NamedQuery(name = "McPrdAvg.findByMcPaNrItems", query = "SELECT m FROM McPrdAvg m WHERE m.mcPaNrItems = :mcPaNrItems"),
-    @NamedQuery(name = "McPrdAvg.findByMcPaQuantity", query = "SELECT m FROM McPrdAvg m WHERE m.mcPaQuantity = :mcPaQuantity"),
-    @NamedQuery(name = "McPrdAvg.findByMcPaPrice", query = "SELECT m FROM McPrdAvg m WHERE m.mcPaPrice = :mcPaPrice"),
-    @NamedQuery(name = "McPrdAvg.findByMcPaCost", query = "SELECT m FROM McPrdAvg m WHERE m.mcPaCost = :mcPaCost"),
-    @NamedQuery(name = "McPrdAvg.findByMcPaLastUsed", query = "SELECT m FROM McPrdAvg m WHERE m.mcPaLastUsed = :mcPaLastUsed")})
 public class McPrdAvg implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -42,7 +21,7 @@ public class McPrdAvg implements Serializable {
     @Basic(optional = false)
     @Column(name = "MC_PA_NR_ITEMS")
     private int mcPaNrItems;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "MC_PA_QUANTITY")
     private BigDecimal mcPaQuantity;
@@ -134,7 +113,7 @@ public class McPrdAvg implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McPrdAvg)) {
             return false;
         }
@@ -149,5 +128,5 @@ public class McPrdAvg implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McPrdAvg[ mcPrdAvgPK=" + mcPrdAvgPK + " ]";
     }
-    
+
 }

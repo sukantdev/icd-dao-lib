@@ -1,28 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MOTRSDEPT", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "Motrsdept.findAll", query = "SELECT m FROM Motrsdept m"),
-    @NamedQuery(name = "Motrsdept.findByDeptCode", query = "SELECT m FROM Motrsdept m WHERE m.deptCode = :deptCode"),
-    @NamedQuery(name = "Motrsdept.findByDeptDesc", query = "SELECT m FROM Motrsdept m WHERE m.deptDesc = :deptDesc")})
 public class Motrsdept implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -71,7 +57,7 @@ public class Motrsdept implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof Motrsdept)) {
             return false;
         }
@@ -86,5 +72,5 @@ public class Motrsdept implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.Motrsdept[ deptCode=" + deptCode + " ]";
     }
-    
+
 }

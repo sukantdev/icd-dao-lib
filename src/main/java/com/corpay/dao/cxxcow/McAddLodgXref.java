@@ -1,34 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_LODG_XREF", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddLodgXref.findAll", query = "SELECT m FROM McAddLodgXref m"),
-    @NamedQuery(name = "McAddLodgXref.findByP105s1FileTy", query = "SELECT m FROM McAddLodgXref m WHERE m.mcAddLodgXrefPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddLodgXref.findByP105s2FileRDt", query = "SELECT m FROM McAddLodgXref m WHERE m.mcAddLodgXrefPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddLodgXref.findByP105s3ProcId", query = "SELECT m FROM McAddLodgXref m WHERE m.mcAddLodgXrefPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddLodgXref.findByP105s4FileSeqNo", query = "SELECT m FROM McAddLodgXref m WHERE m.mcAddLodgXrefPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddLodgXref.findByD71MsgNo", query = "SELECT m FROM McAddLodgXref m WHERE m.mcAddLodgXrefPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddLodgXref.findByOccInd", query = "SELECT m FROM McAddLodgXref m WHERE m.mcAddLodgXrefPK.occInd = :occInd"),
-    @NamedQuery(name = "McAddLodgXref.findByP660s1CustrefId", query = "SELECT m FROM McAddLodgXref m WHERE m.p660s1CustrefId = :p660s1CustrefId"),
-    @NamedQuery(name = "McAddLodgXref.findByP660s2CustrefDtl", query = "SELECT m FROM McAddLodgXref m WHERE m.p660s2CustrefDtl = :p660s2CustrefDtl")})
 public class McAddLodgXref implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -91,7 +71,7 @@ public class McAddLodgXref implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddLodgXref)) {
             return false;
         }
@@ -106,5 +86,5 @@ public class McAddLodgXref implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddLodgXref[ mcAddLodgXrefPK=" + mcAddLodgXrefPK + " ]";
     }
-    
+
 }

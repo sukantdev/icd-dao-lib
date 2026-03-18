@@ -1,97 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_TEMP_SVC", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddTempSvc.findAll", query = "SELECT m FROM McAddTempSvc m"),
-    @NamedQuery(name = "McAddTempSvc.findByP105s1FileTy", query = "SELECT m FROM McAddTempSvc m WHERE m.mcAddTempSvcPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddTempSvc.findByP105s2FileRDt", query = "SELECT m FROM McAddTempSvc m WHERE m.mcAddTempSvcPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddTempSvc.findByP105s3ProcId", query = "SELECT m FROM McAddTempSvc m WHERE m.mcAddTempSvcPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddTempSvc.findByP105s4FileSeqNo", query = "SELECT m FROM McAddTempSvc m WHERE m.mcAddTempSvcPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddTempSvc.findByMsgTyId", query = "SELECT m FROM McAddTempSvc m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddTempSvc.findByBitMapPri", query = "SELECT m FROM McAddTempSvc m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddTempSvc.findByD1BitMapSec", query = "SELECT m FROM McAddTempSvc m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddTempSvc.findByD24FuncCd", query = "SELECT m FROM McAddTempSvc m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddTempSvc.findByD32AcqInstIdCd", query = "SELECT m FROM McAddTempSvc m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddTempSvc.findByD33FwdngInstCd", query = "SELECT m FROM McAddTempSvc m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddTempSvc.findByP191OrMsgFmt", query = "SELECT m FROM McAddTempSvc m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddTempSvc.findByP501s1UsageCd", query = "SELECT m FROM McAddTempSvc m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddTempSvc.findByP501s2IndstyRec", query = "SELECT m FROM McAddTempSvc m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddTempSvc.findByP501s3OccInd", query = "SELECT m FROM McAddTempSvc m WHERE m.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddTempSvc.findByP501s4MsgNo", query = "SELECT m FROM McAddTempSvc m WHERE m.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddTempSvc.findByP508CustCd", query = "SELECT m FROM McAddTempSvc m WHERE m.p508CustCd = :p508CustCd"),
-    @NamedQuery(name = "McAddTempSvc.findByP597s1TtxAmt", query = "SELECT m FROM McAddTempSvc m WHERE m.p597s1TtxAmt = :p597s1TtxAmt"),
-    @NamedQuery(name = "McAddTempSvc.findByP597s2TtxAmtExp", query = "SELECT m FROM McAddTempSvc m WHERE m.p597s2TtxAmtExp = :p597s2TtxAmtExp"),
-    @NamedQuery(name = "McAddTempSvc.findByP597s3TtxAmtSig", query = "SELECT m FROM McAddTempSvc m WHERE m.p597s3TtxAmtSig = :p597s3TtxAmtSig"),
-    @NamedQuery(name = "McAddTempSvc.findByP598TaxCltnInd", query = "SELECT m FROM McAddTempSvc m WHERE m.p598TaxCltnInd = :p598TaxCltnInd"),
-    @NamedQuery(name = "McAddTempSvc.findByP679Commodity", query = "SELECT m FROM McAddTempSvc m WHERE m.p679Commodity = :p679Commodity"),
-    @NamedQuery(name = "McAddTempSvc.findByP686TaxExempt", query = "SELECT m FROM McAddTempSvc m WHERE m.p686TaxExempt = :p686TaxExempt"),
-    @NamedQuery(name = "McAddTempSvc.findByP718EmpTmpNme", query = "SELECT m FROM McAddTempSvc m WHERE m.p718EmpTmpNme = :p718EmpTmpNme"),
-    @NamedQuery(name = "McAddTempSvc.findByP719EmpSsnr", query = "SELECT m FROM McAddTempSvc m WHERE m.p719EmpSsnr = :p719EmpSsnr"),
-    @NamedQuery(name = "McAddTempSvc.findByP720JobDesc", query = "SELECT m FROM McAddTempSvc m WHERE m.p720JobDesc = :p720JobDesc"),
-    @NamedQuery(name = "McAddTempSvc.findByP721JobCd", query = "SELECT m FROM McAddTempSvc m WHERE m.p721JobCd = :p721JobCd"),
-    @NamedQuery(name = "McAddTempSvc.findByP722FltRteInd", query = "SELECT m FROM McAddTempSvc m WHERE m.p722FltRteInd = :p722FltRteInd"),
-    @NamedQuery(name = "McAddTempSvc.findByP723s1RgHrWrk", query = "SELECT m FROM McAddTempSvc m WHERE m.p723s1RgHrWrk = :p723s1RgHrWrk"),
-    @NamedQuery(name = "McAddTempSvc.findByP723s2RgHrWrEx", query = "SELECT m FROM McAddTempSvc m WHERE m.p723s2RgHrWrEx = :p723s2RgHrWrEx"),
-    @NamedQuery(name = "McAddTempSvc.findByP724s1RgHrRt", query = "SELECT m FROM McAddTempSvc m WHERE m.p724s1RgHrRt = :p724s1RgHrRt"),
-    @NamedQuery(name = "McAddTempSvc.findByP724s2RgHrRtEx", query = "SELECT m FROM McAddTempSvc m WHERE m.p724s2RgHrRtEx = :p724s2RgHrRtEx"),
-    @NamedQuery(name = "McAddTempSvc.findByP725s1OtHrsWrk", query = "SELECT m FROM McAddTempSvc m WHERE m.p725s1OtHrsWrk = :p725s1OtHrsWrk"),
-    @NamedQuery(name = "McAddTempSvc.findByP725s2OtHrsExp", query = "SELECT m FROM McAddTempSvc m WHERE m.p725s2OtHrsExp = :p725s2OtHrsExp"),
-    @NamedQuery(name = "McAddTempSvc.findByP726s1OtHrsRt", query = "SELECT m FROM McAddTempSvc m WHERE m.p726s1OtHrsRt = :p726s1OtHrsRt"),
-    @NamedQuery(name = "McAddTempSvc.findByP726s2OtHrsExp", query = "SELECT m FROM McAddTempSvc m WHERE m.p726s2OtHrsExp = :p726s2OtHrsExp"),
-    @NamedQuery(name = "McAddTempSvc.findByP727TmpStaDt", query = "SELECT m FROM McAddTempSvc m WHERE m.p727TmpStaDt = :p727TmpStaDt"),
-    @NamedQuery(name = "McAddTempSvc.findByP728TmpWkEnd", query = "SELECT m FROM McAddTempSvc m WHERE m.p728TmpWkEnd = :p728TmpWkEnd"),
-    @NamedQuery(name = "McAddTempSvc.findByP729ReqNmeId", query = "SELECT m FROM McAddTempSvc m WHERE m.p729ReqNmeId = :p729ReqNmeId"),
-    @NamedQuery(name = "McAddTempSvc.findByP730RptTo", query = "SELECT m FROM McAddTempSvc m WHERE m.p730RptTo = :p730RptTo"),
-    @NamedQuery(name = "McAddTempSvc.findByP731TmShtNr", query = "SELECT m FROM McAddTempSvc m WHERE m.p731TmShtNr = :p731TmShtNr"),
-    @NamedQuery(name = "McAddTempSvc.findByP732s1DiscAmt", query = "SELECT m FROM McAddTempSvc m WHERE m.p732s1DiscAmt = :p732s1DiscAmt"),
-    @NamedQuery(name = "McAddTempSvc.findByP732s2DiscAmtEx", query = "SELECT m FROM McAddTempSvc m WHERE m.p732s2DiscAmtEx = :p732s2DiscAmtEx"),
-    @NamedQuery(name = "McAddTempSvc.findByP732s3DiscAmtSi", query = "SELECT m FROM McAddTempSvc m WHERE m.p732s3DiscAmtSi = :p732s3DiscAmtSi"),
-    @NamedQuery(name = "McAddTempSvc.findByP732s4DiscTp", query = "SELECT m FROM McAddTempSvc m WHERE m.p732s4DiscTp = :p732s4DiscTp"),
-    @NamedQuery(name = "McAddTempSvc.findByP733s1SbtlAm", query = "SELECT m FROM McAddTempSvc m WHERE m.p733s1SbtlAm = :p733s1SbtlAm"),
-    @NamedQuery(name = "McAddTempSvc.findByP733s2SbtlAmtEx", query = "SELECT m FROM McAddTempSvc m WHERE m.p733s2SbtlAmtEx = :p733s2SbtlAmtEx"),
-    @NamedQuery(name = "McAddTempSvc.findByP733s3SbtlAmtSg", query = "SELECT m FROM McAddTempSvc m WHERE m.p733s3SbtlAmtSg = :p733s3SbtlAmtSg"),
-    @NamedQuery(name = "McAddTempSvc.findByTaxAmtTs", query = "SELECT m FROM McAddTempSvc m WHERE m.taxAmtTs = :taxAmtTs"),
-    @NamedQuery(name = "McAddTempSvc.findByTaxAmt682Ind", query = "SELECT m FROM McAddTempSvc m WHERE m.taxAmt682Ind = :taxAmt682Ind"),
-    @NamedQuery(name = "McAddTempSvc.findByTaxAmt683Ind", query = "SELECT m FROM McAddTempSvc m WHERE m.taxAmt683Ind = :taxAmt683Ind"),
-    @NamedQuery(name = "McAddTempSvc.findByTaxAmt684Ind", query = "SELECT m FROM McAddTempSvc m WHERE m.taxAmt684Ind = :taxAmt684Ind"),
-    @NamedQuery(name = "McAddTempSvc.findByTaxAmt751Ind", query = "SELECT m FROM McAddTempSvc m WHERE m.taxAmt751Ind = :taxAmt751Ind"),
-    @NamedQuery(name = "McAddTempSvc.findByTaxAmt752Ind", query = "SELECT m FROM McAddTempSvc m WHERE m.taxAmt752Ind = :taxAmt752Ind"),
-    @NamedQuery(name = "McAddTempSvc.findByTaxAmt753Ind", query = "SELECT m FROM McAddTempSvc m WHERE m.taxAmt753Ind = :taxAmt753Ind"),
-    @NamedQuery(name = "McAddTempSvc.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddTempSvc m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddTempSvc.findByD63s2TraceId", query = "SELECT m FROM McAddTempSvc m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddTempSvc.findByD63s3ValidnCd", query = "SELECT m FROM McAddTempSvc m WHERE m.d63s3ValidnCd = :d63s3ValidnCd"),
-    @NamedQuery(name = "McAddTempSvc.findByD63s4LfcyctrSeq", query = "SELECT m FROM McAddTempSvc m WHERE m.d63s4LfcyctrSeq = :d63s4LfcyctrSeq"),
-    @NamedQuery(name = "McAddTempSvc.findByD63s5LfcyctrTot", query = "SELECT m FROM McAddTempSvc m WHERE m.d63s5LfcyctrTot = :d63s5LfcyctrTot"),
-    @NamedQuery(name = "McAddTempSvc.findByD71MsgNo", query = "SELECT m FROM McAddTempSvc m WHERE m.mcAddTempSvcPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddTempSvc.findByD93TrDestInst", query = "SELECT m FROM McAddTempSvc m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddTempSvc.findByD94TrOrgInst", query = "SELECT m FROM McAddTempSvc m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddTempSvc.findByD100RecvInstId", query = "SELECT m FROM McAddTempSvc m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddTempSvc.findByD48AddtlDat", query = "SELECT m FROM McAddTempSvc m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddTempSvc.findByD62AddtlData2", query = "SELECT m FROM McAddTempSvc m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McAddTempSvc.findByD123AddtlDat3", query = "SELECT m FROM McAddTempSvc m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddTempSvc.findByD124AddtlDat4", query = "SELECT m FROM McAddTempSvc m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddTempSvc.findByD125AddtlDat5", query = "SELECT m FROM McAddTempSvc m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McAddTempSvc.findByA597s1TtxAmt", query = "SELECT m FROM McAddTempSvc m WHERE m.a597s1TtxAmt = :a597s1TtxAmt"),
-    @NamedQuery(name = "McAddTempSvc.findByA733s1SbtlAmt", query = "SELECT m FROM McAddTempSvc m WHERE m.a733s1SbtlAmt = :a733s1SbtlAmt")})
 public class McAddTempSvc implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -133,7 +51,7 @@ public class McAddTempSvc implements Serializable {
     @Basic(optional = false)
     @Column(name = "P508_CUST_CD")
     private String p508CustCd;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "P597S1_TTX_AMT")
     private BigDecimal p597s1TtxAmt;
@@ -911,7 +829,7 @@ public class McAddTempSvc implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddTempSvc)) {
             return false;
         }
@@ -926,5 +844,5 @@ public class McAddTempSvc implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddTempSvc[ mcAddTempSvcPK=" + mcAddTempSvcPK + " ]";
     }
-    
+
 }

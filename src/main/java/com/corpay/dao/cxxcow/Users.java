@@ -1,74 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "USERS", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u"),
-    @NamedQuery(name = "Users.findByUserId", query = "SELECT u FROM Users u WHERE u.userId = :userId"),
-    @NamedQuery(name = "Users.findByDptId", query = "SELECT u FROM Users u WHERE u.dptId = :dptId"),
-    @NamedQuery(name = "Users.findByUserFirstName", query = "SELECT u FROM Users u WHERE u.userFirstName = :userFirstName"),
-    @NamedQuery(name = "Users.findByUserLastName", query = "SELECT u FROM Users u WHERE u.userLastName = :userLastName"),
-    @NamedQuery(name = "Users.findByUserUptUser", query = "SELECT u FROM Users u WHERE u.userUptUser = :userUptUser"),
-    @NamedQuery(name = "Users.findByUserUptDte", query = "SELECT u FROM Users u WHERE u.userUptDte = :userUptDte"),
-    @NamedQuery(name = "Users.findByUserPasswordDte", query = "SELECT u FROM Users u WHERE u.userPasswordDte = :userPasswordDte"),
-    @NamedQuery(name = "Users.findByUserStatusFlag", query = "SELECT u FROM Users u WHERE u.userStatusFlag = :userStatusFlag"),
-    @NamedQuery(name = "Users.findByUserPassword", query = "SELECT u FROM Users u WHERE u.userPassword = :userPassword"),
-    @NamedQuery(name = "Users.findByUserRacfId", query = "SELECT u FROM Users u WHERE u.userRacfId = :userRacfId"),
-    @NamedQuery(name = "Users.findByUserAccessDte", query = "SELECT u FROM Users u WHERE u.userAccessDte = :userAccessDte"),
-    @NamedQuery(name = "Users.findByUserAccessUsr", query = "SELECT u FROM Users u WHERE u.userAccessUsr = :userAccessUsr"),
-    @NamedQuery(name = "Users.findByUserExtrlCustFg", query = "SELECT u FROM Users u WHERE u.userExtrlCustFg = :userExtrlCustFg"),
-    @NamedQuery(name = "Users.findByUserNbrLogins", query = "SELECT u FROM Users u WHERE u.userNbrLogins = :userNbrLogins"),
-    @NamedQuery(name = "Users.findByUserPwExpFlg", query = "SELECT u FROM Users u WHERE u.userPwExpFlg = :userPwExpFlg"),
-    @NamedQuery(name = "Users.findByUserExpFlg", query = "SELECT u FROM Users u WHERE u.userExpFlg = :userExpFlg"),
-    @NamedQuery(name = "Users.findByUserExpireDte", query = "SELECT u FROM Users u WHERE u.userExpireDte = :userExpireDte"),
-    @NamedQuery(name = "Users.findByUserDfltCustId", query = "SELECT u FROM Users u WHERE u.userDfltCustId = :userDfltCustId"),
-    @NamedQuery(name = "Users.findByUserMidlInitial", query = "SELECT u FROM Users u WHERE u.userMidlInitial = :userMidlInitial"),
-    @NamedQuery(name = "Users.findByQuestionId", query = "SELECT u FROM Users u WHERE u.questionId = :questionId"),
-    @NamedQuery(name = "Users.findByUserAnswer", query = "SELECT u FROM Users u WHERE u.userAnswer = :userAnswer"),
-    @NamedQuery(name = "Users.findByCrtTs", query = "SELECT u FROM Users u WHERE u.crtTs = :crtTs"),
-    @NamedQuery(name = "Users.findByCrtUsr", query = "SELECT u FROM Users u WHERE u.crtUsr = :crtUsr"),
-    @NamedQuery(name = "Users.findByMdyTs", query = "SELECT u FROM Users u WHERE u.mdyTs = :mdyTs"),
-    @NamedQuery(name = "Users.findByMdyUsr", query = "SELECT u FROM Users u WHERE u.mdyUsr = :mdyUsr"),
-    @NamedQuery(name = "Users.findByCustIdSort", query = "SELECT u FROM Users u WHERE u.custIdSort = :custIdSort"),
-    @NamedQuery(name = "Users.findByAcctCdSort", query = "SELECT u FROM Users u WHERE u.acctCdSort = :acctCdSort"),
-    @NamedQuery(name = "Users.findByPswd", query = "SELECT u FROM Users u WHERE u.pswd = :pswd"),
-    @NamedQuery(name = "Users.findByHierId", query = "SELECT u FROM Users u WHERE u.hierId = :hierId"),
-    @NamedQuery(name = "Users.findByScyTypCd", query = "SELECT u FROM Users u WHERE u.scyTypCd = :scyTypCd"),
-    @NamedQuery(name = "Users.findByNavTypCd", query = "SELECT u FROM Users u WHERE u.navTypCd = :navTypCd"),
-    @NamedQuery(name = "Users.findByVehGrpScyFlg", query = "SELECT u FROM Users u WHERE u.vehGrpScyFlg = :vehGrpScyFlg"),
-    @NamedQuery(name = "Users.findByPrfScyFlg", query = "SELECT u FROM Users u WHERE u.prfScyFlg = :prfScyFlg"),
-    @NamedQuery(name = "Users.findByDrvGrpScyFlg", query = "SELECT u FROM Users u WHERE u.drvGrpScyFlg = :drvGrpScyFlg"),
-    @NamedQuery(name = "Users.findByDfltNodeId", query = "SELECT u FROM Users u WHERE u.dfltNodeId = :dfltNodeId"),
-    @NamedQuery(name = "Users.findByWsUsrFlg", query = "SELECT u FROM Users u WHERE u.wsUsrFlg = :wsUsrFlg"),
-    @NamedQuery(name = "Users.findByLocalePref", query = "SELECT u FROM Users u WHERE u.localePref = :localePref"),
-    @NamedQuery(name = "Users.findByBirstonelookusername", query = "SELECT u FROM Users u WHERE u.birstonelookusername = :birstonelookusername"),
-    @NamedQuery(name = "Users.findByOktaMfaMigrText", query = "SELECT u FROM Users u WHERE u.oktaMfaMigrText = :oktaMfaMigrText"),
-    @NamedQuery(name = "Users.findByIamId", query = "SELECT u FROM Users u WHERE u.iamId = :iamId"),
-    @NamedQuery(name = "Users.findByUserHardDelTs", query = "SELECT u FROM Users u WHERE u.userHardDelTs = :userHardDelTs"),
-    @NamedQuery(name = "Users.findByAllowCopyDelFlg", query = "SELECT u FROM Users u WHERE u.allowCopyDelFlg = :allowCopyDelFlg"),
-    @NamedQuery(name = "Users.findByEmpId", query = "SELECT u FROM Users u WHERE u.empId = :empId"),
-    @NamedQuery(name = "Users.findByPermissionType", query = "SELECT u FROM Users u WHERE u.permissionType = :permissionType"),
-    @NamedQuery(name = "Users.findByUserType", query = "SELECT u FROM Users u WHERE u.userType = :userType")})
 public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -632,7 +575,7 @@ public class Users implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof Users)) {
             return false;
         }
@@ -647,5 +590,5 @@ public class Users implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.Users[ userId=" + userId + " ]";
     }
-    
+
 }

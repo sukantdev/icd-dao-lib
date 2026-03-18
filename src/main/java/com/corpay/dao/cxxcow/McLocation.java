@@ -1,44 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_LOCATION", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McLocation.findAll", query = "SELECT m FROM McLocation m"),
-    @NamedQuery(name = "McLocation.findByLcLocId", query = "SELECT m FROM McLocation m WHERE m.lcLocId = :lcLocId"),
-    @NamedQuery(name = "McLocation.findByLcDesc", query = "SELECT m FROM McLocation m WHERE m.lcDesc = :lcDesc"),
-    @NamedQuery(name = "McLocation.findByLcAddr", query = "SELECT m FROM McLocation m WHERE m.lcAddr = :lcAddr"),
-    @NamedQuery(name = "McLocation.findByLcCity", query = "SELECT m FROM McLocation m WHERE m.lcCity = :lcCity"),
-    @NamedQuery(name = "McLocation.findByLcState", query = "SELECT m FROM McLocation m WHERE m.lcState = :lcState"),
-    @NamedQuery(name = "McLocation.findByLcPostCd", query = "SELECT m FROM McLocation m WHERE m.lcPostCd = :lcPostCd"),
-    @NamedQuery(name = "McLocation.findByLcCntryCd", query = "SELECT m FROM McLocation m WHERE m.lcCntryCd = :lcCntryCd"),
-    @NamedQuery(name = "McLocation.findByLcPhNo", query = "SELECT m FROM McLocation m WHERE m.lcPhNo = :lcPhNo"),
-    @NamedQuery(name = "McLocation.findByLcOilCoBrand", query = "SELECT m FROM McLocation m WHERE m.lcOilCoBrand = :lcOilCoBrand"),
-    @NamedQuery(name = "McLocation.findByLcAcqInstId", query = "SELECT m FROM McLocation m WHERE m.lcAcqInstId = :lcAcqInstId"),
-    @NamedQuery(name = "McLocation.findByLcAcceptId", query = "SELECT m FROM McLocation m WHERE m.lcAcceptId = :lcAcceptId"),
-    @NamedQuery(name = "McLocation.findByLcPromptOut", query = "SELECT m FROM McLocation m WHERE m.lcPromptOut = :lcPromptOut"),
-    @NamedQuery(name = "McLocation.findByLcPromptIn", query = "SELECT m FROM McLocation m WHERE m.lcPromptIn = :lcPromptIn"),
-    @NamedQuery(name = "McLocation.findByLcDtlLevel", query = "SELECT m FROM McLocation m WHERE m.lcDtlLevel = :lcDtlLevel"),
-    @NamedQuery(name = "McLocation.findByLcLastUpdt", query = "SELECT m FROM McLocation m WHERE m.lcLastUpdt = :lcLastUpdt")})
 public class McLocation implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -245,7 +218,7 @@ public class McLocation implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McLocation)) {
             return false;
         }
@@ -260,5 +233,5 @@ public class McLocation implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McLocation[ lcLocId=" + lcLocId + " ]";
     }
-    
+
 }

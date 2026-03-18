@@ -1,44 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_EVNT_DTL", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McEvntDtl.findAll", query = "SELECT m FROM McEvntDtl m"),
-    @NamedQuery(name = "McEvntDtl.findByP105s1FileTy", query = "SELECT m FROM McEvntDtl m WHERE m.mcEvntDtlPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McEvntDtl.findByP105s2FileRDt", query = "SELECT m FROM McEvntDtl m WHERE m.mcEvntDtlPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McEvntDtl.findByP105s3ProcId", query = "SELECT m FROM McEvntDtl m WHERE m.mcEvntDtlPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McEvntDtl.findByP105s4FileSeqNo", query = "SELECT m FROM McEvntDtl m WHERE m.mcEvntDtlPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McEvntDtl.findByD71MsgNo", query = "SELECT m FROM McEvntDtl m WHERE m.mcEvntDtlPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McEvntDtl.findByOccInd", query = "SELECT m FROM McEvntDtl m WHERE m.mcEvntDtlPK.occInd = :occInd"),
-    @NamedQuery(name = "McEvntDtl.findByEvntTyp", query = "SELECT m FROM McEvntDtl m WHERE m.mcEvntDtlPK.evntTyp = :evntTyp"),
-    @NamedQuery(name = "McEvntDtl.findByP627s1BillEvntA", query = "SELECT m FROM McEvntDtl m WHERE m.p627s1BillEvntA = :p627s1BillEvntA"),
-    @NamedQuery(name = "McEvntDtl.findByP627s2BillEvntE", query = "SELECT m FROM McEvntDtl m WHERE m.p627s2BillEvntE = :p627s2BillEvntE"),
-    @NamedQuery(name = "McEvntDtl.findByP627s3BillEvntS", query = "SELECT m FROM McEvntDtl m WHERE m.p627s3BillEvntS = :p627s3BillEvntS"),
-    @NamedQuery(name = "McEvntDtl.findByP627s4BillEvntD", query = "SELECT m FROM McEvntDtl m WHERE m.p627s4BillEvntD = :p627s4BillEvntD")})
 public class McEvntDtl implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected McEvntDtlPK mcEvntDtlPK;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "P627S1_BILL_EVNT_A")
     private BigDecimal p627s1BillEvntA;
@@ -120,7 +97,7 @@ public class McEvntDtl implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McEvntDtl)) {
             return false;
         }
@@ -135,5 +112,5 @@ public class McEvntDtl implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McEvntDtl[ mcEvntDtlPK=" + mcEvntDtlPK + " ]";
     }
-    
+
 }

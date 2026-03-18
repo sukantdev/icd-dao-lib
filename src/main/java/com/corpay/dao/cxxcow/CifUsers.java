@@ -1,35 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
+
+import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import java.io.Serializable;
-import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CIF_USERS", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "CifUsers.findAll", query = "SELECT c FROM CifUsers c"),
-    @NamedQuery(name = "CifUsers.findByUsrId", query = "SELECT c FROM CifUsers c WHERE c.usrId = :usrId"),
-    @NamedQuery(name = "CifUsers.findByCifId", query = "SELECT c FROM CifUsers c WHERE c.cifId = :cifId"),
-    @NamedQuery(name = "CifUsers.findByCrtTs", query = "SELECT c FROM CifUsers c WHERE c.crtTs = :crtTs"),
-    @NamedQuery(name = "CifUsers.findByCrtUsr", query = "SELECT c FROM CifUsers c WHERE c.crtUsr = :crtUsr"),
-    @NamedQuery(name = "CifUsers.findByMdyTs", query = "SELECT c FROM CifUsers c WHERE c.mdyTs = :mdyTs"),
-    @NamedQuery(name = "CifUsers.findByMdyUsr", query = "SELECT c FROM CifUsers c WHERE c.mdyUsr = :mdyUsr")})
 public class CifUsers implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -128,7 +111,7 @@ public class CifUsers implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof CifUsers)) {
             return false;
         }
@@ -143,5 +126,5 @@ public class CifUsers implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.CifUsers[ usrId=" + usrId + " ]";
     }
-    
+
 }

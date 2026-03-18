@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
@@ -12,10 +8,6 @@ import jakarta.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Embeddable
 public class McAuthorizationPK implements Serializable {
 
@@ -88,7 +80,7 @@ public class McAuthorizationPK implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAuthorizationPK)) {
             return false;
         }
@@ -112,5 +104,5 @@ public class McAuthorizationPK implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAuthorizationPK[ authPan=" + authPan + ", authApprovCd=" + authApprovCd + ", authUtDt=" + authUtDt + ", authLocalTs=" + authLocalTs + " ]";
     }
-    
+
 }

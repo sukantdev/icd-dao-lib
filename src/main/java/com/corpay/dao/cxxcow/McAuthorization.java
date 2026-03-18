@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,150 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_AUTHORIZATION", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAuthorization.findAll", query = "SELECT m FROM McAuthorization m"),
-    @NamedQuery(name = "McAuthorization.findByAuthPan", query = "SELECT m FROM McAuthorization m WHERE m.mcAuthorizationPK.authPan = :authPan"),
-    @NamedQuery(name = "McAuthorization.findByAuthLocalDt", query = "SELECT m FROM McAuthorization m WHERE m.authLocalDt = :authLocalDt"),
-    @NamedQuery(name = "McAuthorization.findByAuthApprovCd", query = "SELECT m FROM McAuthorization m WHERE m.mcAuthorizationPK.authApprovCd = :authApprovCd"),
-    @NamedQuery(name = "McAuthorization.findByStlmtId", query = "SELECT m FROM McAuthorization m WHERE m.stlmtId = :stlmtId"),
-    @NamedQuery(name = "McAuthorization.findByBtchId", query = "SELECT m FROM McAuthorization m WHERE m.btchId = :btchId"),
-    @NamedQuery(name = "McAuthorization.findByMrchId", query = "SELECT m FROM McAuthorization m WHERE m.mrchId = :mrchId"),
-    @NamedQuery(name = "McAuthorization.findByDtlStlmtId", query = "SELECT m FROM McAuthorization m WHERE m.dtlStlmtId = :dtlStlmtId"),
-    @NamedQuery(name = "McAuthorization.findByAuthUtDt", query = "SELECT m FROM McAuthorization m WHERE m.mcAuthorizationPK.authUtDt = :authUtDt"),
-    @NamedQuery(name = "McAuthorization.findByAuthUtTm", query = "SELECT m FROM McAuthorization m WHERE m.authUtTm = :authUtTm"),
-    @NamedQuery(name = "McAuthorization.findByAuthLocalTm", query = "SELECT m FROM McAuthorization m WHERE m.authLocalTm = :authLocalTm"),
-    @NamedQuery(name = "McAuthorization.findByAuthAcctNo", query = "SELECT m FROM McAuthorization m WHERE m.authAcctNo = :authAcctNo"),
-    @NamedQuery(name = "McAuthorization.findByAuthCustId", query = "SELECT m FROM McAuthorization m WHERE m.authCustId = :authCustId"),
-    @NamedQuery(name = "McAuthorization.findByAuthTranAmt", query = "SELECT m FROM McAuthorization m WHERE m.authTranAmt = :authTranAmt"),
-    @NamedQuery(name = "McAuthorization.findByAuthTranAmtAct", query = "SELECT m FROM McAuthorization m WHERE m.authTranAmtAct = :authTranAmtAct"),
-    @NamedQuery(name = "McAuthorization.findByAuthExpDt", query = "SELECT m FROM McAuthorization m WHERE m.authExpDt = :authExpDt"),
-    @NamedQuery(name = "McAuthorization.findByAuthMcc", query = "SELECT m FROM McAuthorization m WHERE m.authMcc = :authMcc"),
-    @NamedQuery(name = "McAuthorization.findByAuthMccOrig", query = "SELECT m FROM McAuthorization m WHERE m.authMccOrig = :authMccOrig"),
-    @NamedQuery(name = "McAuthorization.findByAuthProcCd", query = "SELECT m FROM McAuthorization m WHERE m.authProcCd = :authProcCd"),
-    @NamedQuery(name = "McAuthorization.findByAuthPosEntMode", query = "SELECT m FROM McAuthorization m WHERE m.authPosEntMode = :authPosEntMode"),
-    @NamedQuery(name = "McAuthorization.findByAuthAcqInstId", query = "SELECT m FROM McAuthorization m WHERE m.authAcqInstId = :authAcqInstId"),
-    @NamedQuery(name = "McAuthorization.findByAuthTermId", query = "SELECT m FROM McAuthorization m WHERE m.authTermId = :authTermId"),
-    @NamedQuery(name = "McAuthorization.findByAuthAcceptId", query = "SELECT m FROM McAuthorization m WHERE m.authAcceptId = :authAcceptId"),
-    @NamedQuery(name = "McAuthorization.findByAuthAcceptLoc", query = "SELECT m FROM McAuthorization m WHERE m.authAcceptLoc = :authAcceptLoc"),
-    @NamedQuery(name = "McAuthorization.findByAuthTranCntryCd", query = "SELECT m FROM McAuthorization m WHERE m.authTranCntryCd = :authTranCntryCd"),
-    @NamedQuery(name = "McAuthorization.findByAuthResponseCd", query = "SELECT m FROM McAuthorization m WHERE m.authResponseCd = :authResponseCd"),
-    @NamedQuery(name = "McAuthorization.findByAuthCbackStat", query = "SELECT m FROM McAuthorization m WHERE m.authCbackStat = :authCbackStat"),
-    @NamedQuery(name = "McAuthorization.findByAuthRetrStat", query = "SELECT m FROM McAuthorization m WHERE m.authRetrStat = :authRetrStat"),
-    @NamedQuery(name = "McAuthorization.findByAuthPostedDt", query = "SELECT m FROM McAuthorization m WHERE m.authPostedDt = :authPostedDt"),
-    @NamedQuery(name = "McAuthorization.findByAuthMeth", query = "SELECT m FROM McAuthorization m WHERE m.authMeth = :authMeth"),
-    @NamedQuery(name = "McAuthorization.findByAuthWarnFlg", query = "SELECT m FROM McAuthorization m WHERE m.authWarnFlg = :authWarnFlg"),
-    @NamedQuery(name = "McAuthorization.findByAuthStan", query = "SELECT m FROM McAuthorization m WHERE m.authStan = :authStan"),
-    @NamedQuery(name = "McAuthorization.findByAuthReversalFlg", query = "SELECT m FROM McAuthorization m WHERE m.authReversalFlg = :authReversalFlg"),
-    @NamedQuery(name = "McAuthorization.findByAuthReversalRsn", query = "SELECT m FROM McAuthorization m WHERE m.authReversalRsn = :authReversalRsn"),
-    @NamedQuery(name = "McAuthorization.findByAuthStandInFlg", query = "SELECT m FROM McAuthorization m WHERE m.authStandInFlg = :authStandInFlg"),
-    @NamedQuery(name = "McAuthorization.findByClusterKey", query = "SELECT m FROM McAuthorization m WHERE m.clusterKey = :clusterKey"),
-    @NamedQuery(name = "McAuthorization.findByAuthLocalTs", query = "SELECT m FROM McAuthorization m WHERE m.mcAuthorizationPK.authLocalTs = :authLocalTs"),
-    @NamedQuery(name = "McAuthorization.findByAuthMsgNo", query = "SELECT m FROM McAuthorization m WHERE m.authMsgNo = :authMsgNo"),
-    @NamedQuery(name = "McAuthorization.findByAuthPostCntlNo", query = "SELECT m FROM McAuthorization m WHERE m.authPostCntlNo = :authPostCntlNo"),
-    @NamedQuery(name = "McAuthorization.findByAuthPostMsgNo", query = "SELECT m FROM McAuthorization m WHERE m.authPostMsgNo = :authPostMsgNo"),
-    @NamedQuery(name = "McAuthorization.findByAuthPromptedId", query = "SELECT m FROM McAuthorization m WHERE m.authPromptedId = :authPromptedId"),
-    @NamedQuery(name = "McAuthorization.findByAuthPostedTm", query = "SELECT m FROM McAuthorization m WHERE m.authPostedTm = :authPostedTm"),
-    @NamedQuery(name = "McAuthorization.findByAuthPostedAmt", query = "SELECT m FROM McAuthorization m WHERE m.authPostedAmt = :authPostedAmt"),
-    @NamedQuery(name = "McAuthorization.findByAuthSystemFlg", query = "SELECT m FROM McAuthorization m WHERE m.authSystemFlg = :authSystemFlg"),
-    @NamedQuery(name = "McAuthorization.findByAuthRejectDesc", query = "SELECT m FROM McAuthorization m WHERE m.authRejectDesc = :authRejectDesc"),
-    @NamedQuery(name = "McAuthorization.findByAuthInsertTs", query = "SELECT m FROM McAuthorization m WHERE m.authInsertTs = :authInsertTs"),
-    @NamedQuery(name = "McAuthorization.findByAuthPosData", query = "SELECT m FROM McAuthorization m WHERE m.authPosData = :authPosData"),
-    @NamedQuery(name = "McAuthorization.findByP105s1FileTy", query = "SELECT m FROM McAuthorization m WHERE m.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAuthorization.findByP105s2FileRDt", query = "SELECT m FROM McAuthorization m WHERE m.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAuthorization.findByP105s3ProcId", query = "SELECT m FROM McAuthorization m WHERE m.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAuthorization.findByP105s4FileSeqNo", query = "SELECT m FROM McAuthorization m WHERE m.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAuthorization.findByD71MsgNo", query = "SELECT m FROM McAuthorization m WHERE m.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAuthorization.findByD63s2TraceId", query = "SELECT m FROM McAuthorization m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAuthorization.findByAuthUpdateTs", query = "SELECT m FROM McAuthorization m WHERE m.authUpdateTs = :authUpdateTs"),
-    @NamedQuery(name = "McAuthorization.findByAuthUcafInd", query = "SELECT m FROM McAuthorization m WHERE m.authUcafInd = :authUcafInd"),
-    @NamedQuery(name = "McAuthorization.findByAuthAvsResp", query = "SELECT m FROM McAuthorization m WHERE m.authAvsResp = :authAvsResp"),
-    @NamedQuery(name = "McAuthorization.findByAuthMrchAdvCd", query = "SELECT m FROM McAuthorization m WHERE m.authMrchAdvCd = :authMrchAdvCd"),
-    @NamedQuery(name = "McAuthorization.findByAuthUcafData", query = "SELECT m FROM McAuthorization m WHERE m.authUcafData = :authUcafData"),
-    @NamedQuery(name = "McAuthorization.findByAuthAvsData", query = "SELECT m FROM McAuthorization m WHERE m.authAvsData = :authAvsData"),
-    @NamedQuery(name = "McAuthorization.findByAuthIrisFlg", query = "SELECT m FROM McAuthorization m WHERE m.authIrisFlg = :authIrisFlg"),
-    @NamedQuery(name = "McAuthorization.findByHierId", query = "SELECT m FROM McAuthorization m WHERE m.hierId = :hierId"),
-    @NamedQuery(name = "McAuthorization.findByNodeId", query = "SELECT m FROM McAuthorization m WHERE m.nodeId = :nodeId"),
-    @NamedQuery(name = "McAuthorization.findByD48s87CvcInd", query = "SELECT m FROM McAuthorization m WHERE m.d48s87CvcInd = :d48s87CvcInd"),
-    @NamedQuery(name = "McAuthorization.findByECmrcCd", query = "SELECT m FROM McAuthorization m WHERE m.eCmrcCd = :eCmrcCd"),
-    @NamedQuery(name = "McAuthorization.findByAuthTranAmtActOrig", query = "SELECT m FROM McAuthorization m WHERE m.authTranAmtActOrig = :authTranAmtActOrig"),
-    @NamedQuery(name = "McAuthorization.findByAuthCmpltTs", query = "SELECT m FROM McAuthorization m WHERE m.authCmpltTs = :authCmpltTs"),
-    @NamedQuery(name = "McAuthorization.findByAuthAdvDt", query = "SELECT m FROM McAuthorization m WHERE m.authAdvDt = :authAdvDt"),
-    @NamedQuery(name = "McAuthorization.findByAuthAdvTm", query = "SELECT m FROM McAuthorization m WHERE m.authAdvTm = :authAdvTm"),
-    @NamedQuery(name = "McAuthorization.findByAuthTranDt", query = "SELECT m FROM McAuthorization m WHERE m.authTranDt = :authTranDt"),
-    @NamedQuery(name = "McAuthorization.findByAuthTranTm", query = "SELECT m FROM McAuthorization m WHERE m.authTranTm = :authTranTm"),
-    @NamedQuery(name = "McAuthorization.findByTrnsTrkgNbr", query = "SELECT m FROM McAuthorization m WHERE m.trnsTrkgNbr = :trnsTrkgNbr"),
-    @NamedQuery(name = "McAuthorization.findByD63s2TraceIdCmplt", query = "SELECT m FROM McAuthorization m WHERE m.d63s2TraceIdCmplt = :d63s2TraceIdCmplt"),
-    @NamedQuery(name = "McAuthorization.findByAuthAsiFlg", query = "SELECT m FROM McAuthorization m WHERE m.authAsiFlg = :authAsiFlg"),
-    @NamedQuery(name = "McAuthorization.findByAuthRecurPmtFlg", query = "SELECT m FROM McAuthorization m WHERE m.authRecurPmtFlg = :authRecurPmtFlg"),
-    @NamedQuery(name = "McAuthorization.findByXpndCtlNbr", query = "SELECT m FROM McAuthorization m WHERE m.xpndCtlNbr = :xpndCtlNbr"),
-    @NamedQuery(name = "McAuthorization.findByAuthTranFeeAmt", query = "SELECT m FROM McAuthorization m WHERE m.authTranFeeAmt = :authTranFeeAmt"),
-    @NamedQuery(name = "McAuthorization.findByAuthIdMtchNbr", query = "SELECT m FROM McAuthorization m WHERE m.authIdMtchNbr = :authIdMtchNbr"),
-    @NamedQuery(name = "McAuthorization.findByAuthD48s63TraceId", query = "SELECT m FROM McAuthorization m WHERE m.authD48s63TraceId = :authD48s63TraceId"),
-    @NamedQuery(name = "McAuthorization.findByD48s61ExtndCondCd", query = "SELECT m FROM McAuthorization m WHERE m.d48s61ExtndCondCd = :d48s61ExtndCondCd"),
-    @NamedQuery(name = "McAuthorization.findByD48s71OnBehalfCd", query = "SELECT m FROM McAuthorization m WHERE m.d48s71OnBehalfCd = :d48s71OnBehalfCd"),
-    @NamedQuery(name = "McAuthorization.findByD48s33PanMappingCd", query = "SELECT m FROM McAuthorization m WHERE m.d48s33PanMappingCd = :d48s33PanMappingCd"),
-    @NamedQuery(name = "McAuthorization.findByD48s26WalletId", query = "SELECT m FROM McAuthorization m WHERE m.d48s26WalletId = :d48s26WalletId"),
-    @NamedQuery(name = "McAuthorization.findByD48s77PmtXtnTypCd", query = "SELECT m FROM McAuthorization m WHERE m.d48s77PmtXtnTypCd = :d48s77PmtXtnTypCd"),
-    @NamedQuery(name = "McAuthorization.findByD48s72IssChipAuth", query = "SELECT m FROM McAuthorization m WHERE m.d48s72IssChipAuth = :d48s72IssChipAuth"),
-    @NamedQuery(name = "McAuthorization.findByD48s79CvrTvrBitErr", query = "SELECT m FROM McAuthorization m WHERE m.d48s79CvrTvrBitErr = :d48s79CvrTvrBitErr"),
-    @NamedQuery(name = "McAuthorization.findByAuthMultiPostFlg", query = "SELECT m FROM McAuthorization m WHERE m.authMultiPostFlg = :authMultiPostFlg"),
-    @NamedQuery(name = "McAuthorization.findByAuth2ndXtnChk", query = "SELECT m FROM McAuthorization m WHERE m.auth2ndXtnChk = :auth2ndXtnChk"),
-    @NamedQuery(name = "McAuthorization.findByXborderFeeAmt", query = "SELECT m FROM McAuthorization m WHERE m.xborderFeeAmt = :xborderFeeAmt"),
-    @NamedQuery(name = "McAuthorization.findByD48s42ElecCommInd", query = "SELECT m FROM McAuthorization m WHERE m.d48s42ElecCommInd = :d48s42ElecCommInd"),
-    @NamedQuery(name = "McAuthorization.findByD48s43Ucaf", query = "SELECT m FROM McAuthorization m WHERE m.d48s43Ucaf = :d48s43Ucaf"),
-    @NamedQuery(name = "McAuthorization.findByD48s83AvsResp", query = "SELECT m FROM McAuthorization m WHERE m.d48s83AvsResp = :d48s83AvsResp"),
-    @NamedQuery(name = "McAuthorization.findByServCd", query = "SELECT m FROM McAuthorization m WHERE m.servCd = :servCd"),
-    @NamedQuery(name = "McAuthorization.findByUnqId", query = "SELECT m FROM McAuthorization m WHERE m.unqId = :unqId"),
-    @NamedQuery(name = "McAuthorization.findByD4TranAmt", query = "SELECT m FROM McAuthorization m WHERE m.d4TranAmt = :d4TranAmt"),
-    @NamedQuery(name = "McAuthorization.findByInAuthProc", query = "SELECT m FROM McAuthorization m WHERE m.inAuthProc = :inAuthProc"),
-    @NamedQuery(name = "McAuthorization.findByInAuthApprStat", query = "SELECT m FROM McAuthorization m WHERE m.inAuthApprStat = :inAuthApprStat"),
-    @NamedQuery(name = "McAuthorization.findByThrdPrtyApprCd", query = "SELECT m FROM McAuthorization m WHERE m.thrdPrtyApprCd = :thrdPrtyApprCd"),
-    @NamedQuery(name = "McAuthorization.findByThrdPrtyRsnCd", query = "SELECT m FROM McAuthorization m WHERE m.thrdPrtyRsnCd = :thrdPrtyRsnCd"),
-    @NamedQuery(name = "McAuthorization.findByD48s75FrdScr", query = "SELECT m FROM McAuthorization m WHERE m.d48s75FrdScr = :d48s75FrdScr"),
-    @NamedQuery(name = "McAuthorization.findByD48s75FrdScrRsnCd", query = "SELECT m FROM McAuthorization m WHERE m.d48s75FrdScrRsnCd = :d48s75FrdScrRsnCd"),
-    @NamedQuery(name = "McAuthorization.findByD48s75RlsScr", query = "SELECT m FROM McAuthorization m WHERE m.d48s75RlsScr = :d48s75RlsScr"),
-    @NamedQuery(name = "McAuthorization.findByD48s75RlsRsnCd1", query = "SELECT m FROM McAuthorization m WHERE m.d48s75RlsRsnCd1 = :d48s75RlsRsnCd1"),
-    @NamedQuery(name = "McAuthorization.findByD48s75RlsRsnCd2", query = "SELECT m FROM McAuthorization m WHERE m.d48s75RlsRsnCd2 = :d48s75RlsRsnCd2"),
-    @NamedQuery(name = "McAuthorization.findByFnMrchDt", query = "SELECT m FROM McAuthorization m WHERE m.fnMrchDt = :fnMrchDt"),
-    @NamedQuery(name = "McAuthorization.findByFnMrchTm", query = "SELECT m FROM McAuthorization m WHERE m.fnMrchTm = :fnMrchTm"),
-    @NamedQuery(name = "McAuthorization.findByLocId", query = "SELECT m FROM McAuthorization m WHERE m.locId = :locId"),
-    @NamedQuery(name = "McAuthorization.findByTrxNo", query = "SELECT m FROM McAuthorization m WHERE m.trxNo = :trxNo"),
-    @NamedQuery(name = "McAuthorization.findByTrxDt", query = "SELECT m FROM McAuthorization m WHERE m.trxDt = :trxDt"),
-    @NamedQuery(name = "McAuthorization.findByMrchStlmtDt", query = "SELECT m FROM McAuthorization m WHERE m.mrchStlmtDt = :mrchStlmtDt"),
-    @NamedQuery(name = "McAuthorization.findByOdmRdngNbr", query = "SELECT m FROM McAuthorization m WHERE m.odmRdngNbr = :odmRdngNbr"),
-    @NamedQuery(name = "McAuthorization.findByAuthD48s38AcctCat", query = "SELECT m FROM McAuthorization m WHERE m.authD48s38AcctCat = :authD48s38AcctCat"),
-    @NamedQuery(name = "McAuthorization.findByAuthAlmApprovCd", query = "SELECT m FROM McAuthorization m WHERE m.authAlmApprovCd = :authAlmApprovCd"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf1AcptStAddr", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf1AcptStAddr = :de122S01Sf1AcptStAddr"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf2AcptStCd", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf2AcptStCd = :de122S01Sf2AcptStCd"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf4AcptServPhn", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf4AcptServPhn = :de122S01Sf4AcptServPhn"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf5AcptPhn", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf5AcptPhn = :de122S01Sf5AcptPhn"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf6AcptCntct", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf6AcptCntct = :de122S01Sf6AcptCntct"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf7AcptTaxId", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf7AcptTaxId = :de122S01Sf7AcptTaxId"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf8AcptPrtnrId", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf8AcptPrtnrId = :de122S01Sf8AcptPrtnrId"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf9SlocCty", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf9SlocCty = :de122S01Sf9SlocCty"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf10SlocStCd", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf10SlocStCd = :de122S01Sf10SlocStCd"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf11SlocCntryCd", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf11SlocCntryCd = :de122S01Sf11SlocCntryCd"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf12SlocZip", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf12SlocZip = :de122S01Sf12SlocZip"),
-    @NamedQuery(name = "McAuthorization.findByRowChgTs", query = "SELECT m FROM McAuthorization m WHERE m.rowChgTs = :rowChgTs"),
-    @NamedQuery(name = "McAuthorization.findByMultiTrnsId", query = "SELECT m FROM McAuthorization m WHERE m.multiTrnsId = :multiTrnsId"),
-    @NamedQuery(name = "McAuthorization.findByMisc1Nbr", query = "SELECT m FROM McAuthorization m WHERE m.misc1Nbr = :misc1Nbr"),
-    @NamedQuery(name = "McAuthorization.findByUnitNbr", query = "SELECT m FROM McAuthorization m WHERE m.unitNbr = :unitNbr"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf13AcptGeo", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf13AcptGeo = :de122S01Sf13AcptGeo"),
-    @NamedQuery(name = "McAuthorization.findByDe122S01Sf14SlocGeo", query = "SELECT m FROM McAuthorization m WHERE m.de122S01Sf14SlocGeo = :de122S01Sf14SlocGeo"),
-    @NamedQuery(name = "McAuthorization.findByAcptLatNbr", query = "SELECT m FROM McAuthorization m WHERE m.acptLatNbr = :acptLatNbr"),
-    @NamedQuery(name = "McAuthorization.findByAcptLongNbr", query = "SELECT m FROM McAuthorization m WHERE m.acptLongNbr = :acptLongNbr"),
-    @NamedQuery(name = "McAuthorization.findBySlocLatNbr", query = "SELECT m FROM McAuthorization m WHERE m.slocLatNbr = :slocLatNbr"),
-    @NamedQuery(name = "McAuthorization.findBySlocLongNbr", query = "SELECT m FROM McAuthorization m WHERE m.slocLongNbr = :slocLongNbr"),
-    @NamedQuery(name = "McAuthorization.findByDf32SpndCntlOvr", query = "SELECT m FROM McAuthorization m WHERE m.df32SpndCntlOvr = :df32SpndCntlOvr"),
-    @NamedQuery(name = "McAuthorization.findByDf32Codes", query = "SELECT m FROM McAuthorization m WHERE m.df32Codes = :df32Codes"),
-    @NamedQuery(name = "McAuthorization.findByDf32LvlTypCd", query = "SELECT m FROM McAuthorization m WHERE m.df32LvlTypCd = :df32LvlTypCd"),
-    @NamedQuery(name = "McAuthorization.findByLmtNetwUsedFlg", query = "SELECT m FROM McAuthorization m WHERE m.lmtNetwUsedFlg = :lmtNetwUsedFlg")})
 public class McAuthorization implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -197,7 +49,7 @@ public class McAuthorization implements Serializable {
     @Basic(optional = false)
     @Column(name = "AUTH_CUST_ID")
     private String authCustId;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "AUTH_TRAN_AMT")
     private BigDecimal authTranAmt;
@@ -1802,7 +1654,7 @@ public class McAuthorization implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAuthorization)) {
             return false;
         }
@@ -1817,5 +1669,5 @@ public class McAuthorization implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAuthorization[ mcAuthorizationPK=" + mcAuthorizationPK + " ]";
     }
-    
+
 }

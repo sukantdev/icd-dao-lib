@@ -1,47 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
+
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.Date;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "CUST_DRIVER", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "CustDriver.findAll", query = "SELECT c FROM CustDriver c"),
-    @NamedQuery(name = "CustDriver.findByDrvrCustId", query = "SELECT c FROM CustDriver c WHERE c.custDriverPK.drvrCustId = :drvrCustId"),
-    @NamedQuery(name = "CustDriver.findByDrvrId", query = "SELECT c FROM CustDriver c WHERE c.custDriverPK.drvrId = :drvrId"),
-    @NamedQuery(name = "CustDriver.findByDrvrLastNm", query = "SELECT c FROM CustDriver c WHERE c.drvrLastNm = :drvrLastNm"),
-    @NamedQuery(name = "CustDriver.findByDrvrFirstNm", query = "SELECT c FROM CustDriver c WHERE c.drvrFirstNm = :drvrFirstNm"),
-    @NamedQuery(name = "CustDriver.findByDrvrLicNbr", query = "SELECT c FROM CustDriver c WHERE c.drvrLicNbr = :drvrLicNbr"),
-    @NamedQuery(name = "CustDriver.findByDrvrStateCd", query = "SELECT c FROM CustDriver c WHERE c.drvrStateCd = :drvrStateCd"),
-    @NamedQuery(name = "CustDriver.findByDrvrUpdateTs", query = "SELECT c FROM CustDriver c WHERE c.drvrUpdateTs = :drvrUpdateTs"),
-    @NamedQuery(name = "CustDriver.findByIdMisc1", query = "SELECT c FROM CustDriver c WHERE c.idMisc1 = :idMisc1"),
-    @NamedQuery(name = "CustDriver.findByIdMisc2", query = "SELECT c FROM CustDriver c WHERE c.idMisc2 = :idMisc2"),
-    @NamedQuery(name = "CustDriver.findByDrvrIdOnHoldFlg", query = "SELECT c FROM CustDriver c WHERE c.drvrIdOnHoldFlg = :drvrIdOnHoldFlg"),
-    @NamedQuery(name = "CustDriver.findByDrvrIdHoldRelDt", query = "SELECT c FROM CustDriver c WHERE c.drvrIdHoldRelDt = :drvrIdHoldRelDt"),
-    @NamedQuery(name = "CustDriver.findByDrvrIdHoldRelTm", query = "SELECT c FROM CustDriver c WHERE c.drvrIdHoldRelTm = :drvrIdHoldRelTm"),
-    @NamedQuery(name = "CustDriver.findByDrvrEmailAddr", query = "SELECT c FROM CustDriver c WHERE c.drvrEmailAddr = :drvrEmailAddr"),
-    @NamedQuery(name = "CustDriver.findByDrvrPhoneNbr", query = "SELECT c FROM CustDriver c WHERE c.drvrPhoneNbr = :drvrPhoneNbr"),
-    @NamedQuery(name = "CustDriver.findByRowChgTs", query = "SELECT c FROM CustDriver c WHERE c.rowChgTs = :rowChgTs")})
 public class CustDriver implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -249,7 +223,7 @@ public class CustDriver implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof CustDriver)) {
             return false;
         }
@@ -264,5 +238,5 @@ public class CustDriver implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.CustDriver[ custDriverPK=" + custDriverPK + " ]";
     }
-    
+
 }

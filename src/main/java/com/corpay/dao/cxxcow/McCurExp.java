@@ -1,33 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_CUR_EXP", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McCurExp.findAll", query = "SELECT m FROM McCurExp m"),
-    @NamedQuery(name = "McCurExp.findByP105s1FileTy", query = "SELECT m FROM McCurExp m WHERE m.mcCurExpPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McCurExp.findByP105s2FileRDt", query = "SELECT m FROM McCurExp m WHERE m.mcCurExpPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McCurExp.findByP105s3ProcId", query = "SELECT m FROM McCurExp m WHERE m.mcCurExpPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McCurExp.findByP105s4FileSeqNo", query = "SELECT m FROM McCurExp m WHERE m.mcCurExpPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McCurExp.findByP148s1CurrCd", query = "SELECT m FROM McCurExp m WHERE m.p148s1CurrCd = :p148s1CurrCd"),
-    @NamedQuery(name = "McCurExp.findByP148s2CurrExp", query = "SELECT m FROM McCurExp m WHERE m.p148s2CurrExp = :p148s2CurrExp"),
-    @NamedQuery(name = "McCurExp.findByD71MsgNo", query = "SELECT m FROM McCurExp m WHERE m.mcCurExpPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McCurExp.findByOccInd", query = "SELECT m FROM McCurExp m WHERE m.mcCurExpPK.occInd = :occInd")})
 public class McCurExp implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -82,7 +62,7 @@ public class McCurExp implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McCurExp)) {
             return false;
         }
@@ -97,5 +77,5 @@ public class McCurExp implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McCurExp[ mcCurExpPK=" + mcCurExpPK + " ]";
     }
-    
+
 }

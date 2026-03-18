@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.dbo;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,14 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "TELE_TRNS_INTRADAY", catalog = "", schema = "DBO")
-@NamedQueries({
-    @NamedQuery(name = "TeleTrnsIntraday.findAll", query = "SELECT t FROM TeleTrnsIntraday t")})
 public class TeleTrnsIntraday implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -80,7 +68,7 @@ public class TeleTrnsIntraday implements Serializable {
     @Basic(optional = false)
     @Column(name = "MRCH_NAME")
     private String mrchName;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "MRCH_LAT")
     private BigDecimal mrchLat;
@@ -335,7 +323,7 @@ public class TeleTrnsIntraday implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof TeleTrnsIntraday)) {
             return false;
         }
@@ -350,5 +338,5 @@ public class TeleTrnsIntraday implements Serializable {
     public String toString() {
         return "com.corpay.dao.dbo.TeleTrnsIntraday[ teleTrnsIntradayPK=" + teleTrnsIntradayPK + " ]";
     }
-    
+
 }

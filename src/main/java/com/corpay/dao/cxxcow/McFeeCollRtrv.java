@@ -1,15 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -17,116 +11,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_FEE_COLL_RTRV", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McFeeCollRtrv.findAll", query = "SELECT m FROM McFeeCollRtrv m"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP105s1FileTy", query = "SELECT m FROM McFeeCollRtrv m WHERE m.mcFeeCollRtrvPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP105s2FileRDt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.mcFeeCollRtrvPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP105s3ProcId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.mcFeeCollRtrvPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP105s4FileSeqNo", query = "SELECT m FROM McFeeCollRtrv m WHERE m.mcFeeCollRtrvPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McFeeCollRtrv.findByMsgTyId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByBitMapPri", query = "SELECT m FROM McFeeCollRtrv m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD1BitMapSec", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD2PriAccntNo", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d2PriAccntNo = :d2PriAccntNo"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD3s1ChTranTy", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d3s1ChTranTy = :d3s1ChTranTy"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD3s2ChFraccntty", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d3s2ChFraccntty = :d3s2ChFraccntty"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD3s3ChToaccntty", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d3s3ChToaccntty = :d3s3ChToaccntty"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD4TranAmt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d4TranAmt = :d4TranAmt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD5ReconAmt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d5ReconAmt = :d5ReconAmt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD9ReconConvRt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d9ReconConvRt = :d9ReconConvRt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD14ExpDt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d14ExpDt = :d14ExpDt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD23CardSeqNo", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d23CardSeqNo = :d23CardSeqNo"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD24FuncCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD25MsgRsnCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d25MsgRsnCd = :d25MsgRsnCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD30s1TrOrigAmt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d30s1TrOrigAmt = :d30s1TrOrigAmt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD30s2RnOrigAmt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d30s2RnOrigAmt = :d30s2RnOrigAmt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD26CrdAcptrbus", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d26CrdAcptrbus = :d26CrdAcptrbus"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD31s1IcRtDsgtr", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d31s1IcRtDsgtr = :d31s1IcRtDsgtr"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD31s2AcquirBin", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d31s2AcquirBin = :d31s2AcquirBin"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD31s3JulPrcDt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d31s3JulPrcDt = :d31s3JulPrcDt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD31s4AcqSeqNo", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d31s4AcqSeqNo = :d31s4AcqSeqNo"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD31s5CheckDigit", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d31s5CheckDigit = :d31s5CheckDigit"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD33FwdngInstCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD37RetrRefNo", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d37RetrRefNo = :d37RetrRefNo"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD38ApprvlCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d38ApprvlCd = :d38ApprvlCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD41CrdAcprTrm", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d41CrdAcprTrm = :d41CrdAcprTrm"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD42CrdAcprId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d42CrdAcprId = :d42CrdAcprId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByMcMerchId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.mcMerchId = :mcMerchId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD48AddtlDat", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP025s1MsgRev", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p025s1MsgRev = :p025s1MsgRev"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP025s2Cprdtorig", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p025s2Cprdtorig = :p025s2Cprdtorig"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP137FeeColCntl", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p137FeeColCntl = :p137FeeColCntl"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP149s1OrTaCur", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p149s1OrTaCur = :p149s1OrTaCur"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP149s2OrRcncur", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p149s2OrRcncur = :p149s2OrRcncur"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s1ApBrandId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s1ApBrandId = :p158s1ApBrandId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s2BusSrvcLv", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s2BusSrvcLv = :p158s2BusSrvcLv"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s3BusSrvcId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s3BusSrvcId = :p158s3BusSrvcId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s4IcgRtDsgn", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s4IcgRtDsgn = :p158s4IcgRtDsgn"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s5BusDt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s5BusDt = :p158s5BusDt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s6BusCycle", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s6BusCycle = :p158s6BusCycle"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s7MccOvr", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s7MccOvr = :p158s7MccOvr"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s8ProdOvr", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s8ProdOvr = :p158s8ProdOvr"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s9CorpIncrt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s9CorpIncrt = :p158s9CorpIncrt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s10QualLvl", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s10QualLvl = :p158s10QualLvl"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP159s1SSrvcTai", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p159s1SSrvcTai = :p159s1SSrvcTai"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP159s2SSrvctaa", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p159s2SSrvctaa = :p159s2SSrvctaa"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP159s3SSrvcLvl", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p159s3SSrvcLvl = :p159s3SSrvcLvl"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP159s4SSrvcId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p159s4SSrvcId = :p159s4SSrvcId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP159s5SFrnexCl", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p159s5SFrnexCl = :p159s5SFrnexCl"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP159s6ReconDt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p159s6ReconDt = :p159s6ReconDt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP159s7ReconCycle", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p159s7ReconCycle = :p159s7ReconCycle"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP159s8StlDt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p159s8StlDt = :p159s8StlDt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP159s9StlCycle", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p159s9StlCycle = :p159s9StlCycle"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP165s1StlInd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p165s1StlInd = :p165s1StlInd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP165s2StlInfo", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p165s2StlInfo = :p165s2StlInfo"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP170s1CustsvcPh", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p170s1CustsvcPh = :p170s1CustsvcPh"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP170s2CrdAcpPh", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p170s2CrdAcpPh = :p170s2CrdAcpPh"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP170s3AdtlCtInf", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p170s3AdtlCtInf = :p170s3AdtlCtInf"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP171s1ChrSetInd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p171s1ChrSetInd = :p171s1ChrSetInd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP171s2CrdAcpdsc", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p171s2CrdAcpdsc = :p171s2CrdAcpdsc"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP172SoleProNm", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p172SoleProNm = :p172SoleProNm"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP173LegCorpNm", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p173LegCorpNm = :p173LegCorpNm"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP174DunBradNo", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p174DunBradNo = :p174DunBradNo"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP175CrdAcpUrl", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p175CrdAcpUrl = :p175CrdAcpUrl"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP189s1FormatNo", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p189s1FormatNo = :p189s1FormatNo"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP189s2PhoneDat", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p189s2PhoneDat = :p189s2PhoneDat"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP190PartIdCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p190PartIdCd = :p190PartIdCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP191OrMsgFmt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP228RetrDoc", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p228RetrDoc = :p228RetrDoc"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP230FulDocCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p230FulDocCd = :p230FulDocCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP241MstcCntl", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p241MstcCntl = :p241MstcCntl"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP262DocIndctr", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p262DocIndctr = :p262DocIndctr"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP264OrRetrRsn", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p264OrRetrRsn = :p264OrRetrRsn"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP375MbrRcnInd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p375MbrRcnInd = :p375MbrRcnInd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP376MbrRcnInd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p376MbrRcnInd = :p376MbrRcnInd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD49TranCurrCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d49TranCurrCd = :d49TranCurrCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD50ReconCurCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d50ReconCurCd = :d50ReconCurCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD51ChBlCurCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d51ChBlCurCd = :d51ChBlCurCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD55IntdCirSys", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d55IntdCirSys = :d55IntdCirSys"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD62AddtlData2", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD63s1LfcycSpInd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD63s2TraceId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD63s3ValidnCd", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d63s3ValidnCd = :d63s3ValidnCd"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD63s4LfcyctrSeq", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d63s4LfcyctrSeq = :d63s4LfcyctrSeq"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD63s5LfcyctrTot", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d63s5LfcyctrTot = :d63s5LfcyctrTot"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD71MsgNo", query = "SELECT m FROM McFeeCollRtrv m WHERE m.mcFeeCollRtrvPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD72DataRec", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d72DataRec = :d72DataRec"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD73ActionDt", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d73ActionDt = :d73ActionDt"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD93TrDestInst", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD94TrOrgInst", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD95CrdIssuerRef", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d95CrdIssuerRef = :d95CrdIssuerRef"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD100RecvInstId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD123AddtlDat3", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD124AddtlDat4", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McFeeCollRtrv.findByD125AddtlDat5", query = "SELECT m FROM McFeeCollRtrv m WHERE m.d125AddtlDat5 = :d125AddtlDat5"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP2ProdId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p2ProdId = :p2ProdId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP3ProdId", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p3ProdId = :p3ProdId"),
-    @NamedQuery(name = "McFeeCollRtrv.findByP158s11McmrchOvr", query = "SELECT m FROM McFeeCollRtrv m WHERE m.p158s11McmrchOvr = :p158s11McmrchOvr")})
 public class McFeeCollRtrv implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -146,7 +32,7 @@ public class McFeeCollRtrv implements Serializable {
     private Short d3s2ChFraccntty;
     @Column(name = "D3S3_CH_TOACCNTTY")
     private Short d3s3ChToaccntty;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Column(name = "D4_TRAN_AMT")
     private BigDecimal d4TranAmt;
     @Column(name = "D5_RECON_AMT")
@@ -1141,7 +1027,7 @@ public class McFeeCollRtrv implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McFeeCollRtrv)) {
             return false;
         }
@@ -1156,5 +1042,5 @@ public class McFeeCollRtrv implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McFeeCollRtrv[ mcFeeCollRtrvPK=" + mcFeeCollRtrvPK + " ]";
     }
-    
+
 }

@@ -1,55 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_SECOND_PR_SUPA", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McSecondPrSupa.findAll", query = "SELECT m FROM McSecondPrSupa m"),
-    @NamedQuery(name = "McSecondPrSupa.findByP105s1FileTy", query = "SELECT m FROM McSecondPrSupa m WHERE m.mcSecondPrSupaPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McSecondPrSupa.findByP105s2FileRDt", query = "SELECT m FROM McSecondPrSupa m WHERE m.mcSecondPrSupaPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McSecondPrSupa.findByP105s3ProcId", query = "SELECT m FROM McSecondPrSupa m WHERE m.mcSecondPrSupaPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McSecondPrSupa.findByP105s4FileSeqNo", query = "SELECT m FROM McSecondPrSupa m WHERE m.mcSecondPrSupaPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McSecondPrSupa.findByD71MsgNo", query = "SELECT m FROM McSecondPrSupa m WHERE m.mcSecondPrSupaPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McSecondPrSupa.findByD35Track2Data", query = "SELECT m FROM McSecondPrSupa m WHERE m.d35Track2Data = :d35Track2Data"),
-    @NamedQuery(name = "McSecondPrSupa.findByD45Track1Dat", query = "SELECT m FROM McSecondPrSupa m WHERE m.d45Track1Dat = :d45Track1Dat"),
-    @NamedQuery(name = "McSecondPrSupa.findByP161s1SSrvcTai", query = "SELECT m FROM McSecondPrSupa m WHERE m.p161s1SSrvcTai = :p161s1SSrvcTai"),
-    @NamedQuery(name = "McSecondPrSupa.findByP161s2SSrvcTaa", query = "SELECT m FROM McSecondPrSupa m WHERE m.p161s2SSrvcTaa = :p161s2SSrvcTaa"),
-    @NamedQuery(name = "McSecondPrSupa.findByP161s3SSrvcLvl", query = "SELECT m FROM McSecondPrSupa m WHERE m.p161s3SSrvcLvl = :p161s3SSrvcLvl"),
-    @NamedQuery(name = "McSecondPrSupa.findByP161s4SSrvcId", query = "SELECT m FROM McSecondPrSupa m WHERE m.p161s4SSrvcId = :p161s4SSrvcId"),
-    @NamedQuery(name = "McSecondPrSupa.findByP161s5SFeRtCl", query = "SELECT m FROM McSecondPrSupa m WHERE m.p161s5SFeRtCl = :p161s5SFeRtCl"),
-    @NamedQuery(name = "McSecondPrSupa.findByP161s6ReconDt", query = "SELECT m FROM McSecondPrSupa m WHERE m.p161s6ReconDt = :p161s6ReconDt"),
-    @NamedQuery(name = "McSecondPrSupa.findByP161s7ReconCycle", query = "SELECT m FROM McSecondPrSupa m WHERE m.p161s7ReconCycle = :p161s7ReconCycle"),
-    @NamedQuery(name = "McSecondPrSupa.findByP161s8SDt", query = "SELECT m FROM McSecondPrSupa m WHERE m.p161s8SDt = :p161s8SDt"),
-    @NamedQuery(name = "McSecondPrSupa.findByP161s9SCycle", query = "SELECT m FROM McSecondPrSupa m WHERE m.p161s9SCycle = :p161s9SCycle"),
-    @NamedQuery(name = "McSecondPrSupa.findByP375MbrRcnInd", query = "SELECT m FROM McSecondPrSupa m WHERE m.p375MbrRcnInd = :p375MbrRcnInd"),
-    @NamedQuery(name = "McSecondPrSupa.findByP376MbrRcnInd", query = "SELECT m FROM McSecondPrSupa m WHERE m.p376MbrRcnInd = :p376MbrRcnInd"),
-    @NamedQuery(name = "McSecondPrSupa.findByP2ProdId", query = "SELECT m FROM McSecondPrSupa m WHERE m.p2ProdId = :p2ProdId"),
-    @NamedQuery(name = "McSecondPrSupa.findByP52s1SecuProt", query = "SELECT m FROM McSecondPrSupa m WHERE m.p52s1SecuProt = :p52s1SecuProt"),
-    @NamedQuery(name = "McSecondPrSupa.findByP52s2ChAuth", query = "SELECT m FROM McSecondPrSupa m WHERE m.p52s2ChAuth = :p52s2ChAuth"),
-    @NamedQuery(name = "McSecondPrSupa.findByP52s3UcafColind", query = "SELECT m FROM McSecondPrSupa m WHERE m.p52s3UcafColind = :p52s3UcafColind"),
-    @NamedQuery(name = "McSecondPrSupa.findByP177s1XborderInd", query = "SELECT m FROM McSecondPrSupa m WHERE m.p177s1XborderInd = :p177s1XborderInd"),
-    @NamedQuery(name = "McSecondPrSupa.findByP177s2CurrInd", query = "SELECT m FROM McSecondPrSupa m WHERE m.p177s2CurrInd = :p177s2CurrInd"),
-    @NamedQuery(name = "McSecondPrSupa.findByP001s1PpasActTy", query = "SELECT m FROM McSecondPrSupa m WHERE m.p001s1PpasActTy = :p001s1PpasActTy"),
-    @NamedQuery(name = "McSecondPrSupa.findByP001s2PpasActNo", query = "SELECT m FROM McSecondPrSupa m WHERE m.p001s2PpasActNo = :p001s2PpasActNo"),
-    @NamedQuery(name = "McSecondPrSupa.findByP057TranCatInd", query = "SELECT m FROM McSecondPrSupa m WHERE m.p057TranCatInd = :p057TranCatInd"),
-    @NamedQuery(name = "McSecondPrSupa.findByP044s1CvcValInd", query = "SELECT m FROM McSecondPrSupa m WHERE m.p044s1CvcValInd = :p044s1CvcValInd"),
-    @NamedQuery(name = "McSecondPrSupa.findByP044s2QpsCbInd", query = "SELECT m FROM McSecondPrSupa m WHERE m.p044s2QpsCbInd = :p044s2QpsCbInd")})
 public class McSecondPrSupa implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -342,7 +301,7 @@ public class McSecondPrSupa implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McSecondPrSupa)) {
             return false;
         }
@@ -357,5 +316,5 @@ public class McSecondPrSupa implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McSecondPrSupa[ mcSecondPrSupaPK=" + mcSecondPrSupaPK + " ]";
     }
-    
+
 }

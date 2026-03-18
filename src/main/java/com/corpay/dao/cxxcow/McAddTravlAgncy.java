@@ -1,61 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.corpay.dao.cxxcow;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- *
- * @author Sukant.Tiwari
- */
 @Entity
 @Table(name = "MC_ADD_TRAVL_AGNCY", catalog = "", schema = "CXXCOW")
-@NamedQueries({
-    @NamedQuery(name = "McAddTravlAgncy.findAll", query = "SELECT m FROM McAddTravlAgncy m"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP105s1FileTy", query = "SELECT m FROM McAddTravlAgncy m WHERE m.mcAddTravlAgncyPK.p105s1FileTy = :p105s1FileTy"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP105s2FileRDt", query = "SELECT m FROM McAddTravlAgncy m WHERE m.mcAddTravlAgncyPK.p105s2FileRDt = :p105s2FileRDt"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP105s3ProcId", query = "SELECT m FROM McAddTravlAgncy m WHERE m.mcAddTravlAgncyPK.p105s3ProcId = :p105s3ProcId"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP105s4FileSeqNo", query = "SELECT m FROM McAddTravlAgncy m WHERE m.mcAddTravlAgncyPK.p105s4FileSeqNo = :p105s4FileSeqNo"),
-    @NamedQuery(name = "McAddTravlAgncy.findByMsgTyId", query = "SELECT m FROM McAddTravlAgncy m WHERE m.msgTyId = :msgTyId"),
-    @NamedQuery(name = "McAddTravlAgncy.findByBitMapPri", query = "SELECT m FROM McAddTravlAgncy m WHERE m.bitMapPri = :bitMapPri"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD1BitMapSec", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d1BitMapSec = :d1BitMapSec"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD24FuncCd", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d24FuncCd = :d24FuncCd"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD32AcqInstIdCd", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d32AcqInstIdCd = :d32AcqInstIdCd"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD33FwdngInstCd", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d33FwdngInstCd = :d33FwdngInstCd"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD48AddtlDat", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d48AddtlDat = :d48AddtlDat"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP191OrMsgFmt", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p191OrMsgFmt = :p191OrMsgFmt"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP501s1UsageCd", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p501s1UsageCd = :p501s1UsageCd"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP501s2IndstyRec", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p501s2IndstyRec = :p501s2IndstyRec"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP501s3OccInd", query = "SELECT m FROM McAddTravlAgncy m WHERE m.mcAddTravlAgncyPK.p501s3OccInd = :p501s3OccInd"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP501s4MsgNo", query = "SELECT m FROM McAddTravlAgncy m WHERE m.mcAddTravlAgncyPK.p501s4MsgNo = :p501s4MsgNo"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP502s1CustIdTyp", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p502s1CustIdTyp = :p502s1CustIdTyp"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP502s2CustIdDtl", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p502s2CustIdDtl = :p502s2CustIdDtl"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP503AgncySeqNo", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p503AgncySeqNo = :p503AgncySeqNo"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP504s1FeeAmt", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p504s1FeeAmt = :p504s1FeeAmt"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP504s2FeeAmtExp", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p504s2FeeAmtExp = :p504s2FeeAmtExp"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP504s3FeeAmtSgn", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p504s3FeeAmtSgn = :p504s3FeeAmtSgn"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP504s4FeeAmtRte", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p504s4FeeAmtRte = :p504s4FeeAmtRte"),
-    @NamedQuery(name = "McAddTravlAgncy.findByP504s5FeeAmtDsc", query = "SELECT m FROM McAddTravlAgncy m WHERE m.p504s5FeeAmtDsc = :p504s5FeeAmtDsc"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD62AddtlData2", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d62AddtlData2 = :d62AddtlData2"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD63s1LfcycSpInd", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d63s1LfcycSpInd = :d63s1LfcycSpInd"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD63s2TraceId", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d63s2TraceId = :d63s2TraceId"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD71MsgNo", query = "SELECT m FROM McAddTravlAgncy m WHERE m.mcAddTravlAgncyPK.d71MsgNo = :d71MsgNo"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD93TrDestInst", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d93TrDestInst = :d93TrDestInst"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD94TrOrgInst", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d94TrOrgInst = :d94TrOrgInst"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD100RecvInstId", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d100RecvInstId = :d100RecvInstId"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD123AddtlDat3", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d123AddtlDat3 = :d123AddtlDat3"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD124AddtlDat4", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d124AddtlDat4 = :d124AddtlDat4"),
-    @NamedQuery(name = "McAddTravlAgncy.findByD125AddtlDat5", query = "SELECT m FROM McAddTravlAgncy m WHERE m.d125AddtlDat5 = :d125AddtlDat5")})
 public class McAddTravlAgncy implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -100,7 +54,7 @@ public class McAddTravlAgncy implements Serializable {
     @Basic(optional = false)
     @Column(name = "P503_AGNCY_SEQ_NO")
     private String p503AgncySeqNo;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "P504S1_FEE_AMT")
     private BigDecimal p504s1FeeAmt;
@@ -419,7 +373,7 @@ public class McAddTravlAgncy implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof McAddTravlAgncy)) {
             return false;
         }
@@ -434,5 +388,5 @@ public class McAddTravlAgncy implements Serializable {
     public String toString() {
         return "com.corpay.dao.cxxcow.McAddTravlAgncy[ mcAddTravlAgncyPK=" + mcAddTravlAgncyPK + " ]";
     }
-    
+
 }
