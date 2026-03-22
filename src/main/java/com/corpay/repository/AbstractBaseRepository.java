@@ -2,6 +2,7 @@ package com.corpay.repository;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import jakarta.persistence.EntityManager;
@@ -115,10 +116,10 @@ public abstract class AbstractBaseRepository<T, ID extends Serializable> impleme
         return entityManager.createNamedQuery(queryName, entityClass).getResultList();
     }
 
-    protected List<T> executeNamedQuery(String queryName, Object... params) {
+    protected List<T> executeNamedQuery(String queryName, Map<String, Object> params) {
         TypedQuery<T> query = entityManager.createNamedQuery(queryName, entityClass);
-        for (int i = 0; i < params.length; i += 2) {
-            query.setParameter((String) params[i], params[i + 1]);
+        for (var entry : params.entrySet()) {
+            query.setParameter(entry.getKey(), entry.getValue());
         }
         return query.getResultList();
     }
@@ -129,19 +130,11 @@ public abstract class AbstractBaseRepository<T, ID extends Serializable> impleme
     }
 
     @SuppressWarnings("unchecked")
-    protected List<T> executeNativeQuery(String sql, Object... params) {
+    protected List<T> executeNativeQuery(String sql, Map<String, Object> params) {
         Query query = entityManager.createNativeQuery(sql, entityClass);
-        for (int i = 0; i < params.length; i += 2) {
-            query.setParameter((String) params[i], params[i + 1]);
+        for (var entry : params.entrySet()) {
+            query.setParameter(entry.getKey(), entry.getValue());
         }
         return query.getResultList();
-    }
-
-    protected int executeNativeUpdate(String sql, Object... params) {
-        Query query = entityManager.createNativeQuery(sql);
-        for (int i = 0; i < params.length; i += 2) {
-            query.setParameter((String) params[i], params[i + 1]);
-        }
-        return query.executeUpdate();
     }
 }
